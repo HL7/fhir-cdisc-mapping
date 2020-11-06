@@ -1,0 +1,77 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
+  <a name="intro"> </a>
+  <h3>Introduction</h3>
+	<p>
+    <a href="">CDISC</a> defines a number of standards that support the capture and sharing of information related to research and clinical trials.  
+    <a href="">FHIR</a> is an <a href="">HL7</a> standard for the capturing
+    and sharing of healthcare information for a wide variety of purposes.  This implementation guide, a joint effort of CDISC and HL7 defines mappings between <a href="http://hl7.org/fhir/R4">FHIR release 4.0</a> and two specific CDISC standards:
+  </p>
+  <ul>
+    <li><a href="https://www.cdisc.org/standards/foundational/sdtmig/sdtmig-v3-2">Study Data Tabulation Model Implementation Guide (SDTMIG) 3.2</a></li>
+    <li><a href="https://www.cdisc.org/standards/foundational/cdash/cdashig-v2-1">Clinical Data Access Standards Harmonization Implementation Guide (CDASH) 2.1</a></li>
+  </ul>
+  <p>
+    By making it easier to convert data between HL7 FHIR (commonly used in clinical systems to collect and share healthcare data) and CDISC standards (commonly used to submit clinical trial data for analysis and regulatory approval), both organizations aim to reduce the barriers to using clinical information to support research.  Possible uses include:
+  </p>
+  <ul>
+    <li>capturing 'real world evidence' (RWE) where clinical data not directly captured for clinical trial purposes can be used to support regulatory applications;</li>
+    <li>allowing trial-driven data capture to occur directly inside clinical systems rather than separate clinical trial management solutions, leveraging technologies like <a href="">SMART on FHIR</a>;</li>
+    <li>making it easier to leverage clinical data in retrospective studies</li>
+    <li>supporting the creation of case report forms (CRFs) that link to data elements defined using FHIR resources and profiles</li>
+    <li>enabling experts from both standards communities to understand each others terms and better align both sets of specifications as they continue to evolve</li>
+  </ul>
+  <a name="approach"> </a>
+  <h3>Approach</h3>
+  <a name="caveats"> </a>
+  <h4>Caveats</h4>
+  <p>
+    All mappings defined are based on the formal definitions as they appear in the formal definitions of the CDISC and the HL7 specification, however the reality is that actual content of real FHIR interfaces and real study requirements may occasionally require variation from these mappings - either through additional filters, additional transformation, or occasionally looking for information in alternate locations.  Therefore, the mappings provided here should be considered 'informative', rather than binding.  As well, some of the mappings here will indicate where study-specific or context-specific considerations will influence the mappings.  For example, the Conditions from the patient record that will be deemed appropriate to report as 'adverse reactions' may vary from study to study.  As a result, in most cases, data should map as defined, but those implementing conversions will need to review and potentially adjust to reflect the requirements of their particular implementation space.
+  </p>
+  <p>
+    The mappings listed here are version-specific.  Implementers may attempt to leverage the mapping information when using alterate versions, but should be aware that changes between versions may render the mapping information inappropriate.  CDISC and HL7 expect to produce new versions of this IG to document mappings for future releases of the specifications for both organizations.
+  </p>
+  <p>
+    The mappings are also based only on the information defined in the core specifications and, for FHIR, extensions defined in the core specification.  Implementations will also need to consider mappings for supplemental qualifiers and local FHIR extensions.
+  </p>
+  <a name="mappings"> </a>
+  <h4>Mappings</h4>
+  <p>
+    In this release, mappings are captured in a simple table structure intended to support the work of business analysts rather than a formal computably executable representation.  This approach was chosen for a few reasons:
+  </p>
+  <ul>
+    <li>As mentioned earlier, mappings will need to be adjusted on a study-specific and implementation-environment specific basis.  A business-analyst view of the mappings will be easier to use as a starting point for context-specific adjustment than a formally computable structure.</li>
+    <li>Less formal tabular representations are easier for the community to review and verify</li>
+    <li>Different organizations are likely to have differing tooling stacks for performing data conversion, meaning that formally computable representations are less likely to be as broadly useful</li>
+    <li>Formal, executable mappings, such as those expressible with <a href="{{site.data.fhir.path}}structuremap.html">StructureMap</a> are more time-consuming to create and test, and HL7 and CDISC don't want to undertake that effort unless there is a clear demand from the community for such artifacts to be produced.</li>
+  </ul>
+  <p>
+    Future versions of this implementation guide may include formal profiles of FHIR resources for use with CDISC standards, <a href="{{site.data.fhir.path}}conceptmap.html">concept maps</a> that support translation between CDISC and FHIR terminologies and extension definitions for data elements used in CDISC but not present in the FHIR core specification.  Implementers are encouraged to provide feedback about what resources they would find most helpful.
+  </p>
+  <p>
+    Mapping tables are provided for each CDISC 'domain'.  (Domains are a means of organizing related data in both the SDTM and CDASH specifications.)  Not all CDISC domains are mapped in this release, but all of the primary clinical domains are included, specifically: <a href="ae.html">Adverse Events (AE)</a>, <a href="cm.html">Concommitant Medications (CM)</a>, <a href="dm.html">Demographics (DM)</a>, <a href="lb.html">Labs (LB)</a>, <a href="mh.html">Medical History (MH)</a>, <a href="pr.html">Procedures</a> and <a href="vs.html">Vital Signs (VS)</a>.  Each domain table is organized into two sections.  The first provides information about the CDISC domain elements, both from the SDTM and the CDASH perspective (though not all data elements will exist in both specifications).  This portion of the table contains the following data elements:
+  </p>
+  <ul>
+    <li><b>Element name</b> - a descriptive name for the data element.  This is the descriptive name for the element as exposed in CDASH and/or SDTM.  (If the names are different in the two specifications but it is known the content and mapping are the same, the CDASH name is chosen preferentially)</li>
+    <li><b>CDASH Variable</b> - the formal id for the variable in the CDASH standard.  A fly-over provides the definition for the element in CDASH.  This column will be omitted for mapped data elements that do not have a CDASH equivalent.</li>
+    <li><b>SDTM Variable</b> - the formal id for the variable in the SDTM standard.  A fly-over provides the definition for the element in SDTM.  This column will be omitted for mapped data elements that do not have a SDTM equivalent.</li>
+  </ul>
+  <p>
+    The second part of the mapping table indicates where the data element can be found in FHIR.  Every   This section includes the following columns:
+  </p>
+  <ul>
+    <li><b>Resource element</b> - indicates the specific resource element in FHIR and provides a hyperlink to the associated data dictionary page in the FHIR core specification</li>
+    <li><b>Path</b> - provides a description of how to navigate from the 'base' FHIR resource that corresponds to the equivalent domain to the specified data element.</li>
+    <li><b>Comments</b> - notes about the mapping and its applicability</li>
+  </ul>
+  <p>
+    The tables for each domain can be found by using the 'Mapping' menu link.  As well, each mapping table is followed by a link to a CSV file containing the same content as the mapping table, with the exception that definitions are included as columns rather than flyovers.
+  </p>
+  <p>
+    Finally, the complete set of mappings is available as an <a href="cdisc-fhir-mappings.xml">XML-based Excel file</a>.  A link to this file, as well as a downloadable version of the IG can be found on the <a href="downloads.html">downloads</a> page.
+  </p>
+  <a name="credits"> </a>
+  <h3>Credits</h3>
+  <p>The following individuals were intrumental in the development of this implementation guide:</p>
+  <p>TODO</p>
+</div>
