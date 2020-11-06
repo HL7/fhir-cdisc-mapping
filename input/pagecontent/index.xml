@@ -57,7 +57,7 @@
     <li><b>SDTM Variable</b> - the formal id for the variable in the SDTM standard.  A fly-over provides the definition for the element in SDTM.  This column will be omitted for mapped data elements that do not have a SDTM equivalent.</li>
   </ul>
   <p>
-    The second part of the mapping table indicates where the data element can be found in FHIR.  Every   This section includes the following columns:
+    The second part of the mapping table indicates where the data element can be found in FHIR.  In some cases, there will only be a comment indicating that no mapping currently exists (and custom extensions would be needed).  In other cases, there may be multiple FHIR rows for a single CDISC row if corresponding data might be found in multiple places.  This section includes the following columns:
   </p>
   <ul>
     <li><b>Resource element</b> - indicates the specific resource element in FHIR and provides a hyperlink to the associated data dictionary page in the FHIR core specification</li>
