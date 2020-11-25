@@ -15,11 +15,11 @@
     By making it easier to convert data between HL7 FHIR (commonly used in clinical systems to collect and share healthcare data) and CDISC standards (commonly used to submit clinical trial data for analysis and regulatory approval), both organizations aim to reduce the barriers to using clinical information to support research.  Possible uses include:
   </p>
   <ul>
-    <li>capturing 'real world evidence' (RWE) where clinical data not directly captured for clinical trial purposes can be used to support regulatory applications;</li>
-    <li>allowing trial-driven data capture to occur directly inside clinical systems rather than separate clinical trial management solutions, leveraging technologies like <a href="">SMART on FHIR</a>;</li>
-    <li>making it easier to leverage clinical data in retrospective studies</li>
-    <li>supporting the creation of case report forms (CRFs) that link to data elements defined using FHIR resources and profiles</li>
-    <li>enabling experts from both standards communities to understand each others terms and better align both sets of specifications as they continue to evolve</li>
+    <li>Capturing 'real world evidence' (RWE) where clinical data not directly captured for clinical trial purposes can be used to support regulatory applications.</li>
+    <li>Allowing trial-driven data capture to occur directly inside clinical systems rather than separate clinical trial management solutions, leveraging technologies like <a href="">SMART on FHIR</a>.  This is sometimes referred to as e-sourced data.</li>
+    <li>Making it easier to leverage clinical data in retrospective studies.</li>
+    <li>Supporting the creation of case report forms (CRFs) that link to data elements defined using FHIR resources and profiles.</li>
+    <li>Enabling experts from both standards communities to understand each others terms and better align both sets of specifications as they continue to evolve.</li>
   </ul>
   <a name="approach"> </a>
   <h3>Approach</h3>
