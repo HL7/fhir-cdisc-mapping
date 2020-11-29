@@ -117,31 +117,49 @@
                     </xsl:if>
                   </cdisc>
                 </xsl:if>
-                <xsl:variable name="mappings" as="element()?">
-                  <xsl:if test="t:hasCellValue(., $resourceColumn)">
-                    <mapping>
-                      <xsl:variable name="element" select="concat(t:cellValue(., $resourceColumn), '.', t:cellValue(., $elementColumn))"/>
-                      <xsl:attribute name="element" select="$element"/>
-                      <xsl:if test="t:hasCellValue(., $pathColumn)">
-                        <path value="{t:cellValue(., $pathColumn)}"/>
-                      </xsl:if>
-                    </mapping>
-                  </xsl:if>
-                </xsl:variable>
-                <xsl:choose>
-                  <xsl:when test="contains($mappings/@element, ',')">
-                    <xsl:choose>
-                      <xsl:when test="count(tokenize($mappings/@element, ','))=count(tokenize($mappings/@path, ','))">
-                        <xsl:for-each select="tokenize($mappings/@element, ',')">
-                          <mapping element="{.}" path="{tokenize($mappings/@element, ',')[position()]}"/>
+                <xsl:if test="t:hasCellValue(., $resourceColumn) or t:hasCellValue(., $elementColumn) or t:hasCellValue(., $pathColumn)">
+                  <xsl:variable name="resourceCell" select="t:cellValue(., $resourceColumn)"/>
+                  <xsl:variable name="attributeCell" select="t:cellValue(., $elementColumn)"/>
+                  <xsl:variable name="pathCell" select="if (t:hasCellValue(., $pathColumn)) then t:cellValue(., $pathColumn) else ''"/>
+                  <xsl:variable name="mappingResources" select="if (contains($resourceCell, '&#xa;')) then tokenize($resourceCell, '&#xa;')[not(normalize-space(.)=('','OR'))] else $resourceCell"/>
+                  <xsl:variable name="mappingAttributes" select="if (contains($attributeCell, '&#xa;')) then tokenize($attributeCell, '&#xa;')[not(normalize-space(.)=('','OR'))] else $attributeCell"/>
+                  <xsl:variable name="mappingPaths" select="if (contains($pathCell, '&#xa;')) then tokenize($pathCell, '&#xa;')[not(normalize-space(.)=('', 'OR'))] else $pathCell"/>
+                  <xsl:choose>
+                    <xsl:when test="count($mappingResources)=1 and count($mappingAttributes)=1">
+                      <mapping element="{concat($mappingResources, '.', $mappingAttributes)}">
+                        <xsl:for-each select="$mappingPaths">
+                          <path value="{.}"/>
                         </xsl:for-each>
-                      </xsl:when>
-                    </xsl:choose>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:copy-of select="$mappings"/>
-                  </xsl:otherwise>
-                </xsl:choose>
+                      </mapping>                  
+                    </xsl:when>
+                    <xsl:when test="count($mappingResources)=count($mappingAttributes) and count($mappingResources)=count($mappingPaths)">
+                      <xsl:for-each select="$mappingResources">
+                        <xsl:variable name="pos" select="position()"/>
+                        <mapping element="{concat(., '.', $mappingAttributes[$pos])}">
+                          <xsl:for-each select="$mappingPaths[position()]">
+                            <path value="{.}"/>
+                          </xsl:for-each>
+                        </mapping>
+                      </xsl:for-each>
+                    </xsl:when>
+                    <xsl:when test="count($mappingResources)=1 and count($mappingAttributes)=count($mappingPaths)">
+                      <xsl:for-each select="$mappingAttributes">
+                        <xsl:variable name="pos" select="position()"/>
+                        <mapping element="{concat($mappingResources, '.', .)}">
+                          <xsl:for-each select="$mappingPaths[$pos]">
+                            <path value="{.}"/>
+                          </xsl:for-each>
+                        </mapping>
+                      </xsl:for-each>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:message select="concat('Resources: ', count($mappingResources), ' - ', string-join($mappingResources, ';'))"/>
+                      <xsl:message select="concat('Attributes: ', count($mappingAttributes), ' - ', string-join($mappingAttributes, ';'))"/>
+                      <xsl:message select="concat('Paths: ', count($mappingPaths), ' - ', string-join($mappingPaths, ';'))"/>
+                      <xsl:message terminate="yes" select="('Un-even line elements in domain: ', $domainCode)"/>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:if>
                 <xsl:if test="t:hasCellValue(., $gapColumn)">
                   <gap>
                     <xsl:copy-of select="t:htmlValue(., $gapColumn)"/>

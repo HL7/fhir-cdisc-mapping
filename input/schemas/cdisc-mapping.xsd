@@ -93,16 +93,19 @@
   <xs:simpleType name="FHIRElement">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][a-zA-Z]+)*"/>
+<!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="FHIRPath">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][a-zA-Z()=]+)*"/>
+<!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CDISCName">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|([A-Z][A-Z\.]+)"/>
+<!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SpecType">
