@@ -21,8 +21,8 @@
   <WindowWidth>22302</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
-  <ActiveSheet>7</ActiveSheet>
-  <FirstVisibleSheet>5</FirstVisibleSheet>
+  <ActiveSheet>6</ActiveSheet>
+  <FirstVisibleSheet>2</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -39,7 +39,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#0066CC"
     ss:Underline="Single"/>
   </Style>
-  <Style ss:ID="m2214551687568">
+  <Style ss:ID="m2214643904592">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -50,7 +50,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687588">
+  <Style ss:ID="m2214643904612">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -61,7 +61,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687608">
+  <Style ss:ID="m2214643904632">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -72,7 +72,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687628">
+  <Style ss:ID="m2214643904652">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -83,7 +83,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687648">
+  <Style ss:ID="m2214643904672">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -94,7 +94,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687668">
+  <Style ss:ID="m2214643904692">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -105,7 +105,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683408">
+  <Style ss:ID="m2214643904384">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -116,7 +116,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683428">
+  <Style ss:ID="m2214643904404">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -127,7 +127,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683448">
+  <Style ss:ID="m2214643904424">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -138,7 +138,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683468">
+  <Style ss:ID="m2214643904444">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -149,7 +149,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683488">
+  <Style ss:ID="m2214643904464">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -160,7 +160,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683508">
+  <Style ss:ID="m2214643904484">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -171,7 +171,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684864">
+  <Style ss:ID="m2214643906048">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -182,7 +182,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684884">
+  <Style ss:ID="m2214643906068">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -193,7 +193,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684904">
+  <Style ss:ID="m2214643906088">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -204,7 +204,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684924">
+  <Style ss:ID="m2214643906108">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -215,7 +215,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684944">
+  <Style ss:ID="m2214643906128">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -226,7 +226,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551684964">
+  <Style ss:ID="m2214643906148">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -237,7 +237,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691312">
+  <Style ss:ID="m2214643905424">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -248,7 +248,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691332">
+  <Style ss:ID="m2214643905444">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -259,7 +259,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691352">
+  <Style ss:ID="m2214643905464">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -270,7 +270,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691372">
+  <Style ss:ID="m2214643905484">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -281,7 +281,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691392">
+  <Style ss:ID="m2214643905504">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -292,7 +292,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691412">
+  <Style ss:ID="m2214643905524">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -303,7 +303,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690896">
+  <Style ss:ID="m2214643899392">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -314,7 +314,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690916">
+  <Style ss:ID="m2214643899412">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -325,7 +325,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690936">
+  <Style ss:ID="m2214643899432">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -336,7 +336,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690956">
+  <Style ss:ID="m2214643899452">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -347,7 +347,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690976">
+  <Style ss:ID="m2214643899472">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -358,7 +358,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690996">
+  <Style ss:ID="m2214643899492">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -369,7 +369,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687360">
+  <Style ss:ID="m2214643905840">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -380,7 +380,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687380">
+  <Style ss:ID="m2214643905860">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -391,7 +391,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687400">
+  <Style ss:ID="m2214643905880">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -402,7 +402,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687420">
+  <Style ss:ID="m2214643905900">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -413,7 +413,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687440">
+  <Style ss:ID="m2214643905920">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -424,7 +424,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551687460">
+  <Style ss:ID="m2214643905940">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -435,7 +435,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690688">
+  <Style ss:ID="m2214643899184">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -446,7 +446,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690708">
+  <Style ss:ID="m2214643899204">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -457,7 +457,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690728">
+  <Style ss:ID="m2214643899224">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -468,7 +468,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690748">
+  <Style ss:ID="m2214643899244">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -479,7 +479,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690768">
+  <Style ss:ID="m2214643899264">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -490,7 +490,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551690788">
+  <Style ss:ID="m2214643899284">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -501,7 +501,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682784">
+  <Style ss:ID="m2214643912288">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -512,7 +512,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682804">
+  <Style ss:ID="m2214643912308">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -523,7 +523,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682824">
+  <Style ss:ID="m2214643912328">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -534,7 +534,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682844">
+  <Style ss:ID="m2214643912348">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -545,7 +545,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682864">
+  <Style ss:ID="m2214643912368">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -556,7 +556,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682884">
+  <Style ss:ID="m2214643912388">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -567,7 +567,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685280">
+  <Style ss:ID="m2214643911664">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -578,7 +578,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685300">
+  <Style ss:ID="m2214643911684">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -589,7 +589,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685320">
+  <Style ss:ID="m2214643911704">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -600,7 +600,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685340">
+  <Style ss:ID="m2214643911724">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -611,7 +611,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685360">
+  <Style ss:ID="m2214643911744">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -622,7 +622,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685380">
+  <Style ss:ID="m2214643911764">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -633,7 +633,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551689668">
+  <Style ss:ID="m2214643899620">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -644,7 +644,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551689688">
+  <Style ss:ID="m2214643899640">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -655,7 +655,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551689728">
+  <Style ss:ID="m2214643899680">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -666,7 +666,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691728">
+  <Style ss:ID="m2214643903136">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -677,7 +677,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691748">
+  <Style ss:ID="m2214643903156">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -688,7 +688,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691768">
+  <Style ss:ID="m2214643903176">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -699,7 +699,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691788">
+  <Style ss:ID="m2214643903196">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -710,7 +710,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691808">
+  <Style ss:ID="m2214643903216">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -721,7 +721,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551691828">
+  <Style ss:ID="m2214643903236">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -732,7 +732,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682160">
+  <Style ss:ID="m2214643907296">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -743,7 +743,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682180">
+  <Style ss:ID="m2214643907316">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -754,7 +754,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682200">
+  <Style ss:ID="m2214643907336">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -765,7 +765,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682220">
+  <Style ss:ID="m2214643907356">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -776,7 +776,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682240">
+  <Style ss:ID="m2214643907376">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -787,7 +787,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682260">
+  <Style ss:ID="m2214643907396">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -798,7 +798,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681952">
+  <Style ss:ID="m2214643911248">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -809,7 +809,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681972">
+  <Style ss:ID="m2214643911268">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -820,7 +820,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681992">
+  <Style ss:ID="m2214643911288">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -831,7 +831,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682012">
+  <Style ss:ID="m2214643911308">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -842,7 +842,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682032">
+  <Style ss:ID="m2214643911328">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -853,7 +853,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682052">
+  <Style ss:ID="m2214643911348">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -864,7 +864,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685072">
+  <Style ss:ID="m2214643905632">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -875,7 +875,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685092">
+  <Style ss:ID="m2214643905652">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -886,7 +886,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685112">
+  <Style ss:ID="m2214643905672">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -897,7 +897,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685132">
+  <Style ss:ID="m2214643905692">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -908,7 +908,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685152">
+  <Style ss:ID="m2214643905712">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -919,7 +919,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685172">
+  <Style ss:ID="m2214643905732">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -930,7 +930,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685192">
+  <Style ss:ID="m2214643905752">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -941,7 +941,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685212">
+  <Style ss:ID="m2214643905772">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -952,7 +952,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685232">
+  <Style ss:ID="m2214643905792">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -963,7 +963,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551685252">
+  <Style ss:ID="m2214643905812">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -974,7 +974,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683616">
+  <Style ss:ID="m2214643904176">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -985,7 +985,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683636">
+  <Style ss:ID="m2214643904196">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -996,7 +996,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683656">
+  <Style ss:ID="m2214643904216">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1007,7 +1007,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683676">
+  <Style ss:ID="m2214643904236">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1018,7 +1018,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683696">
+  <Style ss:ID="m2214643904256">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1029,7 +1029,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683716">
+  <Style ss:ID="m2214643904276">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1040,7 +1040,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551683736">
+  <Style ss:ID="m2214643904296">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1051,7 +1051,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681536">
+  <Style ss:ID="m2214643911040">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1062,7 +1062,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681556">
+  <Style ss:ID="m2214643911060">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1073,7 +1073,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681576">
+  <Style ss:ID="m2214643911080">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1084,7 +1084,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681596">
+  <Style ss:ID="m2214643911100">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1095,7 +1095,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681616">
+  <Style ss:ID="m2214643911120">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1106,7 +1106,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681636">
+  <Style ss:ID="m2214643911140">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1117,7 +1117,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681656">
+  <Style ss:ID="m2214643911160">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1128,7 +1128,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681676">
+  <Style ss:ID="m2214643911180">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1139,7 +1139,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681696">
+  <Style ss:ID="m2214643911200">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1150,7 +1150,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551681716">
+  <Style ss:ID="m2214643911220">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1161,7 +1161,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551686528">
+  <Style ss:ID="m2214643902928">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1172,7 +1172,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551686568">
+  <Style ss:ID="m2214643902968">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1183,7 +1183,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551686588">
+  <Style ss:ID="m2214643902988">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1194,7 +1194,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551686628">
+  <Style ss:ID="m2214643903028">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1205,7 +1205,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682368">
+  <Style ss:ID="m2214643910832">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1216,7 +1216,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682388">
+  <Style ss:ID="m2214643910852">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1227,7 +1227,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682408">
+  <Style ss:ID="m2214643910872">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1238,7 +1238,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682428">
+  <Style ss:ID="m2214643910892">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1249,7 +1249,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682448">
+  <Style ss:ID="m2214643910912">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1260,7 +1260,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551682468">
+  <Style ss:ID="m2214643910932">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1271,7 +1271,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694224">
+  <Style ss:ID="m2214643923520">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1282,7 +1282,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694244">
+  <Style ss:ID="m2214643923540">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1293,7 +1293,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694264">
+  <Style ss:ID="m2214643923560">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1304,7 +1304,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694284">
+  <Style ss:ID="m2214643923580">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1315,7 +1315,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694304">
+  <Style ss:ID="m2214643923600">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1326,7 +1326,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694324">
+  <Style ss:ID="m2214643923620">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1337,7 +1337,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694432">
+  <Style ss:ID="m2214643921024">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1348,7 +1348,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694452">
+  <Style ss:ID="m2214643921044">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1359,7 +1359,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694472">
+  <Style ss:ID="m2214643921064">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1370,7 +1370,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694492">
+  <Style ss:ID="m2214643921084">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1381,7 +1381,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694512">
+  <Style ss:ID="m2214643921104">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1392,7 +1392,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694532">
+  <Style ss:ID="m2214643921124">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1403,7 +1403,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551694552">
+  <Style ss:ID="m2214643921144">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1414,7 +1414,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680704">
+  <Style ss:ID="m2214643923312">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1425,7 +1425,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680724">
+  <Style ss:ID="m2214643923332">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1436,7 +1436,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680744">
+  <Style ss:ID="m2214643923352">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1447,7 +1447,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680764">
+  <Style ss:ID="m2214643923372">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1458,7 +1458,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680784">
+  <Style ss:ID="m2214643923392">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1469,7 +1469,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680804">
+  <Style ss:ID="m2214643923412">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1480,7 +1480,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680824">
+  <Style ss:ID="m2214643923432">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1491,7 +1491,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680844">
+  <Style ss:ID="m2214643923452">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1502,7 +1502,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680864">
+  <Style ss:ID="m2214643923472">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1513,7 +1513,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680884">
+  <Style ss:ID="m2214643923492">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1524,7 +1524,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680288">
+  <Style ss:ID="m2214643920400">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1535,7 +1535,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680308">
+  <Style ss:ID="m2214643920420">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1546,7 +1546,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680328">
+  <Style ss:ID="m2214643920440">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1557,7 +1557,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680348">
+  <Style ss:ID="m2214643920460">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1568,7 +1568,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680368">
+  <Style ss:ID="m2214643920480">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1579,7 +1579,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680388">
+  <Style ss:ID="m2214643920500">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1590,7 +1590,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680408">
+  <Style ss:ID="m2214643920520">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1601,7 +1601,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680428">
+  <Style ss:ID="m2214643920540">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1612,7 +1612,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680448">
+  <Style ss:ID="m2214643920560">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1623,7 +1623,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680468">
+  <Style ss:ID="m2214643920580">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1634,7 +1634,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679456">
+  <Style ss:ID="m2214643920816">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1645,7 +1645,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679476">
+  <Style ss:ID="m2214643920836">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1656,7 +1656,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679496">
+  <Style ss:ID="m2214643920856">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1667,7 +1667,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679516">
+  <Style ss:ID="m2214643920876">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1678,7 +1678,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679536">
+  <Style ss:ID="m2214643920896">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1689,7 +1689,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679556">
+  <Style ss:ID="m2214643920916">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1700,7 +1700,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679576">
+  <Style ss:ID="m2214643920936">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1711,7 +1711,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679596">
+  <Style ss:ID="m2214643920956">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1722,7 +1722,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679616">
+  <Style ss:ID="m2214643920976">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1733,7 +1733,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679636">
+  <Style ss:ID="m2214643920996">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1744,7 +1744,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679160">
+  <Style ss:ID="m2214643924472">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1755,7 +1755,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679972">
+  <Style ss:ID="m2214643922580">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1766,7 +1766,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679992">
+  <Style ss:ID="m2214643922600">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1777,7 +1777,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680012">
+  <Style ss:ID="m2214643922620">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1788,7 +1788,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680032">
+  <Style ss:ID="m2214643922640">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1799,7 +1799,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551680052">
+  <Style ss:ID="m2214643922660">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1810,7 +1810,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688816">
+  <Style ss:ID="m2214643905008">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1821,7 +1821,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688836">
+  <Style ss:ID="m2214643905028">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1832,7 +1832,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688856">
+  <Style ss:ID="m2214643905048">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1843,7 +1843,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688876">
+  <Style ss:ID="m2214643905068">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1854,7 +1854,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688896">
+  <Style ss:ID="m2214643905088">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1865,7 +1865,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688916">
+  <Style ss:ID="m2214643905108">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1876,7 +1876,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688936">
+  <Style ss:ID="m2214643905128">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1887,7 +1887,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688956">
+  <Style ss:ID="m2214643905148">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1898,7 +1898,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688976">
+  <Style ss:ID="m2214643905168">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1909,7 +1909,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688996">
+  <Style ss:ID="m2214643905188">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1920,7 +1920,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679248">
+  <Style ss:ID="m2214643900640">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1929,7 +1929,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679268">
+  <Style ss:ID="m2214643900660">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1938,7 +1938,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679288">
+  <Style ss:ID="m2214643900680">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1947,7 +1947,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679308">
+  <Style ss:ID="m2214643900700">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1956,7 +1956,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679328">
+  <Style ss:ID="m2214643900720">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1965,7 +1965,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551679348">
+  <Style ss:ID="m2214643900740">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1974,7 +1974,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688400">
+  <Style ss:ID="m2214643900224">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1985,7 +1985,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688420">
+  <Style ss:ID="m2214643900244">
    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -1996,7 +1996,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688440">
+  <Style ss:ID="m2214643900264">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2007,7 +2007,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688460">
+  <Style ss:ID="m2214643900284">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2018,7 +2018,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688480">
+  <Style ss:ID="m2214643900304">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2029,7 +2029,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688500">
+  <Style ss:ID="m2214643900324">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2040,7 +2040,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688212">
+  <Style ss:ID="m2214643904820">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2051,7 +2051,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688232">
+  <Style ss:ID="m2214643904840">
    <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2062,7 +2062,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688252">
+  <Style ss:ID="m2214643904860">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2073,7 +2073,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688272">
+  <Style ss:ID="m2214643904880">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2084,7 +2084,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688292">
+  <Style ss:ID="m2214643904900">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -2095,7 +2095,7 @@
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
   </Style>
-  <Style ss:ID="m2214551688312">
+  <Style ss:ID="m2214643904920">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
@@ -3640,15 +3640,6 @@
    </Borders>
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
   </Style>
-  <Style ss:ID="s325">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
-   <Borders>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
-    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
-   </Borders>
-   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
-   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
-  </Style>
   <Style ss:ID="s326">
    <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
    <Borders>
@@ -3941,6 +3932,15 @@
   </Style>
   <Style ss:ID="s363">
    <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s378">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
    <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
    <Interior/>
   </Style>
@@ -9413,7 +9413,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s130">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682368"><Data ss:Type="String">Category for Medical History</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910832"><Data ss:Type="String">Category for Medical History</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9421,17 +9421,17 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><Data ss:Type="String">Condition.category</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682388"><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910852"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682408"><Data ss:Type="String">The sponsors does not typically require this information from the sites.&#10;&#10;If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910872"><Data ss:Type="String">The sponsors does not typically require this information from the sites.&#10;&#10;If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682428"><Data ss:Type="String">MHCAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910892"><Data ss:Type="String">MHCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682448"><Data ss:Type="String">Category for Medical History&#10;&#10;A grouping of topic-variable values based on user-defined characteristics.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910912"><Data ss:Type="String">Category for Medical History&#10;&#10;A grouping of topic-variable values based on user-defined characteristics.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682468"><Data ss:Type="String">MHCAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643910932"><Data ss:Type="String">MHCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551686528"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643902928"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s130">
@@ -9468,13 +9468,13 @@
     <Cell ss:StyleID="s190"><Data ss:Type="String">Condition.category</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551686568"><Data ss:Type="String">The sponsors does not typically require this information from the sites.&#10;&#10;If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643902968"><Data ss:Type="String">The sponsors does not typically require this information from the sites.&#10;&#10;If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551686588"><Data ss:Type="String">MHSCAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643902988"><Data ss:Type="String">MHSCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s177"><Data ss:Type="String">Subcategory for Medical History&#10;&#10;A sub-division of MHCAT values based on user-defined characteristics.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551686628"><Data ss:Type="String">MHSCAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903028"><Data ss:Type="String">MHSCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s195"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9507,7 +9507,7 @@
     <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681536"><Data ss:Type="String">Medical History Collection Date</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911040"><Data ss:Type="String">Medical History Collection Date</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9517,13 +9517,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681556"><Data ss:Type="String">MHDAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911060"><Data ss:Type="String">MHDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681576"><Data ss:Type="String">Medical History Collection Date&#10;&#10;The date on which the medical history was collected represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911080"><Data ss:Type="String">Medical History Collection Date&#10;&#10;The date on which the medical history was collected represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681596"><Data ss:Type="String">MHDAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911100"><Data ss:Type="String">MHDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681616"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911120"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9557,24 +9557,24 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681636"><Data ss:Type="String">MH Sponsor Defined Identifier</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911140"><Data ss:Type="String">MH Sponsor Defined Identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681656"><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911160"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681676"><Data ss:Type="String">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911180"><Data ss:Type="String">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681696"><Data ss:Type="String">MHSPID</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911200"><Data ss:Type="String">MHSPID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681716"><Data ss:Type="String">MH Sponsor Defined Identifier&#10;&#10;A sponsor-defined identifier.  In CDASH, this is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier fields.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911220"><Data ss:Type="String">MH Sponsor Defined Identifier&#10;&#10;A sponsor-defined identifier.  In CDASH, this is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier fields.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683616"><Data ss:Type="String">MHSPID</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904176"><Data ss:Type="String">MHSPID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683636"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). May be used to create RELREC to link this record with a record in another domain.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904196"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). May be used to create RELREC to link this record with a record in another domain.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9599,7 +9599,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683656"><Data ss:Type="String">Medical History Event Date Type</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904216"><Data ss:Type="String">Medical History Event Date Type</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9609,13 +9609,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683676"><Data ss:Type="String">MHEVDTYP</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904236"><Data ss:Type="String">MHEVDTYP</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683696"><Data ss:Type="String">Medical History Event Date Type&#10;&#10;Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.&#10;&#10;Question: &quot;What was the medical history event date type?&quot;&#10;&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904256"><Data ss:Type="String">Medical History Event Date Type&#10;&#10;Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.&#10;&#10;Question: &quot;What was the medical history event date type?&quot;&#10;&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683716"><Data ss:Type="String">SUPPMH.QVAL</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904276"><Data ss:Type="String">SUPPMH.QVAL</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683736"><Data ss:Type="String">This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = &quot;MHEVDTYP&quot; and SUPPMH.QLABEL = &quot;Medical History Event Date Type&quot;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904296"><Data ss:Type="String">This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = &quot;MHEVDTYP&quot; and SUPPMH.QLABEL = &quot;Medical History Event Date Type&quot;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9649,7 +9649,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685072"><Data ss:Type="String">Reported Term for Medical History</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905632"><Data ss:Type="String">Reported Term for Medical History</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9659,13 +9659,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685092"><Data ss:Type="String">MHTERM</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905652"><Data ss:Type="String">MHTERM</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685112"><Data ss:Type="String">Reported Term for Medical History&#10;&#10;The reported or prespecified name of the medical condition or event.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905672"><Data ss:Type="String">Reported Term for Medical History&#10;&#10;The reported or prespecified name of the medical condition or event.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685132"><Data ss:Type="String">MHTERM</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905692"><Data ss:Type="String">MHTERM</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685152"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905712"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9699,7 +9699,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685172"><Data ss:Type="String">Medical History Occurrence</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905732"><Data ss:Type="String">Medical History Occurrence</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9708,15 +9708,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">Condition.verificationStatus != 'refuted, entered-in-error</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685192"><Data ss:Type="String">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around &quot;has the patient had X&quot;, that would be accomplished through a Questionnaire.Response</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905752"><Data ss:Type="String">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around &quot;has the patient had X&quot;, that would be accomplished through a Questionnaire.Response</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685212"><Data ss:Type="String">MHOCCUR</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905772"><Data ss:Type="String">MHOCCUR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685232"><Data ss:Type="String">Medical History Occurrence&#10;&#10;An indication whether a prespecified medical condition/event or a group of medical conditions/events occurred when information about the occurrence of specific event is solicited.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905792"><Data ss:Type="String">Medical History Occurrence&#10;&#10;An indication whether a prespecified medical condition/event or a group of medical conditions/events occurred when information about the occurrence of specific event is solicited.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685252"><Data ss:Type="String">MHOCCUR</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905812"><Data ss:Type="String">MHOCCUR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681952"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911248"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9818,7 +9818,7 @@
     <Cell ss:StyleID="s195"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681972"><Data ss:Type="String">Medical History Event Start Date</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911268"><Data ss:Type="String">Medical History Event Start Date</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9828,13 +9828,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551681992"><Data ss:Type="String">MHSTDAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911288"><Data ss:Type="String">MHSTDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682012"><Data ss:Type="String">Medical History Event Start Date&#10;&#10;The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYY).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911308"><Data ss:Type="String">Medical History Event Start Date&#10;&#10;The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYY).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682032"><Data ss:Type="String">MHSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911328"><Data ss:Type="String">MHSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682052"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable MHSTDTC in ISO 8601 format.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911348"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable MHSTDTC in ISO 8601 format.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9888,7 +9888,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="42" ss:StyleID="s187">
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682160"><Data ss:Type="String">Medical History Event Location</Data><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907296"><Data ss:Type="String">Medical History Event Location</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9897,15 +9897,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">Condition.bodysite</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682180"><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907316"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682200"><Data ss:Type="String">MHLOC</Data><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907336"><Data ss:Type="String">MHLOC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682220"><Data ss:Type="String">Medical History Event Location&#10;&#10;A description of the anatomical location relevant for the medical condition or event.</Data><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907356"><Data ss:Type="String">Medical History Event Location&#10;&#10;A description of the anatomical location relevant for the medical condition or event.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682240"><Data ss:Type="String">MHLOC</Data><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907376"><Data ss:Type="String">MHLOC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="2" ss:StyleID="m2214551682260"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </Data><NamedCell
+    <Cell ss:MergeDown="2" ss:StyleID="m2214643907396"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -9981,7 +9981,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691728"><Data ss:Type="String">MH Modified Reported Term</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903136"><Data ss:Type="String">MH Modified Reported Term</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9990,15 +9990,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691748"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903156"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691768"><Data ss:Type="String">MHMODIFY</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903176"><Data ss:Type="String">MHMODIFY</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691788"><Data ss:Type="String">MH Modified Reported Term&#10;&#10;If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903196"><Data ss:Type="String">MH Modified Reported Term&#10;&#10;If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691808"><Data ss:Type="String">MHMODIFY</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903216"><Data ss:Type="String">MHMODIFY</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691828"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643903236"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10038,13 +10038,13 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s190"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551689668"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899620"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551689688"><Data ss:Type="String">MHDECOD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899640"><Data ss:Type="String">MHDECOD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s163"><Data ss:Type="String">MH Dictionary-Derived Term&#10;&#10;The dictionary text description of MHTERM or the modified topic variable (MHMODIFY), if applicable.&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551689728"><Data ss:Type="String">MHDECOD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899680"><Data ss:Type="String">MHDECOD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s163"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10077,7 +10077,7 @@
     <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685280"><Data ss:Type="String">Medical History Event Lowest Level Term</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911664"><Data ss:Type="String">Medical History Event Lowest Level Term</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10086,15 +10086,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685300"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911684"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685320"><Data ss:Type="String">MHLLT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911704"><Data ss:Type="String">MHLLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685340"><Data ss:Type="String">Medical History Event Lowest Level Term&#10;&#10;MedDRA Dictionary text description of the Lowest Level Term.&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911724"><Data ss:Type="String">Medical History Event Lowest Level Term&#10;&#10;MedDRA Dictionary text description of the Lowest Level Term.&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685360"><Data ss:Type="String">MHLLT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911744"><Data ss:Type="String">MHLLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551685380"><Data ss:Type="String">&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643911764"><Data ss:Type="String">&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10125,7 +10125,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682784"><Data ss:Type="String">MH Event Lowest Level Term Code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912288"><Data ss:Type="String">MH Event Lowest Level Term Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10134,15 +10134,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682804"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912308"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682824"><Data ss:Type="String">MHLLTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912328"><Data ss:Type="String">MHLLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682844"><Data ss:Type="String">MH Event Lowest Level Term Code&#10;&#10;MedDRA Lowest Level Term code.&#10;&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912348"><Data ss:Type="String">MH Event Lowest Level Term Code&#10;&#10;MedDRA Lowest Level Term code.&#10;&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682864"><Data ss:Type="String">MHLLTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912368"><Data ss:Type="String">MHLLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551682884"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643912388"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10173,7 +10173,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690688"><Data ss:Type="String">MH Event Preferred Term Code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899184"><Data ss:Type="String">MH Event Preferred Term Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10182,15 +10182,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690708"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899204"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690728"><Data ss:Type="String">MHPTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899224"><Data ss:Type="String">MHPTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690748"><Data ss:Type="String">MH Event Preferred Term Code&#10;&#10;MedDRA code for the Preferred Term&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899244"><Data ss:Type="String">MH Event Preferred Term Code&#10;&#10;MedDRA code for the Preferred Term&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690768"><Data ss:Type="String">MHPTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899264"><Data ss:Type="String">MHPTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690788"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899284"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10221,7 +10221,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687360"><Data ss:Type="String">Medical History  High Level Term</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905840"><Data ss:Type="String">Medical History  High Level Term</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10230,15 +10230,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687380"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905860"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687400"><Data ss:Type="String">MHHLT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905880"><Data ss:Type="String">MHHLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687420"><Data ss:Type="String">Medical History  High Level Term&#10;&#10;MedDRA text description of the High Level Term from the primary path.&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905900"><Data ss:Type="String">Medical History  High Level Term&#10;&#10;MedDRA text description of the High Level Term from the primary path.&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687440"><Data ss:Type="String">MHHLT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905920"><Data ss:Type="String">MHHLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687460"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905940"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10269,7 +10269,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690896"><Data ss:Type="String">MH Event High Level Term Code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899392"><Data ss:Type="String">MH Event High Level Term Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10278,15 +10278,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690916"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899412"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690936"><Data ss:Type="String">MHHLTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899432"><Data ss:Type="String">MHHLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690956"><Data ss:Type="String">MedDRA High Level Term code from the primary path&#10;&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899452"><Data ss:Type="String">MedDRA High Level Term code from the primary path&#10;&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690976"><Data ss:Type="String">MHHLTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899472"><Data ss:Type="String">MHHLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551690996"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643899492"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10317,7 +10317,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691312"><Data ss:Type="String">MH Event High Level Group Term</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905424"><Data ss:Type="String">MH Event High Level Group Term</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10326,15 +10326,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691332"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905444"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691352"><Data ss:Type="String">MHHLGT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905464"><Data ss:Type="String">MHHLGT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691372"><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905484"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691392"><Data ss:Type="String">MHHLGT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905504"><Data ss:Type="String">MHHLGT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551691412"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905524"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10365,7 +10365,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684864"><Data ss:Type="String">MH Event High Level Group Term Code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906048"><Data ss:Type="String">MH Event High Level Group Term Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10374,15 +10374,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684884"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906068"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684904"><Data ss:Type="String">MHHLGTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906088"><Data ss:Type="String">MHHLGTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684924"><Data ss:Type="String">MedDRA High Level Group Term code from the primary path.&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906108"><Data ss:Type="String">MedDRA High Level Group Term code from the primary path.&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684944"><Data ss:Type="String">MHHLGTCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906128"><Data ss:Type="String">MHHLGTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551684964"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643906148"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10413,7 +10413,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683408"><Data ss:Type="String">MH Event Primary System Organ Class</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904384"><Data ss:Type="String">MH Event Primary System Organ Class</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10422,15 +10422,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683428"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904404"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683448"><Data ss:Type="String">MHSOCCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904424"><Data ss:Type="String">MHSOCCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683468"><Data ss:Type="String">MedDRA primary System Organ Class description associated with the event&#10;&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904444"><Data ss:Type="String">MedDRA primary System Organ Class description associated with the event&#10;&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683488"><Data ss:Type="String">MHSCOC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904464"><Data ss:Type="String">MHSCOC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551683508"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904484"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10461,7 +10461,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687568"><Data ss:Type="String">MH Event Primary System Organ Class Code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904592"><Data ss:Type="String">MH Event Primary System Organ Class Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10470,15 +10470,15 @@
     <Cell ss:StyleID="s226"><Data ss:Type="String">Condition.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687588"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904612"><Data ss:Type="String">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687608"><Data ss:Type="String">MHSOCCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904632"><Data ss:Type="String">MHSOCCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687628"><Data ss:Type="String">MedDRA code for the primary System Organ Class.&#10;&#10;</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904652"><Data ss:Type="String">MedDRA code for the primary System Organ Class.&#10;&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687648"><Data ss:Type="String">MHSOCCD</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904672"><Data ss:Type="String">MHSOCCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551687668"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643904692"><Data ss:Type="String">The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#10;&#10;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &quot;ASSIGNED&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -10763,7 +10763,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="43.5" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688212"><Data ss:Type="String">CM Sponsor-Defined Identifier</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904820"><Data ss:Type="String">CM Sponsor-Defined Identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10772,15 +10772,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688232"><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904840"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688252"><Data ss:Type="String">CMSPID</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904860"><Data ss:Type="String">CMSPID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688272"><Data ss:Type="String">A sponsor-defined identifier.  IN CDASH, This is typically used for preprinted or autom-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904880"><Data ss:Type="String">A sponsor-defined identifier.  IN CDASH, This is typically used for preprinted or autom-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688292"><Data ss:Type="String">CMSPID</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904900"><Data ss:Type="String">CMSPID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688312"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643904920"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="39.524999999999999" ss:StyleID="s187">
@@ -10820,7 +10820,7 @@
     <Cell ss:StyleID="s266"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.5" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688400"><Data ss:Type="String">Reported Name of Drug, Med, or Therapy</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900224"><Data ss:Type="String">Reported Name of Drug, Med, or Therapy</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10829,15 +10829,15 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.medication.medication.CodeableConcept&#10;MedicationStatement.medication.medicationReference.resolve().code&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688420"><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900244"><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688440"><Data ss:Type="String">CMTRT</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900264"><Data ss:Type="String">CMTRT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688460"><Data ss:Type="String">Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900284"><Data ss:Type="String">Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688480"><Data ss:Type="String">CMTRT</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900304"><Data ss:Type="String">CMTRT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688500"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900324"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25" ss:StyleID="s187">
@@ -10895,7 +10895,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.274999999999999" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679248"><Data ss:Type="String">CM Occurrence</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900640"><Data ss:Type="String">CM Occurrence</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10904,15 +10904,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s274"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679268"><Data ss:Type="String">In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900660"><Data ss:Type="String">In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679288"><Data ss:Type="String">CMOCCUR</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900680"><Data ss:Type="String">CMOCCUR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679308"><Data ss:Type="String">An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#10;&#10;Indicate if (specific medication/treatment) was taken by checking Yes or No.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900700"><Data ss:Type="String">An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#10;&#10;Indicate if (specific medication/treatment) was taken by checking Yes or No.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679328"><Data ss:Type="String">CMOCCUR</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900720"><Data ss:Type="String">CMOCCUR</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679348"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643900740"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="67.274999999999991" ss:StyleID="s187">
@@ -10952,7 +10952,7 @@
     <Cell ss:StyleID="s292"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688816"><Data ss:Type="String">Concomitant Meds Active Ingredients</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643905008"><Data ss:Type="String">Concomitant Meds Active Ingredients</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><Data ss:Type="String">Medication&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10962,13 +10962,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688836"><Data ss:Type="String">CMINGRD</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643905028"><Data ss:Type="String">CMINGRD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688856"><Data ss:Type="String">Medication Ingredients.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643905048"><Data ss:Type="String">Medication Ingredients.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688876"><Data ss:Type="String">N/A</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643905068"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551688896"><Data ss:Type="String">Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643905088"><Data ss:Type="String">Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
@@ -11012,7 +11012,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="47.475000000000001" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551688916"><Data ss:Type="String">CM Indication</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905108"><Data ss:Type="String">CM Indication</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11022,13 +11022,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551688936"><Data ss:Type="String">CMINDC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905128"><Data ss:Type="String">CMINDC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551688956"><Data ss:Type="String">The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., Why the medication/treatment/therapy was taken or administered).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905148"><Data ss:Type="String">The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., Why the medication/treatment/therapy was taken or administered).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551688976"><Data ss:Type="String">CMINDC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905168"><Data ss:Type="String">CMINDC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551688996"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643905188"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
@@ -11133,7 +11133,7 @@
     <Cell ss:StyleID="s294"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679972"><Data ss:Type="String">CM Dose per Administration</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643922580"><Data ss:Type="String">CM Dose per Administration</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11143,13 +11143,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s300"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679992"><Data ss:Type="String">CMDOSE</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643922600"><Data ss:Type="String">CMDOSE</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680012"><Data ss:Type="String">The dose of medication/treatment (e.g., -TRT given at one time represented as a numeric value.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643922620"><Data ss:Type="String">The dose of medication/treatment (e.g., -TRT given at one time represented as a numeric value.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680032"><Data ss:Type="String">CMDOSE</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643922640"><Data ss:Type="String">CMDOSE</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680052"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). in the column with the heading &quot;SDTMIG Target&quot;.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643922660"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). in the column with the heading &quot;SDTMIG Target&quot;.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
@@ -11255,7 +11255,7 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.dosage.maxDosePerPeriod</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s303"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679160"><Data ss:Type="String">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643924472"><Data ss:Type="String">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s170"><Data ss:Type="String">CMDOSTOT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11414,7 +11414,7 @@
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.5" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679456"><Data ss:Type="String">CM Route of Administration</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643920816"><Data ss:Type="String">CM Route of Administration</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11424,13 +11424,13 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s138"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679476"><Data ss:Type="String">CMROUTE</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643920836"><Data ss:Type="String">CMROUTE</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679496"><Data ss:Type="String">The route of administration of the (concomitant) [medication/treatment/therapy].</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643920856"><Data ss:Type="String">The route of administration of the (concomitant) [medication/treatment/therapy].</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679516"><Data ss:Type="String">CMROUTE</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643920876"><Data ss:Type="String">CMROUTE</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551679536"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643920896"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:StyleID="s187">
@@ -11474,7 +11474,7 @@
     <Cell ss:StyleID="s186"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="48.524999999999999" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679556"><Data ss:Type="String">Concomitant Meds Start Date</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920916"><Data ss:Type="String">Concomitant Meds Start Date</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11485,13 +11485,13 @@
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s213"><Data ss:Type="String">start includes both date and time, though time commonly won't be pecified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679576"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920936"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679596"><Data ss:Type="String">Record the date the concomitant [medication/treatment] was first taken using this format (e.g., DD-MON-YYYY).  If the subject has been taking the concomitant [medication/treatment for a considerable amount of time prior to the start of the study, it is acceptable to have an incomplete date.  Concomitant [medication/treatment] taken during the study are expected to have a complete start date.  Prior concomitant [medication/treatment] that are exclusionary should have both a start and end date.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920956"><Data ss:Type="String">Record the date the concomitant [medication/treatment] was first taken using this format (e.g., DD-MON-YYYY).  If the subject has been taking the concomitant [medication/treatment for a considerable amount of time prior to the start of the study, it is acceptable to have an incomplete date.  Concomitant [medication/treatment] taken during the study are expected to have a complete start date.  Prior concomitant [medication/treatment] that are exclusionary should have both a start and end date.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679616"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920976"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551679636"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920996"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s187">
@@ -11528,7 +11528,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="43.275000000000006" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680288"><Data ss:Type="String">Concomitant Meds Start Time</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920400"><Data ss:Type="String">Concomitant Meds Start Time</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11539,13 +11539,13 @@
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s213"><Data ss:Type="String">start includes both date and time, though time commonly won't be pecified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680308"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920420"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680328"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was started</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920440"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was started</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680348"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920460"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680368"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920480"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s187">
@@ -11582,7 +11582,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680388"><Data ss:Type="String">Concomitant Meds End Date</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920500"><Data ss:Type="String">Concomitant Meds End Date</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11593,13 +11593,13 @@
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s213"><Data ss:Type="String">end includes both date and time, though time commonly won't be pecified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680408"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920520"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680428"><Data ss:Type="String">The date that the subject ended/stopped taking the concomitant/medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920540"><Data ss:Type="String">The date that the subject ended/stopped taking the concomitant/medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680448"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920560"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680468"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CMSTDTC in ISO 8601 format.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643920580"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CMSTDTC in ISO 8601 format.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s187">
@@ -11635,7 +11635,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="33.524999999999999" ss:StyleID="s187">
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680704"><Data ss:Type="String">Concomitant Meds End Time</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643923312"><Data ss:Type="String">Concomitant Meds End Time</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11646,13 +11646,13 @@
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s213"><Data ss:Type="String">end includes both date and time, though time commonly won't be pecified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680724"><Data ss:Type="String">CMENDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643923332"><Data ss:Type="String">CMENDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680744"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was stopped.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643923352"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was stopped.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680764"><Data ss:Type="String">CMENDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643923372"><Data ss:Type="String">CMENDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2214551680784"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2214643923392"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s187">
@@ -11727,7 +11727,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="63.975000000000001" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680804"><Data ss:Type="String">Standardized Medication Name</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923412"><Data ss:Type="String">Standardized Medication Name</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11736,15 +11736,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.medicationCodeableConcept&#10;MedicationStatement.medicationReference.resolve().code&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680824"><Data ss:Type="String">We would not expect to receive these from the site.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923432"><Data ss:Type="String">We would not expect to receive these from the site.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680844"><Data ss:Type="String">CMDECOD</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923452"><Data ss:Type="String">CMDECOD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680864"><Data ss:Type="String">The dictionary or sponsor defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923472"><Data ss:Type="String">The dictionary or sponsor defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551680884"><Data ss:Type="String">CMDECOD</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923492"><Data ss:Type="String">CMDECOD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694432"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921024"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57" ss:StyleID="s187">
@@ -11784,7 +11784,7 @@
     <Cell ss:StyleID="s266"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694452"><Data ss:Type="String">CM Medication Class</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921044"><Data ss:Type="String">CM Medication Class</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11793,15 +11793,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.medicationCodeableConcept&#10;MedicationStatement.medicationReference.resolve().code&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694472"><Data ss:Type="String">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921064"><Data ss:Type="String">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694492"><Data ss:Type="String">CMCLAS</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921084"><Data ss:Type="String">CMCLAS</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694512"><Data ss:Type="String">The class for the intervention, often obtained from a coding dictionary</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921104"><Data ss:Type="String">The class for the intervention, often obtained from a coding dictionary</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694532"><Data ss:Type="String">CMCLAS</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921124"><Data ss:Type="String">CMCLAS</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694552"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643921144"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57" ss:StyleID="s187">
@@ -11841,7 +11841,7 @@
     <Cell ss:StyleID="s266"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25" ss:StyleID="s187">
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694224"><Data ss:Type="String">CM Medication Class Code</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923520"><Data ss:Type="String">CM Medication Class Code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s136"><Data ss:Type="String">MedicationStatement&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11850,15 +11850,15 @@
     <Cell ss:StyleID="s138"><Data ss:Type="String">MedicationStatement.medicationCodeableConcept&#10;MedicationStatement.medicationReference.resolve().code&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s240"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694244"><Data ss:Type="String">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923540"><Data ss:Type="String">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694264"><Data ss:Type="String">CMCLASCD</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923560"><Data ss:Type="String">CMCLASCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694284"><Data ss:Type="String">The assigned dictionary code for the class for the intervention</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923580"><Data ss:Type="String">The assigned dictionary code for the class for the intervention</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694304"><Data ss:Type="String">CMCLASCD</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923600"><Data ss:Type="String">CMCLASCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="4" ss:StyleID="m2214551694324"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
+    <Cell ss:MergeDown="4" ss:StyleID="m2214643923620"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57" ss:StyleID="s187">
@@ -12211,14 +12211,15 @@
    <Row ss:AutoFitHeight="0" ss:Height="57.524999999999999">
     <Cell ss:StyleID="s323"><Data ss:Type="String">Subject ID for the Study</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s323"><Data ss:Type="String">Subject&#10;ResearchSubject</Data><NamedCell
+    <Cell ss:StyleID="s323"><Data ss:Type="String">ResearchSubject</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s324"><Data ss:Type="String">reference&#10;identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s325"><Data ss:Type="String">ResearchSubject.where(subject=Procedure|Medication[x].subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s378"><Data ss:Type="String">ResearchSubject.where(subject=Procedure.subject).identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s326"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s206"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s227"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s84"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s327"><Data ss:Type="String">SUBJID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s323"><Data ss:Type="String">Sponsor's subject Identifier for the study.&#10;&#10;A unique subject identifier within a site and a study.</Data><NamedCell
@@ -12411,7 +12412,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s331"><Data ss:Type="String">reasonCode&#10;&#10;reasonReference&#10;&#10;statusReason</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s331"><Data ss:Type="String">Procedure.reasonCode&#10;&#10;Procedure.reasonReference&#10;&#10;Procedure.statusReason</Data><NamedCell
+    <Cell ss:StyleID="s138"><Data ss:Type="String">Procedure.reasonCode&#10;&#10;Procedure.reasonReference&#10;&#10;Procedure.statusReason</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s340"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s225"><Data ss:Type="String">Note that reasonReference would need to be turned into a code or string.  Reason[x] indicates reason for doing the procedure; statusReason when status=not-done would be reason for non-occurrence</Data><NamedCell
@@ -12428,11 +12429,11 @@
    <Row ss:AutoFitHeight="0" ss:Height="29.025000000000002" ss:StyleID="s102">
     <Cell ss:StyleID="s328"><Data ss:Type="String">Procedure Reason NOT Done</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s329"><Data ss:Type="String">Procedure&#10;Procedure</Data><NamedCell
+    <Cell ss:StyleID="s329"><Data ss:Type="String">Procedure</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s331"><Data ss:Type="String">status&#10;statusReason</Data><NamedCell
+    <Cell ss:StyleID="s331"><Data ss:Type="String">statusReason</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s331"><Data ss:Type="String">Procedure.statusReason where Procedure.status = not-done, stopped</Data><NamedCell
+    <Cell ss:StyleID="s138"><Data ss:Type="String">Procedure.statusReason.where(%resource.status = ('not-done', 'stopped'))</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s344"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s341"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -13154,10 +13155,11 @@
     <VerticalResolution>1200</VerticalResolution>
    </Print>
    <Zoom>68</Zoom>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>11</TopRowBottomPane>
+   <TopRowBottomPane>13</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -13168,8 +13170,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>12</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>15</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -13825,7 +13827,6 @@
     <HorizontalResolution>1200</HorizontalResolution>
     <VerticalResolution>1200</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
