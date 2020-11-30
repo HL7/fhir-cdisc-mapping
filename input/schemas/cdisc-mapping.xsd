@@ -31,11 +31,11 @@
           <xs:field xpath="@spec"/>
           <xs:field xpath="@label"/>
         </xs:unique>
-        <xs:unique name="fhirSpecLabel">
+<!--        <xs:unique name="fhirSpecLabel">
           <xs:selector xpath="mapping"/>
           <xs:field xpath="@spec"/>
           <xs:field xpath="@label"/>
-        </xs:unique>
+        </xs:unique>-->
       </xs:element>
     </xs:sequence>
     <xs:attribute name="code" use="required">
@@ -73,7 +73,7 @@
   </xs:complexType>
   <xs:complexType name="FHIRMapping">
     <xs:sequence>
-      <xs:element name="path" minOccurs="1" maxOccurs="unbounded" type="MappingFHIRPath">
+      <xs:element name="path" type="MappingFHIRPath" minOccurs="1" maxOccurs="unbounded">
         <xs:unique name="MappingFHIRPath">
           <xs:selector xpath="path"/>
           <xs:field xpath="value"/>
@@ -93,19 +93,19 @@
   <xs:simpleType name="FHIRElement">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][a-zA-Z]+)*"/>
-<!--<xs:pattern value="[^\n^\r]+"/>-->
+      <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="FHIRPath">
     <xs:restriction base="NonEmptyString">
-      <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][a-zA-Z()=]+)*"/>
-<!--<xs:pattern value="[^\n^\r]+"/>-->
+      <xs:pattern value="[A-Z][a-zA-Z]+(\.\-[a-z][a-zA-Z()=]+)*"/>
+      <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CDISCName">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|([A-Z][A-Z\.]+)"/>
-<!--<xs:pattern value="[^\n^\r]+"/>-->
+      <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SpecType">
