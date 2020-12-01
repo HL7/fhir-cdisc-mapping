@@ -5,7 +5,7 @@
     All mappings defined are based on the formal definitions as they appear in the formal definitions of the CDISC and the HL7 specification, however the reality is that actual content of real FHIR interfaces and real study requirements may occasionally require variation from these mappings - either through additional filters, additional transformation, or occasionally looking for information in alternate locations.  Therefore, the mappings provided here should be considered 'informative', rather than binding.  As well, some of the mappings here will indicate where study-specific or context-specific considerations will influence the mappings.  For example, the Conditions from the patient record that will be deemed appropriate to report as 'adverse reactions' may vary from study to study.  As a result, in most cases, data should map as defined, but those implementing conversions will need to review and potentially adjust to reflect the requirements of their particular implementation space.
   </p>
   <p>
-    The mappings listed here are version-specific.  Implementers may attempt to leverage the mapping information when using alterate versions, but should be aware that changes between versions may render the mapping information inappropriate.  CDISC and HL7 expect to produce new versions of this IG to document mappings for future releases of the specifications for both organizations.
+    The mappings listed here are version-specific.  Implementers may attempt to leverage the mapping information when using alternate versions, but should be aware that changes between versions may render the mapping information inappropriate.  CDISC and HL7 expect to produce new versions of this IG to document mappings for future releases of the specifications for both organizations.
   </p>
   <p>
     The mappings are also based only on the information defined in the core specifications and, for FHIR, extensions defined in the core specification.  Implementations will also need to consider mappings for supplemental qualifiers and local FHIR extensions.
@@ -59,7 +59,7 @@
   </p>
   <ul>
     <li>FHIR data can be expressed in different syntaxes (XML, JSON and RDF) and FHIRPath is a syntax-independent path language</li>
-    <li>FHIRPath is more consise than other path language (e.g. XPath)</li>
+    <li>FHIRPath is more concise than other path language (e.g. XPath)</li>
     <li>FHIRPath includes built in extensions for traversing references to other resources and accessing extensions</li>
     <li>If we ever move to fully computable mappings, they will need to be based on FHIRPath</li>
   </ul>
@@ -69,6 +69,6 @@
     <li>As in the example above, equality assertions of reference elements is taken to mean that they reference the same resource.</li>
     <li>When referencing CodeableConcept elements, the implication is that an appropriate code will be extracted from the coding.</li>
     <li>When referencing 'standard' extensions, the <code>http://hl7.org/fhir/StructureDefinition/</code> prefix is ignored.</li>
-    <li>Similarly when referencing R5 pre-adoption extensions, the extension path of <code>R5/someCode</code> is interpreted to be <code>http://hl7.org/fhir/5.0/StructureDefinition/</code>.</li>
+    <li>Similarly, when referencing R5 pre-adoption extensions, the extension path of <code>R5/someCode</code> is interpreted to be <code>http://hl7.org/fhir/5.0/StructureDefinition/</code>.</li>
   </ul>
 </div>
