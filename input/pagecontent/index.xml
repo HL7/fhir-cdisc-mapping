@@ -23,6 +23,7 @@
   </ul>
   
   <a name="content"> </a>
+  <h3>Content</h3>
   <p>
     This implementation guide is purely a 'descriptive' guide.  It does not (currently) define any FHIR profiles, value sets or other artifacts.  Instead, it provides mapping tables that show the mappings between elements in portions of selected CDISC specifications map to FHIR.  This content is organized as follows:
   </p>
