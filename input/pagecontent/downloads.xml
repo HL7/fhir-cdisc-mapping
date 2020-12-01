@@ -6,9 +6,9 @@
     Download the entire implementation guide <a href="full-ig.zip">here</a>
 	</p>
 	<p>
-    An XML file containing all of the mappings can be found <a href="cdisc-map.xml">here</a>
+    An XML file containing all of the mappings can be found <a href="cdiscMaps.xml">here</a>
 	</p>
 	<p>
-    A CSV file that provides a flattened representation of the mappings can be found <a href="cdisc-map.csv">here</a>
+    A CSV file that provides a flattened representation of the mappings can be found <a href="cdiscMaps.csv">here</a>
 	</p>
 </div>
