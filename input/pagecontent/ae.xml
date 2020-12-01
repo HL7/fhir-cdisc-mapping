@@ -21,6 +21,6 @@
   
   <a name="mappings"> </a>
   <h3>AE Mappings</h3>
-  {% include ae-table.xml %}
+  {% include AE-table.xml %}
 
 </div>

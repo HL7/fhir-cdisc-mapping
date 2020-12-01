@@ -5,6 +5,6 @@
   
   <a name="mappings"> </a>
   <h3>DM Mappings</h3>
-  {% include dm-table.xml %}
+  {% include DM-table.xml %}
 
 </div>

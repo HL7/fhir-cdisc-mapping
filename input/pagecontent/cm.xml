@@ -15,6 +15,6 @@
   
   <a name="mappings"> </a>
   <h3>CM Mappings</h3>
-  {% include cm-table.xml %}
+  {% include CM-table.xml %}
 
 </div>

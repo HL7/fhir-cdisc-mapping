@@ -8,5 +8,5 @@
   
   <a name="mappings"> </a>
   <h3>PR Mappings</h3>
-  {% include pr-table.xml %}
+  {% include PR-table.xml %}
 </div>

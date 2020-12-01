@@ -21,10 +21,10 @@
   
   <a name="mappings"> </a>
   <h3>LB Mappings</h3>
-  {% include lb-table.xml %}
+  {% include LB-table.xml %}
 
   <a name="lab-mappings"> </a>
   <h3>LAB Mappings</h3>
-  {% include lab-table.xml %}
+  {% include LAB-table.xml %}
 
 </div>

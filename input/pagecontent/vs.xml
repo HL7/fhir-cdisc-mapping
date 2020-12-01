@@ -8,6 +8,6 @@
   
   <a name="mappings"> </a>
   <h3>VS Mappings</h3>
-  {% include vs-table.xml %}
+  {% include VS-table.xml %}
 
 </div>

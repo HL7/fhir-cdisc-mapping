@@ -14,6 +14,6 @@
   
   <a name="mappings"> </a>
   <h3>MH Mappings</h3>
-  {% include mh-table.xml %}
+  {% include MH-table.xml %}
 
 </div>
