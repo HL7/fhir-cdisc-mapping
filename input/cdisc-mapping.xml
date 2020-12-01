@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
+  <id value="hl7.fhir.uv.cdisc-mapping"/>
+  <url value="http://hl7.org/fhir/uv/myig/ImplementationGuide/cdisc-mapping"/>
+  <version value="0.1.0"/>
+  <name value="CDISCMappings"/>
+  <title value="CDISC to FHIR joint mapping Implementation Guide"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International - BR&amp;R Work Group"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/rcrim"/>
+    </telecom>
+  </contact>
+  <description value="This implementation guide defines authoritative mappings between the CDISC LAB, SDTM and CDASH standards and the corresponding HL7 FHIR resources to ease interoperability and data conversion between systems implementing these standards."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.uv.cdisc-mapping"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <definition>
+<!--    <resource>
+      <reference>
+        <reference value="StructureDefinition/mypatient"/>
+      </reference>
+      <description value="Overriding description because we can"/>
+    </resource>-->
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="IG Home Page"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="overview.html"/>
+        <title value="Mapping Overview"/>
+        <generation value="html"/>
+        <page>
+          <nameUrl value="ae.html"/>
+          <title value="Adverse Events"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="cm.html"/>
+          <title value="Concomitant Medications"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="dm.html"/>
+          <title value="Demographics"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="lb.html"/>
+          <title value="Laboratory"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="mh.html"/>
+          <title value="Medical History"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="pr.html"/>
+          <title value="Procedures"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="vs.html"/>
+          <title value="Vital Signs"/>
+          <generation value="html"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Useful Downloads"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="changes.html"/>
+        <title value="IG Change History"/>
+        <generation value="html"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="copyrightyear"/>
+      <value value="2020+"/>
+    </parameter>
+    <parameter>
+      <code value="releaselabel"/>
+      <value value="CI Build"/>
+    </parameter>
+    <parameter>
+      <code value="find-other-resources"/>
+      <value value="true"/>
+    </parameter>
+<!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
+    <parameter>
+      <code value="excludexml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludejson"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludettl"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludemap"/>
+      <value value="true"/>
+    </parameter>-->
+    <parameter>
+      <code value="showsource"/>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

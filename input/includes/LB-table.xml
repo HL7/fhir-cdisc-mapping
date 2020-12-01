@@ -1,0 +1,659 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <p>
+        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+      </p>
+   <table class="grid"
+          style="width:150%;word-break:break-word;table-layout:fixed;">
+      <col style="width:15%"/>
+      <col style="width:7.5%"/>
+      <col style="width:7.5%"/>
+      <col style="width:15%;"/>
+      <col style="width:20%;"/>
+      <col style="width:35%;"/>
+      <thead style="background-color:PowderBlue;">
+         <tr>
+            <th colspan="3" style="text-align:center;">CDISC</th>
+            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+         </tr>
+         <tr style="text-align:center;">
+            <th style="text-align:center;">Name</th>
+            <th style="text-align:center;">CDASH</th>
+            <th style="text-align:center;">SDTM</th>
+            <th style="text-align:center;">Element</th>
+            <th style="text-align:center;">FHIRPath</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th>Study ID or Number</th>
+            <td>
+               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+            </td>
+            <td>
+               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+            </td>
+            <td>ResearchStudy.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
+               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Site ID or Number</th>
+            <td>
+               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+            </td>
+            <td>
+               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+            </td>
+            <td>ResearchStudy.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
+               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Investigator ID or Number</th>
+            <td>
+               <span title="Sponsor's investigator ID">INVID</span>
+            </td>
+            <td>
+               <span title="Sponsor's investigator ID">INVID</span>
+            </td>
+            <td>Practitioner.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
+               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
+            </td>
+            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Screen ID or Number (pre-randomization)</th>
+            <td>
+               <span title="Sponsor to use SUBJID to determine/derive USUBJID">SUBJID</span>
+            </td>
+            <td>
+               <span title="Sponsor to use SUBJID to determine/derive USUBJID">SUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+            </td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+         </tr>
+         <tr>
+            <th>Visit ID or Number</th>
+            <td>
+               <span title="Observation/encounter data need to be dictated by the protocol and contain the Sponsor defined values in Research resources. ">VISITNUM</span>
+            </td>
+            <td>
+               <span title="Observation/encounter data need to be dictated by the protocol and contain the Sponsor defined values in Research resources. ">VISITNUM</span>
+            </td>
+            <td>Encounter.identifier</td>
+            <td>
+               <p>Observation.encounter.resolve().identifier</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Visit Name</th>
+            <td>
+               <span title="Observation/encounter data need to be dictated by the protocol and contain the Sponsor defined values in Research resources. ">VISIT</span>
+            </td>
+            <td>
+               <span title="Observation/encounter data need to be dictated by the protocol and contain the Sponsor defined values in Research resources. ">VISIT</span>
+            </td>
+            <td>ActivityDefinition.name</td>
+            <td>
+               <p>Observation.encounter.resolve().extension(workflow-instantiates).valueCanonical.resolve().title</p>
+            </td>
+            <td>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.<br/>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.</td>
+         </tr>
+         <tr>
+            <th>Accession ID or Number</th>
+            <td>
+               <span title="As reported from the Site">LBREFID</span>
+            </td>
+            <td>
+               <span title="As reported from the Site">LBREFID</span>
+            </td>
+            <td>Observation.specimenRefSpecimen.accessionIdentifier</td>
+            <td>
+               <p>Observation.specimen.accessionIdentifier.value</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Specimen Actual Collection Start Date and Time</th>
+            <td/>
+            <td>
+               <span title="To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBDTC
+
+(NOTE: no mapping included for CDASH LBDAT and LBTIM)</span>
+            </td>
+            <td>Observation.specimenRefSpecimen.collection.collected.collectedPeriod.start</td>
+            <td>
+               <p>Observation.specimen.collection.collected.collectedPeriod.start</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Specimen Actual Collection End Date and Time</th>
+            <td/>
+            <td>
+               <span title="To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBENDTC
+
+NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
+            </td>
+            <td>Observation.specimenRefSpecimen.collection.collected.collectedPeriod.end</td>
+            <td>
+               <p>Observation.specimen.collection.collected.collectedPeriod.end</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Specimen Collection Duration (for Clinical Research with extended time of collection)</th>
+            <td>
+               <span title="Contains both the duration and unit.">LBCDUR</span>
+            </td>
+            <td>
+               <span title="Must be ISO 8601 PT12H for duration of 12 hours.  Typically for urine samples.  Conversion of LBCDUR that contains both duration and units.">LBDUR</span>
+            </td>
+            <td>Observation.specimen.RefSpecimen.collection.collected.collectedPeriod</td>
+            <td>
+               <p>Observation.specimen.RefSpecimen.collection.collected.collectedPeriod</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Specimen Planned Time Point Name (Planned Collection Time Point - time within Encounter)</th>
+            <td>
+               <span title="If the words do not match what the Sponsor desires, put the text in this variable.">LBCTPT</span>
+            </td>
+            <td>
+               <span title="Wording needs to match what is required by Sponsor">LBTPT</span>
+            </td>
+            <td>Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference</td>
+            <td>
+               <p>Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference</p>
+            </td>
+            <td>TBD - change being made to Specimen resource</td>
+         </tr>
+         <tr>
+            <th>Specimen Planned Elapsed Time from Time Point Reference</th>
+            <td>
+               <span title="e.g., 3 hours post dose; sponsor would have to translate data to ISO-8601 to use LBCELTM data in LBELTM">LBCELTM</span>
+            </td>
+            <td>
+               <span title="See instructions in column C.  This needs to be converted from LBCELTM.">LBELTM</span>
+            </td>
+            <td>Observation.specimen(Ref: Specimen.extension.cqf-relativeDateTime.valueReference.reference)</td>
+            <td>
+               <p>Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueReference.reference</p>
+            </td>
+            <td>TBD - change being made to Specimen resource</td>
+         </tr>
+         <tr>
+            <th>Specimen Condition</th>
+            <td>
+               <span title="Proposed CDASH variable (Specimen Condition as Collected)&#xA;&#xA;Proposed CDASH variable (Specimen Condition as Collected)">LBCSPCCN</span>
+            </td>
+            <td>
+               <span title="To use this, sponsor must first ensure compliant terminology (compliant either to CDISC or sponsor extensions) will be used.">LBSPCCND</span>
+            </td>
+            <td>Observation.specimen(Ref: Specimen.condition.CodeableConcept.coding.code)</td>
+            <td>
+               <p>Observation.specimen.condition.codeableConcept.coding.code</p>
+            </td>
+            <td>TBD - change being made to Specimen resource<br/>TBD - change being made to Specimen resource</td>
+         </tr>
+         <tr>
+            <th>Specimen Type</th>
+            <td>
+               <span title="Specimen as collected.  Current FHIR terminology does not align to CDISC terminology. (At least not the example)  An &#34;as collected&#34; version of the SDTM variable is recommended to allow the sponsor to make adjustments to ensure terminology compliance while mapping to SDTM.">LBCSPEC</span>
+            </td>
+            <td>
+               <span title="To use this, sponsor must first ensure compliant CDISC terminology (compliant either to CDISC or sponsor extensions) will be used.  ">LBSPEC</span>
+            </td>
+            <td>Observation.specimen(Ref: Specimen.type.CodeableConcept.coding.Coding.display)</td>
+            <td>
+               <p>Observation.specimen.type.coding.display</p>
+            </td>
+            <td>NOTE: In some cases, this may be inferred from the LOINC.</td>
+         </tr>
+         <tr>
+            <th>Fasting Status</th>
+            <td>
+               <span title="HL7 terminology is binding.   Does not match CDISC CT with is just No/Yes/Unknown/Not Applicable">LBCFAST</span>
+            </td>
+            <td>
+               <span title="Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.&#xA;&#xA;Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.">LBFAST</span>
+            </td>
+            <td>Observation.specimen.RefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code</td>
+            <td>
+               <p>Observation.specimen.collection.fastingStatus.fastingStatusCodeableConcept.code</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Condition Met (Y/N)</th>
+            <td>
+               <span title="Must provide a way to explain what this is answering.  May need to answer this for a particular test.">LBCOND (confirmation that protocol defined condition was met - e.g. fasting)</span>
+            </td>
+            <td/>
+            <td colspan="2" style="background-color:LightGray">This is an 'ask on entry' question.  May be able to determine some conditions, such as fasting, by using other specimen.collection attributes (e.g., fasting status).  Others might be captured as components or extensions.  Alternatively, obtain this information from the case report form entries.</td>
+            <td>There are explicit elements for Specimen.collection.fastingStatus and collection.fastingDuration.  May need extensions for other pre-conditions</td>
+         </tr>
+         <tr>
+            <th>Specimen Collection Position</th>
+            <td>
+               <span title="As reported from the lab">LBCPOS</span>
+            </td>
+            <td>
+               <span title="Must be aligned with controlled terminology.">LBPOS</span>
+            </td>
+            <td>Observation.specimenRefSpecimen.collection extension observation-bodyPosition</td>
+            <td>
+               <p>Observation.specimen.collection extension observation-bodyPosition</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Specimen Usability for the Test</th>
+            <td>
+               <span title="As reported from the lab.">LBCSPCUF</span>
+            </td>
+            <td>
+               <span title="Need to translate to blank or N if not received as blank or N&#xA;&#xA;Need to translate to blank or N if not received as blank or N">LBSPCUFL</span>
+            </td>
+            <td>Observation.specimenRefSpecimen.status where (status = 'Unsatisfactory')</td>
+            <td>
+               <p>Observation.specimen.status where status='Unsatisfactory')</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="2">Category</th>
+            <td rowspan="2">
+               <span title="Take from the panel name on the EHR. The battery could be used by the sponsor to populate this and then translate into sponsor-specific terminology.">LBCCAT</span>
+            </td>
+            <td rowspan="2">
+               <span title="Terminology is defined by sponsor (no CDISC controlled terminology exists)  Need to derive this to organize results for the statistical and reporting teams.  Sponsor may want a different category than was reported by the lab.">LBCAT</span>
+            </td>
+            <td>DiagnosticReport.category.code</td>
+            <td>
+               <p>DiagnosticReport.category.code where (system = 'LBSCAT')</p>
+            </td>
+            <td rowspan="2">NOTE: In some cases, this may be inferred from the LOINC.</td>
+         </tr>
+         <tr>
+            <td>DiagnosticReport.code.text</td>
+            <td>
+               <p>DiagnosticReport.code.text</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Test Status</th>
+            <td>
+               <span title="Could be used to accept true for this resource and later populate LBSTAT as NOT DONE">LBCSTAT</span>
+            </td>
+            <td>
+               <span title="Needs to be translated from FHIR vocabulary to SDTM controlled terminology:&#xA;&#xA;Needs to be translated from FHIR vocabulary to SDTM controlled terminology:">LBSTAT</span>
+            </td>
+            <td>Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)</td>
+            <td>
+               <p>ServiceRequest.doNotPerform.@value and ServiceRequest.status</p>
+            </td>
+            <td>Sponsor may choose to map a situation in which the entire panel is cancelled as one summary record compliant with SDTM IG examples.
+Some sponsor may decline to accept cancelled records under specific circumstances (e.g., unscheduled)
+Sponsor may also choose to populate LBREASND as CANCELLED</td>
+         </tr>
+         <tr>
+            <th>Reason Test Not Done</th>
+            <td/>
+            <td>
+               <span title="See notes on LBSTAT">LBREASND</span>
+            </td>
+            <td>Observation.dataAbsentReason</td>
+            <td>
+               <p>Observation.dataAbsentReason.text</p>
+            </td>
+            <td>see notes on LBSTAT</td>
+         </tr>
+         <tr>
+            <th>Test Code</th>
+            <td/>
+            <td>
+               <span title="Translate to compliant terminology (if needed)">LBTESTCD</span>
+            </td>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code.coding.where(selected=true).code</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Test Name</th>
+            <td/>
+            <td>
+               <span title="Translate to compliant terminology (if needed)">LBTEST</span>
+            </td>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code.coding.where(selected=true).display</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Test LOINC Code</th>
+            <td>
+               <span title="Use LOINC terminology">LBLOINC</span>
+            </td>
+            <td>
+               <span title="Use LOINC terminology">LBLOINC</span>
+            </td>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code.coding.where(system='LOINC').code</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Performing Laboratory Name</th>
+            <td>
+               <span title="The name of the lab that performed the analysis.  ">LBNAM</span>
+            </td>
+            <td>
+               <span title="The name of the lab that performed the analysis.  ">LBNAM</span>
+            </td>
+            <td>Organization.name</td>
+            <td>
+               <p>Observation.performer.where($this is Organization).resolve().name</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reference Range Indicator</th>
+            <td>
+               <span title="As reported by the lab.">LBCNRIND</span>
+            </td>
+            <td>
+               <span title="Must match CDISC controlled terminology">LBNRIND</span>
+            </td>
+            <td>Observation.interpretation</td>
+            <td>
+               <p>Observation.interpretation.where(system = 'NRIND')</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Toxicity Grade</th>
+            <td/>
+            <td>
+               <span title="Use a controlled vocabulary list for the toxicity grade. There is not a CDISC standard for this.">LBTOXGR</span>
+            </td>
+            <td>Observation.interpretation</td>
+            <td>
+               <p>Observation.interpretation.where(system = 'Toxicity Grade').coding.code</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Toxicity Grade Code List Version</th>
+            <td>
+               <span title="The version number as reported by the lab.">LBCTOXV</span>
+            </td>
+            <td>
+               <span title="See Toxicity Grade Code List - LBTOX - 1">LBTOX - 2</span>
+            </td>
+            <td>Observation.interpretation</td>
+            <td>
+               <p>Observation.interpretation.where(system = "Toxicity Grade").coding.version</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Toxicity Grade Code List</th>
+            <td>
+               <span title="The coding system as reported by the lab.">LBCTOX</span>
+            </td>
+            <td>
+               <span title="Needs to be translated from the URI and version to a name concatenated with the version.">LBTOX - 1</span>
+            </td>
+            <td>Observation.interpretation</td>
+            <td>
+               <p>Observation.interpretation.system(where system = "Toxicity Grade")</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reported Reference Range Low</th>
+            <td>
+               <span title="As reported from the lab.">LBORNRLO</span>
+            </td>
+            <td>
+               <span title="As reported from the lab">LBORNRLO</span>
+            </td>
+            <td>Observation.referenceRange</td>
+            <td>
+               <p>Observation.referenceRange.low</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reported Reference Range High</th>
+            <td>
+               <span title="As reported from the lab.">LBORNRHI</span>
+            </td>
+            <td>
+               <span title="As reported from the lab">LBORNRHI</span>
+            </td>
+            <td>Observation.referenceRange</td>
+            <td>
+               <p>Observation.referenceRange.high</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reference Range (for string value)</th>
+            <td>
+               <span title="Character indicator of a normal value, the way the lab sends it.">LBCSTNRC</span>
+            </td>
+            <td>
+               <span title="Sponsor would normalize this.">LBSTNRC</span>
+            </td>
+            <td>Observation.referenceRange</td>
+            <td>
+               <p>Observation.referenceRange.text</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Result Value (numeric)</th>
+            <td>
+               <span title="As reported from the lab">LBORRES</span>
+            </td>
+            <td>
+               <span title="As reported from the lab">LBORRES</span>
+            </td>
+            <td>Observation.valueQuantity</td>
+            <td>
+               <p>Observation.valueQuantity.value</p>
+            </td>
+            <td>Might also include valueQuantity.comparator</td>
+         </tr>
+         <tr>
+            <th>Result Value (string)</th>
+            <td>
+               <span title="As reported from the lab">LBORRES</span>
+            </td>
+            <td>
+               <span title="As reported from the lab">LBORRES</span>
+            </td>
+            <td>Observation.valueCodeableConcept</td>
+            <td>
+               <p>Observation.valueCodeableConcept.text</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reported Units</th>
+            <td>
+               <span title="The value as reported by the lab">LBRESU</span>
+            </td>
+            <td>
+               <span title="Needs to be translated to match the controlled terminology, if not already compliant">LBORRESU</span>
+            </td>
+            <td>Observation.valueQuantity</td>
+            <td>
+               <p>Observation.valueQuantity.unit</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Result Clinically Significant (Y/N)</th>
+            <td>
+               <span title="Designation from the investigator.  May be notation on the individual result.">LBCLSIG</span>
+            </td>
+            <td>
+               <span title="Must be mapped to supplemental qualifier.">SUPPLB.QVAL</span>
+            </td>
+            <td>Observation.interpretation</td>
+            <td>
+               <p>Observation.interpretation</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Method</th>
+            <td>
+               <span title="Method as collected (as reported by the laboratory).">LBCMETH</span>
+            </td>
+            <td>
+               <span title="Must be aligned with controlled terminology.">LBMETHOD</span>
+            </td>
+            <td>Observation.method</td>
+            <td>
+               <p>Observation.method</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Anatomical Region </th>
+            <td/>
+            <td>
+               <span title="Must be aligned with controlled terminology.">LBLOC</span>
+            </td>
+            <td>Specimen.bodySite</td>
+            <td>
+               <p>Observation.specimen.resolve().collection.bodySite</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Run ID  
+(ties data together across subjects)</th>
+            <td>
+               <span title="May not be applicable for safety labs.">LBRUNID</span>
+            </td>
+            <td>
+               <span title="May not be applicable for safety labs.">LBRUNID</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Would need to introduce an extension</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Unique Subject ID for Sponsor</th>
+            <td/>
+            <td>
+               <span title="This would not be sent by the lab - we would expect to get study-specific subject ID">USUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>Observation.subject.reference(=Patient/identifier), then to ResearchSubject.identifier</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Result Categorization</th>
+            <td>
+               <span title="Probably will not be provided by lab.">LBRESCAT</span>
+            </td>
+            <td>
+               <span title="Probably will not be provided by lab.">LBRESCAT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This wouldn't come from the lab.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Anatomical Region</th>
+            <td>
+               <span title="Not for basic safety labs">LBANTREG</span>
+            </td>
+            <td>
+               <span title="Not for basic safety labs">LBANTREG</span>
+            </td>
+            <td>Specimen.collection.bodySite</td>
+            <td>
+               <p>Observation.specimen.resolve().collection.bodySite</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Unscheduled Flag</th>
+            <td>
+               <span title="N/A - this is not for human clinical trials">LBUSCHFL</span>
+            </td>
+            <td>
+               <span title="N/A - this is not for human clinical trials">LBUSCHFL</span>
+            </td>
+            <td>Observation.encounter (ref: encounter.gap)</td>
+            <td>
+               <p/>
+            </td>
+            <td>This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag</td>
+         </tr>
+         <tr>
+            <th>Planned Time Point Number (sequence to order the relative timepoints)</th>
+            <td/>
+            <td>
+               <span title="Pull this information from the Clinical Plan (PlanDefinition)">LBTPTNUM</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Pull this information from the Clinical Plan (PlanDefinition)</td>
+            <td>Link to the clinical plan would be through the Observation.basedOn link to CarePlan or the instantiatesCanonical link to PlanDefinition or ActivityDefinition</td>
+         </tr>
+         <tr>
+            <th>Analytical Method</th>
+            <td/>
+            <td>
+               <span title="Does not apply to safety labs">LBANMETH</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This does not apply to safety labs.</td>
+            <td>The corresponding values need to be evaluated and aligned accordingly to the CDISC context of --METHOD.
+Potentially could appear in Observation.method.  An extension is required to distinguish.</td>
+         </tr>
+         <tr>
+            <th>Baseline Flag</th>
+            <td/>
+            <td>
+               <span title="This may be deprecated.  May appear on CRF, but would not be in EHR.">LBBLFL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Variable may be deprecated.  This information would come from the Sponsor.</td>
+            <td>Could appear in Observation.reasonCode.  In practice the notion of 'baseline' is more of a relationship.  Any arbitrary Observation might be selected as the 'baseline' for a particular step in the study.  As such, the real linkage is the tie to the CarePlan activity that's tied to the ActivityDefinition with a reason of 'baseline'.</td>
+         </tr>
+         <tr>
+            <th>Derived Flag</th>
+            <td/>
+            <td>
+               <span title="This will not be received from the EHR - this would be created by the Sponsor when Sponsor derives data from values received from lab.  (sponsor doing the derivation)">LBDRVFL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This information would come from the Sponsor.</td>
+            <td>FHIR doesn't use a flag.  If an Observation is derived, it should point to the Observations it's derived from with the derivedFrom association.  (If that relationship is present, then the Derived Flag is true)</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

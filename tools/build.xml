@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="org.hl7.fhir.tools" basedir=".." default="generate-maps">
+  <path id="saxon.path">
+    <fileset dir="tools/saxon">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+  <target name="generate-maps" description="Convert spreadsheet XML and generate maps">
+    <xslt in="input/Domain_CDISC_FHIR_Mappingsv2.xml" out="input/images/cdiscMaps.xml" style="tools/ExtractCDISCMaps.xslt" classpathref="saxon.path">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    </xslt>
+    <xslt in="input/images/cdiscMaps.xml" out="temp/cdiscMaps.tmp" style="tools/CDISCMappingTables.xslt" classpathref="saxon.path">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    </xslt>
+    <xslt in="input/images/cdiscMaps.xml" out="input/images/cdiscMaps.csv" style="tools/CDISCMappingToCSV.xslt" classpathref="saxon.path">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    </xslt>
+  </target>
+</project>

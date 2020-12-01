@@ -1,0 +1,10 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+	<p>
+	  Demographic information in FHIR is captured using the <a href="{{site.data.fhir.path}}patient.html">Patient</a> resource.  Even if an individual isn't directly receiving care, if they're a potential subject of care, they're represented using Patient.  The <a href="{{site.data.fhir.path}}researchsubject.html">ResearchSubject</a> resource is used to tie patients to specific research studies and to capture metadata about the patient's involvement with that study.  In theory the same patient could be involved in many studies, some even at the same time.
+  </p>
+  
+  <a name="mappings"> </a>
+  <h3>DM Mappings</h3>
+  {% include dm-table.xml %}
+
+</div>

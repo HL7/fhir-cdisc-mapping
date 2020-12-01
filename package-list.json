@@ -1,0 +1,21 @@
+{
+ "package-id" : "hl7.fhir.uv.cdisc-mapping",
+ "title" : "CDISC Mapping FHIR IG", 
+ "canonical" : "http://hl7.org/fhir/uv/cdisc-mapping", 
+ "introduction" : "This implementation guide defines authoritative mappings between the CDISC LAB, SDTM and CDASH standards and the corresponding HL7 FHIR resources to ease interoperability and data conversion between systems implementing these standards.",
+ "list" : [{
+  "version" : "current",
+  "desc" : "Continuous Integration Build (latest in version control)",
+  "path" : "http://build.fhir.org/ig/HL7/cdisc-map",
+  "status" : "ci-build",
+  "current" : true
+ },{
+  "version" : "0.1.0",  
+  "date" : "2020-12-07", 
+  "desc" : "STU 1 Ballot #1",
+  "path" : "http://hl7.org/fhir/uv/cdisc-mapping/2021Jan",   
+  "status" : "ballot",   
+  "sequence" : "STU 1"
+ }],
+ "category": "Research"
+}

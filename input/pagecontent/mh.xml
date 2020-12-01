@@ -1,0 +1,19 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <p>
+    Medical history could include information from a wide range of FHIR resources.  However, the most typical resources are:
+  </p>
+  <ul>
+    <li><a href="{{site.data.fhir.path}}adverseevent.html">AdverseEvent</a> - These would be filtered to only extract issues that would not qualify as 'adverse events', but were still potentially study-relevant (perhaps having occurred prior to the study).</li>
+    <li><a href="{{site.data.fhir.path}}allergyintolerance.html">AllergyIntolerance</a> - captures both the propensity to reaction as well as specific reaction occurrences</li>
+    <li><a href="{{site.data.fhir.path}}condition.html">Condition</a> - used to capture healthcare problems as well as other conditions (e.g. pregnancy)</li>
+    <li><a href="{{site.data.fhir.path}}observation.html">Observation</a> - captures symptoms, assessments, non-study pertinent lab results (e.g. blood type), etc.</li>
+  </ul>
+  <p>
+    Mappings are provided for all of these.
+  </p>
+  
+  <a name="mappings"> </a>
+  <h3>MH Mappings</h3>
+  {% include mh-table.xml %}
+
+</div>

@@ -1,0 +1,20 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <p>
+    The fact a patient is taking or has been exposed to a medication can be expressed in a number of ways in FHIR, with some conveying a greater degree of certainty and/or detail about exactly what was taken and when.  Mappings are provided for all of these resources.
+  </p>
+  <ul>
+    <li><a href="{{site.data.fhir.path}}medicationstatement.html">MedicationStatement</a> - captures information about a drug that the patient is believed to be taking.  This is generally 'summary' information and may span multiple orders.  It can also be used for non-prescribed medications.  In some cases, it will also assert medications not taken.</li>
+    <li><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a> - captures drug orders and prescriptions (though it can also contain recommendations and plans).  Not all ordered drugs are actually taken (or taken as ordered)</li>
+    <li><a href="{{site.data.fhir.path}}medicationdispense.html">MedicationDispense</a> - captures information about a drug that was supplied to or for a patient.  It also conveys the instructions for administering the supplied medication.  The existence of a dispense gives confidence that the medication was actually received, but again, not dispensed are actually taken (or taken according to instructions)</li>
+    <li><a href="{{site.data.fhir.path}}medicationadministration.html">MedicationAdministration</a> - captures information about a specific administration of a particular drug at a specific time.  These records generally only exist for in-patient administrations, though in principle they could be captured for community administrations, either by a healthcare professional or even by the patient themselves.  These records are highly specific and are the most likely to reflect what the patient actually received.</li>
+    <li><a href="{{site.data.fhir.path}}immunization.html">Immunization</a> - captures information about a specific administration of a vaccine.  Like MedicationAdministration, these records are highly specific and are the most likely to reflect what the patient actually received.</li>
+  </ul>
+  <p>
+    Note that the same resources are used when dealing with study drugs as with concomitant drugs, so when converting data from FHIR, data will need to be filtered to differentiate between the two.
+  </p>
+  
+  <a name="mappings"> </a>
+  <h3>CM Mappings</h3>
+  {% include cm-table.xml %}
+
+</div>

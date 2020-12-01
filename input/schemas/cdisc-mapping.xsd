@@ -31,7 +31,7 @@
           <xs:field xpath="@spec"/>
           <xs:field xpath="@label"/>
         </xs:unique>
-<!--        <xs:unique name="fhirSpecLabel">
+        <!--        <xs:unique name="fhirSpecLabel">
           <xs:selector xpath="mapping"/>
           <xs:field xpath="@spec"/>
           <xs:field xpath="@label"/>
@@ -51,7 +51,12 @@
     <xs:sequence>
       <xs:element name="cdisc" type="CDISCElement" minOccurs="1" maxOccurs="unbounded"/>
       <xs:choice>
-        <xs:element name="mapping" type="FHIRMapping" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="mapping" type="FHIRMapping" minOccurs="1" maxOccurs="unbounded">
+          <xs:unique name="MappingFHIRPath">
+            <xs:selector xpath="path"/>
+            <xs:field xpath="@value"/>
+          </xs:unique>
+        </xs:element>
         <xs:element name="gap" type="HTML" minOccurs="1" maxOccurs="1"/>
       </xs:choice>
       <xs:element name="comment" type="HTML" minOccurs="0" maxOccurs="1"/>
@@ -73,12 +78,7 @@
   </xs:complexType>
   <xs:complexType name="FHIRMapping">
     <xs:sequence>
-      <xs:element name="path" type="MappingFHIRPath" minOccurs="1" maxOccurs="unbounded">
-        <xs:unique name="MappingFHIRPath">
-          <xs:selector xpath="path"/>
-          <xs:field xpath="value"/>
-        </xs:unique>
-      </xs:element>
+      <xs:element name="path" type="MappingFHIRPath" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="element" type="FHIRElement"/>
   </xs:complexType>

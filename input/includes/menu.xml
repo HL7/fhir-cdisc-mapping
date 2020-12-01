@@ -1,38 +1,64 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
-  <li><a href="toc.html">Table of Contents</a></li>
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="overview.html">Mapping Overview</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">MyIg Background<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="background.html">Background</a>
+        <a href="ae.html">Adverse Events</a>
+      </li>
+      <li>
+        <a href="cm.html">Concomitant Medications</a>
+      </li>
+      <li>
+        <a href="dm.html">Demographics</a>
+      </li>
+      <li>
+        <a href="lb.html">Laboratory</a>
+      </li>
+      <li>
+        <a href="mh.html">Medical History</a>
+      </li>
+      <li>
+        <a href="pr.html">Procedures</a>
+      </li>
+      <li>
+        <a href="vs.html">Vital Signs</a>
       </li>
     </ul>
   </li>
-<!--  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification<b class="caret">
-      </b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="spec.html">Detailed Specification</a>
-      </li>
-    </ul>
-  </li>-->
-  <li><a href="artifacts.html">Artifact Index</a></li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a href="{{site.data.fhir.path}}index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="https://www.cdisc.org/standards/foundational/sdtmig/sdtmig-v3-2">CDISC SDTMIG Spec</a>
+      </li>
+      <li>
+        <a href="https://www.cdisc.org/standards/foundational/cdash/cdashig-v2-1">CDISC CDASH Spec</a>
+      </li>
+      <li>
+        <a href="https://www.cdisc.org/standards/foundational/lab/lab-v1-0-1">CDISC LAB Spec</a>
+      </li>
+      <li>
+        <a href="{{site.data.fhir.path}}index.html">HL7 FHIR Spec</a>
       </li>
       <li>
         <a href="downloads.html">Downloads</a>
       </li>
     </ul>
   </li>
-</ul>      
+</ul>

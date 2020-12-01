@@ -1,0 +1,1132 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <p>
+        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+      </p>
+   <table class="grid"
+          style="width:150%;word-break:break-word;table-layout:fixed;">
+      <col style="width:15%"/>
+      <col style="width:7.5%"/>
+      <col style="width:7.5%"/>
+      <col style="width:15%;"/>
+      <col style="width:20%;"/>
+      <col style="width:35%;"/>
+      <thead style="background-color:PowderBlue;">
+         <tr>
+            <th colspan="3" style="text-align:center;">CDISC</th>
+            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+         </tr>
+         <tr style="text-align:center;">
+            <th style="text-align:center;">Name</th>
+            <th style="text-align:center;">CDASH</th>
+            <th style="text-align:center;">SDTM</th>
+            <th style="text-align:center;">Element</th>
+            <th style="text-align:center;">FHIRPath</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th>Study Identifier</th>
+            <td>
+               <span title="A unique identifier for a study.">STUDYID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
+            </td>
+            <td>ResearchStudy.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier.value</p>
+               <p>MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Study Site Identifier</th>
+            <td>
+               <span title="A unique identifier for a site within a study.">SITEID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+            </td>
+            <td>ResearchStudy.site</td>
+            <td>
+               <p>ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier.value</p>
+               <p>MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Subject Identifier for the Study</th>
+            <td>
+               <span title="A unique subject identifier within a site and a study.">SUBJID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value</p>
+            </td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.</td>
+         </tr>
+         <tr>
+            <th rowspan="4">Category for Medication</th>
+            <td rowspan="4">
+               <span title="A grouping of topic-variable values based on user-defined characteristics">CMCAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCAT</span>
+            </td>
+            <td>MedicationStatement.category</td>
+            <td>
+               <p>MedicationStatement.category</p>
+            </td>
+            <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.category</td>
+            <td>
+               <p>MedicationRequest.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.category</td>
+            <td>
+               <p>MedicationDispense.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.category</td>
+            <td>
+               <p>MedicationAdministration.category</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Subcategory for Medication</th>
+            <td rowspan="4">
+               <span title="A sub-division of the CMCAT values based on user-defined characteristics.">CMSCAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMSCAT</span>
+            </td>
+            <td>MedicationStatement.category</td>
+            <td>
+               <p>MedicationStatement.category</p>
+            </td>
+            <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.category</td>
+            <td>
+               <p>MedicationRequest.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.category</td>
+            <td>
+               <p>MedicationDispense.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.category</td>
+            <td>
+               <p>MedicationAdministration.category</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Any Concomitant Medications Taken</th>
+            <td>
+               <span title="An indication whether or not any (concomitant) medications treatments/therapies were taken/given.">CMYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would be determined by dates within the protocol.  <br/>This would be determined by dates within the protocol.  </td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="5">CM Sponsor-Defined Identifier</th>
+            <td rowspan="5">
+               <span title="A sponsor-defined identifier.  IN CDASH, This is typically used for preprinted or autom-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">CMSPID</span>
+            </td>
+            <td rowspan="5">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">CMSPID</span>
+            </td>
+            <td>MedicationStatement.identifier</td>
+            <td>
+               <p>MedicationStatement.identifier</p>
+            </td>
+            <td rowspan="5"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.identifier</td>
+            <td>
+               <p>MedicationRequest.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.identifier</td>
+            <td>
+               <p>MedicationDispense.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.identifier</td>
+            <td>
+               <p>MedicationAdministration.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.identifier</td>
+            <td>
+               <p>Immunization.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="9">Reported Name of Drug, Med, or Therapy</th>
+            <td rowspan="9">
+               <span title="Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).">CMTRT</span>
+            </td>
+            <td rowspan="9">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMTRT</span>
+            </td>
+            <td>MedicationStatement.medication.medicationCodeableconcept</td>
+            <td>
+               <p>MedicationStatement.medication.medication.CodeableConcept</p>
+            </td>
+            <td rowspan="9"/>
+         </tr>
+         <tr>
+            <td>MedicationStatement.medication.medicationReference</td>
+            <td>
+               <p>MedicationStatement.medication.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medication.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationRequest.medication.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medication.medicationReference</td>
+            <td>
+               <p>MedicationRequest.medication.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medication.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationDispense.medication.medication.CodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medication.medicationReference</td>
+            <td>
+               <p>MedicationDispense.medication.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medication.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationAdministration.medication.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medication.medicationReference</td>
+            <td>
+               <p>MedicationAdministration.medication.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.vaccineCode</td>
+            <td>
+               <p>Immunization.vaccineCode</p>
+            </td>
+         </tr>
+         <tr>
+            <th>CM Pre-Specified</th>
+            <td>
+               <span title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">CMPRESP</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMPRESP</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Would not expect to receive from the site.
+</td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="6">CM Occurrence</th>
+            <td rowspan="6">
+               <span title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#xA;&#xA;An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.">CMOCCUR</span>
+            </td>
+            <td rowspan="6">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMOCCUR</span>
+            </td>
+            <td>MedicationStatement.status</td>
+            <td>
+               <p>MedicationStatement.status</p>
+            </td>
+            <td rowspan="6">In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.doNotPerform</td>
+            <td>
+               <p>MedicationRequest.doNotPerform=true</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.status</td>
+            <td>
+               <p>status=('entered-in-error', 'cancelled', 'stopped')</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.status</td>
+            <td>
+               <p>MedicationRequest.status=entered-in-error, cancelled, stopped</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.status</td>
+            <td>
+               <p>status</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.status</td>
+            <td>
+               <p>status = ('completed', 'entered-in-error')</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="5">Concomitant Meds Active Ingredients</th>
+            <td rowspan="5">
+               <span title="Medication Ingredients.">CMINGRD</span>
+            </td>
+            <td rowspan="5">
+               <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
+            </td>
+            <td>Medication.ingredient</td>
+            <td>
+               <p>MedicationStatement.medicationReference.resolve().ingredient.where(isActive)</p>
+            </td>
+            <td rowspan="5"/>
+         </tr>
+         <tr>
+            <td>Medication.ingredient</td>
+            <td>
+               <p>MedicationRequest.medicationReference.resolve().ingredient.where(isActive)</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Medication.ingredient</td>
+            <td>
+               <p>MedicationDispense.medicationReference.resolve().ingredient.where(isActive)</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Medication.ingredient</td>
+            <td>
+               <p>MedicationAdministration.medicationReference.resolve().ingredient.where(isActive)</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.ingredient</td>
+            <td>
+               <p>Immunization.medicationReference.resolve().ingredient.where(isActive)</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">CM Indication</th>
+            <td rowspan="4">
+               <span title="The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., Why the medication/treatment/therapy was taken or administered).">CMINDC</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMINDC</span>
+            </td>
+            <td>MedicationStatement.reasonCode</td>
+            <td>
+               <p>MedicationStatement.reasonCode</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.reasonCode</td>
+            <td>
+               <p>MedicationRequest.reasonCode</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.reasonCode</td>
+            <td>
+               <p>MedicationAdministration.reasonCode</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.reasonCode</td>
+            <td>
+               <p>Immunization.reasonCode</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Related AdverseEvent ID</th>
+            <td>
+               <span title="Identifier for the AdverseEvent that is the indication for this medication/treatment/therapy.">CMAENO</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
+            </td>
+            <td>AdverseEvent.identifier</td>
+            <td>
+               <p>AdverseEvent.where(suspectEntity.instanceReference=MedicationX).identifier</p>
+            </td>
+            <td>This could match on AdverseEvent by code.  (Note that the AdverseEvent points to the medication record, not the reverse</td>
+         </tr>
+         <tr>
+            <th rowspan="4">Related Medical History Event ID</th>
+            <td rowspan="4">
+               <span title="Identifier for the medical history condition that is the indication for this medication/treatment/therapy">CMMHNO</span>
+            </td>
+            <td rowspan="4">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
+            </td>
+            <td>Condition.identifier</td>
+            <td>
+               <p>MedicationStatement.reasonReference.resolve().identifier</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>Condition.identifier</td>
+            <td>
+               <p>MedicationRequest.reasonReference.resolve().identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Condition.identifier</td>
+            <td>
+               <p>MedicationAdministration.reasonReference.resolve().identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.identifier</td>
+            <td>
+               <p>Immunization.reasonReference.resolve().identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="5">CM Dose per Administration</th>
+            <td rowspan="5">
+               <span title="The dose of medication/treatment (e.g., -TRT given at one time represented as a numeric value.">CMDOSE</span>
+            </td>
+            <td rowspan="5">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). in the column with the heading &#34;SDTMIG Target&#34;.">CMDOSE</span>
+            </td>
+            <td>MedicationStatement.dosage</td>
+            <td>
+               <p>MedicationStatement.dosage.doseAndRate.doseQuantity</p>
+            </td>
+            <td rowspan="5"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.doseAndRate.doseQuantity</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.doseAndRate.doseQuantity</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.dosage.dose</td>
+            <td>
+               <p>MedicationAdministration.dosage.dose</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.doesQuantity</td>
+            <td>
+               <p>Immunization.doseQuantity</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Concomitant Meds Dose Description</th>
+            <td rowspan="4">
+               <span title="The dose of medication/treatment taken per administration.">CMDSTXT</span>
+            </td>
+            <td rowspan="4">
+               <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSTXT; CMDOSE</span>
+            </td>
+            <td>MedicationStatement.dosage</td>
+            <td>
+               <p>MedicationStatement.dosage.text</p>
+            </td>
+            <td rowspan="4">Requires combining multiple repetitions together</td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.text</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.text</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.dosage.text</td>
+            <td>
+               <p>MedicationAdministration.dosage.text</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">CM Total Daily Dose</th>
+            <td rowspan="4">
+               <span title="The total amount of CMTRT taken over a day using the units in CMDOSU">CMDOSTOT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSTOT</span>
+            </td>
+            <td>MedicationStatement.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationStatement.dosage.maxDosePerPeriod</p>
+            </td>
+            <td rowspan="4">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.dosage.maxDosePerPeriod</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.dosage.maxDosePerPeriod</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.doseQuantity</td>
+            <td>
+               <p>Immunization.doseQuantity</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="3">CM Dose Units</th>
+            <td rowspan="3">
+               <span title="The unit associated with the concomitant medication/treatment/therapy taken (e.g., mg in &#34;2 mg 3 times per day&#34;).">CMDOSU</span>
+            </td>
+            <td rowspan="3">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSU</span>
+            </td>
+            <td>MedicationStatement.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationStatement.dosage.maxDosePerPeriod.code</p>
+            </td>
+            <td rowspan="3"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationRequest.dosage.maxDosePerPeriod.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosage.maxDosePerPeriod</td>
+            <td>
+               <p>MedicationDispense.dosage.maxDosePerPeriod.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="3">CM Dose Form</th>
+            <td rowspan="3">
+               <span title="The pharmaceutical dosage form in which the CMTRT is physically presented.">CMDOSFRM</span>
+            </td>
+            <td rowspan="3">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRM</span>
+            </td>
+            <td>Medication.form</td>
+            <td>
+               <p>Medication[x].medicationReference.resolve().form</p>
+            </td>
+            <td rowspan="3"/>
+         </tr>
+         <tr>
+            <td>Medication.form</td>
+            <td>
+               <p>Medication[x].medicationReference.resolve().form</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Medication.form</td>
+            <td>
+               <p>Medication[x].medicationReference.resolve().form</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="3">CM Dosing Frequency per Interval</th>
+            <td rowspan="3">
+               <span title="The number of doses given/administered/taken during a specific interval">CMDOSFRQ</span>
+            </td>
+            <td rowspan="3">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRQ</span>
+            </td>
+            <td>MedicationStatement.dosage</td>
+            <td>
+               <p>MedicationStatement.dosage.timing.frequency</p>
+            </td>
+            <td rowspan="3"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.frequencey</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.frequency</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="5">CM Route of Administration</th>
+            <td rowspan="5">
+               <span title="The route of administration of the (concomitant) [medication/treatment/therapy].">CMROUTE</span>
+            </td>
+            <td rowspan="5">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMROUTE</span>
+            </td>
+            <td>MedicationStatement.dosage</td>
+            <td>
+               <p>MedicationStatement.dosage.route</p>
+            </td>
+            <td rowspan="5"/>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.route</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.route</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.dosage.route</td>
+            <td>
+               <p>MedicationAdministration.dosage.route</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.route</td>
+            <td>
+               <p>Immunization.route</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="6">Concomitant Meds Start Date</th>
+            <td rowspan="6">
+               <span title="Record the date the concomitant [medication/treatment] was first taken using this format (e.g., DD-MON-YYYY).  If the subject has been taking the concomitant [medication/treatment for a considerable amount of time prior to the start of the study, it is acceptable to have an incomplete date.  Concomitant [medication/treatment] taken during the study are expected to have a complete start date.  Prior concomitant [medication/treatment] that are exclusionary should have both a start and end date.">CMSTDTC</span>
+            </td>
+            <td rowspan="6">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="6">start includes both date and time, though time commonly won't be pecified</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod.start</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrence.occurrenceDateTime</td>
+            <td>
+               <p>Immunization.occurrence.occurrenceDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceString</td>
+            <td>
+               <p>Immunization.occurrence.orrurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="6">Concomitant Meds Start Time</th>
+            <td rowspan="6">
+               <span title="Record the time (as complete as possible) that the concomitant [medication/treatment] was started">CMSTDTC</span>
+            </td>
+            <td rowspan="6">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="6">start includes both date and time, though time commonly won't be pecified</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod.start</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosage.instruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrence.occurrenceDateTime</td>
+            <td>
+               <p>Immunization.occurrence.occurrenceDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceString</td>
+            <td>
+               <p>Immunization.occurrence.orrurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="5">Concomitant Meds End Date</th>
+            <td rowspan="5">
+               <span title="The date that the subject ended/stopped taking the concomitant/medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).">CMSTDTC</span>
+            </td>
+            <td rowspan="5">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CMSTDTC in ISO 8601 format.">CMSTDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="5">end includes both date and time, though time commonly won't be pecified</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod.end</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosage.instruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrence</td>
+            <td>
+               <p>Immunization.occurrence.occurrenceDateTime</p>
+               <p>Immunization.occurrence.orrurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="5">Concomitant Meds End Time</th>
+            <td rowspan="5">
+               <span title="Record the time (as complete as possible) that the concomitant [medication/treatment] was stopped.">CMENDTC</span>
+            </td>
+            <td rowspan="5">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.">CMENDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="5">end includes both date and time, though time commonly won't be pecified</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod.end</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrence</td>
+            <td>
+               <p>Immunization.occurrence.occurrenceDateTime</p>
+               <p>Immunization.occurrence.orrurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Prior Concomitant Medications</th>
+            <td>
+               <span title="Indication the concomitant medication/treatment/therapy was given or taken prior to [CMSTTPT] or prior to the date in DM.RFSTDTC.">CMPRIOR</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMSTRF; CMSTRTPT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Ongoing Concomitant Medications</th>
+            <td>
+               <span title="Indication the concomitant medication/treatment/therapy is ongoing when no end date is provided">CMONGO</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMENRF; CMENRTPT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="9">Standardized Medication Name</th>
+            <td rowspan="9">
+               <span title="The dictionary or sponsor defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.">CMDECOD</span>
+            </td>
+            <td rowspan="9">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDECOD</span>
+            </td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
+            </td>
+            <td rowspan="9">We would not expect to receive these from the site.</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.vaccineCode</td>
+            <td>
+               <p>Immunization.vaccineCode</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="9">CM Medication Class</th>
+            <td rowspan="9">
+               <span title="The class for the intervention, often obtained from a coding dictionary">CMCLAS</span>
+            </td>
+            <td rowspan="9">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLAS</span>
+            </td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
+            </td>
+            <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunizations.vaccineCode</td>
+            <td>
+               <p>Immunization.vaccineCode</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="9">CM Medication Class Code</th>
+            <td rowspan="9">
+               <span title="The assigned dictionary code for the class for the intervention">CMCLASCD</span>
+            </td>
+            <td rowspan="9">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLASCD</span>
+            </td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
+            </td>
+            <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
+            <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.vaccineCode</td>
+            <td>
+               <p>Immunization.vaccineCode</p>
+            </td>
+         </tr>
+         <tr>
+            <th>ATC Level 1 Description</th>
+            <td>
+               <span title="Dictionary text description of the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC1</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 1 Code</th>
+            <td>
+               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC1CD</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC1CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 2 Description</th>
+            <td>
+               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC2</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC2&#34; and SUPPCM.QLABEL=&#34;ATC Level 2 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 2 Code</th>
+            <td>
+               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC2CD</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC2CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 2 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 3 Description</th>
+            <td>
+               <span title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC3</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC3&#34; and SUPPCM.QLABEL=&#34;ATC Level 3 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 3 Code</th>
+            <td>
+               <span title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC3CD</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC3CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 3 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 4 Description</th>
+            <td>
+               <span title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC4</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC4&#34; and SUPPCM.QLABEL=&#34;ATC Level 4 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 4 Code</th>
+            <td>
+               <span title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC4CD</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC4CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 4 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 5 Description</th>
+            <td>
+               <span title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC5</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC5&#34; and SUPPCM.QLABEL=&#34;ATC Level 5 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>ATC Level 5 Code</th>
+            <td>
+               <span title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC5CD</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC5CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 5 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td/>
+         </tr>
+      </tbody>
+   </table>
+</div>

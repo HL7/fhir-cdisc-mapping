@@ -1,0 +1,661 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <p>
+        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+      </p>
+   <table class="grid"
+          style="width:150%;word-break:break-word;table-layout:fixed;">
+      <col style="width:15%"/>
+      <col style="width:7.5%"/>
+      <col style="width:7.5%"/>
+      <col style="width:15%;"/>
+      <col style="width:20%;"/>
+      <col style="width:35%;"/>
+      <thead style="background-color:PowderBlue;">
+         <tr>
+            <th colspan="3" style="text-align:center;">CDISC</th>
+            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+         </tr>
+         <tr style="text-align:center;">
+            <th style="text-align:center;">Name</th>
+            <th style="text-align:center;">CDASH</th>
+            <th style="text-align:center;">SDTM</th>
+            <th style="text-align:center;">Element</th>
+            <th style="text-align:center;">FHIRPath</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th>Study ID or Number</th>
+            <td>
+               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
+            </td>
+            <td>ResearchStudy.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
+               <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Study Site ID</th>
+            <td>
+               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+            </td>
+            <td>ResearchStudy.site</td>
+            <td>
+               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
+               <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Subject ID for the Study</th>
+            <td>
+               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;Sponsor's subject Identifier for the study.">SUBJID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>ResearchSubject.where(subject=Procedure.subject).identifier.value</p>
+            </td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.</td>
+         </tr>
+         <tr>
+            <th>Any Procedures Performed</th>
+            <td>
+               <span title="An indication whether or not the subject had any procedures performed">PRYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that this field is NOT SUBMITTED">(Y/N)</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.  It could be the answer to an Observation, but even then it would be qualified by type and time-range (procedure covers education, massage, cognitive therapy and various other data)</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Category</th>
+            <td>
+               <span title="A grouping of topic variable values based on user-defined characteristics.">PRCAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRCAT</span>
+            </td>
+            <td>Procedure.category</td>
+            <td>
+               <p>Procedure.category</p>
+            </td>
+            <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
+         </tr>
+         <tr>
+            <th>Procedure Subcategory</th>
+            <td>
+               <span title="A sub-division of the PRCAT values based on user-defined characteristics">PRSCAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRSCAT</span>
+            </td>
+            <td>Procedure.category</td>
+            <td>
+               <p>Procedure.category</p>
+            </td>
+            <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
+         </tr>
+         <tr>
+            <th>Procedure Sponsor Defined Identifier</th>
+            <td>
+               <span title="A sponsor-defined identifier in CDASH.  This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">PRSPID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRSPID</span>
+            </td>
+            <td>Procedure.identifier</td>
+            <td>
+               <p>Procedure.identifier</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Report name of Procedure</th>
+            <td>
+               <span title="The verbatim surgical therapeutic, or diagnostic procedure's name">PRTRT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRTRT</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code.coding.display; Procedure.code.text</p>
+            </td>
+            <td>The name as expressed by or displayed to the user goes in code.text.  The name associated with the selected code goes in code.coding.display.</td>
+         </tr>
+         <tr>
+            <th>Standardized Procedure Name</th>
+            <td>
+               <span title="The dictionary or sponsor defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.">PRDECOD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDECOD</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Define and review standardized coding schema with coding translations are conducted by the sponsor.<br/>Define and review standardized coding schema with coding translations are conducted by the sponsor.</td>
+         </tr>
+         <tr>
+            <th>Modified Procedure Name</th>
+            <td>
+               <span title="If the value for PRTERM is modified for coding purposes, the  modified text is placed here">PRMODIFY</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRMODIFY</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Coding translations are conducted by the sponsor.<br/>Coding translations are conducted by the sponsor.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Prespecified</th>
+            <td>
+               <span title="An indication that a specific intervention or a group of interventions is prespecified on a CRF">PRPRESP</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRPRESP</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.
+This could possibly be an extension on the Procedure/MedicationAdministration/MedicationStatement.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Occurrence</th>
+            <td>
+               <span title="An indication whether a prespecified procedure (PRTRT) happened when information about the occurrence of a specific intervention is solicited">PROCCUR</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  If the response was not asked or answered, populate the SDTMIG variable PRSTAT with &#34;NOT DONE&#34;">PROCCUR</span>
+            </td>
+            <td>Procedure.status</td>
+            <td>
+               <p>Procedure.status</p>
+            </td>
+            <td>
+Coding translations are left to the sponsor.<br/>
+Coding translations are left to the sponsor.</td>
+         </tr>
+         <tr>
+            <th rowspan="3">Procedure Reason for Occur Value</th>
+            <td rowspan="3">
+               <span title="An explanation of why a scheduled procedure did or did not occur">PRREASOC</span>
+            </td>
+            <td rowspan="3">
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRREASOC&#34; and SUPPPR.QLABEL = &#34;Reason for Occur Value&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable I SDTM domains.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.reasonCode</td>
+            <td>
+               <p>Procedure.reasonCode</p>
+            </td>
+            <td rowspan="3">Note that reasonReference would need to be turned into a code or string.  Reason[x] indicates reason for doing the procedure; statusReason when status=not-done would be reason for non-occurrence</td>
+         </tr>
+         <tr>
+            <td>Procedure.reasonReference</td>
+            <td>
+               <p>Procedure.reasonReference</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Procedure.statusReason</td>
+            <td>
+               <p>Procedure.statusReason</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Procedure Reason NOT Done</th>
+            <td>
+               <span title="An explanation of why the data are not available.">PRREASND</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRREASND</span>
+            </td>
+            <td>Procedure.statusReason</td>
+            <td>
+               <p>Procedure.statusReason.where(%resource.status = ('not-done', 'stopped'))</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Prior Procedure</th>
+            <td>
+               <span title="Indicate the procedure occurred prior to [PRSTTPT] or prior to the date in DM RFSTDTC">PRPRIOR</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is &#34;Y&#34; a value from the CDISC CT (STENRF) may be used.  ">PRSTRTPT; PRSTRF</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>This is not expect to receive from the site.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Start Date</th>
+            <td>
+               <span title="The date or start date of when the procedure started or was performed, represented in an unambiguous date format (e.g., DD-MON-YYYY)">PRSTDAT</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRSTDTC</span>
+            </td>
+            <td>Procedure.performed[x]</td>
+            <td>
+               <p>Procedure.performedDateTime</p>
+               <p>Procedure.performedPeriod.start</p>
+               <p>Procedure.performedRange.low</p>
+            </td>
+            <td>PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</td>
+         </tr>
+         <tr>
+            <th>Ongoing Procedure</th>
+            <td>
+               <span title="Indication the procedure is ongoing when no end date is provided">PRONGO</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTM variable.  May be used to populate a value into an SDTMIG relative timing variable such as PRENRF or PRENRTPT.  When populating PRENRF, if the value of PRONGO is &#34;Y&#34;, the value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating PRENRTPT, if the value of PRONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When PRONGO refers to the Study Reference Period (defined in DM.RFSTDTC to DM.RFENDTC) the SDTM variable PRENRF should be populated.  When PRONGO is used in conjunction with another time point, the SDTM variable PRENRRPT and PRENTPT should be used">PRENRTPT; PRENRF</span>
+            </td>
+            <td>Procedure.status</td>
+            <td>
+               <p>Procedure.status</p>
+            </td>
+            <td>This supports the necessity of separating procedures and medication.<br/>This supports the necessity of separating procedures and medication.</td>
+         </tr>
+         <tr>
+            <th>Procedure End Date</th>
+            <td>
+               <span title="The end date of the procedure, represented in an unambiguous date format (e.g., DD-MON-YYYY)">PRENDAT</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRENDTC</span>
+            </td>
+            <td>Procedure.performed[x]</td>
+            <td>
+               <p>Procedure.performedDateTime, Procedure.performedPeriod.start</p>
+               <p>Procedure.performedRange.high</p>
+            </td>
+            <td>PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</td>
+         </tr>
+         <tr>
+            <th>Procedure Indication</th>
+            <td>
+               <span title="The condition, disease symptom, or disorder that the procedure was used to address or investigate (e.g., why the therapy was taken or administered, why the procedure was performed).">PRINDC</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRINDC</span>
+            </td>
+            <td>Procedure.reasonCode, reasonReference</td>
+            <td>
+               <p>Procedure.reasonCode,</p>
+               <p>Procedure.reasonReference</p>
+            </td>
+            <td>Note that reasonReference would need to be turned into a code or string. </td>
+         </tr>
+         <tr>
+            <th>Related AdverseEvent ID</th>
+            <td>
+               <span title="Identifier for the AdverseEvent that is the indication for this procedure">PRAENO</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format"/>
+            </td>
+            <td>AdverseEvent.identifier</td>
+            <td>
+               <p>Procedure.reasonReference.resolve().where(type='AdverseEvent').identifier</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Related Medical History Event ID</th>
+            <td>
+               <span title="Identifier for the medical history event that is the indication for this procedure.">PRMHNO</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For SDTM submission datasets, may be used to create RELREC to link this record with a record in the eMedical History domain."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Dose Description</th>
+            <td>
+               <span title="The dose/amount administered during the procedure.">PRDOSTXT</span>
+            </td>
+            <td/>
+            <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Dose Unit</th>
+            <td>
+               <span title="The unit for intended dose/amount for PRDOSE, PRDOSTOT, or PRDOSTXT">PRDOSU</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDOSU</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Frequency per Interval</th>
+            <td>
+               <span title="The number/amount of the procedure that was given/administered taken during a specific interval">PRDOSFRQ</span>
+            </td>
+            <td/>
+            <td>Procedure.occurrenceTiming</td>
+            <td>
+               <p>Procedure.occurrenceTiming.repeat.frequency</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Route of Administration</th>
+            <td>
+               <span title="The route of administration of the procedure.">PRROUTE</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRROUTE</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This is a known gap. Procedure Dose interval does NOT exist for 'Procedure'. </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Location of Procedure</th>
+            <td>
+               <span title="A description of the anatomical location of an procedures, such as location of a biopsy.">PRLOC</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRLOC</span>
+            </td>
+            <td>Procedure.bodySite</td>
+            <td>
+               <p>Procedure.bodySite</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Laterality</th>
+            <td>
+               <span title="Qualifier for anatomical location further detailing side of the body for the procedure administration">PRLAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRLAT</span>
+            </td>
+            <td>BodyStructure.locationQualifier</td>
+            <td>
+               <p>Procedure.extension(procedure-targetBodyStructure).valueReference.resolve().locationQualifier</p>
+            </td>
+            <td>This is frequently pre-coordinated into Procedure.bodySite.  Multiple qualifiers are possible.  Laterality will need to be recognized by code and/or system</td>
+         </tr>
+         <tr>
+            <th>Procedure Directionality</th>
+            <td>
+               <span title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ or specimen">PRDIR</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDIR</span>
+            </td>
+            <td>BodyStructure.locationQualifier</td>
+            <td>
+               <p>Procedure.extension(procedure-targetBodyStructure).valueReference.resolve().locationQualifier</p>
+            </td>
+            <td>This is frequently pre-coordinated into Procedure.bodySite.  Multiple qualifiers are possible.  Directionality will need to be recognized by code and/or system</td>
+         </tr>
+         <tr>
+            <th>Procedure Portion or Totality</th>
+            <td>
+               <span title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of ).">PRPORTOT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRPORTOT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Typically this would be pre-coordinated into Procedure.code and would be captured in dosage instructions text for medications.  If captured as a separate element, if would need to be an extension.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Fasting Status</th>
+            <td>
+               <span title="An indication that the subject has abstained from food/water for the specified amount of time.">PRFAST</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRFAST</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Could propose as standard extension.  Probably not relevant for MedicationStatement</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Intended Dose Regimen</th>
+            <td>
+               <span title="The text description of the (intended) schedule or regimen for the procedure.">PRDOSRGM</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDOSRGM</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">An administration could be based on more than one thing (recommendation, plan, order) and in theory the intended dose would be different for each.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Adjusted</th>
+            <td>
+               <span title="An indication whether or not the procedure dose/amount was adjusted.">PRDOSADJ</span>
+            </td>
+            <td>
+               <span title="When PRDOSADJ is collected, does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED&gt;  When PRADJ is to collected, the sponsor may suit this variable as a SUPPQ."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Would appear on Procedure/MedicationAdministration/MedicationStatement.basedOn.
+Might consider proposing it as a standard extension.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Reason for Procedure Adjustment</th>
+            <td>
+               <span title="Description of explanation of why a procedure dose/amount was adjusted.">PRADJ</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRADJ</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Would appear on Procedure/MedicationAdministration/MedicationStatement.basedOn.
+Might consider proposing it as a standard extension.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Completed Procedure</th>
+            <td>
+               <span title="Indication whether the subject completed the intended regimen.">PRTRTCMP</span>
+            </td>
+            <td>
+               <span title="This does not map, directly to an SDTMIG variable.  This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRTRTCMP&#34; and SUPPPR.QLABEL = &#34;Treatment Completed&#34;. ">SUPPPR.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Not all potential mapping/FHIR resources/attributes will be addressed in this implementation guide.  All data requires review and analysis to ensure the data is relevant and understood.
+</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Interrupted</th>
+            <td>
+               <span title="An indication whether the procedure was interrupted">PRITRPYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM a CRF is annotated to indicate that this field is NOT SUBMITTED."/>
+            </td>
+            <td>Procedure.status</td>
+            <td>
+               <p>Procedure.status</p>
+            </td>
+            <td>If something is currently interrupted, the status would either be on-hold or stopped.  If there was a temporary interruption and the procedure has since resumed or completed, the only way to detect the interruption would be an extension or to review the history.</td>
+         </tr>
+         <tr>
+            <th>Reason Procedure Interrupted</th>
+            <td>
+               <span title="An indication of why the intervention was interrupted">PRITRPRS</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRITRPRS&#34; and SUPPPR.QLABEL = &#34;Reason intervention Interrupted&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.statusReason</td>
+            <td>
+               <p>Procedure.statusReason</p>
+            </td>
+            <td>If the status is on-hold or stopped, statusReason would convey the reason.  If there was a temporary interruption and the procedure has since resumed or completed, the only way to detect the interruption would be an extension or to review the history.</td>
+         </tr>
+         <tr>
+            <th>Procedure Interruption Duration</th>
+            <td>
+               <span title="The collected duration of the procedure interruption">PRCINTD</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRCINTD&#34; and SUPPPR.QLABEL = &#34;Intervention Duration&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would have to be an extension.  Typically, you'd just look at history to see when something was suspended, then resumed.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Interruption Duration Units</th>
+            <td>
+               <span title="The unit for the collected duration of the procedure interruption">PRCINTDU</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPPR dataset as the value of SPPPR.QVAL where SUPPPR.QNAM = &#34;PRITRPD&#34; and SUPPPR.QLABEL = &#34;Interruption Duration&#34;.  Concatenate the collected procedure interruption duration and the duration unit components and create PRITRPD using ISO 8601.">SUPPPR.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would have to be part of the previous extension.  Typically, reviewing the history of the procedure will indicate if it was suspended and then resumed.  </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Procedure Lowest Level Term</th>
+            <td>
+               <span title="MedDRA text description of the lowest level term.">PRLLT</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRLLT&#34; and SUPPPR.QLABEL = &#34;Lower Level Term&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>Procedure Lowest Level Term Code</th>
+            <td>
+               <span title="MedDRA lowest level Term code.">PRLLTCD</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRLLTCD&#34; and SUPPPR.QLABEL = &#34;Lower Level Term Code&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>Procedure Preferred Term Code</th>
+            <td>
+               <span title="MedDRA code for the Preferred Term">PRPTCD</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRPTCD&#34; and SUPPPR.QLABEL = &#34;Preferred Term Code Lower Level Term Code&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>Procedure High Level Term</th>
+            <td>
+               <span title="MedDRA text description of High Level Term from the primary path.">PRHLT</span>
+            </td>
+            <td>
+               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRHLT&#34; and SUPPPR.QLABEL = &#34;High Level Term&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>Procedure High Level Term Code</th>
+            <td>
+               <span title="MedDRA high Level Term code from the primary path.">PRHLTCD</span>
+            </td>
+            <td>
+               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>Procedure High Level Group Term</th>
+            <td>
+               <span title="MedDRA text description of the High Level Group Term from the primary path.">PRHLGT</span>
+            </td>
+            <td>
+               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</td>
+         </tr>
+         <tr>
+            <th>Procedure High Level Group Term Code</th>
+            <td>
+               <span title="MedDRA high Level Term code from the primary path.">PRHLGTCD</span>
+            </td>
+            <td>
+               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+         <tr>
+            <th>PR Primary System Organ Class</th>
+            <td>
+               <span title="MedDRA Primary System Organ Class description associated with the intervention">PRSOC</span>
+            </td>
+            <td>
+               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</td>
+         </tr>
+         <tr>
+            <th>PR primary System Organ Class Code</th>
+            <td>
+               <span title="MedDRA Primary System Organ Class code.">PRSOCCD</span>
+            </td>
+            <td>
+               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+            </td>
+            <td>Procedure.code</td>
+            <td>
+               <p>Procedure.code</p>
+            </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

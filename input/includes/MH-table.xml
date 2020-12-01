@@ -1,0 +1,845 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <p>
+        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+      </p>
+   <table class="grid"
+          style="width:150%;word-break:break-word;table-layout:fixed;">
+      <col style="width:15%"/>
+      <col style="width:7.5%"/>
+      <col style="width:7.5%"/>
+      <col style="width:15%;"/>
+      <col style="width:20%;"/>
+      <col style="width:35%;"/>
+      <thead style="background-color:PowderBlue;">
+         <tr>
+            <th colspan="3" style="text-align:center;">CDISC</th>
+            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+         </tr>
+         <tr style="text-align:center;">
+            <th style="text-align:center;">Name</th>
+            <th style="text-align:center;">CDASH</th>
+            <th style="text-align:center;">SDTM</th>
+            <th style="text-align:center;">Element</th>
+            <th style="text-align:center;">FHIRPath</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th>Study ID or Number</th>
+            <td>
+               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
+            </td>
+            <td>ResearchStudy.identifier</td>
+            <td>
+               <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
+               <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Study Site ID</th>
+            <td>
+               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+            </td>
+            <td>ResearchStudy.site</td>
+            <td>
+               <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value</p>
+               <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Subject ID for the Study</th>
+            <td>
+               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;Sponsor's subject Identifier for the study.">SUBJID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject)).identifer.value</p>
+            </td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.</td>
+         </tr>
+         <tr>
+            <th>Any Medical History Event</th>
+            <td>
+               <span title="Any Medical History Event&#xA;&#xA;Any Medical History Event">MHYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED"/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">If captured, this would be a Questionnaire question.  FHIR almost always has some type of history information.  Will require review to determine if the history is relevant.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="4">Category for Medical History</th>
+            <td rowspan="4">
+               <span title="Category for Medical History&#xA;&#xA;Category for Medical History">MHCAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHCAT</span>
+            </td>
+            <td>Condition.category</td>
+            <td>
+               <p>Condition.category</p>
+            </td>
+            <td rowspan="4">The sponsors does not typically require this information from the sites.<br/>The sponsors does not typically require this information from the sites.</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.category</td>
+            <td>
+               <p>AdverseEvent.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.category</td>
+            <td>
+               <p>AllergyIntolerance.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.category</td>
+            <td>
+               <p>Observation.category</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Subcategory for Medical History</th>
+            <td rowspan="4">
+               <span title="Subcategory for Medical History&#xA;&#xA;Subcategory for Medical History">MHSCAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHSCAT</span>
+            </td>
+            <td>Condition.category</td>
+            <td>
+               <p>Condition.category</p>
+            </td>
+            <td rowspan="4">The sponsors does not typically require this information from the sites.<br/>The sponsors does not typically require this information from the sites.</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.category</td>
+            <td>
+               <p>AdverseEvent.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.category</td>
+            <td>
+               <p>AllergyIntolerance.category</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.category</td>
+            <td>
+               <p>Observation.category</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Medical History Collection Date</th>
+            <td rowspan="4">
+               <span title="Medical History Collection Date&#xA;&#xA;Medical History Collection Date">MHDAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format">MHDAT</span>
+            </td>
+            <td>Condition.recordedDate</td>
+            <td>
+               <p>Condition.recordedDate</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.recordedDate</td>
+            <td>
+               <p>AdverseEvent.recordedDate</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.recordedDate</td>
+            <td>
+               <p>AllergyIntolerance.recordedDate</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effectiveDteTime</td>
+            <td>
+               <p>Observaton.effectiveDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Sponsor Defined Identifier</th>
+            <td rowspan="4">
+               <span title="MH Sponsor Defined Identifier&#xA;&#xA;MH Sponsor Defined Identifier">MHSPID</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). May be used to create RELREC to link this record with a record in another domain.">MHSPID</span>
+            </td>
+            <td>Condition.identifier</td>
+            <td>
+               <p>Condition.identifier</p>
+            </td>
+            <td rowspan="4">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.identifier</td>
+            <td>
+               <p>AdverseEvent.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.identifier</td>
+            <td>
+               <p>AlergyIntolerance.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.identifier</td>
+            <td>
+               <p>Observation.identifier</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="9">Medical History Event Date Type</th>
+            <td rowspan="9">
+               <span title="Medical History Event Date Type&#xA;&#xA;Medical History Event Date Type">MHEVDTYP</span>
+            </td>
+            <td rowspan="9">
+               <span title="This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = &#34;MHEVDTYP&#34; and SUPPMH.QLABEL = &#34;Medical History Event Date Type&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPMH.QVAL</span>
+            </td>
+            <td>Condition.onset</td>
+            <td>
+               <p>Condition.onset</p>
+            </td>
+            <td rowspan="9"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.date</td>
+            <td>
+               <p>AdverseEvent.date</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.onset.onsetDateTime</td>
+            <td>
+               <p>AllergyIntolerance.onset.onsetDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.onset.onsetRange</td>
+            <td>
+               <p>AllergyIntolerance.onset.onsetRange</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.onset.onsetString</td>
+            <td>
+               <p>AllergyIntolerance.onset.onsetString</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effectiveDateTime</td>
+            <td>
+               <p>Observation.effective.effectiveDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effectivePeriod</td>
+            <td>
+               <p>Observation.effective.effectivePeriod</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effectiveTiming</td>
+            <td>
+               <p>Observation.effective.effectiveTiming</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effectiveInstant</td>
+            <td>
+               <p>Observaton.effective.effectiveInstant</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Reported Term for Medical History</th>
+            <td rowspan="4">
+               <span title="Reported Term for Medical History&#xA;&#xA;Reported Term for Medical History">MHTERM</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHTERM</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.event</td>
+            <td>
+               <p>AdverseEvent.event</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.Code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="3">Medical History Occurrence</th>
+            <td rowspan="3">
+               <span title="Medical History Occurrence&#xA;&#xA;Medical History Occurrence">MHOCCUR</span>
+            </td>
+            <td rowspan="3">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHOCCUR</span>
+            </td>
+            <td>Condition.verificationStatus</td>
+            <td>
+               <p>Condition.verificationStatus != 'refuted, entered-in-error</p>
+            </td>
+            <td rowspan="3">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around "has the patient had X", that would be accomplished through a Questionnaire.Response</td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.verificationStatus</td>
+            <td>
+               <p>AllergyIntolerance.verificationStatus!=unconfirmed, confirmed, refuted, entered-in-error</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effective.effectiveDateTime</td>
+            <td>
+               <p>Observation.effective.effectiveDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Medical History Event Prespecified</th>
+            <td>
+               <span title="Medical History Event prespecified&#xA;&#xA;Medical History Event prespecified">MHPRESP</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHPRESP</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Not expect to receive these from the site.  How this is populated in the sponsor's database would be up to the sponsor. If available, this would need to be an extension.  The notion of pre-specified is part of the questionnaire</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Prior Medical History Event</th>
+            <td>
+               <span title="Prior Medical History Event&#xA;&#xA;Prior Medical History Event">MHPRIOR</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHSTRF or MHSTRTPT.  When populating MHSTRF, or MHSTRTPT if the value of the CDASH field MHPRIOR is &#34;Y&#34; a value from the CDISC CT (STENRF) may be used.  When MHPRIOR refers to the Study Reference Period (defined in DM.RFSTDTC to DM.RFENDTC) the SDTMIG variable MHSTRF should be populated.  When MHPRIOR is compared to another time point, the SDTMIG variables MHSTRTPT and MHSTTPT should be used.  ">MHSTRTPT; MHSTRF</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This can be determined from either the onsetDateTime and/or the abatementDateTime.  If it were to be flagged on the record, it would need to be an extension on the extension that links to the study.<br/>This can be determined from either the onsetDateTime and/or the abatementDateTime.  If it were to be flagged on the record, it would need to be an extension on the extension that links to the study.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="2">Ongoing Medical History Event</th>
+            <td rowspan="2">
+               <span title="Ongoing Medical History Event&#xA;&#xA;Ongoing Medical History Event">MHONGO</span>
+            </td>
+            <td rowspan="2">
+               <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHENRF or MHENRTPT.  When populating MHENRF, if the value of the   MHONGO  is &#34;Y&#34; a value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating MHENRTPT, if the value of MHONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When MHONGO refers to the Study Reference Period (defined in DM&gt;RFSTDTC to DM&gt;RFENDTC) the SDTMIG variable MHENRF should be populated.">MHENRF; MHENRTPT</span>
+            </td>
+            <td>Condition.clinicalStatus</td>
+            <td>
+               <p>Condition.clinicalStatus</p>
+            </td>
+            <td rowspan="2"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Medical History Event Start Date</th>
+            <td rowspan="4">
+               <span title="Medical History Event Start Date&#xA;&#xA;Medical History Event Start Date">MHSTDAT</span>
+            </td>
+            <td rowspan="4">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable MHSTDTC in ISO 8601 format.">MHSTDTC</span>
+            </td>
+            <td>Condition.onsetDateTime</td>
+            <td>
+               <p>Condition.onset.onsetDateTime</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.date</td>
+            <td>
+               <p>AdverseEvent.date</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.onsetDateTime</td>
+            <td>
+               <p>AllergyIntolerance.onsetDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.effective.effectiveDateTime</td>
+            <td>
+               <p>Observation.effectiveDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Medical History Event End Date</th>
+            <td>
+               <span title="Medical History Event End Date&#xA;&#xA;Medical History Event End Date">MHENDAT</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable MHENDTC in ISO 8601 format.">MHENDTC</span>
+            </td>
+            <td>Condition.abatement.abatementDateTime</td>
+            <td>
+               <p>Condition.abatement.abatementDateTime</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="4">Medical History Event Location</th>
+            <td rowspan="4">
+               <span title="Medical History Event Location&#xA;&#xA;Medical History Event Location">MHLOC</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHLOC</span>
+            </td>
+            <td>Condition.bodySite</td>
+            <td>
+               <p>Condition.bodysite</p>
+            </td>
+            <td rowspan="4"/>
+         </tr>
+         <tr>
+            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.bodySite</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.bodySite</td>
+            <td>
+               <p>Observation.bodySite</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.specimen.bodySite</td>
+            <td>
+               <p>Observation.specimen.bodySite</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Medical History Event Laterality</th>
+            <td>
+               <span title="Medical History Event Laterality&#xA;&#xA;Medical History Event Laterality">MHLAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHLAT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Medical History Directionality</th>
+            <td>
+               <span title="Medical History Directionality&#xA;&#xA;Medical History Directionality">MHDIR</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHDIR</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>MH Event Location Portion or Totality</th>
+            <td>
+               <span title="MH Event Location Portion or Totality&#xA;&#xA;MH Event Location Portion or Totality">MHPORTOT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHPORTOT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">This would likely be an extension on Condition</td>
+            <td/>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Modified Reported Term</th>
+            <td rowspan="4">
+               <span title="MH Modified Reported Term&#xA;&#xA;MH Modified Reported Term">MHMODIFY</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHMODIFY</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Dictionary-Derived Term</th>
+            <td rowspan="4">
+               <span title="MH Dictionary-Derived Term&#xA;&#xA;MH Dictionary-Derived Term">MHDECOD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHDECOD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Medical History Event Lowest Level Term</th>
+            <td rowspan="4">
+               <span title="Medical History Event Lowest Level Term&#xA;&#xA;Medical History Event Lowest Level Term">MHLLT</span>
+            </td>
+            <td rowspan="4">
+               <span title="&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHLLT</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event Lowest Level Term Code</th>
+            <td rowspan="4">
+               <span title="MH Event Lowest Level Term Code&#xA;&#xA;MH Event Lowest Level Term Code">MHLLTCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHLLTCD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event Preferred Term Code</th>
+            <td rowspan="4">
+               <span title="MH Event Preferred Term Code&#xA;&#xA;MH Event Preferred Term Code">MHPTCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHPTCD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">Medical History  High Level Term</th>
+            <td rowspan="4">
+               <span title="Medical History  High Level Term&#xA;&#xA;Medical History  High Level Term">MHHLT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHHLT</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event High Level Term Code</th>
+            <td rowspan="4">
+               <span title="MedDRA High Level Term code from the primary path&#xA;&#xA;MedDRA High Level Term code from the primary path">MHHLTCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding">MHHLTCD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event High Level Group Term</th>
+            <td rowspan="4">
+               <span>MHHLGT</span>
+            </td>
+            <td rowspan="4">
+               <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding">MHHLGT</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event High Level Group Term Code</th>
+            <td rowspan="4">
+               <span title="MedDRA High Level Group Term code from the primary path.&#xA;">MHHLGTCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding">MHHLGTCD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event Primary System Organ Class</th>
+            <td rowspan="4">
+               <span title="MedDRA primary System Organ Class description associated with the event&#xA;&#xA;MedDRA primary System Organ Class description associated with the event">MHSOCCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding">MHSCOC</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="4">MH Event Primary System Organ Class Code</th>
+            <td rowspan="4">
+               <span title="MedDRA code for the primary System Organ Class.&#xA;&#xA;MedDRA code for the primary System Organ Class.">MHSOCCD</span>
+            </td>
+            <td rowspan="4">
+               <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding">MHSOCCD</span>
+            </td>
+            <td>Condition.code</td>
+            <td>
+               <p>Condition.code</p>
+            </td>
+            <td rowspan="4">Condition.code can have numerous coding all with varying levels of granularity.  The type of granularity is conveyed either by the code system or knowledge of the code</td>
+         </tr>
+         <tr>
+            <td>AdverseEvent.code</td>
+            <td>
+               <p>AdverseEvent.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>AllergyIntolerance.code</td>
+            <td>
+               <p>AllergyIntolerance.code</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code</p>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

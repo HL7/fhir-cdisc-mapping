@@ -1,0 +1,768 @@
+<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <p>
+        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+      </p>
+   <table class="grid"
+          style="width:150%;word-break:break-word;table-layout:fixed;">
+      <col style="width:15%"/>
+      <col style="width:7.5%"/>
+      <col style="width:7.5%"/>
+      <col style="width:15%;"/>
+      <col style="width:20%;"/>
+      <col style="width:35%;"/>
+      <thead style="background-color:PowderBlue;">
+         <tr>
+            <th colspan="3" style="text-align:center;">CDISC</th>
+            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+         </tr>
+         <tr style="text-align:center;">
+            <th style="text-align:center;">Name</th>
+            <th style="text-align:center;">CDASH</th>
+            <th style="text-align:center;">SDTM</th>
+            <th style="text-align:center;">Element</th>
+            <th style="text-align:center;">FHIRPath</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <th>Study ID or Number</th>
+            <td>
+               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">STUDYID</span>
+            </td>
+            <td>AdverseEvent.researchSubject</td>
+            <td>
+               <p>AdverseEvent.study.resolve().partOf.resolve().identifier.value</p>
+               <p>ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Study Site ID</th>
+            <td>
+               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+            </td>
+            <td>ResearchStudy.site</td>
+            <td>
+               <p>AdverseEvent.study.resolve().identifier.value</p>
+               <p>ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier.value</p>
+            </td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+         </tr>
+         <tr>
+            <th>Subject ID for the Study</th>
+            <td>
+               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;Sponsor's subject Identifier for the study.">SUBJID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+            </td>
+            <td>ResearchSubject.identifier</td>
+            <td>
+               <p>ResearchSubject.where(individual=AdverseEvent.subject).identifier.value</p>
+            </td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.</td>
+         </tr>
+         <tr>
+            <th>Any AdverseEvent</th>
+            <td>
+               <span title="Any AdverseEvent&#xA;&#xA;Any AdverseEvent">AEYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that the field is NOT SUBMITTED."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">In FHIR, this would be determined by searching for AdverseEvents with a given subject (possibly also filtered by research study) and excluding those that were entered in error.  If a flag were necessary, it would be an extension on Study, not sent on AdverseEvent.  It might also be necessary to search for Condition instances, Observation instances, Encounters with particular reasons and other resources if the desire is to have the full set of potential adverse reactions.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Category for AdverseEvent</th>
+            <td>
+               <span title="Category for AdverseEvent&#xA;&#xA;Category for AdverseEvent">AECAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">AECAT</span>
+            </td>
+            <td>AdverseEvent.category</td>
+            <td>
+               <p>AdverseEvent.category</p>
+            </td>
+            <td>This is typically sponsor-specific and we would not expect this to come from the site.<br/>This is typically sponsor-specific and we would not expect this to come from the site.</td>
+         </tr>
+         <tr>
+            <th>Subcategory for AdverseEvent</th>
+            <td>
+               <span title="Subcategory for AdverseEvent&#xA;&#xA;Subcategory for AdverseEvent">AESCAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCAT</span>
+            </td>
+            <td>AdverseEvent.category</td>
+            <td>
+               <p>AdverseEvent.category</p>
+            </td>
+            <td>This is typically sponsor-specific and we would not expect this to come from the site.<br/>This is typically sponsor-specific and we would not expect this to come from the site.</td>
+         </tr>
+         <tr>
+            <th>A sponsor defined identifier</th>
+            <td>
+               <span title="AE Sponsor-defined Identifier&#xA;&#xA;AE Sponsor-defined Identifier">AESPID</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">AESPID</span>
+            </td>
+            <td>AdvserseEvent.identifier</td>
+            <td>
+               <p>AdverseEvent.identifier.where(assigner=sponsor).value</p>
+               <p>AdverseEvent.refID</p>
+            </td>
+            <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.</td>
+         </tr>
+         <tr>
+            <th>Reported Term for the Adverse Event</th>
+            <td>
+               <span title="Reported Term for the Adverse Event.&#xA;&#xA;Reported Term for the Adverse Event.">AETERM</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AETERM</span>
+            </td>
+            <td>AdverseEvent.resourceCondition.Condition</td>
+            <td>
+               <p>AdverseEvent.resourceCondition.Condition</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AdverseEvent Occurrence</th>
+            <td>
+               <span title="AdverseEvent Occurrence&#xA;&#xA;AdverseEvent Occurrence">AEOCCUR</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable.  Because the SDTM AE domain is intended to hold only AdverseEvents that actually happen, all values collected in AEOCCUR for prespecified AEs should be submitted in a Findings About AdverseEvents data set (FAAE) where FAORRES=the value of AEOCCUR where FATESTCD=&#34;OCCUR&#34; in addition, where AEOCCUR=Y, there should be a corresponding record in the AE domain.">FAORRES</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">FHIR only captures AdverseEvents that have actually occurred.  A flag about whether a particular potential adverse reaction has been detected or not could be captured using Questionnaire Response</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Prespecified AdverseEvent</th>
+            <td>
+               <span title="An indication that a specific event, or group of events, are prespecified on a CRF.">AEPRESP</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEPRESP</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">If captured within an EHR, this would be an extension on the existing extension that references the ResearchStudy.  (An AdverseEvent might be pre-specified for one study and not for another.)</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Adverse Event Start Date</th>
+            <td>
+               <span title="The start date of the adverse event, represented in a unambiguous date format (i.e. DD-MON-YYYY)">AESTDAT</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.">AESTDTC</span>
+            </td>
+            <td>AdverseEvent.date</td>
+            <td>
+               <p>AdverseEvent.date (date portion)</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Adverse Event Start Time</th>
+            <td>
+               <span title="The start time of the adverse event, represented in a unambiguous time format (i.e. hh:mm:ss)">AESTTIM</span>
+            </td>
+            <td>
+               <span title="This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.">AESTDTC</span>
+            </td>
+            <td>AdverseEvent.date</td>
+            <td>
+               <p>AdverseEvent.date (time portion)</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Location of Event</th>
+            <td>
+               <span title="AE Location of Event&#xA;&#xA;AE Location of Event">AELOC</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AELOC</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.bodySite</p>
+            </td>
+            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+         </tr>
+         <tr>
+            <th>Adverse Event Laterality</th>
+            <td>
+               <span title="Qualifier for anatomical location further detailing the side of the body relevant for the event.&#xA;&#xA;Qualifier for anatomical location further detailing the side of the body relevant for the event.">AELAT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AELAT</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.bodySite</p>
+            </td>
+            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+         </tr>
+         <tr>
+            <th>Adverse Event Directionality</th>
+            <td>
+               <span title="Qualifier for further detailing the position of the anatomical location relative to the center of the body, organ or specimen.&#xA;&#xA;Qualifier for further detailing the position of the anatomical location relative to the center of the body, organ or specimen.">AEDIR</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEDIR</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.bodySite</p>
+            </td>
+            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+         </tr>
+         <tr>
+            <th>AE Location Portion or Totality</th>
+            <td>
+               <span title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of apportioning of)&#xA;&#xA;Qualifier for anatomical location further detailing the distribution (i.e., arrangement of apportioning of)">AEPORTOT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEPORTOT</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.bodySite</p>
+            </td>
+            <td>Review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+         </tr>
+         <tr>
+            <th>Ongoing AdverseEvent</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AEONGO</span>
+            </td>
+            <td>
+               <span>AEENRTPT; AEENRF</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Adverse Event End Date</th>
+            <td>
+               <span title="The date when the adverse event resolved/ended, represented in an unambiguous date format (e.g. DD-MON-YYYY)">AEENDAT</span>
+            </td>
+            <td>
+               <span>AEENDTC</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.occurrence).valuePeriod.end</p>
+            </td>
+            <td>Need to use a standard extension to pre-adopt the type allowed in R5.  Element contains both date and time (if specified).</td>
+         </tr>
+         <tr>
+            <th>Adverse Event End Time</th>
+            <td>
+               <span title="The time when the adverse event ended/resolved, represented in an unambiguous time format (e.g. hh:mm:ss)">AEENTIM</span>
+            </td>
+            <td>
+               <span>AEENDTC</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.occurrence).valuePeriod.end</p>
+            </td>
+            <td>Need to use a standard extension to pre-adopt the type allowed in R5.  Element contains both date and time (if specified).</td>
+         </tr>
+         <tr>
+            <th>Adverse Event Severity Intensity</th>
+            <td>
+               <span title="The severity of intensity of the event.">AESEV</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESEV</span>
+            </td>
+            <td>AdverseEvent.severity</td>
+            <td>
+               <p>AdverseEvent.severity</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Standard Toxicity Grade</th>
+            <td>
+               <span title="The grade of the severity of the event using a standard &#34;toxicity&#34; scale (e.g. NCI CTCAE)">AETOXGR</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the toxicity scale name and version used to map the terms utilizing the Define-XML external code list attributes.">AETOXGR</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Recommendation is to add extension for oncology or other studies requiring toxicity grades.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Serious Event</th>
+            <td>
+               <span title="Y/N&#xA;An indication whether or not the adverse event is determined to be 'serious&#34; based on what is defined in the protocol.&#xA;&#xA;Y/N&#xA;An indication whether or not the adverse event is determined to be 'serious&#34; based on what is defined in the protocol.">AESER</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESER</span>
+            </td>
+            <td>AdverseEvent.seriousness</td>
+            <td>
+               <p>AdverseEvent.seriousness</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Results in Death</th>
+            <td>
+               <span title="Y/N&#xA;Record whether the serious adverse event resulted in death">AESDTH</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESDTH</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome=fatal</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Death Date</th>
+            <td>
+               <span title="Record the date of death">DTHDAT</span>
+            </td>
+            <td>
+               <span title="This field does not map directly to an SDTMIG variable.  For the SDTM dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTM variable DTHDTC in ISO 8601 format.">DM.DTHDTC</span>
+            </td>
+            <td>Patient.deceasedDateTime</td>
+            <td>
+               <p>Patient.deceasedDateTime</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Is Life Threatening</th>
+            <td>
+               <span title="Y?N&#xA;&#xA;Y?N">AESLIFE</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESLIFE</span>
+            </td>
+            <td>AdverseEvent.seriousness</td>
+            <td>
+               <p>AdverseEvent.seriousness</p>
+            </td>
+            <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
+         </tr>
+         <tr>
+            <th>Requires or Prolongs Hospitalization</th>
+            <td>
+               <span title="An indication the serious AdverseEvent resulted in an initial or prolonged hospitalization.">AESHOSP</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESHOP</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Note: there is Encounter.hospitalization.[x], but its relevance to AESHOSP may not be explicit and would require additional analysis.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Persist or Signify Disability Incapacity</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AESDISAB</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESDISAB</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
+         </tr>
+         <tr>
+            <th>Congenital Anomaly or Birth Defect</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AESCONG</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCONG</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
+         </tr>
+         <tr>
+            <th>Needs Intervention to Prevent Impairment</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AESINTV</span>
+            </td>
+            <td>
+               <span title="If the details regarding Serious As are collected I the clinical database, then it is recommended that a separate Yes/No variable be defined for each Serious AE type.  ">SUPPAE.QVAL</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
+         </tr>
+         <tr>
+            <th>Other Medically Important Serious Event</th>
+            <td>
+               <span title="An indication additional categories for seriousness apply.">AESMIE</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESMIE</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>Additional outcomes or seriousness codes would be specified</td>
+         </tr>
+         <tr>
+            <th>Involves Cancer</th>
+            <td>
+               <span title="An indication the serious event was associated with the development of cancer.">AESCAN</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCAN</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>Additional outcomes or seriousness codes would be specified</td>
+         </tr>
+         <tr>
+            <th>Occurred with Overdose</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AESOD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESOD</span>
+            </td>
+            <td>AdverseEvent.causality.productRelatedness</td>
+            <td>
+               <p>AdverseEvent.causality.productRelatedness</p>
+            </td>
+            <td>Product Relatedness implies that the product is involved in the AE, but it doesn't indicate overdose.   After looking through other fields, it does not look like there is a field that would cover this situation.   In studies, OD  would be a reason why the AE was marked as an SAE.</td>
+         </tr>
+         <tr>
+            <th>AE Causality</th>
+            <td>
+               <span title="An indication the study treatment had a causal effect on the adverse event, as determined by the clinical/investigator">AEREL</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEREL</span>
+            </td>
+            <td>AdverseEvent.suspectEntity.causality.productRelatedness</td>
+            <td>
+               <p> AdverseEvent.suspectEntity.causality.productRelatedness</p>
+            </td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Action Taken with study Treatment</th>
+            <td>
+               <span title="A description of the action taken with study treatment as a result of the event.">AEACN</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEACN</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
+            </td>
+            <td>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to select only those related to study treatement</td>
+         </tr>
+         <tr>
+            <th>Actions Taken with Device</th>
+            <td>
+               <span title="A description of the action taken with respect to a device used in a study (which may or may not be the device under study) as a result of the event.">AEACNDEV</span>
+            </td>
+            <td>
+               <span title="This does not map directly an SDTMIG variable.  The sponsor may submit this data in a SUPPAE-dataset where SUPPAE.QNAM = &#34;AEACNDEV&#34; and SUPPAE.QLABEL = &#34;Actions Taken with Device&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPAE.QVAL</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
+            </td>
+            <td>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to select only those related to devices</td>
+         </tr>
+         <tr>
+            <th>Other Action Taken</th>
+            <td>
+               <span title="A description of other action taken as a result of the event that is unrelated to dose adjustments of the study treatment.">AEACNOTH</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEACNOTH</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
+            </td>
+            <td>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to exclude actions related to study treatment or device</td>
+         </tr>
+         <tr>
+            <th>Outcome of Adverse Event</th>
+            <td>
+               <span title="Record the appropriate outcome of the event in relation to the subject's status.">AEOUT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEOUT</span>
+            </td>
+            <td>AdverseEvent.outcome</td>
+            <td>
+               <p>AdverseEvent.outcome</p>
+            </td>
+            <td>The coded equivalents matching up the CDISC controlled terminology. Meaning, in the EHR we may not have value-based coordination from FHIR-to-CDISC</td>
+         </tr>
+         <tr>
+            <th>AE Caused Study Discontinuation</th>
+            <td>
+               <span title="Y/N&#xA;&#xA;Y/N">AEDIS</span>
+            </td>
+            <td>
+               <span title="This does not map directly an SDTMIG variable.  May be used to create a RELREC to link the AdverseEvent to the Disposition record (see SDTMIG v3.2 Section (8.2).  The sponsor may also submit this data in a SUPPAE dataset where SUPPAE.QNAM = &#34;AEDIS&#34; and SUPPAE.QLABEL = &#34;Cased Study Discontinuation &#34;.  if appropriate.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPAE.QVAL</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Related to Non-Study Treatment</th>
+            <td>
+               <span title="An indication whether in the investigator's opinion the event may have been due to a treatment other than study treatment">AERLYSYN</span>
+            </td>
+            <td>
+               <span title="This does not map directly an SDTMIG variable.  The SDTM aCRF is annotated to indicate that this field is not SUBMITTED."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Relationship to Non-Study Treatment</th>
+            <td>
+               <span title="Description of the investigator's opinion as to whether the AdverseEvent may have been due to a treatment other than study treatment">AERELNST</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AERELNST</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AdverseEvent of Special Interest</th>
+            <td>
+               <span title="Record the investigator's opinion as to whether the event is an AdverseEvent of special interest by the sponsor.">AESI</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that the field is NOT SUBMITTED."/>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Add extension, probably on a study-specific link.  (Adverse events of interst to one study wouldn't necessarily be of interest to others.)</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Pattern of AdverseEvent</th>
+            <td>
+               <span title="Used to indicate the pattern of the event over time.">AEPATT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEPATT</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">Add extension</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>Concomitant or Additional Treatment Given</th>
+            <td>
+               <span title="An indication whether a concomitant or additional treatment given because of the occurrence of the event.">AECONTRT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AECONTRT</span>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
+            </td>
+            <td>R5 pre-adoption extension.  Note that mitigatingActions aren't necessarily treatments, so codes would need to be examined to only map those that were treatments</td>
+         </tr>
+         <tr>
+            <th>AE Modified Reported Term</th>
+            <td>
+               <span title="If the value for AETERM is modified to facilitate coding, then AEMODIFY will contain the modified text.">AEMODIFY</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEMODIFY</span>
+            </td>
+            <td colspan="2" style="background-color:LightGray">The fact one of the codings was modified would be captured as an extension</td>
+            <td/>
+         </tr>
+         <tr>
+            <th>AE Dictionary-Derived Term</th>
+            <td>
+               <span title="The dictionary or standardized text description of AETERM or the modified topic variable (AEMODIFY), if applicable.">AEDECOD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEDECOD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE Lowest Level Term </th>
+            <td>
+               <span title="MedDRA text description of the Lowest Level Term">AELLT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AELLT</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE Lowest Level Term Code</th>
+            <td>
+               <span title="MedDRA Lowest Level Term code.">AELLTCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AELLTCD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE Preferred Term Code</th>
+            <td>
+               <span title="MedDRA code for the Preferred Term.">AEPTCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEPTCD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE High Level Term</th>
+            <td>
+               <span title="MedDRA text description of the High Level Term from the primary path.">AEHLT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLT</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE High Level Term Code</th>
+            <td>
+               <span title="MedDRA high Level Term code from the primary path.">AEHLTCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLTCD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE High Level Group Term</th>
+            <td>
+               <span title="MedDRA test description of the High Level Group Term from the primary path.">AEHLGT</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLGT</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE High Level Group Term Code</th>
+            <td>
+               <span title="MedDRA High Level Group Term code from the primary path.">AEHLGTCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLGTCD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE Primary System Organ Class</th>
+            <td>
+               <span title="MedDRA Primary System organ Class text description associated with the event.">AESOC</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AESOC</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>AE Primary System Organ Class Code</th>
+            <td>
+               <span title="MedDRA code for the primary System Organ Class.">AESOCCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AESOCCD</span>
+            </td>
+            <td>AdverseEvent.resultingCondition.code</td>
+            <td>
+               <p>AdverseEvent.resultingCondition.code</p>
+            </td>
+            <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
+         </tr>
+         <tr>
+            <th>Any Other Actions Taken</th>
+            <td>
+               <span title="An indication whether any other actions were taken in response to the AdverseEvent that were unrelated to study treatment dose changes or other non-study treatments given because of this AdverseEvent.">AEACNOYN</span>
+            </td>
+            <td>
+               <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that the field is NOT SUBMITTED."/>
+            </td>
+            <td>AdverseEvent.extension</td>
+            <td>
+               <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
+            </td>
+            <td>R5 pre-adoption extension.  Note that mitigatingActions also include treatments, so codes would need to be examined to only map those that were NOT treatments</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

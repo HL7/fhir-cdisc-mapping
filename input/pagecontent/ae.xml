@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <p>
+    Adverse event data in FHIR is handled by the <a href="{{site.data.fhir.path}}adverseevent.html">AdverseEvent</a> resource.  This resource is the focus of the mappings in this guide.  However, when using it to map to CDISC, implementers should consider two things
+  </p>
+  <ul>
+    <li>AdverseEvent will sometimes capture events that are not of interest to a particular study or do not qualify as "adverse events" per the study's protocol</li>
+    <li>Not all situations that a study might deem to qualify as an adverse event will result in the creation of an AdverseEvent instance in typical clinical systems</li>
+  </ul>
+  <p>
+    In the latter circumstance, research systems may also need to consult some or all of the following resources:
+  </p>
+  <ul>
+    <li><a href="{{site.data.fhir.path}}condition.html">Condition</a> - for various health conditions and outcomes</li>
+    <li><a href="{{site.data.fhir.path}}observation.html">Observation</a> - for symptoms and other findings</li>
+    <li><a href="{{site.data.fhir.path}}encounter.html">Encounter</a> - for unplanned visits, including the reasons for them</li>
+    <li><a href="{{site.data.fhir.path}}medicationrequest.html">MedicationRequest</a> or <a href="{{site.data.fhir.path}}medicationadministration.html">MedicationAdministration</a> - for dosage or timing errors</li>
+  </ul>
+  <p>
+    These latter resources won't convey information on relatedness to the study drug, mitigating actions, etc.  However, they could trigger an investigation that would allow gathering of that information.
+  </p>
+  
+  <a name="mappings"> </a>
+  <h3>AE Mappings</h3>
+  {% include ae-table.xml %}
+
+</div>
