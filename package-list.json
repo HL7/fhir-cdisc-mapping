@@ -12,6 +12,7 @@
  },{
   "version" : "0.1.0",  
   "date" : "2020-12-07", 
+  "fhirversion": "4.0.1",
   "desc" : "STU 1 Ballot #1",
   "path" : "http://hl7.org/fhir/uv/cdisc-mapping/2021Jan",   
   "status" : "ballot",   
