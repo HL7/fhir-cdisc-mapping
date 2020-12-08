@@ -29,22 +29,23 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to Research Study.">STUDYID</span>
             </td>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">STUDYID</span>
             </td>
             <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Study Site ID</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
@@ -54,12 +55,13 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Subject ID for the Study</th>
             <td>
-               <span title="Sponsor's subject Identifier for the study &#xA;&#xA;Sponsor's subject Identifier for the study ">SUBJID</span>
+               <span title="Sponsor's subject Identifier for the study &#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier within a site and a study">SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
@@ -68,7 +70,8 @@
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+               <br/>No standard way to decide which subject identifier to use</td>
          </tr>
          <tr>
             <th>Visit Name</th>
@@ -98,26 +101,26 @@
          <tr>
             <th>Vital Signs Performed</th>
             <td>
-               <span title="Vital Signs Performed&#xA;&#xA;Vital Signs Performed">[VSTESTCD]_VSPERF</span>
+               <span title="Vital Signs Performed&#xA;&#xA;&#xA;               &#xA;&#xA;An indication whether or not a planned vital signs measurement series of vital signs measurements, tests, or observations was performed.">[VSTESTCD]_VSPERF</span>
             </td>
             <td>
                <span title="This field is not an SDTM variable.  &#xA;May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF=&#34;N&#34;, the value of VSSSTAT will be &#34;NOT DONE&#34;.  If VSPErF=&#34;Y&#34;, VSSTAT should be NULL">VSSTAT</span>
             </td>
             <td>Observation.status</td>
             <td>
-               <p>Observation.status=completed or cancelled</p>
+               <p>Observation.status=('completed' or 'cancelled')</p>
             </td>
             <td/>
          </tr>
          <tr>
             <th>Vital Signs Date</th>
             <td>
-               <span title="Vital Signs Date&#xA;&#xA;Vital Signs Date">[VSTESTCD]_VSDAT</span>
+               <span title="Vital Signs Date&#xA;&#xA;&#xA;               &#xA;&#xA;The date of the vital signs measurement represented in an unambiguous date format (e.g., DD-MON-YYYY)">[VSTESTCD]_VSDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
             </td>
-            <td>Observation .effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -126,12 +129,12 @@
          <tr>
             <th>Vital Signs Time</th>
             <td>
-               <span title="Vital Signs Time&#xA;&#xA;Vital Signs Time">[VSTESTCD]_VSTIM</span>
+               <span title="Vital Signs Time&#xA;&#xA;&#xA;               &#xA;&#xA;The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">[VSTESTCD]_VSTIM</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
             </td>
-            <td>Observation .effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -140,35 +143,39 @@
          <tr>
             <th>Category for Vital Signs</th>
             <td>
-               <span title="Category for Vital Signs&#xA;&#xA;Category for Vital Signs">VSCAT</span>
+               <span title="Category for Vital Signs&#xA;&#xA;&#xA;               &#xA;&#xA;A grouping of topic-variable values based on user-defined characteristics.">VSCAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">VSCAT</span>
             </td>
-            <td>Observation .category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
-            <td/>
+            <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+               <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
          </tr>
          <tr>
             <th>Subcategory for Vital Signs</th>
             <td>
-               <span title="Subcategory for Vital Signs&#xA;&#xA;Subcategory for Vital Signs">VSCAT</span>
+               <span title="Subcategory for Vital Signs&#xA;&#xA;&#xA;               &#xA;&#xA;A sub-division of the VSCAT values based on user defined characteristics.">VSCAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSCAT</span>
             </td>
-            <td>Observation .category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
-            <td>FHIR allows multiple categorizations at various levels of granularity.<br/>FHIR allows multiple categorizations at various levels of granularity.</td>
+            <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+               <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
          </tr>
          <tr>
             <th>Vital Signs Group ID</th>
             <td>
-               <span title="Vital Signs Group ID&#xA;&#xA;Vital Signs Group ID">VSGRPID</span>
+               <span title="Vital Signs Group ID&#xA;&#xA;&#xA;               &#xA;&#xA;A sponsor-defined identifier used to tie a block of related records in a single domain.">VSGRPID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSGRPID</span>
@@ -179,12 +186,12 @@
          <tr>
             <th>Vital Signs Planned Time Point Name</th>
             <td>
-               <span title="Vital Signs Planned Time Point Name&#xA;&#xA;Vital Signs Planned Time Point Name">[VSTESTCD]_VSTPT</span>
+               <span title="Vital Signs Planned Time Point Name&#xA;&#xA;&#xA;               &#xA;&#xA;A text description of planned time point when measurements should be taken as defined in the protocol.">[VSTESTCD]_VSTPT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSTPT</span>
             </td>
-            <td>Observation .instantiates</td>
+            <td>Observation.instantiates</td>
             <td>
                <p>Observation.instantiates.resolve().title</p>
             </td>
@@ -194,12 +201,12 @@
             <th rowspan="2">Vital Signs
 Completion Status</th>
             <td rowspan="2">
-               <span title="Vital Signs Completion Status&#xA;&#xA;Vital Signs Completion Status">[VSTESTCD]_VSSTAT</span>
+               <span title="Vital Signs Completion Status&#xA;&#xA;&#xA;               &#xA;&#xA;The variable used to indicate that data are not available by having the site recording the value as &#34;NOT DONE&#34;">[VSTESTCD]_VSSTAT</span>
             </td>
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSTAT</span>
             </td>
-            <td>Observation .status</td>
+            <td>Observation.status</td>
             <td>
                <p>Observation.status</p>
                <p>ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')</p>
@@ -216,14 +223,14 @@ Completion Status</th>
          <tr>
             <th>Vital Signs Results or Finding in Original Units</th>
             <td>
-               <span title="VS Result or Finding in Original Units&#xA;&#xA;VS Result or Finding in Original Units">[VSTESTCD]_VSORRES</span>
+               <span title="VS Result or Finding in Original Units&#xA;&#xA;&#xA;               &#xA;&#xA;Result of the vital signs measurement as originally received or collected">[VSTESTCD]_VSORRES</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES;
 VSTEST;
 VSTESTCD</span>
             </td>
-            <td>Observation .valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -232,12 +239,12 @@ VSTESTCD</span>
          <tr>
             <th>Vital Sign Original Units</th>
             <td>
-               <span title="VS Original Units&#xA;&#xA;VS Original Units">[VSTESTCD]_VSORRESU</span>
+               <span title="VS Original Units&#xA;&#xA;&#xA;               &#xA;&#xA;The unit of the result as originally received or collected">[VSTESTCD]_VSORRESU</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRESU</span>
             </td>
-            <td>Observation .valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.unit</p>
             </td>
@@ -246,7 +253,7 @@ VSTESTCD</span>
          <tr>
             <th>Vital Signs Clinical Significance</th>
             <td>
-               <span title="Vital Signs Clinical Significance&#xA;&#xA;Vital Signs Clinical Significance">[VSTESTCD]_VSCLSIG</span>
+               <span title="Vital Signs Clinical Significance&#xA;&#xA;&#xA;               &#xA;&#xA;An indication whether the vital signs results were clinically significant.">[VSTESTCD]_VSCLSIG</span>
             </td>
             <td>
                <span>SUPPVS.QVAL</span>
@@ -257,12 +264,12 @@ VSTESTCD</span>
             </td>
             <td>
                <br/>
-            </td>
+               <br/>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
          </tr>
          <tr>
             <th rowspan="2">Vital Signs Position of Subject</th>
             <td rowspan="2">
-               <span title="Vital Signs Position of Subject&#xA;&#xA;Vital Signs Position of Subject">[VSTESTCD]_VSPOS</span>
+               <span title="Vital Signs Position of Subject&#xA;&#xA;&#xA;               &#xA;&#xA;The position of the subject during a measurement or examination">[VSTESTCD]_VSPOS</span>
             </td>
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSPOS</span>
@@ -282,7 +289,7 @@ VSTESTCD</span>
          <tr>
             <th>Location of Vital Signs Measurement</th>
             <td>
-               <span title="Location of Vital Signs Measurement&#xA;&#xA;Location of Vital Signs Measurement">[VSTESTCD]_VSLOC</span>
+               <span title="Location of Vital Signs Measurement&#xA;&#xA;&#xA;               &#xA;&#xA;A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">[VSTESTCD]_VSLOC</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLOC</span>
@@ -296,7 +303,7 @@ VSTESTCD</span>
          <tr>
             <th>Vital Signs Laterality</th>
             <td>
-               <span title="Vital Signs Laterality&#xA;&#xA;Vital Signs Laterality">[VSTESTCD]_VSLAT</span>
+               <span title="Vital Signs Laterality&#xA;&#xA;&#xA;               &#xA;&#xA;Qualifier for anatomical location further detailing the side of the body.">[VSTESTCD]_VSLAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLAT</span>
@@ -310,7 +317,7 @@ VSTESTCD</span>
          <tr>
             <th>Vital Signs Directionality</th>
             <td>
-               <span title="Vital Signs Directionality&#xA;&#xA;Vital Signs Directionality">VSDIR</span>
+               <span title="Vital Signs Directionality&#xA;&#xA;&#xA;               &#xA;&#xA;Qualifier further detailing the position of the anatomical location relative to the cent of the body, organ specimen.">VSDIR</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSDIR</span>
@@ -324,13 +331,13 @@ VSTESTCD</span>
          <tr>
             <th>Vital Signs Test Name</th>
             <td>
-               <span title="Vital Signs Test Name&#xA;&#xA;Vital Signs Test Name">VSTEST</span>
+               <span title="Vital Signs Test Name&#xA;&#xA;&#xA;               &#xA;&#xA;Descriptive name of the test or examination used to obtain the measurement or finding">VSTEST</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST;
 VSTESTCD</span>
             </td>
-            <td>Observation .code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code</p>
             </td>
@@ -339,24 +346,24 @@ VSTESTCD</span>
          <tr>
             <th>Vital Signs Sponsor Defined Identifier</th>
             <td>
-               <span title="Vital Signs Sponsor-Defined Identifier&#xA;&#xA;Vital Signs Sponsor-Defined Identifier">VSSPID</span>
+               <span title="Vital Signs Sponsor-Defined Identifier&#xA;&#xA;&#xA;               &#xA;&#xA;A sponsor defined identifier in CDASH.  This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">VSSPID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">VSSPID</span>
             </td>
             <td>Observation.identifier</td>
             <td>
-               <p>Observation.identifier.where(assigner='sponsor organization id').value</p>
+               <p>Observation.identifier.where(assigner='sponsor organization id')</p>
             </td>
             <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.</td>
          </tr>
          <tr>
             <th>Vital Signs Repetition Number</th>
             <td>
-               <span title="Vital Signs Repetition Number&#xA;&#xA;Vital Signs Repetition Number">VSREPNUM</span>
+               <span title="Vital Signs Repetition Number&#xA;&#xA;&#xA;               &#xA;&#xA;The instance number of a test that is repeated within a given timeframe for the same test.  The level of granularity can vary (e.g., within a time point, within a visit).">VSREPNUM</span>
             </td>
             <td>
-               <span title="The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).&#xA;&#xA;The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).">SUPPVS.QVAL</span>
+               <span title="The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).&#xA;&#xA;&#xA;               &#xA;&#xA;This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPVS dataset as the value of SUPPPVS.QVAL where SUPPVS.QNAM=&#34;VSREPNUM&#34; and SUPVS.QLABEL=&#34;Repetition Number within time point:.  Refer to current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPVS.QVAL</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</td>
             <td/>

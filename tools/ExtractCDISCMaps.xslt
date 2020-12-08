@@ -250,7 +250,8 @@
       <xsl:when test="contains($text, '&#xa;&#xa;')">
         <xsl:value-of select="substring-before($text, '&#xa;&#xa;')"/>
         <br/>
-        <xsl:value-of select="t:insertBreaks(substring-before($text, '&#xa;&#xa;'))"/>
+        <br/>
+        <xsl:value-of select="t:insertBreaks(substring-after($text, '&#xa;&#xa;'))"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text"/>
