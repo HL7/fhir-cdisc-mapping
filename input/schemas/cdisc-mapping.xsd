@@ -104,7 +104,7 @@
   </xs:simpleType>
   <xs:simpleType name="CDISCName">
     <xs:restriction base="NonEmptyString">
-      <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|([A-Z][A-Z\.]+)"/>
+      <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|([A-Z][A-Z\.\[\]]+)"/>
       <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
