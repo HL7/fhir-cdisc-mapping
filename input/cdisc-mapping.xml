@@ -2,7 +2,7 @@
 <!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
   <id value="hl7.fhir.uv.cdisc-mapping"/>
-  <url value="http://hl7.org/fhir/uv/myig/ImplementationGuide/cdisc-mapping"/>
+  <url value="http://hl7.org/fhir/uv/cdisc-mapping/ImplementationGuide/hl7.fhir.uv.cdisc-mapping"/>
   <version value="0.1.0"/>
   <name value="CDISCMappings"/>
   <title value="CDISC to FHIR joint mapping Implementation Guide"/>
