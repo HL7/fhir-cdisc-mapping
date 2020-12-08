@@ -16,11 +16,15 @@
   </p>
   <ul>
     <li>Capturing 'real world evidence' (RWE) where clinical data not directly captured for clinical trial purposes can be used to support regulatory applications.</li>
-    <li>Allowing trial-driven data capture to occur directly inside clinical systems rather than separate clinical trial management solutions, leveraging technologies like <a href="">SMART on FHIR</a>.  This is sometimes referred to as e-sourced data.</li>
+    <li>Allowing trial-driven data capture to occur directly inside clinical systems rather than separate clinical trial management solutions, leveraging technologies like <a href="http://www.hl7.org/fhir/smart-app-launch">SMART on FHIR</a>.  This is sometimes referred to as e-sourced data.</li>
     <li>Making it easier to leverage clinical data in retrospective studies.</li>
     <li>Supporting the creation of case report forms (CRFs) that link to data elements defined using FHIR resources and profiles.</li>
     <li>Enabling experts from both standards communities to understand each others terms and better align both sets of specifications as they continue to evolve.</li>
   </ul>
+  
+  <p>
+    As indicated by the use-cases, this guide will principally be used to support conversion of FHIR data into CDISC standards.  The focus is on identifying which FHIR locations are most likely to have data needed to populate the in-scope CDISC specifications.  However, the mapping information provided could also be used to generate FHIR instances from existing collections of CDISC data if there was a desire to do that.
+  </p>
   
   <a name="content"> </a>
   <h3>Content</h3>

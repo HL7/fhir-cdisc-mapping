@@ -1,6 +1,6 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
 	<p>
-    Like laboratory results, vital signs are also typically captured in <a href="{{site.data.fhir.path}}observation.html">Observations</a>.  FHIR actually defines <a href="observation-vitalsigns.html">specific profiles</a> for common vital sign measures, significantly increasing the consistency of basic vital signs data.  These profiles mandate the declaration of the <code>vital-signs</code> category.  This allows vital signs to be easily separated from other observations.
+    Like laboratory results, vital signs are also typically captured in <a href="{{site.data.fhir.path}}observation.html">Observations</a>.  FHIR actually defines <a href="{{site.data.fhir.path}}observation-vitalsigns.html">specific profiles</a> for common vital sign measures, significantly increasing the consistency of basic vital signs data.  These profiles mandate the declaration of the <code>vital-signs</code> category.  This allows vital signs to be easily separated from other observations.
   </p>
   <p>
     One consideration to be aware of is that Blood Pressure is typically captured as a single Observation with two components, however it is sometimes captured as two distinct resource instances.  When converting, both approaches will need to be accounted for.  

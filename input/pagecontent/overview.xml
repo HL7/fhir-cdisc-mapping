@@ -2,6 +2,9 @@
   <a name="caveats"> </a>
   <h3>Caveats</h3>
   <p>
+    While the most common use-cases for the mappings in this IG are for conversion of FHIR data into CDISC, the mappings are documented by listing the CDISC specifications first.  This is because the CDISC scope is smaller than the FHIR scope and it is easiest to understand the mappings by organizing them according to the CDISC elements
+  </p>
+  <p>
     All mappings defined are based on the formal definitions as they appear in the formal definitions of the CDISC and the HL7 specification, however the reality is that actual content of real FHIR interfaces and real study requirements may occasionally require variation from these mappings - either through additional filters, additional transformation, or occasionally looking for information in alternate locations.  Therefore, the mappings provided here should be considered 'informative', rather than binding.  As well, some of the mappings here will indicate where study-specific or context-specific considerations will influence the mappings.  For example, the Conditions from the patient record that will be deemed appropriate to report as 'adverse reactions' may vary from study to study.  As a result, in most cases, data should map as defined, but those implementing conversions will need to review and potentially adjust to reflect the requirements of their particular implementation space.
   </p>
   <p>

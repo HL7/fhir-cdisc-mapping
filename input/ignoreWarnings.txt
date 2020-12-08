@@ -1,4 +1,4 @@
 == Suppressed Messages ==
 
 # Validating against the base resource, as expected
-INFORMATION: ImplementationGuide/hl7.fhir.uv.cdisc-map: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
