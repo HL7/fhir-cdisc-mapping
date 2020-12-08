@@ -9,7 +9,8 @@
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Name">
          <cdisc spec="LAB" label="/GTP/Study/@Name">
@@ -19,7 +20,8 @@
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().title"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().title"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Transmission Type">
          <cdisc spec="LAB" label="/GTP/Study/@TransmissionType">
@@ -43,7 +45,8 @@
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Site Transaction Type">
          <cdisc spec="LAB" label="/GTP/Study/Site/TransactionType">
@@ -60,7 +63,8 @@
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value"/>
          </mapping>
-         <comment>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.</comment>
+         <comment>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Investigator Name">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/@Name">
@@ -70,7 +74,8 @@
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text"/>
          </mapping>
-         <comment>Will need to decide which nname to expose.  Can also extract the prefix, given and family names if text isn't specified.<br/>Will need to decide which nname to expose.  Can also extract the prefix, given and family names if text isn't specified.</comment>
+         <comment>Will need to decide which name to expose.  Can also extract the prefix, given and family names if text isn't specified.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Investigator Transaction Type">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/TransactionType">
@@ -86,7 +91,8 @@
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
       </element>
       <element name="Subject ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/SubjectID">
@@ -95,7 +101,8 @@
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
       </element>
       <element name="Spare subject level ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/SpareSubjectID">
@@ -104,11 +111,17 @@
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
       </element>
       <element name="Subject Sex">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Sex/@Value">
-            <description>Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.<br/>Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.</description>
+            <description>Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.<br/>
+               <br/>If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:
+male -&gt; M
+female -&gt; F
+other -&gt; U
+unknown -&gt; U</description>
          </cdisc>
          <mapping element="Patient.gender">
             <path value="ResearchSubject.where(subject=Observation.subject).individual.resolve().gender"/>
@@ -122,7 +135,8 @@
       </element>
       <element name="Subject Race">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Race/@Value">
-            <description>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  </description>
+            <description>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
+               <br/>If patient race is sent, use the us-core-race extension in FHIR.</description>
          </cdisc>
          <gap>There's an US-core extension (us-core-race) for capturing this in the U.S. and the possibility that other countries will define their own extensions.  Note that this is for administrative, not clinical purposes.  Genetic heritage would typically be captured as an Observation</gap>
       </element>
@@ -136,7 +150,8 @@
       <element name="Subject Initials">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Confidential/@Initials">
-            <description>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  </description>
+            <description>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
+               <br/>If required, be sure to send only the initials, derived from the name.</description>
          </cdisc>
          <mapping element="Patient.name.text">
             <path value="ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text"/>
@@ -174,7 +189,9 @@
             <description>Since this is required for the LAB model, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type'.</description>
          </cdisc>
          <gap>This is essentially whether the visit is tied to a particular activity within the PlanDefinition (study protocol) or not.  Given that in non-study-specific systems, there won't typically be a linkage even when the encounter *is* driven by the study, this will generally need to be populated algorithmically on extension</gap>
-         <comment>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)</comment>
+         <comment>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>
+            <br/>This would be Encounter.reasonCode
+</comment>
       </element>
       <element name="Visit Type Modifier">
          <cdisc spec="LAB"
@@ -261,7 +278,7 @@
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed">
             <description>Capture the duration portion in this attribute. (e.g., 03:00)</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueDuration.code">
+         <mapping element="Observation.specimen.resolve().extension.(cqf-relativeDateTime.valueDuration.code">
             <path value="Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code"/>
          </mapping>
       </element>
@@ -270,7 +287,7 @@
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription">
             <description>Capture both the quantity of time and the relative event (e.g., 3 hours post dose)</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueReference.reference">
+         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
             <path value="Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference"/>
          </mapping>
       </element>
@@ -375,19 +392,26 @@
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection">
             <description>Derive from the patient.birthDate.  Consider whether patient personal information must be shared for subject reconciliation.  If not, do not send this data.</description>
          </cdisc>
-         <gap>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).</gap>
+         <gap>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
+            <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</gap>
       </element>
       <element name="Subject Age Units">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits">
             <description>If age is shared, include a unit of measure (months, years).</description>
          </cdisc>
-         <gap>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).</gap>
+         <gap>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
+            <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</gap>
       </element>
       <element name="Fasting Status">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus">
-            <description>If fasting status is provided, it must be one of the following:<br/>If fasting status is provided, it must be one of the following:</description>
+            <description>If fasting status is provided, it must be one of the following:<br/>
+               <br/>
+Y - Yes
+N - No
+U - Unknown
+and blank if not relevant.</description>
          </cdisc>
          <mapping element="Observation.specimenRefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code">
             <path value="Observation.specimenRefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code"/>
@@ -422,10 +446,14 @@
       <element name="Test Status">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status">
-            <description>Multiple fields are required to populate this value per the standard.  <br/>Multiple fields are required to populate this value per the standard.  </description>
+            <description>Multiple fields are required to populate this value per the standard.  <br/>
+               <br/>Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.   From these two fields, sponsors will need to translate to the CDISC test statuses:  
+D - Done
+N - Not Performed
+X - Cancelled.</description>
          </cdisc>
          <mapping element="Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)">
-            <path value="ServiceRequest.doNotPerform and ServiceRequest.status"/>
+            <path value="Observation.basedOn (Ref:ServiceRequest.doNotPerform and ServiceRequest.status)"/>
          </mapping>
       </element>
       <element name="Testing Date and Time">
@@ -433,8 +461,8 @@
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime">
             <description>Populate with date and time of test.</description>
          </cdisc>
-         <mapping element="Observation.effective.effectiveDateTime">
-            <path value="Observation.effective.effectiveDateTime"/>
+         <mapping element="Observation.effectiveDateTime">
+            <path value="Observation.effectiveDateTime"/>
          </mapping>
       </element>
       <element name="Test Type">
@@ -467,7 +495,8 @@
       <element name="Lab Test ID">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID">
-            <description>The ID of the test as assigned by the laboratory. <br/>The ID of the test as assigned by the laboratory. </description>
+            <description>The ID of the test as assigned by the laboratory. <br/>
+               <br/>NOTE: since this is a codeable concept, you may provide multiple coding system codes for a test.</description>
          </cdisc>
          <mapping element="Observation.code">
             <path value="Observation.code.coding.where(system = 'Lab Test')"/>
@@ -488,7 +517,7 @@
             <description>Additional text about the test that produced the result.</description>
          </cdisc>
          <mapping element="Observation.comment">
-            <path value="Observation.comment."/>
+            <path value="Observation.comment"/>
          </mapping>
       </element>
       <element name="Receiver Test ID">
@@ -497,7 +526,7 @@
             <description>If the Sponsor has a test ID that needs to be included in the results, populate this field.</description>
          </cdisc>
          <mapping element="Observation.code">
-            <path value="Observation.code.coding.where (system = 'Recipient Test')"/>
+            <path value="Observation.code.coding.where (system = Recipient Test)"/>
          </mapping>
          <comment>Observation/code/coding/system/@value ("system" element used to designate the type of code that is being represented (in this case the "ReceiverTest") by the "code" element)</comment>
       </element>
@@ -525,7 +554,7 @@
             <description>The URI for the LOINC code list.</description>
          </cdisc>
          <mapping element="Observation.code">
-            <path value="Observation.code.coding.where (system = &#34;http://loinc.org&#34;)"/>
+            <path value="Observation.code.coding.where (system = 'http://loinc.org')"/>
          </mapping>
       </element>
       <element name="Test Level Comments">
@@ -550,7 +579,16 @@
       <element name="Alert Flag">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag">
-            <description>The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:<br/>The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:</description>
+            <description>The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:<br/>
+               <br/>LP - Low Panic
+LT - Low Telephone
+LN - Low Normal
+N - Normal
+HN - High Normal
+HT - High Telephone
+HP - High Panic
+AB - Abnormal
+and blank when not used.</description>
          </cdisc>
          <mapping element="Observation.interpretation">
             <path value="Observation.interpretation.coding.where(system='Alert Flag')"/>
@@ -559,16 +597,23 @@
       <element name="Delta Flag">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag">
-            <description>The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:<br/>The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:</description>
+            <description>The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:<br/>
+               <br/>D+  for an increase in value
+D-  for a decrease in value
+and blank for no flag.</description>
          </cdisc>
-         <mapping element="Observation.interpretation.">
+         <mapping element="Observation.interpretation">
             <path value="Observation.interpretation.coding.where (system = 'Delta Flag')"/>
          </mapping>
       </element>
       <element name="Exclusion Flag">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag">
-            <description>The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:<br/>The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:</description>
+            <description>The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:<br/>
+               <br/>LX - Low Exclusion
+HX - High Exclusion
+EX - Excluded (for exclusions not falling under high or low)
+and blank for no flag.</description>
          </cdisc>
          <mapping element="Observation.interpretation">
             <path value="Observation.interpretation.coding.where (system = 'Exclusion Flag')"/>
@@ -679,7 +724,9 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="Observation.valueQuantity.value">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
-         <comment>Determine the precision from the value.<br/>Determine the precision from the value.</comment>
+         <comment>Determine the precision from the value.<br/>
+            <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</comment>
       </element>
       <element name="Reported Numeric Result Precision">
          <cdisc spec="LAB"
@@ -690,7 +737,9 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="Observation.valueQuantity.value">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
-         <comment>Determine the precision from the value.<br/>Determine the precision from the value.</comment>
+         <comment>Determine the precision from the value.<br/>
+            <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</comment>
       </element>
       <element name="SI Numeric Result Precision">
          <cdisc spec="LAB"
@@ -701,7 +750,9 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="Observation.valueQuantity.value">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
-         <comment>Determine the precision from the value.<br/>Determine the precision from the value.</comment>
+         <comment>Determine the precision from the value.<br/>
+            <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</comment>
       </element>
       <element name="Conventional Reference Range Low">
          <cdisc spec="LAB"
@@ -821,7 +872,8 @@ Observation/valueQuantity/value/@value</description>
          <cdisc spec="LAB" label="">
             <description>This allows specification of extensions from the Base Lab Model definition.  For a lab record, this would contain 'BASE'.  For Microbiology data, this would contain 'MICROBIO'.</description>
          </cdisc>
-         <gap>Populate with a default value, depending on the type of data being transmitted.<br/>Populate with a default value, depending on the type of data being transmitted.</gap>
+         <gap>Populate with a default value, depending on the type of data being transmitted.<br/>
+            <br/>E.g., "BASE"</gap>
       </element>
       <element name="Result Class">
          <cdisc spec="LAB"
@@ -869,29 +921,35 @@ Observation/valueQuantity/value/@value</description>
    <domain code="LB" name="Laboratory2">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <mapping element="ResearchStudy.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Site ID or Number">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <cdisc spec="SDTM" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <mapping element="ResearchStudy.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Investigator ID or Number">
          <cdisc spec="CDASH" label="INVID">
@@ -904,7 +962,8 @@ Observation/valueQuantity/value/@value</description>
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value"/>
          </mapping>
-         <comment>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.</comment>
+         <comment>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Screen ID or Number (pre-randomization)">
          <cdisc spec="CDASH" label="SUBJID">
@@ -916,7 +975,8 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Visit ID or Number">
          <cdisc spec="CDASH" label="VISITNUM">
@@ -939,7 +999,8 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="ActivityDefinition.name">
             <path value="Observation.encounter.resolve().extension(workflow-instantiates).valueCanonical.resolve().title"/>
          </mapping>
-         <comment>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.<br/>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.</comment>
+         <comment>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.<br/>
+            <br/>Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</comment>
       </element>
       <element name="Accession ID or Number">
          <cdisc spec="CDASH" label="LBREFID">
@@ -988,8 +1049,8 @@ Observation/valueQuantity/value/@value</description>
          <cdisc spec="SDTM" label="LBTPT">
             <description>Wording needs to match what is required by Sponsor</description>
          </cdisc>
-         <mapping element="Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference">
-            <path value="Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference"/>
+         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
+            <path value="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference"/>
          </mapping>
          <comment>TBD - change being made to Specimen resource</comment>
       </element>
@@ -1000,14 +1061,15 @@ Observation/valueQuantity/value/@value</description>
          <cdisc spec="SDTM" label="LBELTM">
             <description>See instructions in column C.  This needs to be converted from LBCELTM.</description>
          </cdisc>
-         <mapping element="Observation.specimen(Ref: Specimen.extension.cqf-relativeDateTime.valueReference.reference)">
-            <path value="Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueReference.reference"/>
+         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
+            <path value="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference"/>
          </mapping>
          <comment>TBD - change being made to Specimen resource</comment>
       </element>
       <element name="Specimen Condition">
          <cdisc spec="CDASH" label="LBCSPCCN">
-            <description>Proposed CDASH variable (Specimen Condition as Collected)<br/>Proposed CDASH variable (Specimen Condition as Collected)</description>
+            <description>Proposed CDASH variable (Specimen Condition as Collected)<br/>
+               <br/>Terminology in current Code System Content does not match CDISC terminology. Both systems have terms that are not in the other.  An "as collected" version of the SDTM variable is recommended to allow the sponsor to make adjustments to ensure terminology compliance while mapping to SDTM.</description>
          </cdisc>
          <cdisc spec="SDTM" label="LBSPCCND">
             <description>To use this, sponsor must first ensure compliant terminology (compliant either to CDISC or sponsor extensions) will be used.</description>
@@ -1015,7 +1077,8 @@ Observation/valueQuantity/value/@value</description>
          <mapping element="Observation.specimen(Ref: Specimen.condition.CodeableConcept.coding.code)">
             <path value="Observation.specimen.condition.codeableConcept.coding.code"/>
          </mapping>
-         <comment>TBD - change being made to Specimen resource<br/>TBD - change being made to Specimen resource</comment>
+         <comment>TBD - change being made to Specimen resource<br/>
+            <br/>Extend the FHIR vocabulary to include CDISC values.   NOTE: requires an extension to the FHIR vocabulary to include CDISC values (e.g., Refrigerated)</comment>
       </element>
       <element name="Specimen Type">
          <cdisc spec="CDASH" label="LBCSPEC">
@@ -1034,7 +1097,11 @@ Observation/valueQuantity/value/@value</description>
             <description>HL7 terminology is binding.   Does not match CDISC CT with is just No/Yes/Unknown/Not Applicable</description>
          </cdisc>
          <cdisc spec="SDTM" label="LBFAST">
-            <description>Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.<br/>Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.</description>
+            <description>Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.<br/>
+               <br/>FHIR -&gt; CDISC
+F =&gt; Y
+NF =&gt; N
+NG =&gt; U</description>
          </cdisc>
          <mapping element="Observation.specimen.RefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code">
             <path value="Observation.specimen.collection.fastingStatus.fastingStatusCodeableConcept.code"/>
@@ -1055,7 +1122,7 @@ Observation/valueQuantity/value/@value</description>
          <cdisc spec="SDTM" label="LBPOS">
             <description>Must be aligned with controlled terminology.</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.collection extension observation-bodyPosition">
+         <mapping element="Observation.specimen(RefSpecimen.collection extension observation-bodyPosition)">
             <path value="Observation.specimen.collection extension observation-bodyPosition"/>
          </mapping>
       </element>
@@ -1064,9 +1131,10 @@ Observation/valueQuantity/value/@value</description>
             <description>As reported from the lab.</description>
          </cdisc>
          <cdisc spec="SDTM" label="LBSPCUFL">
-            <description>Need to translate to blank or N if not received as blank or N<br/>Need to translate to blank or N if not received as blank or N</description>
+            <description>Need to translate to blank or N if not received as blank or N<br/>
+               <br/>May not be applicable for safety labs.</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.status where (status = 'Unsatisfactory')">
+         <mapping element="Observation.specimen.(RefSpecimen.status where status = 'Unsatisfactory')">
             <path value="Observation.specimen.status where status='Unsatisfactory')"/>
          </mapping>
       </element>
@@ -1090,7 +1158,11 @@ Observation/valueQuantity/value/@value</description>
             <description>Could be used to accept true for this resource and later populate LBSTAT as NOT DONE</description>
          </cdisc>
          <cdisc spec="SDTM" label="LBSTAT">
-            <description>Needs to be translated from FHIR vocabulary to SDTM controlled terminology:<br/>Needs to be translated from FHIR vocabulary to SDTM controlled terminology:</description>
+            <description>Needs to be translated from FHIR vocabulary to SDTM controlled terminology:<br/>
+               <br/>FHIR -&gt; CDISC:
+Not performed = NOT DONE
+Cancelled = NOT DONE
+Completed = &lt;blank&gt;  </description>
          </cdisc>
          <mapping element="Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)">
             <path value="ServiceRequest.doNotPerform.@value and ServiceRequest.status"/>
@@ -1154,7 +1226,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>Must match CDISC controlled terminology</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.where(system = 'NRIND')"/>
+            <path value="Observation.interpretation.where(system ='NRIND')"/>
          </mapping>
       </element>
       <element name="Toxicity Grade">
@@ -1173,7 +1245,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>See Toxicity Grade Code List - LBTOX - 1</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.where(system = &#34;Toxicity Grade&#34;).coding.version"/>
+            <path value="Observation.interpretation.where(system = 'Toxicity Grade').coding.version"/>
          </mapping>
       </element>
       <element name="Toxicity Grade Code List">
@@ -1184,7 +1256,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>Needs to be translated from the URI and version to a name concatenated with the version.</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.system(where system = &#34;Toxicity Grade&#34;)"/>
+            <path value="Observation.interpretation.system(where system = 'Toxicity Grade')"/>
          </mapping>
       </element>
       <element name="Reported Reference Range Low">
@@ -1366,20 +1438,24 @@ Potentially could appear in Observation.method.  An extension is required to dis
    <domain code="VS" name="Vital Signs">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>Use the new extension to connect Observation to Research Study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <mapping element="ResearchStudy.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Site ID">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SITEID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1388,11 +1464,13 @@ Potentially could appear in Observation.method.  An extension is required to dis
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject ID for the Study">
          <cdisc spec="CDASH" label="SUBJID">
-            <description>Sponsor's subject Identifier for the study <br/>Sponsor's subject Identifier for the study </description>
+            <description>Sponsor's subject Identifier for the study <br/>
+               <br/>A unique identifier within a site and a study</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1400,7 +1478,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Visit Name">
          <cdisc spec="CDASH" label="VISIT">
@@ -1426,64 +1505,75 @@ This can included planned and unplanned trial interventions, procedures and asse
       </element>
       <element name="Vital Signs Performed">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSPERF">
-            <description>Vital Signs Performed<br/>Vital Signs Performed</description>
+            <description>Vital Signs Performed<br/>
+               <br/>An indication whether or not a planned vital signs measurement series of vital signs measurements, tests, or observations was performed.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSSTAT">
             <description>This field is not an SDTM variable.  
 May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the value of VSSSTAT will be "NOT DONE".  If VSPErF="Y", VSSTAT should be NULL</description>
          </cdisc>
          <mapping element="Observation.status">
-            <path value="Observation.status=completed or cancelled"/>
+            <path value="Observation.status=('completed' or 'cancelled')"/>
          </mapping>
       </element>
       <element name="Vital Signs Date">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSDAT">
-            <description>Vital Signs Date<br/>Vital Signs Date</description>
+            <description>Vital Signs Date<br/>
+               <br/>The date of the vital signs measurement represented in an unambiguous date format (e.g., DD-MON-YYYY)</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.</description>
          </cdisc>
-         <mapping element="Observation .effectiveDateTime">
+         <mapping element="Observation.effectiveDateTime">
             <path value="Observation.effectiveDateTime"/>
          </mapping>
       </element>
       <element name="Vital Signs Time">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSTIM">
-            <description>Vital Signs Time<br/>Vital Signs Time</description>
+            <description>Vital Signs Time<br/>
+               <br/>The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.</description>
          </cdisc>
-         <mapping element="Observation .effectiveDateTime">
+         <mapping element="Observation.effectiveDateTime">
             <path value="Observation.effectiveDateTime"/>
          </mapping>
       </element>
       <element name="Category for Vital Signs">
          <cdisc spec="CDASH" label="VSCAT">
-            <description>Category for Vital Signs<br/>Category for Vital Signs</description>
+            <description>Category for Vital Signs<br/>
+               <br/>A grouping of topic-variable values based on user-defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSCAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
          </cdisc>
-         <mapping element="Observation .category">
+         <mapping element="Observation.category">
             <path value="Observation.category"/>
          </mapping>
+         <comment>FHIR allows multiple categorizations at various levels of granularity.<br/>
+            <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</comment>
       </element>
       <element name="Subcategory for Vital Signs">
          <cdisc spec="CDASH" label="VSCAT">
-            <description>Subcategory for Vital Signs<br/>Subcategory for Vital Signs</description>
+            <description>Subcategory for Vital Signs<br/>
+               <br/>A sub-division of the VSCAT values based on user defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSSCAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Observation .category">
+         <mapping element="Observation.category">
             <path value="Observation.category"/>
          </mapping>
-         <comment>FHIR allows multiple categorizations at various levels of granularity.<br/>FHIR allows multiple categorizations at various levels of granularity.</comment>
+         <comment>FHIR allows multiple categorizations at various levels of granularity.<br/>
+            <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</comment>
       </element>
       <element name="Vital Signs Group ID">
          <cdisc spec="CDASH" label="VSGRPID">
-            <description>Vital Signs Group ID<br/>Vital Signs Group ID</description>
+            <description>Vital Signs Group ID<br/>
+               <br/>A sponsor-defined identifier used to tie a block of related records in a single domain.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSGRPID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1492,24 +1582,26 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Vital Signs Planned Time Point Name">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSTPT">
-            <description>Vital Signs Planned Time Point Name<br/>Vital Signs Planned Time Point Name</description>
+            <description>Vital Signs Planned Time Point Name<br/>
+               <br/>A text description of planned time point when measurements should be taken as defined in the protocol.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSTPT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Observation .instantiates">
+         <mapping element="Observation.instantiates">
             <path value="Observation.instantiates.resolve().title"/>
          </mapping>
          <comment>TimePoints will be represented in FHIR as PlanDefinition.activities.</comment>
       </element>
       <element name="Vital Signs&#xA;Completion Status">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSSTAT">
-            <description>Vital Signs Completion Status<br/>Vital Signs Completion Status</description>
+            <description>Vital Signs Completion Status<br/>
+               <br/>The variable used to indicate that data are not available by having the site recording the value as "NOT DONE"</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSSTAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Observation .status">
+         <mapping element="Observation.status">
             <path value="Observation.status"/>
             <path value="ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')"/>
          </mapping>
@@ -1521,30 +1613,33 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Vital Signs Results or Finding in Original Units">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSORRES">
-            <description>VS Result or Finding in Original Units<br/>VS Result or Finding in Original Units</description>
+            <description>VS Result or Finding in Original Units<br/>
+               <br/>Result of the vital signs measurement as originally received or collected</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSORRES;&#xA;VSTEST;&#xA;VSTESTCD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Observation .valueQuantity">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
          <comment>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </comment>
       </element>
       <element name="Vital Sign Original Units">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSORRESU">
-            <description>VS Original Units<br/>VS Original Units</description>
+            <description>VS Original Units<br/>
+               <br/>The unit of the result as originally received or collected</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSORRESU">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Observation .valueQuantity">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.unit"/>
          </mapping>
       </element>
       <element name="Vital Signs Clinical Significance">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSCLSIG">
-            <description>Vital Signs Clinical Significance<br/>Vital Signs Clinical Significance</description>
+            <description>Vital Signs Clinical Significance<br/>
+               <br/>An indication whether the vital signs results were clinically significant.</description>
          </cdisc>
          <cdisc spec="SDTM" label="SUPPVS.QVAL"/>
          <mapping element="Observation.interpretation">
@@ -1552,11 +1647,12 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
          </mapping>
          <comment>
             <br/>
-         </comment>
+            <br/>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </comment>
       </element>
       <element name="Vital Signs Position of Subject">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSPOS">
-            <description>Vital Signs Position of Subject<br/>Vital Signs Position of Subject</description>
+            <description>Vital Signs Position of Subject<br/>
+               <br/>The position of the subject during a measurement or examination</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSPOS">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1571,7 +1667,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Location of Vital Signs Measurement">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSLOC">
-            <description>Location of Vital Signs Measurement<br/>Location of Vital Signs Measurement</description>
+            <description>Location of Vital Signs Measurement<br/>
+               <br/>A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSLOC">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1583,7 +1680,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Vital Signs Laterality">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSLAT">
-            <description>Vital Signs Laterality<br/>Vital Signs Laterality</description>
+            <description>Vital Signs Laterality<br/>
+               <br/>Qualifier for anatomical location further detailing the side of the body.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSLAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1595,7 +1693,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Vital Signs Directionality">
          <cdisc spec="CDASH" label="VSDIR">
-            <description>Vital Signs Directionality<br/>Vital Signs Directionality</description>
+            <description>Vital Signs Directionality<br/>
+               <br/>Qualifier further detailing the position of the anatomical location relative to the cent of the body, organ specimen.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSDIR">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1607,34 +1706,38 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Vital Signs Test Name">
          <cdisc spec="CDASH" label="VSTEST">
-            <description>Vital Signs Test Name<br/>Vital Signs Test Name</description>
+            <description>Vital Signs Test Name<br/>
+               <br/>Descriptive name of the test or examination used to obtain the measurement or finding</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSTEST;&#xA;VSTESTCD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.</description>
          </cdisc>
-         <mapping element="Observation .code">
+         <mapping element="Observation.code">
             <path value="Observation.code"/>
          </mapping>
          <comment>coding.display and coding.code (plus coding.system)</comment>
       </element>
       <element name="Vital Signs Sponsor Defined Identifier">
          <cdisc spec="CDASH" label="VSSPID">
-            <description>Vital Signs Sponsor-Defined Identifier<br/>Vital Signs Sponsor-Defined Identifier</description>
+            <description>Vital Signs Sponsor-Defined Identifier<br/>
+               <br/>A sponsor defined identifier in CDASH.  This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.</description>
          </cdisc>
          <cdisc spec="SDTM" label="VSSPID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</description>
          </cdisc>
          <mapping element="Observation.identifier">
-            <path value="Observation.identifier.where(assigner='sponsor organization id').value"/>
+            <path value="Observation.identifier.where(assigner='sponsor organization id')"/>
          </mapping>
          <comment>The assigner of the identifier can be explicit or inferred by the Identifier.system.</comment>
       </element>
       <element name="Vital Signs Repetition Number">
          <cdisc spec="CDASH" label="VSREPNUM">
-            <description>Vital Signs Repetition Number<br/>Vital Signs Repetition Number</description>
+            <description>Vital Signs Repetition Number<br/>
+               <br/>The instance number of a test that is repeated within a given timeframe for the same test.  The level of granularity can vary (e.g., within a time point, within a visit).</description>
          </cdisc>
          <cdisc spec="SDTM" label="SUPPVS.QVAL">
-            <description>The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).<br/>The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).</description>
+            <description>The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).<br/>
+               <br/>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPVS dataset as the value of SUPPPVS.QVAL where SUPPVS.QNAM="VSREPNUM" and SUPVS.QLABEL="Repetition Number within time point:.  Refer to current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
          </cdisc>
          <gap>This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</gap>
       </element>
@@ -1642,7 +1745,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
    <domain code="AE" name="Adverse Event">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>A unique identifier for a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
@@ -1651,11 +1755,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
             <path value="AdverseEvent.study.resolve().partOf.resolve().identifier.value"/>
             <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Site ID">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>A unique identifier for a site within a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SITEID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1664,11 +1770,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
             <path value="AdverseEvent.study.resolve().identifier.value"/>
             <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject ID for the Study">
          <cdisc spec="CDASH" label="SUBJID">
-            <description>Sponsor's subject Identifier for the study.<br/>Sponsor's subject Identifier for the study.</description>
+            <description>Sponsor's subject Identifier for the study.<br/>
+               <br/>A unique subject identifier within a site and a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1676,11 +1784,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(individual=AdverseEvent.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Any AdverseEvent">
          <cdisc spec="CDASH" label="AEYN">
-            <description>Any AdverseEvent<br/>Any AdverseEvent</description>
+            <description>Any AdverseEvent<br/>
+               <br/>An indication whether or not any AEs were experienced during the study.</description>
          </cdisc>
          <cdisc spec="SDTM">
             <description>Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that the field is NOT SUBMITTED.</description>
@@ -1689,7 +1799,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Category for AdverseEvent">
          <cdisc spec="CDASH" label="AECAT">
-            <description>Category for AdverseEvent<br/>Category for AdverseEvent</description>
+            <description>Category for AdverseEvent<br/>
+               <br/>A grouping of topic-variable values based on user-defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AECAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
@@ -1697,11 +1808,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
          <mapping element="AdverseEvent.category">
             <path value="AdverseEvent.category"/>
          </mapping>
-         <comment>This is typically sponsor-specific and we would not expect this to come from the site.<br/>This is typically sponsor-specific and we would not expect this to come from the site.</comment>
+         <comment>This is typically sponsor-specific and we would not expect this to come from the site.<br/>
+            <br/>In FHIR, an AdverseEvent can be categorized in as many ways as desired with whatever granularity is desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate AECAT and AESCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</comment>
       </element>
       <element name="Subcategory for AdverseEvent">
          <cdisc spec="CDASH" label="AESCAT">
-            <description>Subcategory for AdverseEvent<br/>Subcategory for AdverseEvent</description>
+            <description>Subcategory for AdverseEvent<br/>
+               <br/>A sub-division of the AECAT values based on user-defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESCAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1709,11 +1822,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
          <mapping element="AdverseEvent.category">
             <path value="AdverseEvent.category"/>
          </mapping>
-         <comment>This is typically sponsor-specific and we would not expect this to come from the site.<br/>This is typically sponsor-specific and we would not expect this to come from the site.</comment>
+         <comment>This is typically sponsor-specific and we would not expect this to come from the site.<br/>
+            <br/>In FHIR, an AdverseEvent can be categorized in as many ways as desired with whatever granularity is desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate AECAT and AESCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</comment>
       </element>
       <element name="A sponsor defined identifier">
          <cdisc spec="CDASH" label="AESPID">
-            <description>AE Sponsor-defined Identifier<br/>AE Sponsor-defined Identifier</description>
+            <description>AE Sponsor-defined Identifier<br/>
+               <br/>A sponsor-defined identifier.  In CDASH, this is typically used for preprinted or auto generated number on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESPID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</description>
@@ -1726,18 +1841,20 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Reported Term for the Adverse Event">
          <cdisc spec="CDASH" label="AETERM">
-            <description>Reported Term for the Adverse Event.<br/>Reported Term for the Adverse Event.</description>
+            <description>Reported Term for the Adverse Event.<br/>
+               <br/>The reported or prespecified name of the AE.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AETERM">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="AdverseEvent.resourceCondition.Condition">
-            <path value="AdverseEvent.resourceCondition.Condition"/>
+         <mapping element="AdverseEvent.resultingCondition.Condition">
+            <path value="AdverseEvent.resultingCondition.Condition"/>
          </mapping>
       </element>
       <element name="AdverseEvent Occurrence">
          <cdisc spec="CDASH" label="AEOCCUR">
-            <description>AdverseEvent Occurrence<br/>AdverseEvent Occurrence</description>
+            <description>AdverseEvent Occurrence<br/>
+               <br/>An indication whether a prespecified AdverseEvent or a group of AdverseEvents occurred when information about the occurrence of a specific event is solicited</description>
          </cdisc>
          <cdisc spec="SDTM" label="FAORRES">
             <description>This does not map directly to an SDTMIG variable.  Because the SDTM AE domain is intended to hold only AdverseEvents that actually happen, all values collected in AEOCCUR for prespecified AEs should be submitted in a Findings About AdverseEvents data set (FAAE) where FAORRES=the value of AEOCCUR where FATESTCD="OCCUR" in addition, where AEOCCUR=Y, there should be a corresponding record in the AE domain.</description>
@@ -1761,7 +1878,7 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
             <description>This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.</description>
          </cdisc>
          <mapping element="AdverseEvent.date">
-            <path value="AdverseEvent.date (date portion)"/>
+            <path value="AdverseEvent.date(date portion)"/>
          </mapping>
       </element>
       <element name="Adverse Event Start Time">
@@ -1772,12 +1889,13 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
             <description>This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.</description>
          </cdisc>
          <mapping element="AdverseEvent.date">
-            <path value="AdverseEvent.date (time portion)"/>
+            <path value="AdverseEvent.date(time portion)"/>
          </mapping>
       </element>
       <element name="AE Location of Event">
          <cdisc spec="CDASH" label="AELOC">
-            <description>AE Location of Event<br/>AE Location of Event</description>
+            <description>AE Location of Event<br/>
+               <br/>Indicates the anatomical location of the adverse event such as ARM.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AELOC">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1789,7 +1907,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Adverse Event Laterality">
          <cdisc spec="CDASH" label="AELAT">
-            <description>Qualifier for anatomical location further detailing the side of the body relevant for the event.<br/>Qualifier for anatomical location further detailing the side of the body relevant for the event.</description>
+            <description>Qualifier for anatomical location further detailing the side of the body relevant for the event.<br/>
+               <br/>Record the side of the anatomical location of the adverse event such as RIGHT or LEFT.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AELAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1801,7 +1920,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Adverse Event Directionality">
          <cdisc spec="CDASH" label="AEDIR">
-            <description>Qualifier for further detailing the position of the anatomical location relative to the center of the body, organ or specimen.<br/>Qualifier for further detailing the position of the anatomical location relative to the center of the body, organ or specimen.</description>
+            <description>Qualifier for further detailing the position of the anatomical location relative to the center of the body, organ or specimen.<br/>
+               <br/>Record the directionality of the anatomical location of the adverse event such as ANTERIOR, PROXIMAL.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AEDIR">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1813,7 +1933,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="AE Location Portion or Totality">
          <cdisc spec="CDASH" label="AEPORTOT">
-            <description>Qualifier for anatomical location further detailing the distribution (i.e., arrangement of apportioning of)<br/>Qualifier for anatomical location further detailing the distribution (i.e., arrangement of apportioning of)</description>
+            <description>Qualifier for anatomical location further detailing the distribution (i.e., arrangement of apportioning of)<br/>
+               <br/>Indicate the portion or totality anatomical location of the adverse event.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AEPORTOT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1825,7 +1946,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       </element>
       <element name="Ongoing AdverseEvent">
          <cdisc spec="CDASH" label="AEONGO">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>Indication that an AdverseEvent is ongoing when no End Date is provided.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AEENRTPT; AEENRF"/>
          <gap>The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</gap>
@@ -1873,8 +1995,8 @@ May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the
       <element name="AE Serious Event">
          <cdisc spec="CDASH" label="AESER">
             <description>Y/N
-An indication whether or not the adverse event is determined to be 'serious" based on what is defined in the protocol.<br/>Y/N
-An indication whether or not the adverse event is determined to be 'serious" based on what is defined in the protocol.</description>
+An indication whether or not the adverse event is determined to be 'serious" based on what is defined in the protocol.<br/>
+               <br/>Access if an adverse event should be classified as serious based on the serious criteria defined in the protocol.</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESER">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1892,7 +2014,7 @@ Record whether the serious adverse event resulted in death</description>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="AdverseEvent.outcome">
-            <path value="AdverseEvent.outcome=fatal"/>
+            <path value="AdverseEvent.outcome='fatal'"/>
          </mapping>
       </element>
       <element name="Death Date">
@@ -1908,7 +2030,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Is Life Threatening">
          <cdisc spec="CDASH" label="AESLIFE">
-            <description>Y?N<br/>Y?N</description>
+            <description>Y?N<br/>
+               <br/>An indication the serious adverse event was life threatening</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESLIFE">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1929,7 +2052,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Persist or Signify Disability Incapacity">
          <cdisc spec="CDASH" label="AESDISAB">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>An indication the serious adverse evet was associated with a persistent or significant disability or incapacity</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESDISAB">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1941,7 +2065,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Congenital Anomaly or Birth Defect">
          <cdisc spec="CDASH" label="AESCONG">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>An indication the serious adverse event was associated with a congenital anomaly or birth defect</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESCONG">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -1953,7 +2078,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Needs Intervention to Prevent Impairment">
          <cdisc spec="CDASH" label="AESINTV">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>An indication an adverse event required medical or surgical intervention to preclude permanent impairment of a body function, or prevent permanent damage to a body structure, due to the use of a medical product.</description>
          </cdisc>
          <cdisc spec="SDTM" label="SUPPAE.QVAL">
             <description>If the details regarding Serious As are collected I the clinical database, then it is recommended that a separate Yes/No variable be defined for each Serious AE type.  </description>
@@ -1989,7 +2115,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Occurred with Overdose">
          <cdisc spec="CDASH" label="AESOD">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>An indication the serious event occurred with an overdose</description>
          </cdisc>
          <cdisc spec="SDTM" label="AESOD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2007,7 +2134,7 @@ Record whether the serious adverse event resulted in death</description>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="AdverseEvent.suspectEntity.causality.productRelatedness">
-            <path value=" AdverseEvent.suspectEntity.causality.productRelatedness"/>
+            <path value="AdverseEvent.suspectEntity.causality.productRelatedness"/>
          </mapping>
       </element>
       <element name="Action Taken with study Treatment">
@@ -2020,7 +2147,7 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="AdverseEvent.extension">
             <path value="AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept"/>
          </mapping>
-         <comment>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to select only those related to study treatement</comment>
+         <comment>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to select only those related to study treatment</comment>
       </element>
       <element name="Actions Taken with Device">
          <cdisc spec="CDASH" label="AEACNDEV">
@@ -2060,7 +2187,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="AE Caused Study Discontinuation">
          <cdisc spec="CDASH" label="AEDIS">
-            <description>Y/N<br/>Y/N</description>
+            <description>Y/N<br/>
+               <br/>An indication whether the event caused the subject to discontinue from the study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="SUPPAE.QVAL">
             <description>This does not map directly an SDTMIG variable.  May be used to create a RELREC to link the AdverseEvent to the Disposition record (see SDTMIG v3.2 Section (8.2).  The sponsor may also submit this data in a SUPPAE dataset where SUPPAE.QNAM = "AEDIS" and SUPPAE.QLABEL = "Cased Study Discontinuation ".  if appropriate.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
@@ -2260,7 +2388,8 @@ Record whether the serious adverse event resulted in death</description>
    <domain code="MH" name="Medical History">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>A unique identifier for a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2272,11 +2401,13 @@ Record whether the serious adverse event resulted in death</description>
             <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Site ID">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>A unique identifier for a site within a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SITEID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2288,11 +2419,13 @@ Record whether the serious adverse event resulted in death</description>
             <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject ID for the Study">
          <cdisc spec="CDASH" label="SUBJID">
-            <description>Sponsor's subject Identifier for the study.<br/>Sponsor's subject Identifier for the study.</description>
+            <description>Sponsor's subject Identifier for the study.<br/>
+               <br/>A unique subject identifier within a site and a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2300,11 +2433,13 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject)).identifer.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Any Medical History Event">
          <cdisc spec="CDASH" label="MHYN">
-            <description>Any Medical History Event<br/>Any Medical History Event</description>
+            <description>Any Medical History Event<br/>
+               <br/>An indication whether or not there was any medica history to report.</description>
          </cdisc>
          <cdisc spec="SDTM">
             <description>Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED</description>
@@ -2313,7 +2448,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Category for Medical History">
          <cdisc spec="CDASH" label="MHCAT">
-            <description>Category for Medical History<br/>Category for Medical History</description>
+            <description>Category for Medical History<br/>
+               <br/>A grouping of topic-variable values based on user-defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHCAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2330,11 +2466,13 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="Observation.category">
             <path value="Observation.category"/>
          </mapping>
-         <comment>The sponsors does not typically require this information from the sites.<br/>The sponsors does not typically require this information from the sites.</comment>
+         <comment>The sponsors does not typically require this information from the sites.<br/>
+            <br/>If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</comment>
       </element>
       <element name="Subcategory for Medical History">
          <cdisc spec="CDASH" label="MHSCAT">
-            <description>Subcategory for Medical History<br/>Subcategory for Medical History</description>
+            <description>Subcategory for Medical History<br/>
+               <br/>A sub-division of MHCAT values based on user-defined characteristics.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSCAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
@@ -2351,11 +2489,13 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="Observation.category">
             <path value="Observation.category"/>
          </mapping>
-         <comment>The sponsors does not typically require this information from the sites.<br/>The sponsors does not typically require this information from the sites.</comment>
+         <comment>The sponsors does not typically require this information from the sites.<br/>
+            <br/>If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</comment>
       </element>
       <element name="Medical History Collection Date">
          <cdisc spec="CDASH" label="MHDAT">
-            <description>Medical History Collection Date<br/>Medical History Collection Date</description>
+            <description>Medical History Collection Date<br/>
+               <br/>The date on which the medical history was collected represented in an unambiguous date format (e.g., DD-MON-YYYY).</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHDAT">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format</description>
@@ -2375,7 +2515,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="MH Sponsor Defined Identifier">
          <cdisc spec="CDASH" label="MHSPID">
-            <description>MH Sponsor Defined Identifier<br/>MH Sponsor Defined Identifier</description>
+            <description>MH Sponsor Defined Identifier<br/>
+               <br/>A sponsor-defined identifier.  In CDASH, this is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier fields.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSPID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). May be used to create RELREC to link this record with a record in another domain.</description>
@@ -2396,7 +2537,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Event Date Type">
          <cdisc spec="CDASH" label="MHEVDTYP">
-            <description>Medical History Event Date Type<br/>Medical History Event Date Type</description>
+            <description>Medical History Event Date Type<br/>
+               <br/>Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.   Question: "What was the medical history event date type?"  </description>
          </cdisc>
          <cdisc spec="SDTM" label="SUPPMH.QVAL">
             <description>This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = "MHEVDTYP" and SUPPMH.QLABEL = "Medical History Event Date Type".  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
@@ -2417,21 +2559,22 @@ Record whether the serious adverse event resulted in death</description>
             <path value="AllergyIntolerance.onset.onsetString"/>
          </mapping>
          <mapping element="Observation.effectiveDateTime">
-            <path value="Observation.effective.effectiveDateTime"/>
+            <path value="Observation.effectiveDateTime"/>
          </mapping>
          <mapping element="Observation.effectivePeriod">
-            <path value="Observation.effective.effectivePeriod"/>
+            <path value="Observation.effectivePeriod"/>
          </mapping>
          <mapping element="Observation.effectiveTiming">
-            <path value="Observation.effective.effectiveTiming"/>
+            <path value="Observation.effectiveTiming"/>
          </mapping>
          <mapping element="Observation.effectiveInstant">
-            <path value="Observaton.effective.effectiveInstant"/>
+            <path value="Observaton.effectiveInstant"/>
          </mapping>
       </element>
       <element name="Reported Term for Medical History">
          <cdisc spec="CDASH" label="MHTERM">
-            <description>Reported Term for Medical History<br/>Reported Term for Medical History</description>
+            <description>Reported Term for Medical History<br/>
+               <br/>The reported or prespecified name of the medical condition or event.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHTERM">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2445,31 +2588,33 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="AllergyIntolerance.code">
             <path value="AllergyIntolerance.code"/>
          </mapping>
-         <mapping element="Observation.Code">
+         <mapping element="Observation.code">
             <path value="Observation.code"/>
          </mapping>
       </element>
       <element name="Medical History Occurrence">
          <cdisc spec="CDASH" label="MHOCCUR">
-            <description>Medical History Occurrence<br/>Medical History Occurrence</description>
+            <description>Medical History Occurrence<br/>
+               <br/>An indication whether a prespecified medical condition/event or a group of medical conditions/events occurred when information about the occurrence of specific event is solicited.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHOCCUR">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
          </cdisc>
          <mapping element="Condition.verificationStatus">
-            <path value="Condition.verificationStatus != 'refuted, entered-in-error"/>
+            <path value="Condition.verificationStatus != 'refuted', 'entered-in-error'"/>
          </mapping>
          <mapping element="AllergyIntolerance.verificationStatus">
-            <path value="AllergyIntolerance.verificationStatus!=unconfirmed, confirmed, refuted, entered-in-error"/>
+            <path value="AllergyIntolerance.verificationStatus!='unconfirmed', 'confirmed', 'refuted', 'entered-in-error'"/>
          </mapping>
-         <mapping element="Observation.effective.effectiveDateTime">
-            <path value="Observation.effective.effectiveDateTime"/>
+         <mapping element="Observation.effectiveDateTime">
+            <path value="Observation.effectiveDateTime"/>
          </mapping>
          <comment>In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around "has the patient had X", that would be accomplished through a Questionnaire.Response</comment>
       </element>
       <element name="Medical History Event Prespecified">
          <cdisc spec="CDASH" label="MHPRESP">
-            <description>Medical History Event prespecified<br/>Medical History Event prespecified</description>
+            <description>Medical History Event prespecified<br/>
+               <br/>An indication that a specific event, or group of events, are prespecified on a CRF</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHPRESP">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2478,16 +2623,19 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Prior Medical History Event">
          <cdisc spec="CDASH" label="MHPRIOR">
-            <description>Prior Medical History Event<br/>Prior Medical History Event</description>
+            <description>Prior Medical History Event<br/>
+               <br/>An indication whether the event occurred prior to study start</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSTRTPT; MHSTRF">
             <description>This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHSTRF or MHSTRTPT.  When populating MHSTRF, or MHSTRTPT if the value of the CDASH field MHPRIOR is "Y" a value from the CDISC CT (STENRF) may be used.  When MHPRIOR refers to the Study Reference Period (defined in DM.RFSTDTC to DM.RFENDTC) the SDTMIG variable MHSTRF should be populated.  When MHPRIOR is compared to another time point, the SDTMIG variables MHSTRTPT and MHSTTPT should be used.  </description>
          </cdisc>
-         <gap>This can be determined from either the onsetDateTime and/or the abatementDateTime.  If it were to be flagged on the record, it would need to be an extension on the extension that links to the study.<br/>This can be determined from either the onsetDateTime and/or the abatementDateTime.  If it were to be flagged on the record, it would need to be an extension on the extension that links to the study.</gap>
+         <gap>This can be determined from either the onsetDateTime and/or the abatementDateTime.  If it were to be flagged on the record, it would need to be an extension on the extension that links to the study.<br/>
+            <br/>The sponsor may determine this, based on an anchor point in the protocol.</gap>
       </element>
       <element name="Ongoing Medical History Event">
          <cdisc spec="CDASH" label="MHONGO">
-            <description>Ongoing Medical History Event<br/>Ongoing Medical History Event</description>
+            <description>Ongoing Medical History Event<br/>
+               <br/>Indication the medical condition or event is ongoing when no end date is provided</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHENRF; MHENRTPT">
             <description>This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHENRF or MHENRTPT.  When populating MHENRF, if the value of the   MHONGO  is "Y" a value of "DURING", "AFTER" or "DURING/AFTER" may be used.  When populating MHENRTPT, if the value of MHONGO is "Y", the value of "ONGOING" may be used.  When MHONGO refers to the Study Reference Period (defined in DM&gt;RFSTDTC to DM&gt;RFENDTC) the SDTMIG variable MHENRF should be populated.</description>
@@ -2501,7 +2649,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Event Start Date">
          <cdisc spec="CDASH" label="MHSTDAT">
-            <description>Medical History Event Start Date<br/>Medical History Event Start Date</description>
+            <description>Medical History Event Start Date<br/>
+               <br/>The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYY).</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSTDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable MHSTDTC in ISO 8601 format.</description>
@@ -2515,13 +2664,14 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="AllergyIntolerance.onsetDateTime">
             <path value="AllergyIntolerance.onsetDateTime"/>
          </mapping>
-         <mapping element="Observation.effective.effectiveDateTime">
+         <mapping element="Observation.effectiveDateTime">
             <path value="Observation.effectiveDateTime"/>
          </mapping>
       </element>
       <element name="Medical History Event End Date">
          <cdisc spec="CDASH" label="MHENDAT">
-            <description>Medical History Event End Date<br/>Medical History Event End Date</description>
+            <description>Medical History Event End Date<br/>
+               <br/>The end date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYY)</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHENDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable MHENDTC in ISO 8601 format.</description>
@@ -2532,7 +2682,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Event Location">
          <cdisc spec="CDASH" label="MHLOC">
-            <description>Medical History Event Location<br/>Medical History Event Location</description>
+            <description>Medical History Event Location<br/>
+               <br/>A description of the anatomical location relevant for the medical condition or event.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHLOC">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
@@ -2552,7 +2703,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Event Laterality">
          <cdisc spec="CDASH" label="MHLAT">
-            <description>Medical History Event Laterality<br/>Medical History Event Laterality</description>
+            <description>Medical History Event Laterality<br/>
+               <br/>Qualifier for anatomical location further detailing the side of the body relevant for the event</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHLAT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
@@ -2561,7 +2713,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Directionality">
          <cdisc spec="CDASH" label="MHDIR">
-            <description>Medical History Directionality<br/>Medical History Directionality</description>
+            <description>Medical History Directionality<br/>
+               <br/>Qualifier further detailing the position of the anatomical location relative to the cent of the body, organ, or specimen.</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHDIR">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2570,7 +2723,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="MH Event Location Portion or Totality">
          <cdisc spec="CDASH" label="MHPORTOT">
-            <description>MH Event Location Portion or Totality<br/>MH Event Location Portion or Totality</description>
+            <description>MH Event Location Portion or Totality<br/>
+               <br/>Qualifier for anatomical location further detailing the distribution , which means arrangement of apportioning of. </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHPORTOT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2579,7 +2733,8 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="MH Modified Reported Term">
          <cdisc spec="CDASH" label="MHMODIFY">
-            <description>MH Modified Reported Term<br/>MH Modified Reported Term</description>
+            <description>MH Modified Reported Term<br/>
+               <br/>If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHMODIFY">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2600,7 +2755,9 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="MH Dictionary-Derived Term">
          <cdisc spec="CDASH" label="MHDECOD">
-            <description>MH Dictionary-Derived Term<br/>MH Dictionary-Derived Term</description>
+            <description>MH Dictionary-Derived Term<br/>
+               <br/>The dictionary text description of MHTERM or the modified topic variable (MHMODIFY), if applicable.
+</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHDECOD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
@@ -2621,7 +2778,9 @@ Record whether the serious adverse event resulted in death</description>
       </element>
       <element name="Medical History Event Lowest Level Term">
          <cdisc spec="CDASH" label="MHLLT">
-            <description>Medical History Event Lowest Level Term<br/>Medical History Event Lowest Level Term</description>
+            <description>Medical History Event Lowest Level Term<br/>
+               <br/>MedDRA Dictionary text description of the Lowest Level Term.
+</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHLLT">
             <description>
@@ -2643,7 +2802,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="MH Event Lowest Level Term Code">
          <cdisc spec="CDASH" label="MHLLTCD">
-            <description>MH Event Lowest Level Term Code<br/>MH Event Lowest Level Term Code</description>
+            <description>MH Event Lowest Level Term Code<br/>
+               <br/>MedDRA Lowest Level Term code.  </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHLLTCD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
@@ -2664,7 +2824,9 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="MH Event Preferred Term Code">
          <cdisc spec="CDASH" label="MHPTCD">
-            <description>MH Event Preferred Term Code<br/>MH Event Preferred Term Code</description>
+            <description>MH Event Preferred Term Code<br/>
+               <br/>MedDRA code for the Preferred Term
+</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHPTCD">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
@@ -2685,7 +2847,9 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="Medical History  High Level Term">
          <cdisc spec="CDASH" label="MHHLT">
-            <description>Medical History  High Level Term<br/>Medical History  High Level Term</description>
+            <description>Medical History  High Level Term<br/>
+               <br/>MedDRA text description of the High Level Term from the primary path.
+</description>
          </cdisc>
          <cdisc spec="SDTM" label="MHHLT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
@@ -2706,10 +2870,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="MH Event High Level Term Code">
          <cdisc spec="CDASH" label="MHHLTCD">
-            <description>MedDRA High Level Term code from the primary path<br/>MedDRA High Level Term code from the primary path</description>
+            <description>MedDRA High Level Term code from the primary path<br/>
+               <br/>
+            </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHHLTCD">
-            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding</description>
+            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>
+               <br/>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
          </cdisc>
          <mapping element="Condition.code">
             <path value="Condition.code"/>
@@ -2728,7 +2895,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       <element name="MH Event High Level Group Term">
          <cdisc spec="CDASH" label="MHHLGT"/>
          <cdisc spec="SDTM" label="MHHLGT">
-            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding</description>
+            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>
+               <br/>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
          </cdisc>
          <mapping element="Condition.code">
             <path value="Condition.code"/>
@@ -2750,7 +2918,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
 </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHHLGTCD">
-            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding</description>
+            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>
+               <br/>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
          </cdisc>
          <mapping element="Condition.code">
             <path value="Condition.code"/>
@@ -2768,10 +2937,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="MH Event Primary System Organ Class">
          <cdisc spec="CDASH" label="MHSOCCD">
-            <description>MedDRA primary System Organ Class description associated with the event<br/>MedDRA primary System Organ Class description associated with the event</description>
+            <description>MedDRA primary System Organ Class description associated with the event<br/>
+               <br/>
+            </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSCOC">
-            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding</description>
+            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>
+               <br/>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
          </cdisc>
          <mapping element="Condition.code">
             <path value="Condition.code"/>
@@ -2789,10 +2961,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="MH Event Primary System Organ Class Code">
          <cdisc spec="CDASH" label="MHSOCCD">
-            <description>MedDRA code for the primary System Organ Class.<br/>MedDRA code for the primary System Organ Class.</description>
+            <description>MedDRA code for the primary System Organ Class.<br/>
+               <br/>
+            </description>
          </cdisc>
          <cdisc spec="SDTM" label="MHSOCCD">
-            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding</description>
+            <description>The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding<br/>
+               <br/>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was "ASSIGNED".</description>
          </cdisc>
          <mapping element="Condition.code">
             <path value="Condition.code"/>
@@ -2825,7 +3000,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
             <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Site Identifier">
          <cdisc spec="CDASH" label="SITEID">
@@ -2842,7 +3018,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
             <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject Identifier for the Study">
          <cdisc spec="CDASH" label="SUBJID">
@@ -2854,7 +3031,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Category for Medication">
          <cdisc spec="CDASH" label="CMCAT">
@@ -2905,7 +3083,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM">
             <description>Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED.</description>
          </cdisc>
-         <gap>This would be determined by dates within the protocol.  <br/>This would be determined by dates within the protocol.  </gap>
+         <gap>This would be determined by dates within the protocol.  <br/>
+            <br/>What constitutes a 'concomitant' drug is study-specific and would need to be evaluated on a study level.  FHIR would not normally store that information. However an extension on ResearchSubject could be utilized or could be captured in a Questionnaire.</gap>
       </element>
       <element name="CM Sponsor-Defined Identifier">
          <cdisc spec="CDASH" label="CMSPID">
@@ -2938,7 +3117,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="MedicationStatement.medication.medicationCodeableconcept">
-            <path value="MedicationStatement.medication.medication.CodeableConcept"/>
+            <path value="MedicationStatement.medication.medicationCodeableConcept"/>
          </mapping>
          <mapping element="MedicationStatement.medication.medicationReference">
             <path value="MedicationStatement.medication.medicationReference.resolve().code"/>
@@ -2950,7 +3129,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="MedicationRequest.medication.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationDispense.medication.medicationCodeableConcept">
-            <path value="MedicationDispense.medication.medication.CodeableConcept"/>
+            <path value="MedicationDispense.medication.medicationCodeableConcept"/>
          </mapping>
          <mapping element="MedicationDispense.medication.medicationReference">
             <path value="MedicationDispense.medication.medicationReference.resolve().code"/>
@@ -2977,7 +3156,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
       </element>
       <element name="CM Occurrence">
          <cdisc spec="CDASH" label="CMOCCUR">
-            <description>An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.<br/>An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.</description>
+            <description>An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.<br/>
+               <br/>Indicate if (specific medication/treatment) was taken by checking Yes or No.</description>
          </cdisc>
          <cdisc spec="SDTM" label="CMOCCUR">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -2992,13 +3172,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="status=('entered-in-error', 'cancelled', 'stopped')"/>
          </mapping>
          <mapping element="MedicationDispense.status">
-            <path value="MedicationRequest.status=entered-in-error, cancelled, stopped"/>
+            <path value="MedicationRequest.status=('entered-in-error', 'cancelled', 'stopped')"/>
          </mapping>
          <mapping element="MedicationAdministration.status">
-            <path value="status"/>
+            <path value="MedicationAdministration.status"/>
          </mapping>
          <mapping element="Immunization.status">
-            <path value="status = ('completed', 'entered-in-error')"/>
+            <path value="Immunization.status = ('completed', 'entered-in-error')"/>
          </mapping>
          <comment>In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</comment>
       </element>
@@ -3241,7 +3421,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="Immunization.occurrenceString">
             <path value="Immunization.occurrence.orrurrenceString"/>
          </mapping>
-         <comment>start includes both date and time, though time commonly won't be pecified</comment>
+         <comment>start includes both date and time, though time commonly won't be specified</comment>
       </element>
       <element name="Concomitant Meds Start Time">
          <cdisc spec="CDASH" label="CMSTDTC">
@@ -3268,7 +3448,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="Immunization.occurrenceString">
             <path value="Immunization.occurrence.orrurrenceString"/>
          </mapping>
-         <comment>start includes both date and time, though time commonly won't be pecified</comment>
+         <comment>start includes both date and time, though time commonly won't be specified</comment>
       </element>
       <element name="Concomitant Meds End Date">
          <cdisc spec="CDASH" label="CMSTDTC">
@@ -3293,7 +3473,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="Immunization.occurrence.occurrenceDateTime"/>
             <path value="Immunization.occurrence.orrurrenceString"/>
          </mapping>
-         <comment>end includes both date and time, though time commonly won't be pecified</comment>
+         <comment>end includes both date and time, though time commonly won't be specified</comment>
       </element>
       <element name="Concomitant Meds End Time">
          <cdisc spec="CDASH" label="CMENDTC">
@@ -3318,7 +3498,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="Immunization.occurrence.occurrenceDateTime"/>
             <path value="Immunization.occurrence.orrurrenceString"/>
          </mapping>
-         <comment>end includes both date and time, though time commonly won't be pecified</comment>
+         <comment>end includes both date and time, though time commonly won't be specified</comment>
       </element>
       <element name="Prior Concomitant Medications">
          <cdisc spec="CDASH" label="CMPRIOR">
@@ -3462,7 +3642,9 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="SUPPCM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= "MATC1CD" and SUPPCM.QLABEL="ATC Level 1 Code".  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was "ASSIGNED". </description>
          </cdisc>
-         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</gap>
+         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+            <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</gap>
       </element>
       <element name="ATC Level 2 Description">
          <cdisc spec="CDASH" label="CMATC2">
@@ -3480,7 +3662,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="SUPPCM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= "MATC2CD" and SUPPCM.QLABEL="ATC Level 2 Code".  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was "ASSIGNED". </description>
          </cdisc>
-         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</gap>
+         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+            <br/>All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</gap>
       </element>
       <element name="ATC Level 3 Description">
          <cdisc spec="CDASH" label="CMATC3">
@@ -3498,7 +3681,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="SUPPCM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= "MATC3CD" and SUPPCM.QLABEL="ATC Level 3 Code".  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was "ASSIGNED". </description>
          </cdisc>
-         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</gap>
+         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+            <br/>All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</gap>
       </element>
       <element name="ATC Level 4 Description">
          <cdisc spec="CDASH" label="CMATC4">
@@ -3516,7 +3700,9 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="SUPPCM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= "MATC4CD" and SUPPCM.QLABEL="ATC Level 4 Code".  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was "ASSIGNED". </description>
          </cdisc>
-         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</gap>
+         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+            <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</gap>
       </element>
       <element name="ATC Level 5 Description">
          <cdisc spec="CDASH" label="CMATC5">
@@ -3534,13 +3720,16 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="SUPPCM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= "MATC5CD" and SUPPCM.QLABEL="ATC Level 5 Code".  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was "ASSIGNED". </description>
          </cdisc>
-         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</gap>
+         <gap>Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+            <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</gap>
       </element>
    </domain>
    <domain code="PR" name="Procedure">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>A unique identifier for a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -3549,11 +3738,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
             <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Study Site ID">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>A unique identifier for a site within a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SITEID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -3562,11 +3753,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
             <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
-         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</comment>
+         <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject ID for the Study">
          <cdisc spec="CDASH" label="SUBJID">
-            <description>Sponsor's subject Identifier for the study.<br/>Sponsor's subject Identifier for the study.</description>
+            <description>Sponsor's subject Identifier for the study.<br/>
+               <br/>A unique subject identifier within a site and a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
@@ -3574,7 +3767,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="ResearchSubject.identifier">
             <path value="ResearchSubject.where(subject=Procedure.subject).identifier.value"/>
          </mapping>
-         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.</comment>
+         <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
+            <br/>No standard way to decide which subject identifier to use</comment>
       </element>
       <element name="Any Procedures Performed">
          <cdisc spec="CDASH" label="PRYN">
@@ -3642,7 +3836,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Define and review standardized coding schema with coding translations are conducted by the sponsor.<br/>Define and review standardized coding schema with coding translations are conducted by the sponsor.</comment>
+         <comment>Define and review standardized coding schema with coding translations are conducted by the sponsor.<br/>
+            <br/>PRDECOD is the dictionary or the sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.  This means it is the standardized term for the procedure. </comment>
       </element>
       <element name="Modified Procedure Name">
          <cdisc spec="CDASH" label="PRMODIFY">
@@ -3651,7 +3846,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="PRMODIFY">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <gap>Coding translations are conducted by the sponsor.<br/>Coding translations are conducted by the sponsor.</gap>
+         <gap>Coding translations are conducted by the sponsor.<br/>
+            <br/>In FHIR, there's no need to modify the PRTERM.  The text which was actually saw/typed (errors and all) is present and the various codes encoding it and the display names for those codes.  If there was a need to capture a corrected text that was submitted to a post-coding process, that would be an extension</gap>
       </element>
       <element name="Procedure Prespecified">
          <cdisc spec="CDASH" label="PRPRESP">
@@ -3675,7 +3871,7 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
          </mapping>
          <comment>
 Coding translations are left to the sponsor.<br/>
-Coding translations are left to the sponsor.</comment>
+            <br/>Status of 'not-done', 'entered-in-error' would indicate that it didn't happen, 'active', 'in-progress', 'on-hold', 'completed' would indicate that it did.  'stopped' would indicate that it started, but was abnormally terminated - where that should go depends on the study's definition of 'occur'.</comment>
       </element>
       <element name="Procedure Reason for Occur Value">
          <cdisc spec="CDASH" label="PRREASOC">
@@ -3713,7 +3909,8 @@ Coding translations are left to the sponsor.</comment>
          <cdisc spec="SDTM" label="PRSTRTPT; PRSTRF">
             <description>This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is "Y" a value from the CDISC CT (STENRF) may be used.  </description>
          </cdisc>
-         <gap>This is not expect to receive from the site.<br/>This is not expect to receive from the site.</gap>
+         <gap>This is not expect to receive from the site.<br/>
+            <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</gap>
       </element>
       <element name="Procedure Start Date">
          <cdisc spec="CDASH" label="PRSTDAT">
@@ -3739,7 +3936,8 @@ Coding translations are left to the sponsor.</comment>
          <mapping element="Procedure.status">
             <path value="Procedure.status"/>
          </mapping>
-         <comment>This supports the necessity of separating procedures and medication.<br/>This supports the necessity of separating procedures and medication.</comment>
+         <comment>This supports the necessity of separating procedures and medication.<br/>
+            <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.  Note that MedicationAdministration reflects a single administration, so it would only be 'ongoing' until the IV is turned off or the rate is adjusted.</comment>
       </element>
       <element name="Procedure End Date">
          <cdisc spec="CDASH" label="PRENDAT">
@@ -3963,7 +4161,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure Lowest Level Term Code">
          <cdisc spec="CDASH" label="PRLLTCD">
@@ -3975,7 +4174,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure Preferred Term Code">
          <cdisc spec="CDASH" label="PRPTCD">
@@ -3987,7 +4187,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure High Level Term">
          <cdisc spec="CDASH" label="PRHLT">
@@ -3999,7 +4200,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure High Level Term Code">
          <cdisc spec="CDASH" label="PRHLTCD">
@@ -4011,7 +4213,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure High Level Group Term">
          <cdisc spec="CDASH" label="PRHLGT">
@@ -4023,7 +4226,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="Procedure High Level Group Term Code">
          <cdisc spec="CDASH" label="PRHLGTCD">
@@ -4035,7 +4239,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="PR Primary System Organ Class">
          <cdisc spec="CDASH" label="PRSOC">
@@ -4047,7 +4252,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
       <element name="PR primary System Organ Class Code">
          <cdisc spec="CDASH" label="PRSOCCD">
@@ -4059,13 +4265,15 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Procedure.code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </comment>
+         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+            <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</comment>
       </element>
    </domain>
    <domain code="DM" name="Demographics">
       <element name="Study ID or Number">
          <cdisc spec="CDASH" label="STUDYID">
-            <description>Sponsor's study ID<br/>Sponsor's study ID</description>
+            <description>Sponsor's study ID<br/>
+               <br/>A unique identifier for a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="STUDYID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
@@ -4076,7 +4284,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Study Site ID">
          <cdisc spec="CDASH" label="SITEID">
-            <description>Sponsor's site ID<br/>Sponsor's site ID</description>
+            <description>Sponsor's site ID<br/>
+               <br/>A unique identifier for a site within a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SITEID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
@@ -4087,7 +4296,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Subject ID for the Study">
          <cdisc spec="CDASH" label="SUBJID">
-            <description>Sponsor's subject Identifier for the study.<br/>Sponsor's subject Identifier for the study.</description>
+            <description>Sponsor's subject Identifier for the study.<br/>
+               <br/>A unique subject identifier within a site and a study.</description>
          </cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
@@ -4098,7 +4308,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Birth Date">
          <cdisc spec="CDASH" label="BRTHDAT">
-            <description>Birth Date<br/>Birth Date</description>
+            <description>Birth Date<br/>
+               <br/>A subject's date of birth(with or without the time of birth).  The complete date of birth is made from the temporal components of Birth Year, Birth Month, Birth Day, Birth Time</description>
          </cdisc>
          <cdisc spec="SDTM" label="BRTHDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4106,11 +4317,13 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Patient.birthDate">
             <path value="Patient.birthDate"/>
          </mapping>
-         <comment>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.</comment>
+         <comment>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>
+            <br/>Birth time is captured as a standard extension</comment>
       </element>
       <element name="Birth Day">
          <cdisc spec="CDASH" label="BRTHDD">
-            <description>Birth Day<br/>Birth Day</description>
+            <description>Birth Day<br/>
+               <br/>Day of birth of the subject in an unambiguous date format (e.g., DD).</description>
          </cdisc>
          <cdisc spec="SDTM" label="BRTHDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4121,7 +4334,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Birth Month">
          <cdisc spec="CDASH" label="BRTHMO">
-            <description>Birth Month<br/>Birth Month</description>
+            <description>Birth Month<br/>
+               <br/>Month of birth of the subject in an unambiguous date format (e.g., MM).</description>
          </cdisc>
          <cdisc spec="SDTM" label="BRTHDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4132,7 +4346,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Birth Year">
          <cdisc spec="CDASH" label="BRTHYY">
-            <description>Birth Year<br/>Birth Year</description>
+            <description>Birth Year<br/>
+               <br/>Year of birth of the subject in an unambiguous date format (e.g., YYYY).</description>
          </cdisc>
          <cdisc spec="SDTM" label="BRTHDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4143,7 +4358,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Birth Time">
          <cdisc spec="CDASH" label="BRTHTIM">
-            <description>Birth Time<br/>Birth Time</description>
+            <description>Birth Time<br/>
+               <br/>The time of birth of the subject in an unambiguous time format (e.g., hh:mm)</description>
          </cdisc>
          <cdisc spec="SDTM" label="BRTHDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4159,7 +4375,8 @@ Might consider proposing it as a standard extension.</gap>
          <cdisc spec="SDTM" label="AGE">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <gap>There is potential where the birth date can not be collected due to country regulations.<br/>There is potential where the birth date can not be collected due to country regulations.</gap>
+         <gap>There is potential where the birth date can not be collected due to country regulations.<br/>
+            <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</gap>
       </element>
       <element name="Age Units">
          <cdisc spec="CDASH" label="AGEU">
@@ -4172,7 +4389,8 @@ Might consider proposing it as a standard extension.</gap>
       </element>
       <element name="Demographics Collection Date">
          <cdisc spec="CDASH" label="DMDAT">
-            <description>Demographics Collection Date<br/>Demographics Collection Date</description>
+            <description>Demographics Collection Date<br/>
+               <br/>The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)</description>
          </cdisc>
          <cdisc spec="SDTM" label="DMDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.</description>
@@ -4180,7 +4398,8 @@ Might consider proposing it as a standard extension.</gap>
          <mapping element="Patient.meta.lastUpdated">
             <path value="Patient.meta.lastUpdated"/>
          </mapping>
-         <comment> <br/> </comment>
+         <comment> <br/>
+            <br/>This indicates when the Patient resource was last changed, but in practice different pieces of demographics are collected at different times.  Review will be required of the history of the patient resource to determine when any particular fact was first asserted.</comment>
       </element>
       <element name="Sex">
          <cdisc spec="CDASH" label="SEX">
@@ -4219,7 +4438,8 @@ Might consider proposing it as a standard extension.</gap>
          <cdisc spec="SDTM" label="RACE">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</gap>
+         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+            <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</gap>
       </element>
       <element name="Collected Race">
          <cdisc spec="CDASH" label="CRACE">
@@ -4228,7 +4448,8 @@ Might consider proposing it as a standard extension.</gap>
          <cdisc spec="SDTM" label="SUPPDM.QVAL">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = "CRACE" and SUPPDM.QLABEL = "Collected Race" See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
          </cdisc>
-         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</gap>
+         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+            <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</gap>
       </element>
       <element name="Race Other">
          <cdisc spec="CDASH" label="RACEOTH">
@@ -4237,7 +4458,8 @@ Might consider proposing it as a standard extension.</gap>
          <cdisc spec="SDTM">
             <description>This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = "RACEOTHER" and SUPPDM.QLABEL = "RACE OTHER" See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
          </cdisc>
-         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</gap>
+         <gap>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+            <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</gap>
       </element>
    </domain>
 </mappings>

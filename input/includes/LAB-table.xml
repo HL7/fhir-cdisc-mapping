@@ -34,7 +34,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Study Name</th>
@@ -46,7 +47,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().title</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().title</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Transmission Type</th>
@@ -74,7 +76,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Site Transaction Type</th>
@@ -94,7 +97,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
             </td>
-            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.</td>
+            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Investigator Name</th>
@@ -106,7 +110,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</p>
             </td>
-            <td>Will need to decide which nname to expose.  Can also extract the prefix, given and family names if text isn't specified.<br/>Will need to decide which nname to expose.  Can also extract the prefix, given and family names if text isn't specified.</td>
+            <td>Will need to decide which name to expose.  Can also extract the prefix, given and family names if text isn't specified.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Investigator Transaction Type</th>
@@ -125,7 +130,8 @@
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+               <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Subject ID or Number</th>
@@ -136,7 +142,8 @@
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+               <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Spare subject level ID or Number</th>
@@ -147,12 +154,13 @@
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+               <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Subject Sex</th>
             <td>
-               <span title="Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.&#xA;&#xA;Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.">/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
+               <span title="Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.&#xA;&#xA;&#xA;               &#xA;&#xA;If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:&#xA;male -&gt; M&#xA;female -&gt; F&#xA;other -&gt; U&#xA;unknown -&gt; U">/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
             </td>
             <td>Patient.gender</td>
             <td>
@@ -171,7 +179,7 @@
          <tr>
             <th>Subject Race</th>
             <td>
-               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  ">/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
+               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;&#xA;               &#xA;&#xA;If patient race is sent, use the us-core-race extension in FHIR.">/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
             </td>
             <td colspan="2" style="background-color:LightGray">There's an US-core extension (us-core-race) for capturing this in the U.S. and the possibility that other countries will define their own extensions.  Note that this is for administrative, not clinical purposes.  Genetic heritage would typically be captured as an Observation</td>
             <td/>
@@ -187,7 +195,7 @@
          <tr>
             <th>Subject Initials</th>
             <td>
-               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  ">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
+               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;&#xA;               &#xA;&#xA;If required, be sure to send only the initials, derived from the name.">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
             </td>
             <td>Patient.name.text</td>
             <td>
@@ -231,7 +239,9 @@
                <span title="Since this is required for the LAB model, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type'.">/GTP/Study/Site/Investigator/Subject/Visit/@Type</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This is essentially whether the visit is tied to a particular activity within the PlanDefinition (study protocol) or not.  Given that in non-study-specific systems, there won't typically be a linkage even when the encounter *is* driven by the study, this will generally need to be populated algorithmically on extension</td>
-            <td>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)</td>
+            <td>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>
+               <br/>This would be Encounter.reasonCode
+</td>
          </tr>
          <tr>
             <th>Visit Type Modifier</th>
@@ -328,7 +338,7 @@
             <td>
                <span title="Capture the duration portion in this attribute. (e.g., 03:00)">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
             </td>
-            <td>Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueDuration.code</td>
+            <td>Observation.specimen.resolve().extension.(cqf-relativeDateTime.valueDuration.code</td>
             <td>
                <p>Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code</p>
             </td>
@@ -339,7 +349,7 @@
             <td>
                <span title="Capture both the quantity of time and the relative event (e.g., 3 hours post dose)">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
             </td>
-            <td>Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueReference.reference</td>
+            <td>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</td>
             <td>
                <p>Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference</p>
             </td>
@@ -460,7 +470,8 @@
             <td>
                <span title="Derive from the patient.birthDate.  Consider whether patient personal information must be shared for subject reconciliation.  If not, do not send this data.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).</td>
+            <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
+               <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</td>
             <td/>
          </tr>
          <tr>
@@ -468,13 +479,14 @@
             <td>
                <span title="If age is shared, include a unit of measure (months, years).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).</td>
+            <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
+               <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</td>
             <td/>
          </tr>
          <tr>
             <th>Fasting Status</th>
             <td>
-               <span title="If fasting status is provided, it must be one of the following:&#xA;&#xA;If fasting status is provided, it must be one of the following:">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
+               <span title="If fasting status is provided, it must be one of the following:&#xA;&#xA;&#xA;               &#xA;&#xA;&#xA;Y - Yes&#xA;N - No&#xA;U - Unknown&#xA;and blank if not relevant.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
             </td>
             <td>Observation.specimenRefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code</td>
             <td>
@@ -515,11 +527,11 @@
          <tr>
             <th>Test Status</th>
             <td>
-               <span title="Multiple fields are required to populate this value per the standard.  &#xA;&#xA;Multiple fields are required to populate this value per the standard.  ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
+               <span title="Multiple fields are required to populate this value per the standard.  &#xA;&#xA;&#xA;               &#xA;&#xA;Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.   From these two fields, sponsors will need to translate to the CDISC test statuses:  &#xA;D - Done&#xA;N - Not Performed&#xA;X - Cancelled.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
             </td>
             <td>Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)</td>
             <td>
-               <p>ServiceRequest.doNotPerform and ServiceRequest.status</p>
+               <p>Observation.basedOn (Ref:ServiceRequest.doNotPerform and ServiceRequest.status)</p>
             </td>
             <td/>
          </tr>
@@ -528,9 +540,9 @@
             <td>
                <span title="Populate with date and time of test.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
             </td>
-            <td>Observation.effective.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
-               <p>Observation.effective.effectiveDateTime</p>
+               <p>Observation.effectiveDateTime</p>
             </td>
             <td/>
          </tr>
@@ -567,7 +579,7 @@
          <tr>
             <th>Lab Test ID</th>
             <td>
-               <span title="The ID of the test as assigned by the laboratory. &#xA;&#xA;The ID of the test as assigned by the laboratory. ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
+               <span title="The ID of the test as assigned by the laboratory. &#xA;&#xA;&#xA;               &#xA;&#xA;NOTE: since this is a codeable concept, you may provide multiple coding system codes for a test.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
             </td>
             <td>Observation.code</td>
             <td>
@@ -593,7 +605,7 @@
             </td>
             <td>Observation.comment</td>
             <td>
-               <p>Observation.comment.</p>
+               <p>Observation.comment</p>
             </td>
             <td/>
          </tr>
@@ -604,7 +616,7 @@
             </td>
             <td>Observation.code</td>
             <td>
-               <p>Observation.code.coding.where (system = 'Recipient Test')</p>
+               <p>Observation.code.coding.where (system = Recipient Test)</p>
             </td>
             <td>Observation/code/coding/system/@value ("system" element used to designate the type of code that is being represented (in this case the "ReceiverTest") by the "code" element)</td>
          </tr>
@@ -637,7 +649,7 @@
             </td>
             <td>Observation.code</td>
             <td>
-               <p>Observation.code.coding.where (system = "http://loinc.org")</p>
+               <p>Observation.code.coding.where (system = 'http://loinc.org')</p>
             </td>
             <td/>
          </tr>
@@ -666,7 +678,7 @@
          <tr>
             <th>Alert Flag</th>
             <td>
-               <span title="The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:&#xA;&#xA;The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
+               <span title="The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:&#xA;&#xA;&#xA;               &#xA;&#xA;LP - Low Panic&#xA;LT - Low Telephone&#xA;LN - Low Normal&#xA;N - Normal&#xA;HN - High Normal&#xA;HT - High Telephone&#xA;HP - High Panic&#xA;AB - Abnormal&#xA;and blank when not used.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
             </td>
             <td>Observation.interpretation</td>
             <td>
@@ -677,9 +689,9 @@
          <tr>
             <th>Delta Flag</th>
             <td>
-               <span title="The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:&#xA;&#xA;The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
+               <span title="The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:&#xA;&#xA;&#xA;               &#xA;&#xA;D+  for an increase in value&#xA;D-  for a decrease in value&#xA;and blank for no flag.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
             </td>
-            <td>Observation.interpretation.</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Delta Flag')</p>
             </td>
@@ -688,7 +700,7 @@
          <tr>
             <th>Exclusion Flag</th>
             <td>
-               <span title="The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:&#xA;&#xA;The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
+               <span title="The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:&#xA;&#xA;&#xA;               &#xA;&#xA;LX - Low Exclusion&#xA;HX - High Exclusion&#xA;EX - Excluded (for exclusions not falling under high or low)&#xA;and blank for no flag.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
             </td>
             <td>Observation.interpretation</td>
             <td>
@@ -820,7 +832,9 @@
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
-            <td>Determine the precision from the value.<br/>Determine the precision from the value.</td>
+            <td>Determine the precision from the value.<br/>
+               <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</td>
          </tr>
          <tr>
             <th>Reported Numeric Result Precision</th>
@@ -831,7 +845,9 @@
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
-            <td>Determine the precision from the value.<br/>Determine the precision from the value.</td>
+            <td>Determine the precision from the value.<br/>
+               <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</td>
          </tr>
          <tr>
             <th>SI Numeric Result Precision</th>
@@ -842,7 +858,9 @@
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
-            <td>Determine the precision from the value.<br/>Determine the precision from the value.</td>
+            <td>Determine the precision from the value.<br/>
+               <br/>Precision is implicitly determined from the attribute 
+Observation/valueQuantity/value/@value</td>
          </tr>
          <tr>
             <th>Conventional Reference Range Low</th>
@@ -987,7 +1005,8 @@
             <td>
                <span title="This allows specification of extensions from the Base Lab Model definition.  For a lab record, this would contain 'BASE'.  For Microbiology data, this would contain 'MICROBIO'."/>
             </td>
-            <td colspan="2" style="background-color:LightGray">Populate with a default value, depending on the type of data being transmitted.<br/>Populate with a default value, depending on the type of data being transmitted.</td>
+            <td colspan="2" style="background-color:LightGray">Populate with a default value, depending on the type of data being transmitted.<br/>
+               <br/>E.g., "BASE"</td>
             <td/>
          </tr>
          <tr>

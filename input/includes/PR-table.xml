@@ -29,7 +29,7 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a study.">STUDYID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
@@ -39,12 +39,13 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Study Site ID</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a site within a study.">SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
@@ -54,12 +55,13 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Subject ID for the Study</th>
             <td>
-               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;Sponsor's subject Identifier for the study.">SUBJID</span>
+               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;&#xA;               &#xA;&#xA;A unique subject identifier within a site and a study.">SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
@@ -68,7 +70,8 @@
             <td>
                <p>ResearchSubject.where(subject=Procedure.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
+               <br/>No standard way to decide which subject identifier to use</td>
          </tr>
          <tr>
             <th>Any Procedures Performed</th>
@@ -149,7 +152,8 @@
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Define and review standardized coding schema with coding translations are conducted by the sponsor.<br/>Define and review standardized coding schema with coding translations are conducted by the sponsor.</td>
+            <td>Define and review standardized coding schema with coding translations are conducted by the sponsor.<br/>
+               <br/>PRDECOD is the dictionary or the sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.  This means it is the standardized term for the procedure. </td>
          </tr>
          <tr>
             <th>Modified Procedure Name</th>
@@ -159,7 +163,8 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRMODIFY</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Coding translations are conducted by the sponsor.<br/>Coding translations are conducted by the sponsor.</td>
+            <td colspan="2" style="background-color:LightGray">Coding translations are conducted by the sponsor.<br/>
+               <br/>In FHIR, there's no need to modify the PRTERM.  The text which was actually saw/typed (errors and all) is present and the various codes encoding it and the display names for those codes.  If there was a need to capture a corrected text that was submitted to a post-coding process, that would be an extension</td>
             <td/>
          </tr>
          <tr>
@@ -188,7 +193,7 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
             </td>
             <td>
 Coding translations are left to the sponsor.<br/>
-Coding translations are left to the sponsor.</td>
+               <br/>Status of 'not-done', 'entered-in-error' would indicate that it didn't happen, 'active', 'in-progress', 'on-hold', 'completed' would indicate that it did.  'stopped' would indicate that it started, but was abnormally terminated - where that should go depends on the study's definition of 'occur'.</td>
          </tr>
          <tr>
             <th rowspan="3">Procedure Reason for Occur Value</th>
@@ -238,7 +243,8 @@ Coding translations are left to the sponsor.</td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is &#34;Y&#34; a value from the CDISC CT (STENRF) may be used.  ">PRSTRTPT; PRSTRF</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>This is not expect to receive from the site.</td>
+            <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
+               <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
             <td/>
          </tr>
          <tr>
@@ -269,7 +275,8 @@ Coding translations are left to the sponsor.</td>
             <td>
                <p>Procedure.status</p>
             </td>
-            <td>This supports the necessity of separating procedures and medication.<br/>This supports the necessity of separating procedures and medication.</td>
+            <td>This supports the necessity of separating procedures and medication.<br/>
+               <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.  Note that MedicationAdministration reflects a single administration, so it would only be 'ongoing' until the IV is turned off or the rate is adjusted.</td>
          </tr>
          <tr>
             <th>Procedure End Date</th>
@@ -542,7 +549,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure Lowest Level Term Code</th>
@@ -556,7 +564,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure Preferred Term Code</th>
@@ -570,7 +579,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure High Level Term</th>
@@ -584,7 +594,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure High Level Term Code</th>
@@ -598,7 +609,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure High Level Group Term</th>
@@ -612,7 +624,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>Procedure High Level Group Term Code</th>
@@ -626,7 +639,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>PR Primary System Organ Class</th>
@@ -640,7 +654,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.</td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
          <tr>
             <th>PR primary System Organ Class Code</th>
@@ -654,7 +669,8 @@ Might consider proposing it as a standard extension.</td>
             <td>
                <p>Procedure.code</p>
             </td>
-            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. </td>
+            <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+               <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
          </tr>
       </tbody>
    </table>
