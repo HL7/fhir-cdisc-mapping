@@ -43,7 +43,8 @@
                <p>MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Study Site Identifier</th>
@@ -62,7 +63,8 @@
                <p>MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Subject Identifier for the Study</th>
@@ -76,7 +78,8 @@
             <td>
                <p>ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
+               <br/>No standard way to decide which subject identifier to use</td>
          </tr>
          <tr>
             <th rowspan="4">Category for Medication</th>
@@ -150,7 +153,8 @@
             <td>
                <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
             </td>
-            <td colspan="2" style="background-color:LightGray">This would be determined by dates within the protocol.  <br/>This would be determined by dates within the protocol.  </td>
+            <td colspan="2" style="background-color:LightGray">This would be determined by dates within the protocol.  <br/>
+               <br/>What constitutes a 'concomitant' drug is study-specific and would need to be evaluated on a study level.  FHIR would not normally store that information. However an extension on ResearchSubject could be utilized or could be captured in a Questionnaire.</td>
             <td/>
          </tr>
          <tr>
@@ -201,7 +205,7 @@
             </td>
             <td>MedicationStatement.medication.medicationCodeableconcept</td>
             <td>
-               <p>MedicationStatement.medication.medication.CodeableConcept</p>
+               <p>MedicationStatement.medication.medicationCodeableConcept</p>
             </td>
             <td rowspan="9"/>
          </tr>
@@ -226,7 +230,7 @@
          <tr>
             <td>MedicationDispense.medication.medicationCodeableConcept</td>
             <td>
-               <p>MedicationDispense.medication.medication.CodeableConcept</p>
+               <p>MedicationDispense.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
@@ -268,7 +272,7 @@
          <tr>
             <th rowspan="6">CM Occurrence</th>
             <td rowspan="6">
-               <span title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#xA;&#xA;An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.">CMOCCUR</span>
+               <span title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#xA;&#xA;&#xA;               &#xA;&#xA;Indicate if (specific medication/treatment) was taken by checking Yes or No.">CMOCCUR</span>
             </td>
             <td rowspan="6">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMOCCUR</span>
@@ -294,19 +298,19 @@
          <tr>
             <td>MedicationDispense.status</td>
             <td>
-               <p>MedicationRequest.status=entered-in-error, cancelled, stopped</p>
+               <p>MedicationRequest.status=('entered-in-error', 'cancelled', 'stopped')</p>
             </td>
          </tr>
          <tr>
             <td>MedicationAdministration.status</td>
             <td>
-               <p>status</p>
+               <p>MedicationAdministration.status</p>
             </td>
          </tr>
          <tr>
             <td>Immunization.status</td>
             <td>
-               <p>status = ('completed', 'entered-in-error')</p>
+               <p>Immunization.status = ('completed', 'entered-in-error')</p>
             </td>
          </tr>
          <tr>
@@ -655,7 +659,7 @@
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="6">start includes both date and time, though time commonly won't be pecified</td>
+            <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod.start</td>
@@ -699,7 +703,7 @@
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="6">start includes both date and time, though time commonly won't be pecified</td>
+            <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod.start</td>
@@ -743,7 +747,7 @@
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="5">end includes both date and time, though time commonly won't be pecified</td>
+            <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod.end</td>
@@ -782,7 +786,7 @@
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="5">end includes both date and time, though time commonly won't be pecified</td>
+            <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod.end</td>
@@ -1036,7 +1040,9 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC1CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+               <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</td>
             <td/>
          </tr>
          <tr>
@@ -1058,7 +1064,8 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC2CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 2 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+               <br/>All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</td>
             <td/>
          </tr>
          <tr>
@@ -1080,7 +1087,8 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC3CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 3 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+               <br/>All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</td>
             <td/>
          </tr>
          <tr>
@@ -1102,7 +1110,9 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC4CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 4 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+               <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</td>
             <td/>
          </tr>
          <tr>
@@ -1124,7 +1134,9 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC5CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 5 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>Encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
+            <td colspan="2" style="background-color:LightGray">Encoding is performed by the sponsor and we would not expect to receive these from the site.<br/>
+               <br/>
+All coding levels are found in the same attribute as distinct codings.  The granularity is distinguished by the code system or knowledge of the code</td>
             <td/>
          </tr>
       </tbody>

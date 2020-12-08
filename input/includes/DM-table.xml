@@ -29,7 +29,7 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a study.">STUDYID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">STUDYID</span>
@@ -43,7 +43,7 @@
          <tr>
             <th>Study Site ID</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a site within a study.">SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SITEID</span>
@@ -57,7 +57,7 @@
          <tr>
             <th>Subject ID for the Study</th>
             <td>
-               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;Sponsor's subject Identifier for the study.">SUBJID</span>
+               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;&#xA;               &#xA;&#xA;A unique subject identifier within a site and a study.">SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SUBJID</span>
@@ -71,7 +71,7 @@
          <tr>
             <th>Birth Date</th>
             <td>
-               <span title="Birth Date&#xA;&#xA;Birth Date">BRTHDAT</span>
+               <span title="Birth Date&#xA;&#xA;&#xA;               &#xA;&#xA;A subject's date of birth(with or without the time of birth).  The complete date of birth is made from the temporal components of Birth Year, Birth Month, Birth Day, Birth Time">BRTHDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -80,12 +80,13 @@
             <td>
                <p>Patient.birthDate</p>
             </td>
-            <td>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.</td>
+            <td>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>
+               <br/>Birth time is captured as a standard extension</td>
          </tr>
          <tr>
             <th>Birth Day</th>
             <td>
-               <span title="Birth Day&#xA;&#xA;Birth Day">BRTHDD</span>
+               <span title="Birth Day&#xA;&#xA;&#xA;               &#xA;&#xA;Day of birth of the subject in an unambiguous date format (e.g., DD).">BRTHDD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -99,7 +100,7 @@
          <tr>
             <th>Birth Month</th>
             <td>
-               <span title="Birth Month&#xA;&#xA;Birth Month">BRTHMO</span>
+               <span title="Birth Month&#xA;&#xA;&#xA;               &#xA;&#xA;Month of birth of the subject in an unambiguous date format (e.g., MM).">BRTHMO</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -113,7 +114,7 @@
          <tr>
             <th>Birth Year</th>
             <td>
-               <span title="Birth Year&#xA;&#xA;Birth Year">BRTHYY</span>
+               <span title="Birth Year&#xA;&#xA;&#xA;               &#xA;&#xA;Year of birth of the subject in an unambiguous date format (e.g., YYYY).">BRTHYY</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -127,7 +128,7 @@
          <tr>
             <th>Birth Time</th>
             <td>
-               <span title="Birth Time&#xA;&#xA;Birth Time">BRTHTIM</span>
+               <span title="Birth Time&#xA;&#xA;&#xA;               &#xA;&#xA;The time of birth of the subject in an unambiguous time format (e.g., hh:mm)">BRTHTIM</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -146,7 +147,8 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AGE</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>There is potential where the birth date can not be collected due to country regulations.</td>
+            <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
+               <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
             <td/>
          </tr>
          <tr>
@@ -163,7 +165,7 @@
          <tr>
             <th>Demographics Collection Date</th>
             <td>
-               <span title="Demographics Collection Date&#xA;&#xA;Demographics Collection Date">DMDAT</span>
+               <span title="Demographics Collection Date&#xA;&#xA;&#xA;               &#xA;&#xA;The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)">DMDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">DMDTC</span>
@@ -172,7 +174,8 @@
             <td>
                <p>Patient.meta.lastUpdated</p>
             </td>
-            <td> <br/> </td>
+            <td> <br/>
+               <br/>This indicates when the Patient resource was last changed, but in practice different pieces of demographics are collected at different times.  Review will be required of the history of the patient resource to determine when any particular fact was first asserted.</td>
          </tr>
          <tr>
             <th>Sex</th>
@@ -218,7 +221,8 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">RACE</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</td>
+            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
             <td/>
          </tr>
          <tr>
@@ -229,7 +233,8 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = &#34;CRACE&#34; and SUPPDM.QLABEL = &#34;Collected Race&#34; See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPDM.QVAL</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</td>
+            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
             <td/>
          </tr>
          <tr>
@@ -240,7 +245,8 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = &#34;RACEOTHER&#34; and SUPPDM.QLABEL = &#34;RACE OTHER&#34; See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains."/>
             </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.</td>
+            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
             <td/>
          </tr>
       </tbody>

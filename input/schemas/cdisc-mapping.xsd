@@ -98,7 +98,7 @@
   </xs:simpleType>
   <xs:simpleType name="FHIRPath">
     <xs:restriction base="NonEmptyString">
-      <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z]['$:\(\)\-a-zA-Z()=]+)*"/>
+      <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][() $:\-a-zA-Z=']+)*"/>
       <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>

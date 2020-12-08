@@ -29,32 +29,34 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">STUDYID</span>
             </td>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;Sponsor's study ID">STUDYID</span>
+               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">STUDYID</span>
             </td>
             <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Site ID or Number</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">SITEID</span>
             </td>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;Sponsor's site ID">SITEID</span>
+               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">SITEID</span>
             </td>
             <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
             </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.</td>
+            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Investigator ID or Number</th>
@@ -69,7 +71,8 @@
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
             </td>
-            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.</td>
+            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
+               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Screen ID or Number (pre-randomization)</th>
@@ -83,7 +86,8 @@
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.</td>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+               <br/>No standard way to decide which subject identifier to use</td>
          </tr>
          <tr>
             <th>Visit ID or Number</th>
@@ -111,7 +115,8 @@
             <td>
                <p>Observation.encounter.resolve().extension(workflow-instantiates).valueCanonical.resolve().title</p>
             </td>
-            <td>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.<br/>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.</td>
+            <td>We could go through Encounter.basedOn-&gt; ServiceRequest.instantiatesCanonical, you arrive at ActivityDefinition.<br/>
+               <br/>Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
          </tr>
          <tr>
             <th>Accession ID or Number</th>
@@ -177,9 +182,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Wording needs to match what is required by Sponsor">LBTPT</span>
             </td>
-            <td>Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference</td>
+            <td>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</td>
             <td>
-               <p>Observation.specimen.Refspecimen.extension.cqf-relativeDateTime.valueReference.reference</p>
+               <p>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</p>
             </td>
             <td>TBD - change being made to Specimen resource</td>
          </tr>
@@ -191,16 +196,16 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="See instructions in column C.  This needs to be converted from LBCELTM.">LBELTM</span>
             </td>
-            <td>Observation.specimen(Ref: Specimen.extension.cqf-relativeDateTime.valueReference.reference)</td>
+            <td>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</td>
             <td>
-               <p>Observation.specimenRefSpecimen.extension.cqf-relativeDateTime.valueReference.reference</p>
+               <p>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</p>
             </td>
             <td>TBD - change being made to Specimen resource</td>
          </tr>
          <tr>
             <th>Specimen Condition</th>
             <td>
-               <span title="Proposed CDASH variable (Specimen Condition as Collected)&#xA;&#xA;Proposed CDASH variable (Specimen Condition as Collected)">LBCSPCCN</span>
+               <span title="Proposed CDASH variable (Specimen Condition as Collected)&#xA;&#xA;&#xA;               &#xA;&#xA;Terminology in current Code System Content does not match CDISC terminology. Both systems have terms that are not in the other.  An &#34;as collected&#34; version of the SDTM variable is recommended to allow the sponsor to make adjustments to ensure terminology compliance while mapping to SDTM.">LBCSPCCN</span>
             </td>
             <td>
                <span title="To use this, sponsor must first ensure compliant terminology (compliant either to CDISC or sponsor extensions) will be used.">LBSPCCND</span>
@@ -209,7 +214,8 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <p>Observation.specimen.condition.codeableConcept.coding.code</p>
             </td>
-            <td>TBD - change being made to Specimen resource<br/>TBD - change being made to Specimen resource</td>
+            <td>TBD - change being made to Specimen resource<br/>
+               <br/>Extend the FHIR vocabulary to include CDISC values.   NOTE: requires an extension to the FHIR vocabulary to include CDISC values (e.g., Refrigerated)</td>
          </tr>
          <tr>
             <th>Specimen Type</th>
@@ -231,7 +237,7 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
                <span title="HL7 terminology is binding.   Does not match CDISC CT with is just No/Yes/Unknown/Not Applicable">LBCFAST</span>
             </td>
             <td>
-               <span title="Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.&#xA;&#xA;Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.">LBFAST</span>
+               <span title="Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.&#xA;&#xA;&#xA;               &#xA;&#xA;FHIR -&gt; CDISC&#xA;F =&gt; Y&#xA;NF =&gt; N&#xA;NG =&gt; U">LBFAST</span>
             </td>
             <td>Observation.specimen.RefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code</td>
             <td>
@@ -256,7 +262,7 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Must be aligned with controlled terminology.">LBPOS</span>
             </td>
-            <td>Observation.specimenRefSpecimen.collection extension observation-bodyPosition</td>
+            <td>Observation.specimen(RefSpecimen.collection extension observation-bodyPosition)</td>
             <td>
                <p>Observation.specimen.collection extension observation-bodyPosition</p>
             </td>
@@ -268,9 +274,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
                <span title="As reported from the lab.">LBCSPCUF</span>
             </td>
             <td>
-               <span title="Need to translate to blank or N if not received as blank or N&#xA;&#xA;Need to translate to blank or N if not received as blank or N">LBSPCUFL</span>
+               <span title="Need to translate to blank or N if not received as blank or N&#xA;&#xA;&#xA;               &#xA;&#xA;May not be applicable for safety labs.">LBSPCUFL</span>
             </td>
-            <td>Observation.specimenRefSpecimen.status where (status = 'Unsatisfactory')</td>
+            <td>Observation.specimen.(RefSpecimen.status where status = 'Unsatisfactory')</td>
             <td>
                <p>Observation.specimen.status where status='Unsatisfactory')</p>
             </td>
@@ -302,7 +308,7 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
                <span title="Could be used to accept true for this resource and later populate LBSTAT as NOT DONE">LBCSTAT</span>
             </td>
             <td>
-               <span title="Needs to be translated from FHIR vocabulary to SDTM controlled terminology:&#xA;&#xA;Needs to be translated from FHIR vocabulary to SDTM controlled terminology:">LBSTAT</span>
+               <span title="Needs to be translated from FHIR vocabulary to SDTM controlled terminology:&#xA;&#xA;&#xA;               &#xA;&#xA;FHIR -&gt; CDISC:&#xA;Not performed = NOT DONE&#xA;Cancelled = NOT DONE&#xA;Completed = &lt;blank&gt;  ">LBSTAT</span>
             </td>
             <td>Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)</td>
             <td>
@@ -386,7 +392,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.where(system = 'NRIND')</p>
+               <p>Observation.interpretation.where(system ='NRIND')</p>
             </td>
             <td/>
          </tr>
@@ -412,7 +418,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.where(system = "Toxicity Grade").coding.version</p>
+               <p>Observation.interpretation.where(system = 'Toxicity Grade').coding.version</p>
             </td>
             <td/>
          </tr>
@@ -426,7 +432,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.system(where system = "Toxicity Grade")</p>
+               <p>Observation.interpretation.system(where system = 'Toxicity Grade')</p>
             </td>
             <td/>
          </tr>
