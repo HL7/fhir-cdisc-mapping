@@ -22,7 +22,7 @@
     <li>As mentioned in <a href="index.html#intro">introduction</a>, mappings will need to be adjusted on a study-specific and implementation-environment specific basis.  A business-analyst view of the mappings will be easier to use as a starting point for context-specific adjustment than a formally computable structure.</li>
     <li>Less formal tabular representations are easier for the community to review and verify</li>
     <li>Different organizations are likely to have differing tooling stacks for performing data conversion, meaning that formally computable representations are less likely to be as broadly useful</li>
-    <li>Formal, executable mappings, such as those expressible with <a href="{{site.data.fhir.path}}structuremap.html">StructureMap</a> are more time-consuming to create and test, and HL7 and CDISC don't want to undertake that effort unless there is a clear demand from the community for such artifacts to be produced.</li>
+    <li>Formal, executable mappings, such as those expressible with <a href="{{site.data.fhir.path}}structuremap.html">StructureMap</a> are more time-consuming to create and test, and HL7 and CDISC do not want to undertake that effort unless there is a clear demand from the community for such artifacts to be produced.</li>
   </ul>
   <p>
     Future versions of this implementation guide may include formal profiles of FHIR resources for use with CDISC standards, <a href="{{site.data.fhir.path}}conceptmap.html">concept maps</a> that support translation between CDISC and FHIR terminologies and extension definitions for data elements used in CDISC but not present in the FHIR core specification.  Implementers are encouraged to provide feedback about what resources they would find most helpful.
