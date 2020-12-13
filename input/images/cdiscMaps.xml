@@ -17,7 +17,7 @@
             <description>Use the new extension to connect Observation to ResearchStudy.</description>
          </cdisc>
          <mapping element="ResearchStudy.title">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().title"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve()partOf.resolve().title"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().title"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -59,7 +59,7 @@
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/@ID">
             <description>Provide the Investigator ID known by the study sponsor.</description>
          </cdisc>
-         <mapping element="Practitioner.identifier.value">
+         <mapping element="Practitioner.identifier">
             <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value"/>
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value"/>
          </mapping>
@@ -239,7 +239,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID">
             <description>Populate with identifier for the lab.</description>
          </cdisc>
-         <mapping element="Organization.identifier.value">
+         <mapping element="Organization.identifier">
             <path value="Observation.performer.resolve().identifier.value"/>
          </mapping>
          <comment>Will need to look at identifier.type or identifier.system to know which identifier to use.  In some cases, performer might be PractitionerRole, in which case, will need to map through PractitionerRole.organization.  If there are multiple performers that link to multiple organizations, converter will need to look at Organization.type or have other rules to decide amongst the candidates.</comment>
@@ -269,7 +269,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime">
             <description>Populate this with the start time of a collection period or the actual time for a single timepoint.</description>
          </cdisc>
-         <mapping element="Specimen.collection.collectedPeriod.start">
+         <mapping element="Specimen.collection.collectedPeriod">
             <path value="Observation.specimen.resolve().collection.collectedPeriod.start"/>
          </mapping>
       </element>
@@ -278,25 +278,27 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed">
             <description>Capture the duration portion in this attribute. (e.g., 03:00)</description>
          </cdisc>
-         <mapping element="Observation.specimen.resolve().extension.(cqf-relativeDateTime.valueDuration.code">
-            <path value="Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code"/>
+         <mapping element="Specimen.extension">
+            <path value="Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration.code"/>
          </mapping>
+         <comment>Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code</comment>
       </element>
       <element name="Planned Collection Time Elapsed Description">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription">
             <description>Capture both the quantity of time and the relative event (e.g., 3 hours post dose)</description>
          </cdisc>
-         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
-            <path value="Specimen.extension.url=http://hl7.org/fhir/StructureDefinition/cqf-relativeDateTime, then Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference"/>
+         <mapping element="Specimen.extension">
+            <path value="Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference"/>
          </mapping>
+         <comment>Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference</comment>
       </element>
       <element name="Collection End Date and Time">
          <cdisc spec="LAB"
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime">
             <description>Populate this with the end time of a collection period.</description>
          </cdisc>
-         <mapping element="Specimen.collection.collectedPeriod.end">
+         <mapping element="Specimen.collection.collectedPeriod">
             <path value="Observation.specimen.resolve().collection.collectedPeriod.end"/>
          </mapping>
       </element>
@@ -314,7 +316,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition">
             <description>Populate with the description of the specimen.</description>
          </cdisc>
-         <mapping element="Specimen.condition.coding.code">
+         <mapping element="Specimen.condition">
             <path value="Observation.specimen.resolve().condition.coding.code"/>
          </mapping>
          <comment>Will need to choose which coding to extract the code for</comment>
@@ -353,7 +355,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text">
             <description>Populate with the comment text.</description>
          </cdisc>
-         <mapping element="Observation.Observation.specimenRefspecimen.note.textandspecimen.note.authorRefOrganization.identifier">
+         <mapping element="Specimen.note">
             <path value="Observation.specimen.resolve().where($author.resolve() isOrganization).note.text"/>
          </mapping>
       </element>
@@ -362,7 +364,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID">
             <description>Populate with an identifier for the specimen material.</description>
          </cdisc>
-         <mapping element="Specimen.type.coding.code">
+         <mapping element="Specimen.type">
             <path value="Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.code"/>
          </mapping>
          <comment>If multiple codes are present, filter based on system</comment>
@@ -372,7 +374,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name">
             <description>Name should be  in the controlled vocabulary of the material code list.</description>
          </cdisc>
-         <mapping element="Specimen.type.coding.display ">
+         <mapping element="Specimen.type">
             <path value="Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.display"/>
          </mapping>
          <comment>If multiple codes are present, filter based on system.  </comment>
@@ -382,7 +384,7 @@ unknown -&gt; U</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID">
             <description>The URI of the code list for the material.</description>
          </cdisc>
-         <mapping element="Specimen.type.coding.system">
+         <mapping element="Specimen.type">
             <path value="Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.system"/>
          </mapping>
          <comment>If multiple codings are present, will need to decide which to use</comment>
@@ -413,8 +415,8 @@ N - No
 U - Unknown
 and blank if not relevant.</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code">
-            <path value="Observation.specimenRefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code"/>
+         <mapping element="Observation.specimenRefSpecimen.collection.fastingStatus">
+            <path value="Observation.specimenRefSpecimen.collection.fastingStatusCodeableConcept.code"/>
          </mapping>
       </element>
       <element name="Battery ID">
@@ -452,8 +454,11 @@ D - Done
 N - Not Performed
 X - Cancelled.</description>
          </cdisc>
-         <mapping element="Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)">
-            <path value="Observation.basedOn (Ref:ServiceRequest.doNotPerform and ServiceRequest.status)"/>
+         <mapping element="ServiceRequest.doNotPerform">
+            <path value="Observation.basedOn.resolve().doNotPerform"/>
+         </mapping>
+         <mapping element="ServiceRequest.status">
+            <path value="Observation.basedon.resolve().status"/>
          </mapping>
       </element>
       <element name="Testing Date and Time">
@@ -478,8 +483,8 @@ X - Cancelled.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID">
             <description>An identifier for the laboratory performing the specimen collection and result generation.</description>
          </cdisc>
-         <mapping element="Observation.performerRefOrganization.identifier">
-            <path value="Observation.performer.reference(=Organization.identifier)"/>
+         <mapping element="Organization.identifier">
+            <path value="Observation.performer.resolve().identifier"/>
          </mapping>
          <comment>Use "Organization/type" to pick the type of Organization that represents "Performing Lab"</comment>
       </element>
@@ -488,8 +493,8 @@ X - Cancelled.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name">
             <description>The name of the laboratory performing the specimen collection and result generation.</description>
          </cdisc>
-         <mapping element="Observation.performerRefOrganization.name">
-            <path value="Observation.performerRefOrganization.name"/>
+         <mapping element="Organization.name">
+            <path value="Observation.performer.resolve().name"/>
          </mapping>
       </element>
       <element name="Lab Test ID">
@@ -554,7 +559,7 @@ X - Cancelled.</description>
             <description>The URI for the LOINC code list.</description>
          </cdisc>
          <mapping element="Observation.code">
-            <path value="Observation.code.coding.where (system = 'http://loinc.org')"/>
+            <path value="Observation.code.coding.where(system = 'http://loinc.org')"/>
          </mapping>
       </element>
       <element name="Test Level Comments">
@@ -562,8 +567,8 @@ X - Cancelled.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment">
             <description>Populate with the comment text.</description>
          </cdisc>
-         <mapping element="Observation.extension event-note.annotation.text and event-note.annotation.author (ref: Organization.identifier)">
-            <path value="http://hl7.org/fhir/StructureDefinition/event-note"/>
+         <mapping element="Observation.extension">
+            <path value="Observation.extension(event-note).valueAnnotation.text"/>
          </mapping>
          <comment>New extension from Observation</comment>
       </element>
@@ -624,7 +629,7 @@ and blank for no flag.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag">
             <description>Blinding is handled via the security on the Observation resource.  </description>
          </cdisc>
-         <mapping element="Observation.meta.security.code">
+         <mapping element="Observation.meta.security">
             <path value="Observation.meta.security.code"/>
          </mapping>
       </element>
@@ -693,7 +698,7 @@ and blank for no flag.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value">
             <description>The conventional result value. </description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
       </element>
@@ -702,7 +707,7 @@ and blank for no flag.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value">
             <description>The reported result value. </description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
       </element>
@@ -711,7 +716,7 @@ and blank for no flag.</description>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value">
             <description>The international unit (SI) result value. </description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
       </element>
@@ -721,7 +726,7 @@ and blank for no flag.</description>
             <description>Precision is implicitly determined from the attribute 
 Observation/valueQuantity/value/@value</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
          <comment>Determine the precision from the value.<br/>
@@ -734,7 +739,7 @@ Observation/valueQuantity/value/@value</comment>
             <description>Precision is implicitly determined from the attribute 
 Observation/valueQuantity/value/@value</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
          <comment>Determine the precision from the value.<br/>
@@ -747,7 +752,7 @@ Observation/valueQuantity/value/@value</comment>
             <description>Precision is implicitly determined from the attribute 
 Observation/valueQuantity/value/@value</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.value">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.value"/>
          </mapping>
          <comment>Determine the precision from the value.<br/>
@@ -759,7 +764,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow">
             <description>The reference range 'low' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.low.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.low.value"/>
             <path value="Observation.referenceRange.low.valueunit"/>
          </mapping>
@@ -769,7 +774,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow">
             <description>The reference range 'low' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.low.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.low.value"/>
             <path value="Observation.referenceRange.low.valueunit"/>
          </mapping>
@@ -779,7 +784,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow">
             <description>The reference range 'low' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.low.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.low.value"/>
             <path value="Observation.referenceRange.low.valueunit"/>
          </mapping>
@@ -789,7 +794,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh">
             <description>The reference range 'high' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.high.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.high.value"/>
             <path value="Observation.referenceRange.high.valueunit"/>
          </mapping>
@@ -799,7 +804,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh">
             <description>The reference range 'high' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.high.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.high.value"/>
             <path value="Observation.referenceRange.high.valueunit"/>
          </mapping>
@@ -809,7 +814,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh">
             <description>The reference range 'high' value for numeric results.</description>
          </cdisc>
-         <mapping element="Observation.referenceRange.high.value">
+         <mapping element="Observation.referenceRange">
             <path value="Observation.referenceRange.high.value"/>
             <path value="Observation.referenceRange.high.valueunit"/>
          </mapping>
@@ -819,7 +824,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value">
             <description>The units of measure in conventional units. NOTE: needs to comply with CDISC terminology.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.unit">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.unit"/>
          </mapping>
       </element>
@@ -828,7 +833,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value">
             <description>The units of measure for the reported result value. NOTE: needs to comply with CDISC terminology.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.unit">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.unit"/>
          </mapping>
       </element>
@@ -837,7 +842,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value">
             <description>The units of measure in international units. NOTE: needs to comply with CDISC terminology.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.unit">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.unit"/>
          </mapping>
       </element>
@@ -846,7 +851,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID">
             <description>Provide the ID (URI) of the code list used.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.system">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.system"/>
          </mapping>
       </element>
@@ -855,7 +860,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID">
             <description>Provide the ID (URI) of the code list used.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.system">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.system"/>
          </mapping>
       </element>
@@ -864,7 +869,7 @@ Observation/valueQuantity/value/@value</comment>
                 label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID">
             <description>Provide the ID (URI) of the code list used.</description>
          </cdisc>
-         <mapping element="Observation.valueQuantity.system">
+         <mapping element="Observation.valueQuantity">
             <path value="Observation.valueQuantity.system"/>
          </mapping>
       </element>
@@ -973,7 +978,7 @@ Observation/valueQuantity/value/@value</comment>
             <description>Sponsor to use SUBJID to determine/derive USUBJID</description>
          </cdisc>
          <mapping element="ResearchSubject.identifier">
-            <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Observation.subject).identifier.value"/>
          </mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -1009,26 +1014,26 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBREFID">
             <description>As reported from the Site</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.accessionIdentifier">
-            <path value="Observation.specimen.accessionIdentifier.value"/>
+         <mapping element="Specimen.accessionIdentifier">
+            <path value="Observation.specimen.resolve().accessionIdentifier.value"/>
          </mapping>
       </element>
       <element name="Specimen Actual Collection Start Date and Time">
-         <cdisc spec="SDTM"
-                label="LBDTC&#xA;&#xA;(NOTE: no mapping included for CDASH LBDAT and LBTIM)">
-            <description>To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</description>
+         <cdisc spec="SDTM" label="LBDTC">
+            <description>NOTE: no mapping included for CDASH LBDAT and LBTIM
+To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.collection.collected.collectedPeriod.start">
-            <path value="Observation.specimen.collection.collected.collectedPeriod.start"/>
+         <mapping element="Specimen.collection.collectedPeriod">
+            <path value="Observation.specimen.resolve().collection.collectedPeriod.start"/>
          </mapping>
       </element>
       <element name="Specimen Actual Collection End Date and Time">
-         <cdisc spec="SDTM"
-                label="LBENDTC&#xA;&#xA;NOTE: No mapping included for CDASH LBENDAT and LBENTIM)">
-            <description>To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</description>
+         <cdisc spec="SDTM" label="LBENDTC">
+            <description>NOTE: No mapping included for CDASH LBENDAT and LBENTIM)<br/>
+               <br/>To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</description>
          </cdisc>
-         <mapping element="Observation.specimenRefSpecimen.collection.collected.collectedPeriod.end">
-            <path value="Observation.specimen.collection.collected.collectedPeriod.end"/>
+         <mapping element="Specimen.collection.collectedPeriod">
+            <path value="Observation.specimen.resolve().collection.collectedPeriod.end"/>
          </mapping>
       </element>
       <element name="Specimen Collection Duration (for Clinical Research with extended time of collection)">
@@ -1038,8 +1043,8 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBDUR">
             <description>Must be ISO 8601 PT12H for duration of 12 hours.  Typically for urine samples.  Conversion of LBCDUR that contains both duration and units.</description>
          </cdisc>
-         <mapping element="Observation.specimen.RefSpecimen.collection.collected.collectedPeriod">
-            <path value="Observation.specimen.RefSpecimen.collection.collected.collectedPeriod"/>
+         <mapping element="Specimen.collection.collectedPeriod">
+            <path value="Observation.specimen.resolve().collection.collectedPeriod"/>
          </mapping>
       </element>
       <element name="Specimen Planned Time Point Name (Planned Collection Time Point - time within Encounter)">
@@ -1049,8 +1054,8 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBTPT">
             <description>Wording needs to match what is required by Sponsor</description>
          </cdisc>
-         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
-            <path value="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference"/>
+         <mapping element="Specimen.extension">
+            <path value="Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference"/>
          </mapping>
          <comment>TBD - change being made to Specimen resource</comment>
       </element>
@@ -1061,8 +1066,8 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBELTM">
             <description>See instructions in column C.  This needs to be converted from LBCELTM.</description>
          </cdisc>
-         <mapping element="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference">
-            <path value="Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference"/>
+         <mapping element="Specimen.extension">
+            <path value="Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference"/>
          </mapping>
          <comment>TBD - change being made to Specimen resource</comment>
       </element>
@@ -1074,8 +1079,8 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBSPCCND">
             <description>To use this, sponsor must first ensure compliant terminology (compliant either to CDISC or sponsor extensions) will be used.</description>
          </cdisc>
-         <mapping element="Observation.specimen(Ref: Specimen.condition.CodeableConcept.coding.code)">
-            <path value="Observation.specimen.condition.codeableConcept.coding.code"/>
+         <mapping element="Specimen.condition">
+            <path value="Observation.specimen.resolve().condition.coding.code"/>
          </mapping>
          <comment>TBD - change being made to Specimen resource<br/>
             <br/>Extend the FHIR vocabulary to include CDISC values.   NOTE: requires an extension to the FHIR vocabulary to include CDISC values (e.g., Refrigerated)</comment>
@@ -1087,8 +1092,8 @@ Observation/valueQuantity/value/@value</comment>
          <cdisc spec="SDTM" label="LBSPEC">
             <description>To use this, sponsor must first ensure compliant CDISC terminology (compliant either to CDISC or sponsor extensions) will be used.  </description>
          </cdisc>
-         <mapping element="Observation.specimen(Ref: Specimen.type.CodeableConcept.coding.Coding.display)">
-            <path value="Observation.specimen.type.coding.display"/>
+         <mapping element="Specimen.type">
+            <path value="Observation.specimen.resolve().type.coding.display"/>
          </mapping>
          <comment>NOTE: In some cases, this may be inferred from the LOINC.</comment>
       </element>
@@ -1103,13 +1108,12 @@ F =&gt; Y
 NF =&gt; N
 NG =&gt; U</description>
          </cdisc>
-         <mapping element="Observation.specimen.RefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code">
-            <path value="Observation.specimen.collection.fastingStatus.fastingStatusCodeableConcept.code"/>
+         <mapping element="Specimen.collection.fastingStatus">
+            <path value="Observation.specimen.resolve().collection.fastingStatus.coding.code"/>
          </mapping>
       </element>
       <element name="Condition Met (Y/N)">
-         <cdisc spec="CDASH"
-                label="LBCOND (confirmation that protocol defined condition was met - e.g. fasting)">
+         <cdisc spec="CDASH" label="LBCOND">
             <description>Must provide a way to explain what this is answering.  May need to answer this for a particular test.</description>
          </cdisc>
          <gap>This is an 'ask on entry' question.  May be able to determine some conditions, such as fasting, by using other specimen.collection attributes (e.g., fasting status).  Others might be captured as components or extensions.  Alternatively, obtain this information from the case report form entries.</gap>
@@ -1122,8 +1126,8 @@ NG =&gt; U</description>
          <cdisc spec="SDTM" label="LBPOS">
             <description>Must be aligned with controlled terminology.</description>
          </cdisc>
-         <mapping element="Observation.specimen(RefSpecimen.collection extension observation-bodyPosition)">
-            <path value="Observation.specimen.collection extension observation-bodyPosition"/>
+         <mapping element="Specimen.colelction.extension">
+            <path value="Observation.specimen.resolve().collection.extension(observation-bodyPosition).valueCodeableConcept"/>
          </mapping>
       </element>
       <element name="Specimen Usability for the Test">
@@ -1134,8 +1138,8 @@ NG =&gt; U</description>
             <description>Need to translate to blank or N if not received as blank or N<br/>
                <br/>May not be applicable for safety labs.</description>
          </cdisc>
-         <mapping element="Observation.specimen.(RefSpecimen.status where status = 'Unsatisfactory')">
-            <path value="Observation.specimen.status where status='Unsatisfactory')"/>
+         <mapping element="Specimen.status">
+            <path value="Observation.specimen.resolve()status.where($this='Unsatisfactory')"/>
          </mapping>
       </element>
       <element name="Category">
@@ -1146,9 +1150,9 @@ NG =&gt; U</description>
             <description>Terminology is defined by sponsor (no CDISC controlled terminology exists)  Need to derive this to organize results for the statistical and reporting teams.  Sponsor may want a different category than was reported by the lab.</description>
          </cdisc>
          <mapping element="DiagnosticReport.category.code">
-            <path value="DiagnosticReport.category.code where (system = 'LBSCAT')"/>
+            <path value="DiagnosticReport.category.code.where(system='LBSCAT')"/>
          </mapping>
-         <mapping element="DiagnosticReport.code.text">
+         <mapping element="DiagnosticReport.code">
             <path value="DiagnosticReport.code.text"/>
          </mapping>
          <comment>NOTE: In some cases, this may be inferred from the LOINC.</comment>
@@ -1164,8 +1168,11 @@ Not performed = NOT DONE
 Cancelled = NOT DONE
 Completed = &lt;blank&gt;  </description>
          </cdisc>
-         <mapping element="Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)">
-            <path value="ServiceRequest.doNotPerform.@value and ServiceRequest.status"/>
+         <mapping element="ServiceRequest.doNotPerform">
+            <path value="Observation.basedOn.resolve().doNotPerform"/>
+         </mapping>
+         <mapping element="ServiceRequest.status">
+            <path value="Observation.basedOn.resolve().status"/>
          </mapping>
          <comment>Sponsor may choose to map a situation in which the entire panel is cancelled as one summary record compliant with SDTM IG examples.
 Some sponsor may decline to accept cancelled records under specific circumstances (e.g., unscheduled)
@@ -1234,7 +1241,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>Use a controlled vocabulary list for the toxicity grade. There is not a CDISC standard for this.</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.where(system = 'Toxicity Grade').coding.code"/>
+            <path value="Observation.interpretation.where(system=[Toxicity Grade]).coding.code"/>
          </mapping>
       </element>
       <element name="Toxicity Grade Code List Version">
@@ -1245,7 +1252,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>See Toxicity Grade Code List - LBTOX - 1</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.where(system = 'Toxicity Grade').coding.version"/>
+            <path value="Observation.interpretation.where(system=[Toxicity Grade]).coding.version"/>
          </mapping>
       </element>
       <element name="Toxicity Grade Code List">
@@ -1256,7 +1263,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>Needs to be translated from the URI and version to a name concatenated with the version.</description>
          </cdisc>
          <mapping element="Observation.interpretation">
-            <path value="Observation.interpretation.system(where system = 'Toxicity Grade')"/>
+            <path value="Observation.interpretation.where(system=[Toxicity Grade]).system"/>
          </mapping>
       </element>
       <element name="Reported Reference Range Low">
@@ -1370,8 +1377,9 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
             <description>This would not be sent by the lab - we would expect to get study-specific subject ID</description>
          </cdisc>
          <mapping element="ResearchSubject.identifier">
-            <path value="Observation.subject.reference(=Patient/identifier), then to ResearchSubject.identifier"/>
+            <path value="ResearchSubject.where(individual=Observation.subject).identifier.value"/>
          </mapping>
+         <comment>To distinguish SUBJID from USUBJID, would need to look at identifier.system</comment>
       </element>
       <element name="Result Categorization">
          <cdisc spec="CDASH" label="LBRESCAT">
@@ -1400,10 +1408,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</comment>
          <cdisc spec="SDTM" label="LBUSCHFL">
             <description>N/A - this is not for human clinical trials</description>
          </cdisc>
-         <mapping element="Observation.encounter (ref: encounter.gap)">
-            <path value=""/>
-         </mapping>
-         <comment>This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag</comment>
+         <gap>This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag</gap>
       </element>
       <element name="Planned Time Point Number (sequence to order the relative timepoints)">
          <cdisc spec="SDTM" label="LBTPTNUM">
@@ -1476,7 +1481,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="ResearchSubject.identifier">
-            <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Observation.subject).identifier.value"/>
          </mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -1513,7 +1518,7 @@ This can included planned and unplanned trial interventions, procedures and asse
 May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF="N", the value of VSSSTAT will be "NOT DONE".  If VSPErF="Y", VSSTAT should be NULL</description>
          </cdisc>
          <mapping element="Observation.status">
-            <path value="Observation.status=('completed' or 'cancelled')"/>
+            <path value="Observation.status=('final' or 'cancelled')"/>
          </mapping>
       </element>
       <element name="Vital Signs Date">
@@ -1593,7 +1598,7 @@ This combination can be used to extract vital sign data points from EHR system a
          </mapping>
          <comment>TimePoints will be represented in FHIR as PlanDefinition.activities.</comment>
       </element>
-      <element name="Vital Signs&#xA;Completion Status">
+      <element name="Vital Signs Completion Status">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSSTAT">
             <description>Vital Signs Completion Status<br/>
                <br/>The variable used to indicate that data are not available by having the site recording the value as "NOT DONE"</description>
@@ -1603,11 +1608,11 @@ This combination can be used to extract vital sign data points from EHR system a
          </cdisc>
          <mapping element="Observation.status">
             <path value="Observation.status"/>
-            <path value="ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')"/>
+            <path value="ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}"/>
          </mapping>
          <mapping element="ServiceRequest.status">
             <path value="Observation.status"/>
-            <path value="ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')"/>
+            <path value="ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}"/>
          </mapping>
          <comment>In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</comment>
       </element>
@@ -1616,7 +1621,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <description>VS Result or Finding in Original Units<br/>
                <br/>Result of the vital signs measurement as originally received or collected</description>
          </cdisc>
-         <cdisc spec="SDTM" label="VSORRES;&#xA;VSTEST;&#xA;VSTESTCD">
+         <cdisc spec="SDTM" label="VSORRES">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="Observation.valueQuantity">
@@ -1645,9 +1650,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <mapping element="Observation.interpretation">
             <path value="Observation.interpretation"/>
          </mapping>
-         <comment>
-            <br/>
-            <br/>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </comment>
+         <comment>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </comment>
       </element>
       <element name="Vital Signs Position of Subject">
          <cdisc spec="CDASH" label="[VSTESTCD]_VSPOS">
@@ -1704,16 +1707,29 @@ This combination can be used to extract vital sign data points from EHR system a
          </mapping>
          <comment>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</comment>
       </element>
+      <element name="Vital Signs Test code">
+         <cdisc spec="CDASH" label="VSTESTCD">
+            <description>Vital Signs Test Code<br/>
+               <br/>Descriptive name of the test or examination used to obtain the measurement or finding</description>
+         </cdisc>
+         <cdisc spec="SDTM" label="VSTESTCD">
+            <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.</description>
+         </cdisc>
+         <mapping element="Observation.code">
+            <path value="Observation.code.coding.code"/>
+         </mapping>
+         <comment>coding.display and coding.code (plus coding.system)</comment>
+      </element>
       <element name="Vital Signs Test Name">
          <cdisc spec="CDASH" label="VSTEST">
             <description>Vital Signs Test Name<br/>
                <br/>Descriptive name of the test or examination used to obtain the measurement or finding</description>
          </cdisc>
-         <cdisc spec="SDTM" label="VSTEST;&#xA;VSTESTCD">
+         <cdisc spec="SDTM" label="VSTEST">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.</description>
          </cdisc>
          <mapping element="Observation.code">
-            <path value="Observation.code"/>
+            <path value="Observation.code.coding.display"/>
          </mapping>
          <comment>coding.display and coding.code (plus coding.system)</comment>
       </element>
@@ -1726,9 +1742,9 @@ This combination can be used to extract vital sign data points from EHR system a
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</description>
          </cdisc>
          <mapping element="Observation.identifier">
-            <path value="Observation.identifier.where(assigner='sponsor organization id')"/>
+            <path value="Observation.identifier.where(assigner=[sponsor organization id])"/>
          </mapping>
-         <comment>The assigner of the identifier can be explicit or inferred by the Identifier.system.</comment>
+         <comment>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</comment>
       </element>
       <element name="Vital Signs Repetition Number">
          <cdisc spec="CDASH" label="VSREPNUM">
@@ -1833,7 +1849,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AESPID">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.</description>
          </cdisc>
-         <mapping element="AdvserseEvent.identifier">
+         <mapping element="AdverseEvent.identifier">
             <path value="AdverseEvent.identifier.where(assigner=sponsor).value"/>
             <path value="AdverseEvent.refID"/>
          </mapping>
@@ -1847,8 +1863,8 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AETERM">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="AdverseEvent.resultingCondition.Condition">
-            <path value="AdverseEvent.resultingCondition.Condition"/>
+         <mapping element="Condition.code">
+            <path value="AdverseEvent.resultingCondition.resolve().code"/>
          </mapping>
       </element>
       <element name="AdverseEvent Occurrence">
@@ -2549,14 +2565,14 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="AdverseEvent.date">
             <path value="AdverseEvent.date"/>
          </mapping>
-         <mapping element="AllergyIntolerance.onset.onsetDateTime">
-            <path value="AllergyIntolerance.onset.onsetDateTime"/>
+         <mapping element="AllergyIntolerance.onsetDateTime">
+            <path value="AllergyIntolerance.onsetDateTime"/>
          </mapping>
-         <mapping element="AllergyIntolerance.onset.onsetRange">
-            <path value="AllergyIntolerance.onset.onsetRange"/>
+         <mapping element="AllergyIntolerance.onsetRange">
+            <path value="AllergyIntolerance.onsetRange"/>
          </mapping>
-         <mapping element="AllergyIntolerance.onset.onsetString">
-            <path value="AllergyIntolerance.onset.onsetString"/>
+         <mapping element="AllergyIntolerance.onsetString">
+            <path value="AllergyIntolerance.onsetString"/>
          </mapping>
          <mapping element="Observation.effectiveDateTime">
             <path value="Observation.effectiveDateTime"/>
@@ -2601,10 +2617,10 @@ Record whether the serious adverse event resulted in death</description>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). </description>
          </cdisc>
          <mapping element="Condition.verificationStatus">
-            <path value="Condition.verificationStatus != 'refuted', 'entered-in-error'"/>
+            <path value="Condition.verificationStatus.where(%this IN {'refuted'|'entered-in-error'})"/>
          </mapping>
          <mapping element="AllergyIntolerance.verificationStatus">
-            <path value="AllergyIntolerance.verificationStatus!='unconfirmed', 'confirmed', 'refuted', 'entered-in-error'"/>
+            <path value="(AllergyIntolerance.verificationStatus in {'unconfirmed'|'confirmed'|'refuted'|'entered-in-error'}).not()"/>
          </mapping>
          <mapping element="Observation.effectiveDateTime">
             <path value="Observation.effectiveDateTime"/>
@@ -2676,8 +2692,8 @@ Record whether the serious adverse event resulted in death</description>
          <cdisc spec="SDTM" label="MHENDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable MHENDTC in ISO 8601 format.</description>
          </cdisc>
-         <mapping element="Condition.abatement.abatementDateTime">
-            <path value="Condition.abatement.abatementDateTime"/>
+         <mapping element="Condition.abatementDateTime">
+            <path value="Condition.abatementDateTime"/>
          </mapping>
       </element>
       <element name="Medical History Event Location">
@@ -2691,14 +2707,16 @@ Record whether the serious adverse event resulted in death</description>
          <mapping element="Condition.bodySite">
             <path value="Condition.bodysite"/>
          </mapping>
-         <mapping element="AdverseEvent.resultingCondition.bodySite">
-            <path value="AdverseEvent.resultingCondition.bodySite"/>
+         <mapping element="Condition.bodySite">
+            <path value="AdverseEvent.resultingCondition.resolve().bodySite"/>
          </mapping>
          <mapping element="Observation.bodySite">
             <path value="Observation.bodySite"/>
+            <path value="Observation.specimen.resolve().bodySite"/>
          </mapping>
-         <mapping element="Observation.specimen.bodySite">
-            <path value="Observation.specimen.bodySite"/>
+         <mapping element="Specimen.bodySite">
+            <path value="Observation.bodySite"/>
+            <path value="Observation.specimen.resolve().bodySite"/>
          </mapping>
       </element>
       <element name="Medical History Event Laterality">
@@ -3116,28 +3134,28 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="SDTM" label="CMTRT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="MedicationStatement.medication.medicationCodeableconcept">
+         <mapping element="MedicationStatement.medicationCodeableconcept">
             <path value="MedicationStatement.medication.medicationCodeableConcept"/>
          </mapping>
-         <mapping element="MedicationStatement.medication.medicationReference">
+         <mapping element="MedicationStatement.medicationReference">
             <path value="MedicationStatement.medication.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationRequest.medication.medicationCodeableConcept">
+         <mapping element="MedicationRequest.medicationCodeableConcept">
             <path value="MedicationRequest.medication.medicationCodeableConcept"/>
          </mapping>
-         <mapping element="MedicationRequest.medication.medicationReference">
+         <mapping element="MedicationRequest.medicationReference">
             <path value="MedicationRequest.medication.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationDispense.medication.medicationCodeableConcept">
+         <mapping element="MedicationDispense.medicationCodeableConcept">
             <path value="MedicationDispense.medication.medicationCodeableConcept"/>
          </mapping>
-         <mapping element="MedicationDispense.medication.medicationReference">
+         <mapping element="MedicationDispense.medicationReference">
             <path value="MedicationDispense.medication.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationAdministration.medication.medicationCodeableConcept">
+         <mapping element="MedicationAdministration.medicationCodeableConcept">
             <path value="MedicationAdministration.medication.medicationCodeableConcept"/>
          </mapping>
-         <mapping element="MedicationAdministration.medication.medicationReference">
+         <mapping element="MedicationAdministration.medicationReference">
             <path value="MedicationAdministration.medication.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="Immunization.vaccineCode">
@@ -3169,16 +3187,16 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="MedicationRequest.doNotPerform=true"/>
          </mapping>
          <mapping element="MedicationRequest.status">
-            <path value="status=('entered-in-error', 'cancelled', 'stopped')"/>
+            <path value="MedicationRequest.status IN {'entered-in-error'|'cancelled'|'stopped'}"/>
          </mapping>
          <mapping element="MedicationDispense.status">
-            <path value="MedicationRequest.status=('entered-in-error', 'cancelled', 'stopped')"/>
+            <path value="MedicationRequest.status IN {entered-in-error'|'cancelled'|'stopped'}"/>
          </mapping>
          <mapping element="MedicationAdministration.status">
             <path value="MedicationAdministration.status"/>
          </mapping>
          <mapping element="Immunization.status">
-            <path value="Immunization.status = ('completed', 'entered-in-error')"/>
+            <path value="Immunization.status IN {'completed'|'entered-in-error'}"/>
          </mapping>
          <comment>In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</comment>
       </element>
@@ -3347,13 +3365,13 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="Medication.form">
-            <path value="Medication[x].medicationReference.resolve().form"/>
+            <path value="MedicationStatement.medicationReference.resolve().form"/>
          </mapping>
          <mapping element="Medication.form">
-            <path value="Medication[x].medicationReference.resolve().form"/>
+            <path value="MedicationRequest.medicationReference.resolve().form"/>
          </mapping>
          <mapping element="Medication.form">
-            <path value="Medication[x].medicationReference.resolve().form"/>
+            <path value="MedicationDispense.medicationReference.resolve().form"/>
          </mapping>
       </element>
       <element name="CM Dosing Frequency per Interval">
@@ -3406,16 +3424,16 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="MedicationStatement.effectiveDateTime">
             <path value="MedicationStatement.effectiveDateTime"/>
          </mapping>
-         <mapping element="MedicationStatement.effectivePeriod.start">
+         <mapping element="MedicationStatement.effectivePeriod">
             <path value="MedicationStatement.effectivePeriod.start"/>
          </mapping>
-         <mapping element="MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start">
+         <mapping element="MedicationRequest.dosageInstruction.timing">
             <path value="MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start"/>
          </mapping>
-         <mapping element="MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start">
+         <mapping element="MedicationDispense.dosageInstruction.timing">
             <path value="MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start"/>
          </mapping>
-         <mapping element="Immunization.occurrence.occurrenceDateTime">
+         <mapping element="Immunization.occurrenceDateTime">
             <path value="Immunization.occurrence.occurrenceDateTime"/>
          </mapping>
          <mapping element="Immunization.occurrenceString">
@@ -3433,7 +3451,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="MedicationStatement.effectiveDateTime">
             <path value="MedicationStatement.effectiveDateTime"/>
          </mapping>
-         <mapping element="MedicationStatement.effectivePeriod.start">
+         <mapping element="MedicationStatement.effectivePeriod">
             <path value="MedicationStatement.effectivePeriod.start"/>
          </mapping>
          <mapping element="MedicationRequest.dosageInstruction">
@@ -3442,7 +3460,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="MedicationDispense.dosage.instruction">
             <path value="MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start"/>
          </mapping>
-         <mapping element="Immunization.occurrence.occurrenceDateTime">
+         <mapping element="Immunization.occurrenceDateTime">
             <path value="Immunization.occurrence.occurrenceDateTime"/>
          </mapping>
          <mapping element="Immunization.occurrenceString">
@@ -3460,7 +3478,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="MedicationStatement.effectiveDateTime">
             <path value="MedicationStatement.effectiveDateTime"/>
          </mapping>
-         <mapping element="MedicationStatement.effectivePeriod.end">
+         <mapping element="MedicationStatement.effectivePeriod">
             <path value="MedicationStatement.effectivePeriod.end"/>
          </mapping>
          <mapping element="MedicationRequest.dosageInstruction">
@@ -3485,7 +3503,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping element="MedicationStatement.effectiveDateTime">
             <path value="MedicationStatement.effectiveDateTime"/>
          </mapping>
-         <mapping element="MedicationStatement.effectivePeriod.end">
+         <mapping element="MedicationStatement.effectivePeriod">
             <path value="MedicationStatement.effectivePeriod.end"/>
          </mapping>
          <mapping element="MedicationRequest.dosageInstruction">
@@ -3527,26 +3545,34 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          </cdisc>
          <mapping element="MedicationStatement.medicationCodeableConcept">
             <path value="MedicationStatement.medicationCodeableConcept"/>
+            <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationStatement.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationStatement.medicationCodeableConcept"/>
             <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationRequest.medicationCodeableConcept">
             <path value="MedicationRequest.medicationCodeableConcept"/>
+            <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationRequest.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationRequest.medicationCodeableConcept"/>
             <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationDispense.medicationCodeableConcept">
             <path value="MedicationDispense.medicationCodeableConcept"/>
+            <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationDispense.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationDispense.medicationCodeableConcept"/>
             <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationAdministration.medicationCodeableConcept">
             <path value="MedicationAdministration.medicationCodeableConcept"/>
+            <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationAdministration.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationAdministration.medicationCodeableConcept"/>
             <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="Immunization.vaccineCode">
@@ -3563,26 +3589,34 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          </cdisc>
          <mapping element="MedicationStatement.medicationCodeableConcept">
             <path value="MedicationStatement.medicationCodeableConcept"/>
+            <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationStatement.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationStatement.medicationCodeableConcept"/>
             <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationRequest.medicationCodeableConcept">
             <path value="MedicationRequest.medicationCodeableConcept"/>
+            <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationRequest.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationRequest.medicationCodeableConcept"/>
             <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationDispense.medicationCodeableConcept">
             <path value="MedicationDispense.medicationCodeableConcept"/>
+            <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationDispense.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationDispense.medicationCodeableConcept"/>
             <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationAdministration.medicationCodeableConcept">
             <path value="MedicationAdministration.medicationCodeableConcept"/>
+            <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationAdministration.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationAdministration.medicationCodeableConcept"/>
             <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="Immunizations.vaccineCode">
@@ -3599,26 +3633,34 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          </cdisc>
          <mapping element="MedicationStatement.medicationCodeableConcept">
             <path value="MedicationStatement.medicationCodeableConcept"/>
+            <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationStatement.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationStatement.medicationCodeableConcept"/>
             <path value="MedicationStatement.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationRequest.medicationCodeableConcept">
             <path value="MedicationRequest.medicationCodeableConcept"/>
+            <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationRequest.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationRequest.medicationCodeableConcept"/>
             <path value="MedicationRequest.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationDispense.medicationCodeableConcept">
             <path value="MedicationDispense.medicationCodeableConcept"/>
+            <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationDispense.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationDispense.medicationCodeableConcept"/>
             <path value="MedicationDispense.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="MedicationAdministration.medicationCodeableConcept">
             <path value="MedicationAdministration.medicationCodeableConcept"/>
+            <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
-         <mapping element="MedicationAdministration.medicationReference.resolve().code">
+         <mapping element="Medication.code">
+            <path value="MedicationAdministration.medicationCodeableConcept"/>
             <path value="MedicationAdministration.medicationReference.resolve().code"/>
          </mapping>
          <mapping element="Immunization.vaccineCode">
@@ -3765,7 +3807,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="ResearchSubject.identifier">
-            <path value="ResearchSubject.where(subject=Procedure.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Procedure.subject).identifier.value"/>
          </mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -3899,7 +3941,7 @@ Coding translations are left to the sponsor.<br/>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping element="Procedure.statusReason">
-            <path value="Procedure.statusReason.where(%resource.status = ('not-done', 'stopped'))"/>
+            <path value="Procedure.statusReason.where(%resource.status IN {'not-done'| 'stopped'})"/>
          </mapping>
       </element>
       <element name="Prior Procedure">
@@ -3919,7 +3961,7 @@ Coding translations are left to the sponsor.<br/>
          <cdisc spec="SDTM" label="PRSTDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format</description>
          </cdisc>
-         <mapping element="Procedure.performed[x]">
+         <mapping element="Procedure.performed">
             <path value="Procedure.performedDateTime"/>
             <path value="Procedure.performedPeriod.start"/>
             <path value="Procedure.performedRange.low"/>
@@ -3946,8 +3988,8 @@ Coding translations are left to the sponsor.<br/>
          <cdisc spec="SDTM" label="PRENDTC">
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format</description>
          </cdisc>
-         <mapping element="Procedure.performed[x]">
-            <path value="Procedure.performedDateTime, Procedure.performedPeriod.start"/>
+         <mapping element="Procedure.performed">
+            <path value="Procedure.performedDateTime Procedure.performedPeriod.start"/>
             <path value="Procedure.performedRange.high"/>
          </mapping>
          <comment>PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</comment>
@@ -3959,8 +4001,10 @@ Coding translations are left to the sponsor.<br/>
          <cdisc spec="SDTM" label="PRINDC">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <mapping element="Procedure.reasonCode, reasonReference">
-            <path value="Procedure.reasonCode,"/>
+         <mapping element="Procedure.reasonCode">
+            <path value="Procedure.reasonCode"/>
+         </mapping>
+         <mapping element="Procedure.reasonReference">
             <path value="Procedure.reasonReference"/>
          </mapping>
          <comment>Note that reasonReference would need to be turned into a code or string. </comment>
@@ -4303,7 +4347,7 @@ Might consider proposing it as a standard extension.</gap>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
          </cdisc>
          <mapping element="ResearchSubject.identifier">
-            <path value="ResearchSubject.where(subject=Patient.identifier).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Patient.identifier).identifier.value"/>
          </mapping>
       </element>
       <element name="Birth Date">

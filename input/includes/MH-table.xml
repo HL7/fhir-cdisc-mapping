@@ -241,21 +241,21 @@
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.onset.onsetDateTime</td>
+            <td>AllergyIntolerance.onsetDateTime</td>
             <td>
-               <p>AllergyIntolerance.onset.onsetDateTime</p>
+               <p>AllergyIntolerance.onsetDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.onset.onsetRange</td>
+            <td>AllergyIntolerance.onsetRange</td>
             <td>
-               <p>AllergyIntolerance.onset.onsetRange</p>
+               <p>AllergyIntolerance.onsetRange</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.onset.onsetString</td>
+            <td>AllergyIntolerance.onsetString</td>
             <td>
-               <p>AllergyIntolerance.onset.onsetString</p>
+               <p>AllergyIntolerance.onsetString</p>
             </td>
          </tr>
          <tr>
@@ -324,14 +324,14 @@
             </td>
             <td>Condition.verificationStatus</td>
             <td>
-               <p>Condition.verificationStatus != 'refuted', 'entered-in-error'</p>
+               <p>Condition.verificationStatus.where(%this IN {'refuted'|'entered-in-error'})</p>
             </td>
             <td rowspan="3">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around "has the patient had X", that would be accomplished through a Questionnaire.Response</td>
          </tr>
          <tr>
             <td>AllergyIntolerance.verificationStatus</td>
             <td>
-               <p>AllergyIntolerance.verificationStatus!='unconfirmed', 'confirmed', 'refuted', 'entered-in-error'</p>
+               <p>(AllergyIntolerance.verificationStatus in {'unconfirmed'|'confirmed'|'refuted'|'entered-in-error'}).not()</p>
             </td>
          </tr>
          <tr>
@@ -423,9 +423,9 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable MHENDTC in ISO 8601 format.">MHENDTC</span>
             </td>
-            <td>Condition.abatement.abatementDateTime</td>
+            <td>Condition.abatementDateTime</td>
             <td>
-               <p>Condition.abatement.abatementDateTime</p>
+               <p>Condition.abatementDateTime</p>
             </td>
             <td/>
          </tr>
@@ -444,21 +444,23 @@
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>AdverseEvent.resultingCondition.bodySite</td>
+            <td>Condition.bodySite</td>
             <td>
-               <p>AdverseEvent.resultingCondition.bodySite</p>
+               <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
          </tr>
          <tr>
             <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
+               <p>Observation.specimen.resolve().bodySite</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.specimen.bodySite</td>
+            <td>Specimen.bodySite</td>
             <td>
-               <p>Observation.specimen.bodySite</p>
+               <p>Observation.bodySite</p>
+               <p>Observation.specimen.resolve().bodySite</p>
             </td>
          </tr>
          <tr>

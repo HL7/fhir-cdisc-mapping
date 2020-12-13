@@ -84,7 +84,7 @@
             </td>
             <td>ResearchSubject.identifier</td>
             <td>
-               <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+               <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
             <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
                <br/>No standard way to decide which subject identifier to use</td>
@@ -126,9 +126,9 @@
             <td>
                <span title="As reported from the Site">LBREFID</span>
             </td>
-            <td>Observation.specimenRefSpecimen.accessionIdentifier</td>
+            <td>Specimen.accessionIdentifier</td>
             <td>
-               <p>Observation.specimen.accessionIdentifier.value</p>
+               <p>Observation.specimen.resolve().accessionIdentifier.value</p>
             </td>
             <td/>
          </tr>
@@ -136,13 +136,11 @@
             <th>Specimen Actual Collection Start Date and Time</th>
             <td/>
             <td>
-               <span title="To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBDTC
-
-(NOTE: no mapping included for CDASH LBDAT and LBTIM)</span>
+               <span title="NOTE: no mapping included for CDASH LBDAT and LBTIM&#xA;To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBDTC</span>
             </td>
-            <td>Observation.specimenRefSpecimen.collection.collected.collectedPeriod.start</td>
+            <td>Specimen.collection.collectedPeriod</td>
             <td>
-               <p>Observation.specimen.collection.collected.collectedPeriod.start</p>
+               <p>Observation.specimen.resolve().collection.collectedPeriod.start</p>
             </td>
             <td/>
          </tr>
@@ -150,13 +148,11 @@
             <th>Specimen Actual Collection End Date and Time</th>
             <td/>
             <td>
-               <span title="To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBENDTC
-
-NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
+               <span title="NOTE: No mapping included for CDASH LBENDAT and LBENTIM)&#xA;&#xA;&#xA;               &#xA;&#xA;To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)">LBENDTC</span>
             </td>
-            <td>Observation.specimenRefSpecimen.collection.collected.collectedPeriod.end</td>
+            <td>Specimen.collection.collectedPeriod</td>
             <td>
-               <p>Observation.specimen.collection.collected.collectedPeriod.end</p>
+               <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
             <td/>
          </tr>
@@ -168,9 +164,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Must be ISO 8601 PT12H for duration of 12 hours.  Typically for urine samples.  Conversion of LBCDUR that contains both duration and units.">LBDUR</span>
             </td>
-            <td>Observation.specimen.RefSpecimen.collection.collected.collectedPeriod</td>
+            <td>Specimen.collection.collectedPeriod</td>
             <td>
-               <p>Observation.specimen.RefSpecimen.collection.collected.collectedPeriod</p>
+               <p>Observation.specimen.resolve().collection.collectedPeriod</p>
             </td>
             <td/>
          </tr>
@@ -182,9 +178,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Wording needs to match what is required by Sponsor">LBTPT</span>
             </td>
-            <td>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</td>
+            <td>Specimen.extension</td>
             <td>
-               <p>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</p>
+               <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</p>
             </td>
             <td>TBD - change being made to Specimen resource</td>
          </tr>
@@ -196,9 +192,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="See instructions in column C.  This needs to be converted from LBCELTM.">LBELTM</span>
             </td>
-            <td>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</td>
+            <td>Specimen.extension</td>
             <td>
-               <p>Observation.specimen.resolve().extension.cqf-relativeDateTime.valueReference.reference</p>
+               <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</p>
             </td>
             <td>TBD - change being made to Specimen resource</td>
          </tr>
@@ -210,9 +206,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="To use this, sponsor must first ensure compliant terminology (compliant either to CDISC or sponsor extensions) will be used.">LBSPCCND</span>
             </td>
-            <td>Observation.specimen(Ref: Specimen.condition.CodeableConcept.coding.code)</td>
+            <td>Specimen.condition</td>
             <td>
-               <p>Observation.specimen.condition.codeableConcept.coding.code</p>
+               <p>Observation.specimen.resolve().condition.coding.code</p>
             </td>
             <td>TBD - change being made to Specimen resource<br/>
                <br/>Extend the FHIR vocabulary to include CDISC values.   NOTE: requires an extension to the FHIR vocabulary to include CDISC values (e.g., Refrigerated)</td>
@@ -225,9 +221,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="To use this, sponsor must first ensure compliant CDISC terminology (compliant either to CDISC or sponsor extensions) will be used.  ">LBSPEC</span>
             </td>
-            <td>Observation.specimen(Ref: Specimen.type.CodeableConcept.coding.Coding.display)</td>
+            <td>Specimen.type</td>
             <td>
-               <p>Observation.specimen.type.coding.display</p>
+               <p>Observation.specimen.resolve().type.coding.display</p>
             </td>
             <td>NOTE: In some cases, this may be inferred from the LOINC.</td>
          </tr>
@@ -239,16 +235,16 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Converted from LBCFAST and/or HL7 FHIR to match the CDISC controlled terminology requirements.&#xA;&#xA;&#xA;               &#xA;&#xA;FHIR -&gt; CDISC&#xA;F =&gt; Y&#xA;NF =&gt; N&#xA;NG =&gt; U">LBFAST</span>
             </td>
-            <td>Observation.specimen.RefSpecimen.collection.fastingStatus.fastingStatusCodeableConcept.code</td>
+            <td>Specimen.collection.fastingStatus</td>
             <td>
-               <p>Observation.specimen.collection.fastingStatus.fastingStatusCodeableConcept.code</p>
+               <p>Observation.specimen.resolve().collection.fastingStatus.coding.code</p>
             </td>
             <td/>
          </tr>
          <tr>
             <th>Condition Met (Y/N)</th>
             <td>
-               <span title="Must provide a way to explain what this is answering.  May need to answer this for a particular test.">LBCOND (confirmation that protocol defined condition was met - e.g. fasting)</span>
+               <span title="Must provide a way to explain what this is answering.  May need to answer this for a particular test.">LBCOND</span>
             </td>
             <td/>
             <td colspan="2" style="background-color:LightGray">This is an 'ask on entry' question.  May be able to determine some conditions, such as fasting, by using other specimen.collection attributes (e.g., fasting status).  Others might be captured as components or extensions.  Alternatively, obtain this information from the case report form entries.</td>
@@ -262,9 +258,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Must be aligned with controlled terminology.">LBPOS</span>
             </td>
-            <td>Observation.specimen(RefSpecimen.collection extension observation-bodyPosition)</td>
+            <td>Specimen.colelction.extension</td>
             <td>
-               <p>Observation.specimen.collection extension observation-bodyPosition</p>
+               <p>Observation.specimen.resolve().collection.extension(observation-bodyPosition).valueCodeableConcept</p>
             </td>
             <td/>
          </tr>
@@ -276,9 +272,9 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             <td>
                <span title="Need to translate to blank or N if not received as blank or N&#xA;&#xA;&#xA;               &#xA;&#xA;May not be applicable for safety labs.">LBSPCUFL</span>
             </td>
-            <td>Observation.specimen.(RefSpecimen.status where status = 'Unsatisfactory')</td>
+            <td>Specimen.status</td>
             <td>
-               <p>Observation.specimen.status where status='Unsatisfactory')</p>
+               <p>Observation.specimen.resolve()status.where($this='Unsatisfactory')</p>
             </td>
             <td/>
          </tr>
@@ -292,31 +288,37 @@ NOTE: No mapping included for CDASH LBENDAT and LBENTIM)</span>
             </td>
             <td>DiagnosticReport.category.code</td>
             <td>
-               <p>DiagnosticReport.category.code where (system = 'LBSCAT')</p>
+               <p>DiagnosticReport.category.code.where(system='LBSCAT')</p>
             </td>
             <td rowspan="2">NOTE: In some cases, this may be inferred from the LOINC.</td>
          </tr>
          <tr>
-            <td>DiagnosticReport.code.text</td>
+            <td>DiagnosticReport.code</td>
             <td>
                <p>DiagnosticReport.code.text</p>
             </td>
          </tr>
          <tr>
-            <th>Test Status</th>
-            <td>
+            <th rowspan="2">Test Status</th>
+            <td rowspan="2">
                <span title="Could be used to accept true for this resource and later populate LBSTAT as NOT DONE">LBCSTAT</span>
             </td>
-            <td>
+            <td rowspan="2">
                <span title="Needs to be translated from FHIR vocabulary to SDTM controlled terminology:&#xA;&#xA;&#xA;               &#xA;&#xA;FHIR -&gt; CDISC:&#xA;Not performed = NOT DONE&#xA;Cancelled = NOT DONE&#xA;Completed = &lt;blank&gt;  ">LBSTAT</span>
             </td>
-            <td>Observation.basedOn (Ref: ServiceRequest for doNotPerform and status)</td>
+            <td>ServiceRequest.doNotPerform</td>
             <td>
-               <p>ServiceRequest.doNotPerform.@value and ServiceRequest.status</p>
+               <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
-            <td>Sponsor may choose to map a situation in which the entire panel is cancelled as one summary record compliant with SDTM IG examples.
+            <td rowspan="2">Sponsor may choose to map a situation in which the entire panel is cancelled as one summary record compliant with SDTM IG examples.
 Some sponsor may decline to accept cancelled records under specific circumstances (e.g., unscheduled)
 Sponsor may also choose to populate LBREASND as CANCELLED</td>
+         </tr>
+         <tr>
+            <td>ServiceRequest.status</td>
+            <td>
+               <p>Observation.basedOn.resolve().status</p>
+            </td>
          </tr>
          <tr>
             <th>Reason Test Not Done</th>
@@ -404,7 +406,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.where(system = 'Toxicity Grade').coding.code</p>
+               <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.code</p>
             </td>
             <td/>
          </tr>
@@ -418,7 +420,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.where(system = 'Toxicity Grade').coding.version</p>
+               <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.version</p>
             </td>
             <td/>
          </tr>
@@ -432,7 +434,7 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.system(where system = 'Toxicity Grade')</p>
+               <p>Observation.interpretation.where(system=[Toxicity Grade]).system</p>
             </td>
             <td/>
          </tr>
@@ -580,9 +582,9 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             </td>
             <td>ResearchSubject.identifier</td>
             <td>
-               <p>Observation.subject.reference(=Patient/identifier), then to ResearchSubject.identifier</p>
+               <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
-            <td/>
+            <td>To distinguish SUBJID from USUBJID, would need to look at identifier.system</td>
          </tr>
          <tr>
             <th>Result Categorization</th>
@@ -617,11 +619,8 @@ Sponsor may also choose to populate LBREASND as CANCELLED</td>
             <td>
                <span title="N/A - this is not for human clinical trials">LBUSCHFL</span>
             </td>
-            <td>Observation.encounter (ref: encounter.gap)</td>
-            <td>
-               <p/>
-            </td>
-            <td>This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag</td>
+            <td colspan="2" style="background-color:LightGray">This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag</td>
+            <td/>
          </tr>
          <tr>
             <th>Planned Time Point Number (sequence to order the relative timepoints)</th>

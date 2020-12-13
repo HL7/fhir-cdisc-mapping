@@ -68,7 +68,7 @@
             </td>
             <td>ResearchSubject.identifier</td>
             <td>
-               <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+               <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
             <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
                <br/>No standard way to decide which subject identifier to use</td>
@@ -108,7 +108,7 @@
             </td>
             <td>Observation.status</td>
             <td>
-               <p>Observation.status=('completed' or 'cancelled')</p>
+               <p>Observation.status=('final' or 'cancelled')</p>
             </td>
             <td/>
          </tr>
@@ -198,8 +198,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>TimePoints will be represented in FHIR as PlanDefinition.activities.</td>
          </tr>
          <tr>
-            <th rowspan="2">Vital Signs
-Completion Status</th>
+            <th rowspan="2">Vital Signs Completion Status</th>
             <td rowspan="2">
                <span title="Vital Signs Completion Status&#xA;&#xA;&#xA;               &#xA;&#xA;The variable used to indicate that data are not available by having the site recording the value as &#34;NOT DONE&#34;">[VSTESTCD]_VSSTAT</span>
             </td>
@@ -209,7 +208,7 @@ Completion Status</th>
             <td>Observation.status</td>
             <td>
                <p>Observation.status</p>
-               <p>ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')</p>
+               <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
             </td>
             <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
          </tr>
@@ -217,7 +216,7 @@ Completion Status</th>
             <td>ServiceRequest.status</td>
             <td>
                <p>Observation.status</p>
-               <p>ServiceRequest.status=('cancelled', 'on-hold', 'revoked', 'entered-in-error')</p>
+               <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
             </td>
          </tr>
          <tr>
@@ -226,9 +225,7 @@ Completion Status</th>
                <span title="VS Result or Finding in Original Units&#xA;&#xA;&#xA;               &#xA;&#xA;Result of the vital signs measurement as originally received or collected">[VSTESTCD]_VSORRES</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES;
-VSTEST;
-VSTESTCD</span>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES</span>
             </td>
             <td>Observation.valueQuantity</td>
             <td>
@@ -262,9 +259,7 @@ VSTESTCD</span>
             <td>
                <p>Observation.interpretation</p>
             </td>
-            <td>
-               <br/>
-               <br/>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
+            <td>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
          </tr>
          <tr>
             <th rowspan="2">Vital Signs Position of Subject</th>
@@ -329,17 +324,30 @@ VSTESTCD</span>
             <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
          </tr>
          <tr>
+            <th>Vital Signs Test code</th>
+            <td>
+               <span title="Vital Signs Test Code&#xA;&#xA;&#xA;               &#xA;&#xA;Descriptive name of the test or examination used to obtain the measurement or finding">VSTESTCD</span>
+            </td>
+            <td>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTESTCD</span>
+            </td>
+            <td>Observation.code</td>
+            <td>
+               <p>Observation.code.coding.code</p>
+            </td>
+            <td>coding.display and coding.code (plus coding.system)</td>
+         </tr>
+         <tr>
             <th>Vital Signs Test Name</th>
             <td>
                <span title="Vital Signs Test Name&#xA;&#xA;&#xA;               &#xA;&#xA;Descriptive name of the test or examination used to obtain the measurement or finding">VSTEST</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST;
-VSTESTCD</span>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST</span>
             </td>
             <td>Observation.code</td>
             <td>
-               <p>Observation.code</p>
+               <p>Observation.code.coding.display</p>
             </td>
             <td>coding.display and coding.code (plus coding.system)</td>
          </tr>
@@ -353,9 +361,9 @@ VSTESTCD</span>
             </td>
             <td>Observation.identifier</td>
             <td>
-               <p>Observation.identifier.where(assigner='sponsor organization id')</p>
+               <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
             </td>
-            <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.</td>
+            <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</td>
          </tr>
          <tr>
             <th>Vital Signs Repetition Number</th>

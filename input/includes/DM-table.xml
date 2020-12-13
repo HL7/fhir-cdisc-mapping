@@ -64,7 +64,7 @@
             </td>
             <td>ResearchSubject.identifier</td>
             <td>
-               <p>ResearchSubject.where(subject=Patient.identifier).identifier.value</p>
+               <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
             </td>
             <td/>
          </tr>

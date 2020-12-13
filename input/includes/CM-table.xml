@@ -203,50 +203,50 @@
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMTRT</span>
             </td>
-            <td>MedicationStatement.medication.medicationCodeableconcept</td>
+            <td>MedicationStatement.medicationCodeableconcept</td>
             <td>
                <p>MedicationStatement.medication.medicationCodeableConcept</p>
             </td>
             <td rowspan="9"/>
          </tr>
          <tr>
-            <td>MedicationStatement.medication.medicationReference</td>
+            <td>MedicationStatement.medicationReference</td>
             <td>
                <p>MedicationStatement.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.medication.medicationCodeableConcept</td>
+            <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.medication.medicationReference</td>
+            <td>MedicationRequest.medicationReference</td>
             <td>
                <p>MedicationRequest.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.medication.medicationCodeableConcept</td>
+            <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.medication.medicationReference</td>
+            <td>MedicationDispense.medicationReference</td>
             <td>
                <p>MedicationDispense.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.medication.medicationCodeableConcept</td>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.medication.medicationReference</td>
+            <td>MedicationAdministration.medicationReference</td>
             <td>
                <p>MedicationAdministration.medication.medicationReference.resolve().code</p>
             </td>
@@ -292,13 +292,13 @@
          <tr>
             <td>MedicationRequest.status</td>
             <td>
-               <p>status=('entered-in-error', 'cancelled', 'stopped')</p>
+               <p>MedicationRequest.status IN {'entered-in-error'|'cancelled'|'stopped'}</p>
             </td>
          </tr>
          <tr>
             <td>MedicationDispense.status</td>
             <td>
-               <p>MedicationRequest.status=('entered-in-error', 'cancelled', 'stopped')</p>
+               <p>MedicationRequest.status IN {entered-in-error'|'cancelled'|'stopped'}</p>
             </td>
          </tr>
          <tr>
@@ -310,7 +310,7 @@
          <tr>
             <td>Immunization.status</td>
             <td>
-               <p>Immunization.status = ('completed', 'entered-in-error')</p>
+               <p>Immunization.status IN {'completed'|'entered-in-error'}</p>
             </td>
          </tr>
          <tr>
@@ -567,20 +567,20 @@
             </td>
             <td>Medication.form</td>
             <td>
-               <p>Medication[x].medicationReference.resolve().form</p>
+               <p>MedicationStatement.medicationReference.resolve().form</p>
             </td>
             <td rowspan="3"/>
          </tr>
          <tr>
             <td>Medication.form</td>
             <td>
-               <p>Medication[x].medicationReference.resolve().form</p>
+               <p>MedicationRequest.medicationReference.resolve().form</p>
             </td>
          </tr>
          <tr>
             <td>Medication.form</td>
             <td>
-               <p>Medication[x].medicationReference.resolve().form</p>
+               <p>MedicationDispense.medicationReference.resolve().form</p>
             </td>
          </tr>
          <tr>
@@ -662,25 +662,25 @@
             <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
-            <td>MedicationStatement.effectivePeriod.start</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</td>
+            <td>MedicationRequest.dosageInstruction.timing</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</td>
+            <td>MedicationDispense.dosageInstruction.timing</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.occurrence.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrence.occurrenceDateTime</p>
             </td>
@@ -706,7 +706,7 @@
             <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
-            <td>MedicationStatement.effectivePeriod.start</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.start</p>
             </td>
@@ -724,7 +724,7 @@
             </td>
          </tr>
          <tr>
-            <td>Immunization.occurrence.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrence.occurrenceDateTime</p>
             </td>
@@ -750,7 +750,7 @@
             <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
-            <td>MedicationStatement.effectivePeriod.end</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.end</p>
             </td>
@@ -789,7 +789,7 @@
             <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
          </tr>
          <tr>
-            <td>MedicationStatement.effectivePeriod.end</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.end</p>
             </td>
@@ -846,12 +846,14 @@
             <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
             <td rowspan="9">We would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -859,11 +861,13 @@
             <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -871,11 +875,13 @@
             <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -883,11 +889,13 @@
             <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -908,12 +916,14 @@
             <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
             <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -921,11 +931,13 @@
             <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -933,11 +945,13 @@
             <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -945,11 +959,13 @@
             <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -970,12 +986,14 @@
             <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
+               <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
             <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>MedicationStatement.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -983,11 +1001,13 @@
             <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
+               <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -995,11 +1015,13 @@
             <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
+               <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
@@ -1007,11 +1029,13 @@
             <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
+               <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.medicationReference.resolve().code</td>
+            <td>Medication.code</td>
             <td>
+               <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>

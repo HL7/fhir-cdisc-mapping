@@ -122,7 +122,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">AESPID</span>
             </td>
-            <td>AdvserseEvent.identifier</td>
+            <td>AdverseEvent.identifier</td>
             <td>
                <p>AdverseEvent.identifier.where(assigner=sponsor).value</p>
                <p>AdverseEvent.refID</p>
@@ -137,9 +137,9 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AETERM</span>
             </td>
-            <td>AdverseEvent.resultingCondition.Condition</td>
+            <td>Condition.code</td>
             <td>
-               <p>AdverseEvent.resultingCondition.Condition</p>
+               <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
             <td/>
          </tr>

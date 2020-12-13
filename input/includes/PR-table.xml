@@ -68,7 +68,7 @@
             </td>
             <td>ResearchSubject.identifier</td>
             <td>
-               <p>ResearchSubject.where(subject=Procedure.subject).identifier.value</p>
+               <p>ResearchSubject.where(individual=Procedure.subject).identifier.value</p>
             </td>
             <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
                <br/>No standard way to decide which subject identifier to use</td>
@@ -231,7 +231,7 @@ Coding translations are left to the sponsor.<br/>
             </td>
             <td>Procedure.statusReason</td>
             <td>
-               <p>Procedure.statusReason.where(%resource.status = ('not-done', 'stopped'))</p>
+               <p>Procedure.statusReason.where(%resource.status IN {'not-done'| 'stopped'})</p>
             </td>
             <td/>
          </tr>
@@ -255,7 +255,7 @@ Coding translations are left to the sponsor.<br/>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRSTDTC</span>
             </td>
-            <td>Procedure.performed[x]</td>
+            <td>Procedure.performed</td>
             <td>
                <p>Procedure.performedDateTime</p>
                <p>Procedure.performedPeriod.start</p>
@@ -286,27 +286,32 @@ Coding translations are left to the sponsor.<br/>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRENDTC</span>
             </td>
-            <td>Procedure.performed[x]</td>
+            <td>Procedure.performed</td>
             <td>
-               <p>Procedure.performedDateTime, Procedure.performedPeriod.start</p>
+               <p>Procedure.performedDateTime Procedure.performedPeriod.start</p>
                <p>Procedure.performedRange.high</p>
             </td>
             <td>PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</td>
          </tr>
          <tr>
-            <th>Procedure Indication</th>
-            <td>
+            <th rowspan="2">Procedure Indication</th>
+            <td rowspan="2">
                <span title="The condition, disease symptom, or disorder that the procedure was used to address or investigate (e.g., why the therapy was taken or administered, why the procedure was performed).">PRINDC</span>
             </td>
-            <td>
+            <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRINDC</span>
             </td>
-            <td>Procedure.reasonCode, reasonReference</td>
+            <td>Procedure.reasonCode</td>
             <td>
-               <p>Procedure.reasonCode,</p>
+               <p>Procedure.reasonCode</p>
+            </td>
+            <td rowspan="2">Note that reasonReference would need to be turned into a code or string. </td>
+         </tr>
+         <tr>
+            <td>Procedure.reasonReference</td>
+            <td>
                <p>Procedure.reasonReference</p>
             </td>
-            <td>Note that reasonReference would need to be turned into a code or string. </td>
          </tr>
          <tr>
             <th>Related AdverseEvent ID</th>
