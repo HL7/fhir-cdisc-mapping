@@ -11463,7 +11463,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">Define and review standardized coding schema with coding translations are conducted by the sponsor.&#10;&#10;PRDECOD is the dictionary or the sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.  This means it is the standardized term for the procedure. </Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">Translation of the source-system-determined procedure code to the study-defined value set may need to be performed by the sponsor.&#10;&#10;PRDECOD is the dictionary or the sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.  This means it is the standardized term for the procedure. </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRDECOD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -12061,7 +12061,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR soure data. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRLLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
