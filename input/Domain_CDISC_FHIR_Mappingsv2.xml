@@ -11600,7 +11600,7 @@
     <Cell ss:StyleID="s87"><Data ss:Type="String">Procedure.performedDateTime&#10;Procedure.performedPeriod.start&#10;Procedure.performedRange.low</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">FHIR also allows performedString, but there is no way to map that to CDISC.  The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific start time.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRSTDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11642,7 +11642,7 @@
     <Cell ss:StyleID="s87"><Data ss:Type="String">Procedure.performedDateTime Procedure.performedPeriod.start&#10;Procedure.performedRange.high</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">PerformedString and performedRange don't allow exact mappings (the latter indicates uncertainty about timing)</Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">FHIR also allows performedString, but there is no way to map that to CDISC. The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific end time.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRENDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
