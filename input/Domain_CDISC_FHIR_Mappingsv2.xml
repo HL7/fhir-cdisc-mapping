@@ -10601,7 +10601,7 @@
     <Cell ss:StyleID="s135"><Data ss:Type="String">MedicationStatement.effectiveDateTime&#10;MedicationStatement.effectivePeriod.start&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s137"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s137"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315917368"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10620,7 +10620,7 @@
     <Cell ss:StyleID="s84"><Data ss:Type="String">MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s232"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.78125" ss:StyleID="s245">
@@ -10631,7 +10631,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s248"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.03125" ss:StyleID="s186">
@@ -10642,7 +10642,7 @@
     <Cell ss:StyleID="s185"><Data ss:Type="String">Immunization.occurrence.occurrenceDateTime&#10;Immunization.occurrence.orrurrenceString</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s265"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="72" ss:StyleID="s186">
@@ -10655,7 +10655,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.effectiveDateTime&#10;MedicationStatement.effectivePeriod.start&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s137"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s137"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315919140"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10674,7 +10674,7 @@
     <Cell ss:StyleID="s189"><Data ss:Type="String">MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s232"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.78125" ss:StyleID="s245">
@@ -10685,7 +10685,7 @@
     <Cell ss:StyleID="s189"><Data ss:Type="String">MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s248"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.03125" ss:StyleID="s186">
@@ -10696,7 +10696,7 @@
     <Cell ss:StyleID="s185"><Data ss:Type="String">Immunization.occurrence.occurrenceDateTime&#10;Immunization.occurrence.orrurrenceString</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s265"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">start includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="72" ss:StyleID="s186">
@@ -10709,7 +10709,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.effectiveDateTime&#10;MedicationStatement.effectivePeriod.end&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s137"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s137"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315919240"><Data ss:Type="String">CMSTDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10728,7 +10728,7 @@
     <Cell ss:StyleID="s189"><Data ss:Type="String">MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s232"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.78125" ss:StyleID="s245">
@@ -10739,7 +10739,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s248"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.03125" ss:StyleID="s186">
@@ -10750,7 +10750,7 @@
     <Cell ss:StyleID="s185"><Data ss:Type="String">Immunization.occurrence.occurrenceDateTime&#10;Immunization.occurrence.orrurrenceString</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s265"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="72.28125" ss:StyleID="s186">
@@ -10763,7 +10763,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.effectiveDateTime&#10;MedicationStatement.effectivePeriod.end&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s137"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s137"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315917684"><Data ss:Type="String">CMENDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10782,7 +10782,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s232"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="28.78125" ss:StyleID="s245">
@@ -10793,7 +10793,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s248"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="58.03125" ss:StyleID="s186">
@@ -10804,7 +10804,7 @@
     <Cell ss:StyleID="s185"><Data ss:Type="String">Immunization.occurrence.occurrenceDateTime&#10;Immunization.occurrence.orrurrenceString</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s265"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s189"><Data ss:Type="String">end includes both date and time, though time commonly won't be specified</Data><NamedCell
+    <Cell ss:StyleID="s189"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="86.71875" ss:StyleID="s186">
