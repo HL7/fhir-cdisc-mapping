@@ -11770,7 +11770,7 @@
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s119"><Data ss:Type="String">This is a known gap. Procedure Dose interval does NOT exist for 'Procedure'. </Data><NamedCell
+    <Cell ss:StyleID="s119"><Data ss:Type="String">This is a known gap. Procedure Route of Administration interval does NOT exist for 'Procedure'. </Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s118"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRROUTE</Data><NamedCell
