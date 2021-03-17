@@ -10603,7 +10603,7 @@
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m1852315917368"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m1852315917368"><Data ss:Type="String">CMSTDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315917388"><Data ss:Type="String">Record the date the concomitant [medication/treatment] was first taken using this format (e.g., DD-MON-YYYY).  If the subject has been taking the concomitant [medication/treatment for a considerable amount of time prior to the start of the study, it is acceptable to have an incomplete date.  Concomitant [medication/treatment] taken during the study are expected to have a complete start date.  Prior concomitant [medication/treatment] that are exclusionary should have both a start and end date.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10657,7 +10657,7 @@
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">Start includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m1852315919140"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m1852315919140"><Data ss:Type="String">CMSTDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315919160"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was started</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10711,7 +10711,7 @@
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m1852315919240"><Data ss:Type="String">CMSTDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m1852315919240"><Data ss:Type="String">CMSTDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315919260"><Data ss:Type="String">The date that the subject ended/stopped taking the concomitant/medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10765,7 +10765,7 @@
     <Cell ss:StyleID="s239"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">End includes both date and time, though time commonly won't be specified</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m1852315917684"><Data ss:Type="String">CMENDTC</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m1852315917684"><Data ss:Type="String">CMENDAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1852315917704"><Data ss:Type="String">Record the time (as complete as possible) that the concomitant [medication/treatment] was stopped.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
