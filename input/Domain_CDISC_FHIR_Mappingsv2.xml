@@ -9,7 +9,7 @@
   <Author>Christine K Denney</Author>
   <LastAuthor>Lloyd McKenzie</LastAuthor>
   <Created>2018-06-06T18:12:11Z</Created>
-  <LastSaved>2021-01-22T05:23:39Z</LastSaved>
+  <LastSaved>2021-03-25T20:42:10Z</LastSaved>
   <Company>Eli Lilly and Company</Company>
   <Version>16.00</Version>
  </DocumentProperties>
@@ -6180,7 +6180,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">The version number as reported by the lab.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s84"><Data ss:Type="String">LBTOX - 2</Data><NamedCell
+    <Cell ss:StyleID="s84"><Data ss:Type="String">LBTOX</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">See Toxicity Grade Code List - LBTOX - 1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6200,7 +6200,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">The coding system as reported by the lab.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s84"><Data ss:Type="String">LBTOX - 1</Data><NamedCell
+    <Cell ss:StyleID="s84"><Data ss:Type="String">LBTOX</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">Needs to be translated from the URI and version to a name concatenated with the version.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6580,7 +6580,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>3</TopRowBottomPane>
+   <TopRowBottomPane>21</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -6588,8 +6588,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>30</ActiveRow>
+     <ActiveCol>8</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7751,7 +7751,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">An indication the serious AdverseEvent resulted in an initial or prolonged hospitalization.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">AESHOP</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">AESHOSP</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -8391,7 +8391,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>22</TopRowBottomPane>
+   <TopRowBottomPane>23</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -8403,7 +8403,7 @@
     <Pane>
      <Number>2</Number>
      <ActiveRow>24</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -8643,7 +8643,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1692047723320"><Data ss:Type="String">Medical History Collection Date&#10;&#10;The date on which the medical history was collected represented in an unambiguous date format (e.g., DD-MON-YYYY).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m1692047723340"><Data ss:Type="String">MHDAT</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m1692047723340"><Data ss:Type="String">MHDTC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m1692047723360"><Data ss:Type="String">This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9647,7 +9647,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>42</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -9658,6 +9658,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveCol>5</ActiveCol>
+     <RangeSelection>R43C6:R45C6</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
