@@ -27,9 +27,9 @@
       </thead>
       <tbody>
          <tr>
-            <th>Study ID or Number</th>
+            <th>Study Identifier</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a study.">STUDYID</span>
+               <span>STUDYID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">STUDYID</span>
@@ -41,9 +41,9 @@
             <td/>
          </tr>
          <tr>
-            <th>Study Site ID</th>
+            <th>Study Site Identifier</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier for a site within a study.">SITEID</span>
+               <span>SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SITEID</span>
@@ -55,9 +55,9 @@
             <td/>
          </tr>
          <tr>
-            <th>Subject ID for the Study</th>
+            <th>Subject Identifier for the Study</th>
             <td>
-               <span title="Sponsor's subject Identifier for the study.&#xA;&#xA;&#xA;               &#xA;&#xA;A unique subject identifier within a site and a study.">SUBJID</span>
+               <span>SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SUBJID</span>
@@ -71,7 +71,7 @@
          <tr>
             <th>Birth Date</th>
             <td>
-               <span title="Birth Date&#xA;&#xA;&#xA;               &#xA;&#xA;A subject's date of birth(with or without the time of birth).  The complete date of birth is made from the temporal components of Birth Year, Birth Month, Birth Day, Birth Time">BRTHDAT</span>
+               <span>BRTHDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -86,7 +86,7 @@
          <tr>
             <th>Birth Day</th>
             <td>
-               <span title="Birth Day&#xA;&#xA;&#xA;               &#xA;&#xA;Day of birth of the subject in an unambiguous date format (e.g., DD).">BRTHDD</span>
+               <span>BRTHDD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -100,7 +100,7 @@
          <tr>
             <th>Birth Month</th>
             <td>
-               <span title="Birth Month&#xA;&#xA;&#xA;               &#xA;&#xA;Month of birth of the subject in an unambiguous date format (e.g., MM).">BRTHMO</span>
+               <span>BRTHMO</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -114,7 +114,7 @@
          <tr>
             <th>Birth Year</th>
             <td>
-               <span title="Birth Year&#xA;&#xA;&#xA;               &#xA;&#xA;Year of birth of the subject in an unambiguous date format (e.g., YYYY).">BRTHYY</span>
+               <span>BRTHYY</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -128,7 +128,7 @@
          <tr>
             <th>Birth Time</th>
             <td>
-               <span title="Birth Time&#xA;&#xA;&#xA;               &#xA;&#xA;The time of birth of the subject in an unambiguous time format (e.g., hh:mm)">BRTHTIM</span>
+               <span>BRTHTIM</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
@@ -142,7 +142,7 @@
          <tr>
             <th>Age</th>
             <td>
-               <span title="The age of the subject expressed in AGEU">AGE</span>
+               <span>AGE</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AGE</span>
@@ -154,7 +154,7 @@
          <tr>
             <th>Age Units</th>
             <td>
-               <span title="The units of time that are routinely used to express the age of a person">AGEU</span>
+               <span>AGEU</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AGEU</span>
@@ -165,12 +165,12 @@
          <tr>
             <th>Demographics Collection Date</th>
             <td>
-               <span title="Demographics Collection Date&#xA;&#xA;&#xA;               &#xA;&#xA;The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)">DMDAT</span>
+               <span>DMDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">DMDTC</span>
             </td>
-            <td>Patient.meta.lastUpdated</td>
+            <td>Patient.meta</td>
             <td>
                <p>Patient.meta.lastUpdated</p>
             </td>
@@ -180,7 +180,7 @@
          <tr>
             <th>Sex</th>
             <td>
-               <span title="Sex of the subject as determined by the investigator.">SEX</span>
+               <span>SEX</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">SEX</span>
@@ -194,7 +194,7 @@
          <tr>
             <th>Ethnicity</th>
             <td>
-               <span title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">ETHNIC</span>
+               <span>ETHNIC</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">ETHNIC</span>
@@ -205,7 +205,7 @@
          <tr>
             <th>Collected Ethnicity</th>
             <td>
-               <span title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">CETHNIC</span>
+               <span>CETHNIC</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = &#34;CETHIC&#34; and SUPPDM.QLABEL = &#34;Collected Ethnicity&#34; See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPDM.QVAL</span>
@@ -216,7 +216,7 @@
          <tr>
             <th>Race</th>
             <td>
-               <span title="An arbitrary classification based on physical characteristics, a group of persons related by common descent or heredity (U.S. Center for Disease Control).">RACE</span>
+               <span>RACE</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">RACE</span>
@@ -228,7 +228,7 @@
          <tr>
             <th>Collected Race</th>
             <td>
-               <span title="An arbitrary classification based on physical characteristics, a group of persons related by common descent or heredity (U.S. Center for Disease Control).">CRACE</span>
+               <span>CRACE</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = &#34;CRACE&#34; and SUPPDM.QLABEL = &#34;Collected Race&#34; See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPDM.QVAL</span>
@@ -240,7 +240,7 @@
          <tr>
             <th>Race Other</th>
             <td>
-               <span title="A free text field to be used when none of the preprinted values for RACE are applicable or if another, unprinted selection should be added to those preprinted values.">RACEOTH</span>
+               <span>RACEOTH</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPDM dataset as the value of SUPPDM.QVAL where SUPPDM.QNAM = &#34;RACEOTHER&#34; and SUPPDM.QLABEL = &#34;RACE OTHER&#34; See SDTMIG v3.2 Section 5, DM Domain.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains."/>

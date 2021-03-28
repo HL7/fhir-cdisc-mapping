@@ -6,7 +6,17 @@
     </fileset>
   </path>
   <target name="generate-maps" description="Convert spreadsheet XML and generate maps">
-    <xslt in="input/Domain_CDISC_FHIR_Mappingsv2.xml" out="input/images/cdiscMaps.xml" style="tools/ExtractCDISCMaps.xslt" classpathref="saxon.path">
+    <xslt in="tools/profiles-resources.xml" out="temp/resources.xml" style="tools/SimplifyFHIR.xslt" classpathref="saxon.path">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    </xslt>
+    <xslt in="input/Domain_CDISC_FHIR_Mappingsv2.xml" out="input/cdiscMaps.xml" style="tools/ExtractCDISCMaps.xslt" classpathref="saxon.path">
+      <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+    </xslt>
+    <dependset>
+      <srcfilelist dir="temp" files="resources.xml"/>
+      <targetfilelist dir="input/images" files="cdiscMaps.xml"/>
+    </dependset>
+    <xslt in="input/cdiscMaps.xml" out="input/images/cdiscMaps.xml" style="tools/SupplementCDISCMaps.xslt" classpathref="saxon.path">
       <factory name="net.sf.saxon.TransformerFactoryImpl"/>
     </xslt>
     <xslt in="input/images/cdiscMaps.xml" out="temp/cdiscMaps.tmp" style="tools/CDISCMappingTables.xslt" classpathref="saxon.path">

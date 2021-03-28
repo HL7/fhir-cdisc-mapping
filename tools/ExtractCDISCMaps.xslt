@@ -39,6 +39,9 @@
         <xsl:when test="ends-with(@ss:Name, ' FHIR Mapping')">
           <xsl:value-of select="normalize-space(substring-before(@ss:Name, ' FHIR Mapping'))"/>
         </xsl:when>
+        <xsl:when test="@ss:Name = 'Concomitant Medications'">
+          <xsl:value-of select="@ss:Name"/>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="@ss:Name"/>
           <xsl:message select="concat('Unexpected worksheet name.  Should end with '' FHIR Mapping'':', @ss:Name)"/>
@@ -94,28 +97,50 @@
                   </cdisc>
                 </xsl:if>
                 <xsl:if test="$cdashColumn!=1 and (t:hasCellValue(., $cdashColumn) or t:hasCellValue(., $cdashMappingColumn))">
-                  <cdisc spec="CDASH">
-                    <xsl:if test="t:hasCellValue(., $cdashColumn)">
-                      <xsl:attribute name="label" select="t:cellValue(., $cdashColumn)"/>
-                    </xsl:if>
-                    <xsl:if test="t:hasCellValue(., $cdashMappingColumn)">
-                      <description>
-                        <xsl:copy-of select="t:htmlValue(., $cdashMappingColumn)"/>
-                      </description>
-                    </xsl:if>
-                  </cdisc>
+                  <xsl:choose>
+                    <xsl:when test="t:hasCellValue(., $cdashColumn)">
+                      <xsl:variable name="html" as="node()*" select="if (t:hasCellValue(., $cdashMappingColumn)) then t:htmlValue(., $cdashMappingColumn) else ()"/>
+                      <xsl:for-each select="tokenize(t:cellValue(., $cdashColumn), ';')">
+                        <cdisc spec="CDASH" label="{normalize-space(.)}">
+                          <xsl:if test="$html">
+                            <description>
+                              <xsl:copy-of select="$html"/>
+                            </description>
+                          </xsl:if>
+                        </cdisc>
+                      </xsl:for-each>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <cdisc spec="CDASH">
+                        <description>
+                          <xsl:copy-of select="t:htmlValue(., $cdashMappingColumn)"/>
+                        </description>
+                      </cdisc>
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </xsl:if>
                 <xsl:if test="$sdtmColumn!=1 and (t:hasCellValue(., $sdtmColumn) or t:hasCellValue(., $sdtmMappingColumn))">
-                  <cdisc spec="SDTM">
-                    <xsl:if test="t:hasCellValue(., $sdtmColumn)">
-                      <xsl:attribute name="label" select="t:cellValue(., $sdtmColumn)"/>
-                    </xsl:if>
-                    <xsl:if test="t:hasCellValue(., $sdtmMappingColumn)">
-                      <description>
-                        <xsl:copy-of select="t:htmlValue(., $sdtmMappingColumn)"/>
-                      </description>
-                    </xsl:if>
-                  </cdisc>
+                  <xsl:choose>
+                    <xsl:when test="t:hasCellValue(., $sdtmColumn)">
+                      <xsl:variable name="html" as="node()*" select="if (t:hasCellValue(., $sdtmMappingColumn)) then t:htmlValue(., $sdtmMappingColumn) else ()"/>
+                      <xsl:for-each select="tokenize(t:cellValue(., $sdtmColumn), ';')">
+                        <cdisc spec="SDTM" label="{normalize-space(.)}">
+                          <xsl:if test="$html">
+                            <description>
+                              <xsl:copy-of select="$html"/>
+                            </description>
+                          </xsl:if>
+                        </cdisc>
+                      </xsl:for-each>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <cdisc spec="SDTM">
+                        <description>
+                          <xsl:copy-of select="t:htmlValue(., $sdtmMappingColumn)"/>
+                        </description>
+                      </cdisc>
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </xsl:if>
                 <xsl:if test="t:hasCellValue(., $resourceColumn) or t:hasCellValue(., $elementColumn) or t:hasCellValue(., $pathColumn)">
                   <xsl:variable name="resourceCell" select="t:cellValue(., $resourceColumn)"/>
@@ -126,7 +151,7 @@
                   <xsl:variable name="mappingPaths" select="if (contains($pathCell, '&#xa;')) then tokenize($pathCell, '&#xa;')[not(normalize-space(.)=('', 'OR'))] else $pathCell"/>
                   <xsl:choose>
                     <xsl:when test="count($mappingResources)=1 and count($mappingAttributes)=1">
-                      <mapping element="{concat($mappingResources, '.', $mappingAttributes)}">
+                      <mapping resource="{$mappingResources}" path="{$mappingAttributes}">
                         <xsl:for-each select="$mappingPaths">
                           <path value="{.}"/>
                         </xsl:for-each>
@@ -135,7 +160,7 @@
                     <xsl:when test="count($mappingResources)=count($mappingAttributes) and count($mappingResources)=count($mappingPaths)">
                       <xsl:for-each select="$mappingResources">
                         <xsl:variable name="pos" select="position()"/>
-                        <mapping element="{concat(., '.', $mappingAttributes[$pos])}">
+                        <mapping resource="{.}" path="{$mappingAttributes[$pos]}">
                           <xsl:for-each select="$mappingPaths[position()]">
                             <path value="{.}"/>
                           </xsl:for-each>
@@ -145,7 +170,7 @@
                     <xsl:when test="count($mappingResources)=1 and count($mappingAttributes)=count($mappingPaths)">
                       <xsl:for-each select="$mappingAttributes">
                         <xsl:variable name="pos" select="position()"/>
-                        <mapping element="{concat($mappingResources, '.', .)}">
+                        <mapping resource="{$mappingResources}" path="{.}">
                           <xsl:for-each select="$mappingPaths[$pos]">
                             <path value="{.}"/>
                           </xsl:for-each>
@@ -189,7 +214,7 @@
               <xsl:otherwise>
                 <xsl:copy>
                   <xsl:copy-of select="@*"/>
-                  <xsl:for-each select="*:cdisc">
+<!--                  <xsl:for-each select="*:cdisc">
                     <xsl:if test="@label and count(distinct-values($elements/*:cdisc[@spec=current()/@spec]/@label))!=1">
                       <xsl:message select="$elements"/>
                       <xsl:message terminate="yes" select="concat('cdisc labels for spec ', @spec, ' are not the same')"/>
@@ -198,7 +223,7 @@
                       <xsl:message select="$elements"/>
                       <xsl:message terminate="yes" select="concat('cdisc descriptions for spec ', @spec, ' are not the same')"/>
                     </xsl:if>
-                  </xsl:for-each>
+                  </xsl:for-each>-->
                   <xsl:if test="*:comment and count(distinct-values($elements/*:comment))!=1">
                     <xsl:message select="$elements"/>
                     <xsl:message terminate="yes" select="'cdisc comments are not the same'"/>

@@ -29,7 +29,7 @@
          <tr>
             <th>Study Identifier</th>
             <td>
-               <span title="A unique identifier for a study.">STUDYID</span>
+               <span>STUDYID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
@@ -49,7 +49,7 @@
          <tr>
             <th>Study Site Identifier</th>
             <td>
-               <span title="A unique identifier for a site within a study.">SITEID</span>
+               <span>SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
@@ -69,7 +69,7 @@
          <tr>
             <th>Subject Identifier for the Study</th>
             <td>
-               <span title="A unique subject identifier within a site and a study.">SUBJID</span>
+               <span>SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
@@ -84,7 +84,7 @@
          <tr>
             <th rowspan="4">Category for Medication</th>
             <td rowspan="4">
-               <span title="A grouping of topic-variable values based on user-defined characteristics">CMCAT</span>
+               <span>CMCAT</span>
             </td>
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCAT</span>
@@ -116,7 +116,7 @@
          <tr>
             <th rowspan="4">Subcategory for Medication</th>
             <td rowspan="4">
-               <span title="A sub-division of the CMCAT values based on user-defined characteristics.">CMSCAT</span>
+               <span>CMSCAT</span>
             </td>
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMSCAT</span>
@@ -148,7 +148,7 @@
          <tr>
             <th>Any Concomitant Medications Taken</th>
             <td>
-               <span title="An indication whether or not any (concomitant) medications treatments/therapies were taken/given.">CMYN</span>
+               <span>CMYN</span>
             </td>
             <td>
                <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
@@ -160,7 +160,7 @@
          <tr>
             <th rowspan="5">CM Sponsor-Defined Identifier</th>
             <td rowspan="5">
-               <span title="A sponsor-defined identifier.  IN CDASH, This is typically used for preprinted or autom-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">CMSPID</span>
+               <span>CMSPID</span>
             </td>
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">CMSPID</span>
@@ -198,12 +198,12 @@
          <tr>
             <th rowspan="9">Reported Name of Drug, Med, or Therapy</th>
             <td rowspan="9">
-               <span title="Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).">CMTRT</span>
+               <span>CMTRT</span>
             </td>
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMTRT</span>
             </td>
-            <td>MedicationStatement.medicationCodeableconcept</td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medication.medicationCodeableConcept</p>
             </td>
@@ -260,7 +260,7 @@
          <tr>
             <th>CM Pre-Specified</th>
             <td>
-               <span title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">CMPRESP</span>
+               <span>CMPRESP</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMPRESP</span>
@@ -272,7 +272,7 @@
          <tr>
             <th rowspan="6">CM Occurrence</th>
             <td rowspan="6">
-               <span title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.&#xA;&#xA;&#xA;               &#xA;&#xA;Indicate if (specific medication/treatment) was taken by checking Yes or No.">CMOCCUR</span>
+               <span>CMOCCUR</span>
             </td>
             <td rowspan="6">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMOCCUR</span>
@@ -316,7 +316,7 @@
          <tr>
             <th rowspan="5">Concomitant Meds Active Ingredients</th>
             <td rowspan="5">
-               <span title="Medication Ingredients.">CMINGRD</span>
+               <span>CMINGRD</span>
             </td>
             <td rowspan="5">
                <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
@@ -346,7 +346,7 @@
             </td>
          </tr>
          <tr>
-            <td>Immunization.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>Immunization.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
@@ -354,7 +354,7 @@
          <tr>
             <th rowspan="4">CM Indication</th>
             <td rowspan="4">
-               <span title="The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., Why the medication/treatment/therapy was taken or administered).">CMINDC</span>
+               <span>CMINDC</span>
             </td>
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMINDC</span>
@@ -384,9 +384,9 @@
             </td>
          </tr>
          <tr>
-            <th>Related AdverseEvent ID</th>
+            <th>Related Adverse Event ID</th>
             <td>
-               <span title="Identifier for the AdverseEvent that is the indication for this medication/treatment/therapy.">CMAENO</span>
+               <span>CMAENO</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
@@ -400,7 +400,7 @@
          <tr>
             <th rowspan="4">Related Medical History Event ID</th>
             <td rowspan="4">
-               <span title="Identifier for the medical history condition that is the indication for this medication/treatment/therapy">CMMHNO</span>
+               <span>CMMHNO</span>
             </td>
             <td rowspan="4">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
@@ -432,7 +432,7 @@
          <tr>
             <th rowspan="5">CM Dose per Administration</th>
             <td rowspan="5">
-               <span title="The dose of medication/treatment (e.g., -TRT given at one time represented as a numeric value.">CMDOSE</span>
+               <span>CMDOSE</span>
             </td>
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). in the column with the heading &#34;SDTMIG Target&#34;.">CMDOSE</span>
@@ -462,7 +462,7 @@
             </td>
          </tr>
          <tr>
-            <td>Immunization.doesQuantity</td>
+            <td>Immunization.doseQuantity</td>
             <td>
                <p>Immunization.doseQuantity</p>
             </td>
@@ -470,10 +470,11 @@
          <tr>
             <th rowspan="4">Concomitant Meds Dose Description</th>
             <td rowspan="4">
-               <span title="The dose of medication/treatment taken per administration.">CMDSTXT</span>
+               <span>CMDSTXT</span>
             </td>
             <td rowspan="4">
-               <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSTXT; CMDOSE</span>
+               <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSTXT</span>
+               <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSE</span>
             </td>
             <td>MedicationStatement.dosage</td>
             <td>
@@ -502,25 +503,25 @@
          <tr>
             <th rowspan="4">CM Total Daily Dose</th>
             <td rowspan="4">
-               <span title="The total amount of CMTRT taken over a day using the units in CMDOSU">CMDOSTOT</span>
+               <span>CMDOSTOT</span>
             </td>
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSTOT</span>
             </td>
-            <td>MedicationStatement.dosage.maxDosePerPeriod</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.maxDosePerPeriod</p>
             </td>
             <td rowspan="4">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </td>
          </tr>
          <tr>
-            <td>MedicationRequest.dosage.maxDosePerPeriod</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.dosage.maxDosePerPeriod</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.dosage.maxDosePerPeriod</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.dosage.maxDosePerPeriod</p>
             </td>
@@ -534,33 +535,33 @@
          <tr>
             <th rowspan="3">CM Dose Units</th>
             <td rowspan="3">
-               <span title="The unit associated with the concomitant medication/treatment/therapy taken (e.g., mg in &#34;2 mg 3 times per day&#34;).">CMDOSU</span>
+               <span>CMDOSU</span>
             </td>
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSU</span>
             </td>
-            <td>MedicationStatement.dosage.maxDosePerPeriod</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.maxDosePerPeriod.code</p>
             </td>
             <td rowspan="3"/>
          </tr>
          <tr>
-            <td>MedicationRequest.dosage.maxDosePerPeriod</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
-               <p>MedicationRequest.dosage.maxDosePerPeriod.code</p>
+               <p>MedicationRequest.dosageInstruction.maxDosePerPeriod.code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.dosage.maxDosePerPeriod</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
-               <p>MedicationDispense.dosage.maxDosePerPeriod.code</p>
+               <p>MedicationDispense.dosageInstruction.maxDosePerPeriod.code</p>
             </td>
          </tr>
          <tr>
             <th rowspan="3">CM Dose Form</th>
             <td rowspan="3">
-               <span title="The pharmaceutical dosage form in which the CMTRT is physically presented.">CMDOSFRM</span>
+               <span>CMDOSFRM</span>
             </td>
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRM</span>
@@ -586,7 +587,7 @@
          <tr>
             <th rowspan="3">CM Dosing Frequency per Interval</th>
             <td rowspan="3">
-               <span title="The number of doses given/administered/taken during a specific interval">CMDOSFRQ</span>
+               <span>CMDOSFRQ</span>
             </td>
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRQ</span>
@@ -612,7 +613,7 @@
          <tr>
             <th rowspan="5">CM Route of Administration</th>
             <td rowspan="5">
-               <span title="The route of administration of the (concomitant) [medication/treatment/therapy].">CMROUTE</span>
+               <span>CMROUTE</span>
             </td>
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMROUTE</span>
@@ -650,7 +651,7 @@
          <tr>
             <th rowspan="6">Concomitant Meds Start Date</th>
             <td rowspan="6">
-               <span title="Record the date the concomitant [medication/treatment] was first taken using this format (e.g., DD-MON-YYYY).  If the subject has been taking the concomitant [medication/treatment for a considerable amount of time prior to the start of the study, it is acceptable to have an incomplete date.  Concomitant [medication/treatment] taken during the study are expected to have a complete start date.  Prior concomitant [medication/treatment] that are exclusionary should have both a start and end date.">CMSTDTC</span>
+               <span>CMSTDAT</span>
             </td>
             <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
@@ -659,51 +660,7 @@
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
-         </tr>
-         <tr>
-            <td>MedicationStatement.effectivePeriod</td>
-            <td>
-               <p>MedicationStatement.effectivePeriod.start</p>
-            </td>
-         </tr>
-         <tr>
-            <td>MedicationRequest.dosageInstruction.timing</td>
-            <td>
-               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
-            </td>
-         </tr>
-         <tr>
-            <td>MedicationDispense.dosageInstruction.timing</td>
-            <td>
-               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
-            </td>
-         </tr>
-         <tr>
-            <td>Immunization.occurrenceDateTime</td>
-            <td>
-               <p>Immunization.occurrence.occurrenceDateTime</p>
-            </td>
-         </tr>
-         <tr>
-            <td>Immunization.occurrenceString</td>
-            <td>
-               <p>Immunization.occurrence.orrurrenceString</p>
-            </td>
-         </tr>
-         <tr>
-            <th rowspan="6">Concomitant Meds Start Time</th>
-            <td rowspan="6">
-               <span title="Record the time (as complete as possible) that the concomitant [medication/treatment] was started">CMSTDTC</span>
-            </td>
-            <td rowspan="6">
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
-            </td>
-            <td>MedicationStatement.effectiveDateTime</td>
-            <td>
-               <p>MedicationStatement.effectiveDateTime</p>
-            </td>
-            <td rowspan="6">start includes both date and time, though time commonly won't be specified</td>
+            <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod</td>
@@ -718,7 +675,7 @@
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.dosage.instruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
@@ -726,67 +683,72 @@
          <tr>
             <td>Immunization.occurrenceDateTime</td>
             <td>
-               <p>Immunization.occurrence.occurrenceDateTime</p>
+               <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
             <td>Immunization.occurrenceString</td>
             <td>
-               <p>Immunization.occurrence.orrurrenceString</p>
+               <p>Immunization.occurrenceString</p>
             </td>
          </tr>
          <tr>
-            <th rowspan="5">Concomitant Meds End Date</th>
-            <td rowspan="5">
-               <span title="The date that the subject ended/stopped taking the concomitant/medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).">CMSTDTC</span>
+            <th rowspan="6">Concomitant Meds Start Time</th>
+            <td rowspan="6">
+               <span>CMSTTIM</span>
             </td>
-            <td rowspan="5">
+            <td rowspan="6">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceDateTime</td>
+            <td>
+               <p>Immunization.occurrenceDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceString</td>
+            <td>
+               <p>Immunization.occurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="6">Concomitant Meds End Date</th>
+            <td rowspan="6">
+               <span>CMENDAT</span>
+            </td>
+            <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CMSTDTC in ISO 8601 format.">CMSTDTC</span>
             </td>
             <td>MedicationStatement.effectiveDateTime</td>
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
-            <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
-         </tr>
-         <tr>
-            <td>MedicationStatement.effectivePeriod</td>
-            <td>
-               <p>MedicationStatement.effectivePeriod.end</p>
-            </td>
-         </tr>
-         <tr>
-            <td>MedicationRequest.dosageInstruction</td>
-            <td>
-               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
-            </td>
-         </tr>
-         <tr>
-            <td>MedicationDispense.dosage.instruction</td>
-            <td>
-               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
-            </td>
-         </tr>
-         <tr>
-            <td>Immunization.occurrence</td>
-            <td>
-               <p>Immunization.occurrence.occurrenceDateTime</p>
-               <p>Immunization.occurrence.orrurrenceString</p>
-            </td>
-         </tr>
-         <tr>
-            <th rowspan="5">Concomitant Meds End Time</th>
-            <td rowspan="5">
-               <span title="Record the time (as complete as possible) that the concomitant [medication/treatment] was stopped.">CMENDTC</span>
-            </td>
-            <td rowspan="5">
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.">CMENDTC</span>
-            </td>
-            <td>MedicationStatement.effectiveDateTime</td>
-            <td>
-               <p>MedicationStatement.effectiveDateTime</p>
-            </td>
-            <td rowspan="5">end includes both date and time, though time commonly won't be specified</td>
+            <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
             <td>MedicationStatement.effectivePeriod</td>
@@ -807,30 +769,81 @@
             </td>
          </tr>
          <tr>
-            <td>Immunization.occurrence</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
-               <p>Immunization.occurrence.occurrenceDateTime</p>
-               <p>Immunization.occurrence.orrurrenceString</p>
+               <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
-            <th>Prior Concomitant Medications</th>
+            <td>Immunization.occurrenceString</td>
             <td>
-               <span title="Indication the concomitant medication/treatment/therapy was given or taken prior to [CMSTTPT] or prior to the date in DM.RFSTDTC.">CMPRIOR</span>
+               <p>Immunization.occurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th rowspan="6">Concomitant Meds End Time</th>
+            <td rowspan="6">
+               <span>CMENTIM</span>
+            </td>
+            <td rowspan="6">
+               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.">CMENDTC</span>
+            </td>
+            <td>MedicationStatement.effectiveDateTime</td>
+            <td>
+               <p>MedicationStatement.effectiveDateTime</p>
+            </td>
+            <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
+         </tr>
+         <tr>
+            <td>MedicationStatement.effectivePeriod</td>
+            <td>
+               <p>MedicationStatement.effectivePeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationRequest.dosageInstruction</td>
+            <td>
+               <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>MedicationDispense.dosageInstruction</td>
+            <td>
+               <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceDateTime</td>
+            <td>
+               <p>Immunization.occurrenceDateTime</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Immunization.occurrenceString</td>
+            <td>
+               <p>Immunization.occurrenceString</p>
+            </td>
+         </tr>
+         <tr>
+            <th>Prior Concomitant Meds</th>
+            <td>
+               <span>CMPRIOR</span>
             </td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMSTRF; CMSTRTPT</span>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMSTRF</span>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMSTRTPT</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
             <td/>
          </tr>
          <tr>
-            <th>Ongoing Concomitant Medications</th>
+            <th>Ongoing Concomitant Meds</th>
             <td>
-               <span title="Indication the concomitant medication/treatment/therapy is ongoing when no end date is provided">CMONGO</span>
+               <span>CMONGO</span>
             </td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMENRF; CMENRTPT</span>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMENRF</span>
+               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">CMENRTPT</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
             <td/>
@@ -838,7 +851,7 @@
          <tr>
             <th rowspan="9">Standardized Medication Name</th>
             <td rowspan="9">
-               <span title="The dictionary or sponsor defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.">CMDECOD</span>
+               <span>CMDECOD</span>
             </td>
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDECOD</span>
@@ -908,7 +921,7 @@
          <tr>
             <th rowspan="9">CM Medication Class</th>
             <td rowspan="9">
-               <span title="The class for the intervention, often obtained from a coding dictionary">CMCLAS</span>
+               <span>CMCLAS</span>
             </td>
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLAS</span>
@@ -970,7 +983,7 @@
             </td>
          </tr>
          <tr>
-            <td>Immunizations.vaccineCode</td>
+            <td>Immunization.vaccineCode</td>
             <td>
                <p>Immunization.vaccineCode</p>
             </td>
@@ -978,7 +991,7 @@
          <tr>
             <th rowspan="9">CM Medication Class Code</th>
             <td rowspan="9">
-               <span title="The assigned dictionary code for the class for the intervention">CMCLASCD</span>
+               <span>CMCLASCD</span>
             </td>
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLASCD</span>
@@ -1048,7 +1061,7 @@
          <tr>
             <th>ATC Level 1 Description</th>
             <td>
-               <span title="Dictionary text description of the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC1</span>
+               <span>CMATC1</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC1&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1059,7 +1072,7 @@
          <tr>
             <th>ATC Level 1 Code</th>
             <td>
-               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC1CD</span>
+               <span>CMATC1CD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC1CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 1 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1072,7 +1085,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 2 Description</th>
             <td>
-               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC2</span>
+               <span>CMATC2</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC2&#34; and SUPPCM.QLABEL=&#34;ATC Level 2 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1083,7 +1096,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 2 Code</th>
             <td>
-               <span title="Dictionary text description of the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC2CD</span>
+               <span>CMATC2CD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC2CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 2 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1095,7 +1108,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 3 Description</th>
             <td>
-               <span title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC3</span>
+               <span>CMATC3</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC3&#34; and SUPPCM.QLABEL=&#34;ATC Level 3 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1106,7 +1119,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 3 Code</th>
             <td>
-               <span title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC3CD</span>
+               <span>CMATC3CD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC3CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 3 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1118,7 +1131,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 4 Description</th>
             <td>
-               <span title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC4</span>
+               <span>CMATC4</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC4&#34; and SUPPCM.QLABEL=&#34;ATC Level 4 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1129,7 +1142,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 4 Code</th>
             <td>
-               <span title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC4CD</span>
+               <span>CMATC4CD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC4CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 4 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1142,7 +1155,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 5 Description</th>
             <td>
-               <span title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC5</span>
+               <span>CMATC5</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;CMATC5&#34; and SUPPCM.QLABEL=&#34;ATC Level 5 Description&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>
@@ -1153,7 +1166,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <tr>
             <th>ATC Level 5 Code</th>
             <td>
-               <span title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification System.  Indicates the anatomical main group">CMATC5CD</span>
+               <span>CMATC5CD</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPCM dataset as the value of SUPPCM.QVAL where SUPPCM.QNAM= &#34;MATC5CD&#34; and SUPPCM.QLABEL=&#34;ATC Level 5 Code&#34;.  Sponsors should include an Origin column in the SUPPQ dataset to indicate that the data was &#34;ASSIGNED&#34;. ">SUPPCM.QVAL</span>

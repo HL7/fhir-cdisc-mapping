@@ -9,7 +9,7 @@
         <xsl:apply-templates mode="htmlToString" select="ancestor::element/cdisc[1]/description/node()"/>
         <xsl:value-of select="concat('&quot;,', f:escape(ancestor::element/cdisc[2]/@spec), ',&quot;', f:escape(ancestor::element/cdisc[2]/@label), '&quot;,&quot;')"/>
         <xsl:apply-templates mode="htmlToString" select="ancestor::element/cdisc[2]/description/node()"/>
-        <xsl:value-of select="concat('&quot;,&quot;', f:escape(parent::mapping/@element), '&quot;,&quot;', f:escape(@value), '&quot;,&quot;')"/>
+        <xsl:value-of select="concat('&quot;,&quot;', f:escape(parent::mapping/@resource),'.', f:escape(parent::mapping/@path), '&quot;,&quot;', f:escape(@value), '&quot;,&quot;')"/>
         <xsl:apply-templates mode="htmlToString" select="self::gap/node()"/>
         <xsl:text>","</xsl:text>
         <xsl:apply-templates mode="htmlToString" select="ancestor::element/comment/node()"/>

@@ -105,7 +105,7 @@
             <td>
                <span title="Provide the Investigator name known by the study sponsor.">/GTP/Study/Site/Investigator/@Name</span>
             </td>
-            <td>Practitioner.name.text</td>
+            <td>Practitioner.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</p>
@@ -197,7 +197,7 @@
             <td>
                <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;&#xA;               &#xA;&#xA;If required, be sure to send only the initials, derived from the name.">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
             </td>
-            <td>Patient.name.text</td>
+            <td>Patient.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
             </td>
@@ -404,7 +404,7 @@
             <td>
                <span title="Populate with the comment text.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
-            <td>Specimen.note.text</td>
+            <td>Specimen.note</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve()isPractitioner).note.text</p>
             </td>
@@ -488,11 +488,13 @@
             <td>
                <span title="If fasting status is provided, it must be one of the following:&#xA;&#xA;&#xA;               &#xA;&#xA;&#xA;Y - Yes&#xA;N - No&#xA;U - Unknown&#xA;and blank if not relevant.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
             </td>
-            <td>Observation.specimenRefSpecimen.collection.fastingStatus</td>
+            <td>Specimen.collection.fastingStatusCodeableConcept</td>
             <td>
-               <p>Observation.specimenRefSpecimen.collection.fastingStatusCodeableConcept.code</p>
+               <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
             </td>
-            <td/>
+            <td>FHIR to CDISC mapping as follows:
+F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
+               <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
          </tr>
          <tr>
             <th>Battery ID</th>
@@ -609,11 +611,11 @@
             <td>
                <span title="Additional text about the test that produced the result.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
             </td>
-            <td>Observation.comment</td>
+            <td>Observation.note</td>
             <td>
-               <p>Observation.comment</p>
+               <p>Observation.note.text</p>
             </td>
-            <td/>
+            <td>Not all notes will necessarily be appropriate to map here.  Would need to decide whether to also bring across authors and dates and would need to combined multiple repetitions into a single string.</td>
          </tr>
          <tr>
             <th>Receiver Test ID</th>
@@ -719,7 +721,7 @@
             <td>
                <span title="Blinding is handled via the security on the Observation resource.  ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
             </td>
-            <td>Observation.meta.security</td>
+            <td>Observation.meta</td>
             <td>
                <p>Observation.meta.security.code</p>
             </td>

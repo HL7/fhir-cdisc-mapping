@@ -27,12 +27,12 @@
       </thead>
       <tbody>
          <tr>
-            <th>Study ID or Number</th>
+            <th>Study Identifier</th>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to Research Study.">STUDYID</span>
+               <span>STUDYID</span>
             </td>
             <td>
-               <span title="Sponsor's study ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">STUDYID</span>
+               <span>STUDYID</span>
             </td>
             <td>ResearchStudy.identifier</td>
             <td>
@@ -43,9 +43,9 @@
                <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
-            <th>Study Site ID</th>
+            <th>Study Site Identifier</th>
             <td>
-               <span title="Sponsor's site ID&#xA;&#xA;&#xA;               &#xA;&#xA;Use the new extension to connect Observation to ResearchStudy.">SITEID</span>
+               <span>SITEID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
@@ -59,9 +59,9 @@
                <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
-            <th>Subject ID for the Study</th>
+            <th>Subject Identifier for the Study</th>
             <td>
-               <span title="Sponsor's subject Identifier for the study &#xA;&#xA;&#xA;               &#xA;&#xA;A unique identifier within a site and a study">SUBJID</span>
+               <span>SUBJID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
@@ -76,7 +76,7 @@
          <tr>
             <th>Visit Name</th>
             <td>
-               <span title="The name of the clinical encounter.  &#xA;This can included planned and unplanned trial interventions, procedures and assessments that may be performed on a subject">VISIT</span>
+               <span>VISIT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VISIT</span>
@@ -87,12 +87,12 @@
          <tr>
             <th>Visit Date</th>
             <td>
-               <span title="Date the clinical encounter occurred (or started)">VISDAT</span>
+               <span>VISDAT</span>
             </td>
             <td>
                <span title="The field is not an SDTM variable.  The date of a measurement, test observation can be determined from the date/time of visit (VISDAT/VISTM components"/>
             </td>
-            <td>Encounter.period.start</td>
+            <td>Encounter.period</td>
             <td>
                <p>Observation.encounter.resolve().period.start</p>
             </td>
@@ -101,7 +101,7 @@
          <tr>
             <th>Vital Signs Performed</th>
             <td>
-               <span title="Vital Signs Performed&#xA;&#xA;&#xA;               &#xA;&#xA;An indication whether or not a planned vital signs measurement series of vital signs measurements, tests, or observations was performed.">[VSTESTCD]_VSPERF</span>
+               <span>VSPERF</span>
             </td>
             <td>
                <span title="This field is not an SDTM variable.  &#xA;May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF=&#34;N&#34;, the value of VSSSTAT will be &#34;NOT DONE&#34;.  If VSPErF=&#34;Y&#34;, VSSTAT should be NULL">VSSTAT</span>
@@ -115,7 +115,7 @@
          <tr>
             <th>Vital Signs Date</th>
             <td>
-               <span title="Vital Signs Date&#xA;&#xA;&#xA;               &#xA;&#xA;The date of the vital signs measurement represented in an unambiguous date format (e.g., DD-MON-YYYY)">[VSTESTCD]_VSDAT</span>
+               <span>VSDAT</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
@@ -129,7 +129,7 @@
          <tr>
             <th>Vital Signs Time</th>
             <td>
-               <span title="Vital Signs Time&#xA;&#xA;&#xA;               &#xA;&#xA;The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">[VSTESTCD]_VSTIM</span>
+               <span>VSTIM</span>
             </td>
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
@@ -143,7 +143,7 @@
          <tr>
             <th>Category for Vital Signs</th>
             <td>
-               <span title="Category for Vital Signs&#xA;&#xA;&#xA;               &#xA;&#xA;A grouping of topic-variable values based on user-defined characteristics.">VSCAT</span>
+               <span>VSCAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">VSCAT</span>
@@ -159,7 +159,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Subcategory for Vital Signs</th>
             <td>
-               <span title="Subcategory for Vital Signs&#xA;&#xA;&#xA;               &#xA;&#xA;A sub-division of the VSCAT values based on user defined characteristics.">VSCAT</span>
+               <span>VSSCAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSCAT</span>
@@ -175,7 +175,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Group ID</th>
             <td>
-               <span title="Vital Signs Group ID&#xA;&#xA;&#xA;               &#xA;&#xA;A sponsor-defined identifier used to tie a block of related records in a single domain.">VSGRPID</span>
+               <span>VSGRPID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSGRPID</span>
@@ -186,21 +186,21 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Planned Time Point Name</th>
             <td>
-               <span title="Vital Signs Planned Time Point Name&#xA;&#xA;&#xA;               &#xA;&#xA;A text description of planned time point when measurements should be taken as defined in the protocol.">[VSTESTCD]_VSTPT</span>
+               <span>VSTPT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSTPT</span>
             </td>
-            <td>Observation.instantiates</td>
+            <td>Observation.extension</td>
             <td>
-               <p>Observation.instantiates.resolve().title</p>
+               <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
             </td>
-            <td>TimePoints will be represented in FHIR as PlanDefinition.activities.</td>
+            <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
          </tr>
          <tr>
             <th rowspan="2">Vital Signs Completion Status</th>
             <td rowspan="2">
-               <span title="Vital Signs Completion Status&#xA;&#xA;&#xA;               &#xA;&#xA;The variable used to indicate that data are not available by having the site recording the value as &#34;NOT DONE&#34;">[VSTESTCD]_VSSTAT</span>
+               <span>VSSTAT</span>
             </td>
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSTAT</span>
@@ -220,9 +220,9 @@ This combination can be used to extract vital sign data points from EHR system a
             </td>
          </tr>
          <tr>
-            <th>Vital Signs Results or Finding in Original Units</th>
+            <th>VS Result or Finding in Original Units</th>
             <td>
-               <span title="VS Result or Finding in Original Units&#xA;&#xA;&#xA;               &#xA;&#xA;Result of the vital signs measurement as originally received or collected">[VSTESTCD]_VSORRES</span>
+               <span>VSORRES</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES</span>
@@ -234,9 +234,9 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </td>
          </tr>
          <tr>
-            <th>Vital Sign Original Units</th>
+            <th>VS Original Units</th>
             <td>
-               <span title="VS Original Units&#xA;&#xA;&#xA;               &#xA;&#xA;The unit of the result as originally received or collected">[VSTESTCD]_VSORRESU</span>
+               <span>VSORRESU</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRESU</span>
@@ -250,7 +250,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Clinical Significance</th>
             <td>
-               <span title="Vital Signs Clinical Significance&#xA;&#xA;&#xA;               &#xA;&#xA;An indication whether the vital signs results were clinically significant.">[VSTESTCD]_VSCLSIG</span>
+               <span>VSCLSIG</span>
             </td>
             <td>
                <span>SUPPVS.QVAL</span>
@@ -264,7 +264,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th rowspan="2">Vital Signs Position of Subject</th>
             <td rowspan="2">
-               <span title="Vital Signs Position of Subject&#xA;&#xA;&#xA;               &#xA;&#xA;The position of the subject during a measurement or examination">[VSTESTCD]_VSPOS</span>
+               <span>VSPOS</span>
             </td>
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSPOS</span>
@@ -284,7 +284,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Location of Vital Signs Measurement</th>
             <td>
-               <span title="Location of Vital Signs Measurement&#xA;&#xA;&#xA;               &#xA;&#xA;A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">[VSTESTCD]_VSLOC</span>
+               <span>VSLOC</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLOC</span>
@@ -298,7 +298,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Laterality</th>
             <td>
-               <span title="Vital Signs Laterality&#xA;&#xA;&#xA;               &#xA;&#xA;Qualifier for anatomical location further detailing the side of the body.">[VSTESTCD]_VSLAT</span>
+               <span>VSLAT</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLAT</span>
@@ -312,10 +312,10 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Directionality</th>
             <td>
-               <span title="Vital Signs Directionality&#xA;&#xA;&#xA;               &#xA;&#xA;Qualifier further detailing the position of the anatomical location relative to the cent of the body, organ specimen.">VSDIR</span>
+               <span>VSDIR</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSDIR</span>
+               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSDIR*</span>
             </td>
             <td>Observation.bodySite</td>
             <td>
@@ -326,7 +326,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Test code</th>
             <td>
-               <span title="Vital Signs Test Code&#xA;&#xA;&#xA;               &#xA;&#xA;Descriptive name of the test or examination used to obtain the measurement or finding">VSTESTCD</span>
+               <span>VSTESTCD</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTESTCD</span>
@@ -340,7 +340,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Test Name</th>
             <td>
-               <span title="Vital Signs Test Name&#xA;&#xA;&#xA;               &#xA;&#xA;Descriptive name of the test or examination used to obtain the measurement or finding">VSTEST</span>
+               <span>VSTEST</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST</span>
@@ -352,9 +352,9 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>coding.display and coding.code (plus coding.system)</td>
          </tr>
          <tr>
-            <th>Vital Signs Sponsor Defined Identifier</th>
+            <th>Vital Signs Sponsor-Defined Identifier</th>
             <td>
-               <span title="Vital Signs Sponsor-Defined Identifier&#xA;&#xA;&#xA;               &#xA;&#xA;A sponsor defined identifier in CDASH.  This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">VSSPID</span>
+               <span>VSSPID</span>
             </td>
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">VSSPID</span>
@@ -368,7 +368,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Repetition Number</th>
             <td>
-               <span title="Vital Signs Repetition Number&#xA;&#xA;&#xA;               &#xA;&#xA;The instance number of a test that is repeated within a given timeframe for the same test.  The level of granularity can vary (e.g., within a time point, within a visit).">VSREPNUM</span>
+               <span>VSREPNUM</span>
             </td>
             <td>
                <span title="The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).&#xA;&#xA;&#xA;               &#xA;&#xA;This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPVS dataset as the value of SUPPPVS.QVAL where SUPPVS.QNAM=&#34;VSREPNUM&#34; and SUPVS.QLABEL=&#34;Repetition Number within time point:.  Refer to current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPVS.QVAL</span>

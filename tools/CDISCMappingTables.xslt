@@ -112,7 +112,7 @@
 	</xsl:template>
 	<xsl:template match="mapping">
     <td>
-      <xsl:value-of select="@element"/>
+      <xsl:value-of select="concat(@resource, '.', @path)"/>
     </td>
     <td>
       <xsl:for-each select="path">
