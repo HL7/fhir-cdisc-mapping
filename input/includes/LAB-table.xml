@@ -27,7 +27,7 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span title="Use the new extension to connect Observation to ResearchStudy.">/GTP/Study/@ID</span>
+               <span>/GTP/Study/@ID</span>
             </td>
             <td>ResearchStudy.ResearchStudy.identifier</td>
             <td>
@@ -40,7 +40,7 @@
          <tr>
             <th>Study Name</th>
             <td>
-               <span title="Use the new extension to connect Observation to ResearchStudy.">/GTP/Study/@Name</span>
+               <span>/GTP/Study/@Name</span>
             </td>
             <td>ResearchStudy.ResearchStudy.title</td>
             <td>
@@ -53,15 +53,15 @@
          <tr>
             <th>Transmission Type</th>
             <td>
-               <span title="Determine from the type of call to the FHIR service.  Requesting all data would be cumulative; requesting only a subset of data, since the last call, is incremental.">/GTP/Study/@TransmissionType</span>
+               <span>/GTP/Study/@TransmissionType</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Determine from type of call to service (requesting all data vs incremental data).  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental data processing (due to lack of delta detection).</td>
+            <td colspan="2" style="background-color:LightGray">Determine from type of call to service (requesting all data vs incremental data - e.g. filtering by _lastUpdated).  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental data processing (due to lack of delta detection).</td>
             <td>If the data is being 'pushed' in a message, this could also be conveyed in the MessageHeader.event</td>
          </tr>
          <tr>
             <th>Study Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/TransactionType</span>
+               <span>/GTP/Study/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>This would be conveyed using a transaction Bundle - specifically the Bundle.entry.request.method</td>
@@ -69,7 +69,7 @@
          <tr>
             <th>Site ID or Number</th>
             <td>
-               <span title="Use the new extension to connect Observation to ResearchStudy.">/GTP/Study/Site/@ID</span>
+               <span>/GTP/Study/Site/@ID</span>
             </td>
             <td>ResearchStudy.ResearchStudy.site</td>
             <td>
@@ -82,7 +82,7 @@
          <tr>
             <th>Site Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/TransactionType</span>
+               <span>/GTP/Study/Site/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -90,33 +90,33 @@
          <tr>
             <th>Investigator ID or Number</th>
             <td>
-               <span title="Provide the Investigator ID known by the study sponsor.">/GTP/Study/Site/Investigator/@ID</span>
+               <span>/GTP/Study/Site/Investigator/@ID</span>
             </td>
             <td>Practitioner.Practitioner.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
             </td>
-            <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
+            <td>Will need to decide which id to expose or may need to map to one recognized by the sponsor.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
                <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Investigator Name</th>
             <td>
-               <span title="Provide the Investigator name known by the study sponsor.">/GTP/Study/Site/Investigator/@Name</span>
+               <span>/GTP/Study/Site/Investigator/@Name</span>
             </td>
             <td>Practitioner.Practitioner.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</p>
             </td>
-            <td>Will need to decide which name to expose.  Can also extract the prefix, given and family names if text isn't specified.<br/>
+            <td>Will need to decide which name to expose if there are multiples.  Can also extract the prefix, given and family names if text isn't specified.<br/>
                <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
          </tr>
          <tr>
             <th>Investigator Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/Investigator/TransactionType</span>
+               <span>/GTP/Study/Site/Investigator/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -124,54 +124,59 @@
          <tr>
             <th>Screen ID or Number</th>
             <td>
-               <span title="Provide the sponsor's research subject ID in this field. Use the identifier.type to differentiate subject identifiers.">/GTP/Study/Site/Investigator/Subject/ScreenID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/ScreenID</span>
             </td>
             <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Subject ID or Number</th>
             <td>
-               <span title="Provide the sponsor's research subject ID in this field. Use the identifier.type to differentiate subject identifiers.">/GTP/Study/Site/Investigator/Subject/SubjectID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/SubjectID</span>
             </td>
             <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Spare subject level ID or Number</th>
             <td>
-               <span title="Provide an alternative subject ID in this field.  Use the identifier.type to differentiate subject identifiers.">/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
             </td>
             <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
          </tr>
          <tr>
             <th>Subject Sex</th>
             <td>
-               <span title="Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.&#xA;&#xA;&#xA;               &#xA;&#xA;If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:&#xA;male -&gt; M&#xA;female -&gt; F&#xA;other -&gt; U&#xA;unknown -&gt; U">/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
             </td>
             <td>Patient.Patient.gender</td>
             <td>
-               <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().gender</p>
+               <p>Observation.subject.resolve().gender</p>
             </td>
-            <td/>
+            <td>Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.  The US-core birth-sex extension (if it is present) may be more consistently populated than Patient.gender.<br/>
+               <br/>If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:
+male -&gt; M
+female -&gt; F
+other -&gt; U
+unknown -&gt; U</td>
          </tr>
          <tr>
             <th>Subject Sex Code List ID</th>
             <td>
-               <span title="No value exists for this field.  ">/GTP/Study/Site/Investigator/Subject/Sex/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Sex/@CodeListID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">For FHIR, the administrative gender code list is fixed, so no need to send it in the instance.  If there's a need to convey alternate gender codes, then those would appear either as Observation values or as extension values on Patient (the former for clinical information, the latter for administrative purposes).  In either event, the code would be in CodeableConcept.coding which allows identifying both the code system and (if relevant), the version</td>
             <td/>
@@ -179,15 +184,16 @@
          <tr>
             <th>Subject Race</th>
             <td>
-               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;&#xA;               &#xA;&#xA;If patient race is sent, use the us-core-race extension in FHIR.">/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
             </td>
             <td colspan="2" style="background-color:LightGray">There's an US-core extension (us-core-race) for capturing this in the U.S. and the possibility that other countries will define their own extensions.  Note that this is for administrative, not clinical purposes.  Genetic heritage would typically be captured as an Observation</td>
-            <td/>
+            <td>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
+               <br/>If patient race is sent, use the us-core-race extension in FHIR.</td>
          </tr>
          <tr>
             <th>Subject Race Code List ID</th>
             <td>
-               <span title="No value exists for this field.  ">/GTP/Study/Site/Investigator/Subject/Race/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Race/@CodeListID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Race, whether captured as an extension or observation value is generally a CodeableConcept allowing capturing both code system and (if relevant) version.  Race is highly variable from country to country (both whether it's allowed and how it's coded), so there's no standard element for this in the core spec.</td>
             <td/>
@@ -195,29 +201,32 @@
          <tr>
             <th>Subject Initials</th>
             <td>
-               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#xA;&#xA;&#xA;               &#xA;&#xA;If required, be sure to send only the initials, derived from the name.">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
             </td>
             <td>Patient.Patient.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
             </td>
+            <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
+               <br/>If required, be sure to send only the initials, derived from the name.</td>
             <td>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials</td>
          </tr>
          <tr>
             <th>Subject Date Of Birth</th>
             <td>
-               <span title="Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.">/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
             </td>
             <td>Patient.Patient.birthDate</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</p>
             </td>
+            <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</td>
             <td>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)</td>
          </tr>
          <tr>
             <th>Visit ID or Number</th>
             <td>
-               <span title="Provide the study sponsor's visit identifier.">/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
             </td>
             <td>Encounter.Encounter.identifier</td>
             <td>
@@ -228,7 +237,7 @@
          <tr>
             <th>Visit Name</th>
             <td>
-               <span title="If a sponsor requires the visit name, use the encounter.identifier.value field to fulfill this purpose.  Set the encounter.identifier.type.CodeableConcept.text to 'Visit Name'.  Alternatively, you can use the Schedule of Activities, within the Protocol (see PlanDefinition resource)">/GTP/Study/Site/Investigator/Subject/Visit/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/@Name</span>
             </td>
             <td colspan="2" style="background-color:LightGray">In practice, visit name would be the ActivityDefinition.title for the activity in the protocol associated with the encounter.  There is no standard extension for this link (though one will be defined).  Most clinical systems won't actually capture this, so the determination will need to be made at time of data extraction based on the protocol</td>
             <td>See LB mapping comment</td>
@@ -236,7 +245,7 @@
          <tr>
             <th>Visit Type</th>
             <td>
-               <span title="Since this is required for the LAB model, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type'.">/GTP/Study/Site/Investigator/Subject/Visit/@Type</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/@Type</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This is essentially whether the visit is tied to a particular activity within the PlanDefinition (study protocol) or not.  Given that in non-study-specific systems, there won't typically be a linkage even when the encounter *is* driven by the study, this will generally need to be populated algorithmically on extension</td>
             <td>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>
@@ -246,7 +255,7 @@
          <tr>
             <th>Visit Type Modifier</th>
             <td>
-               <span title="This is not required for the LAB model.  If needed, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type Modifier'.">/GTP/Study/Site/Investigator/Subject/Visit/@TypeModifier</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/@TypeModifier</span>
             </td>
             <td>Encounter.Encounter.reasonCode</td>
             <td>
@@ -257,7 +266,7 @@
          <tr>
             <th>Subject Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update will be left to the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/Investigator/Subject/TransactionType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -265,7 +274,7 @@
          <tr>
             <th>Accession ID or Number</th>
             <td>
-               <span title="If required by the sponsor, provide the accession ID (for the specimen).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
             </td>
             <td>Specimen.Specimen.accessionIdentifier</td>
             <td>
@@ -276,7 +285,7 @@
          <tr>
             <th>Last Active Date and Time</th>
             <td>
-               <span title="The intention of this field is to hold the local date and time of the last modification made to the accession record at the central laboratory.  This includes a Universal Time Offset plus/minus hours and minutes.  Since this field is not required by LAB, it will not be sent.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/@LastActiveDateTime</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/@LastActiveDateTime</span>
             </td>
             <td colspan="2" style="background-color:LightGray">FHIR allows capture meta.lastUpdated which reflects when the data last changed on the server in question, but would need to look at Provenance to see when data last changed on a particular system.  This typically won't be available.</td>
             <td/>
@@ -284,7 +293,7 @@
          <tr>
             <th>Visit Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/TransactionType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -292,7 +301,7 @@
          <tr>
             <th>Central Laboratory ID</th>
             <td>
-               <span title="Populate with identifier for the lab.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
             </td>
             <td>Organization.Organization.identifier</td>
             <td>
@@ -303,7 +312,7 @@
          <tr>
             <th>Central Laboratory Name</th>
             <td>
-               <span title="Populate with name of the lab, if required.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@Name</span>
             </td>
             <td>Organization.Organization.name</td>
             <td>
@@ -314,7 +323,7 @@
          <tr>
             <th>Specimen ID or Number</th>
             <td>
-               <span title="Populate with specimen identifier from the lab.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
             </td>
             <td>Specimen.Specimen.identifier</td>
             <td>
@@ -323,42 +332,48 @@
             <td>If there are multiple identifiers, need to look at identifier.system or identifier.type to determine</td>
          </tr>
          <tr>
-            <th>Actual Collection Date and Time</th>
-            <td>
-               <span title="Populate this with the start time of a collection period or the actual time for a single timepoint.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</span>
+            <th rowspan="2">Actual Collection Date and Time</th>
+            <td rowspan="2">
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</span>
             </td>
+            <td>Specimen.Specimen.collection.collectedDateTime</td>
+            <td>
+               <p>Observation.specimen.resolve().collection.collectedDateTime</p>
+            </td>
+            <td rowspan="2">Most of the time there'll only be a single dateTime.  If collected over a period of time (e.g. urine), use the end.</td>
+         </tr>
+         <tr>
             <td>Specimen.Specimen.collection.collectedPeriod</td>
             <td>
-               <p>Observation.specimen.resolve().collection.collectedPeriod.start</p>
+               <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
-            <td/>
          </tr>
          <tr>
             <th>Planned Collection Time Elapsed</th>
             <td>
-               <span title="Capture the duration portion in this attribute. (e.g., 03:00)">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
             </td>
             <td>Specimen.Specimen.extension</td>
             <td>
-               <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration.code</p>
+               <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration</p>
             </td>
-            <td>Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code</td>
+            <td>Will need to convert value + units into an ISO duration</td>
          </tr>
          <tr>
             <th>Planned Collection Time Elapsed Description</th>
             <td>
-               <span title="Capture both the quantity of time and the relative event (e.g., 3 hours post dose)">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
             </td>
             <td>Specimen.Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</p>
             </td>
-            <td>Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference</td>
+            <td>The event would be in extension('target').valueReference.display and the time would be in extension('offset').valueDuration value and unit.</td>
          </tr>
          <tr>
             <th>Collection End Date and Time</th>
             <td>
-               <span title="Populate this with the end time of a collection period.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime</span>
             </td>
             <td>Specimen.Specimen.collection.collectedPeriod</td>
             <td>
@@ -369,7 +384,7 @@
          <tr>
             <th>Received Date and Time</th>
             <td>
-               <span title="Populate this with the time the specimen was received.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@ReceivedDateTime</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@ReceivedDateTime</span>
             </td>
             <td>Specimen.Specimen.receivedTime</td>
             <td>
@@ -380,7 +395,7 @@
          <tr>
             <th>Specimen Condition</th>
             <td>
-               <span title="Populate with the description of the specimen.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition</span>
             </td>
             <td>Specimen.Specimen.condition</td>
             <td>
@@ -391,7 +406,7 @@
          <tr>
             <th>Investigator - Specimen Comment Source</th>
             <td>
-               <span title="Populate with the practitioner.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
             <td>Practitioner.Practitioner.identifier</td>
             <td>
@@ -402,7 +417,7 @@
          <tr>
             <th>Investigator - Specimen Comment Text</th>
             <td>
-               <span title="Populate with the comment text.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
             <td>Specimen.Specimen.note</td>
             <td>
@@ -413,7 +428,7 @@
          <tr>
             <th>Lab - Specimen Comment Source</th>
             <td>
-               <span title="Populate with the lab (organization) which produced the lab comment.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
             <td>Observation.Observation.identifier</td>
             <td>
@@ -424,7 +439,7 @@
          <tr>
             <th>Lab - Specimen Comment Text</th>
             <td>
-               <span title="Populate with the comment text.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
             <td>Specimen.Specimen.note</td>
             <td>
@@ -435,7 +450,7 @@
          <tr>
             <th>Specimen Material ID</th>
             <td>
-               <span title="Populate with an identifier for the specimen material.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID</span>
             </td>
             <td>Specimen.Specimen.type</td>
             <td>
@@ -446,18 +461,18 @@
          <tr>
             <th>Specimen Material Name</th>
             <td>
-               <span title="Name should be  in the controlled vocabulary of the material code list.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</span>
             </td>
             <td>Specimen.Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.display</p>
             </td>
-            <td>If multiple codes are present, filter based on system.  </td>
+            <td>If multiple codes are present, filter based on system.   Translation may be required</td>
          </tr>
          <tr>
             <th>Specimen Material Code List ID</th>
             <td>
-               <span title="The URI of the code list for the material.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID</span>
             </td>
             <td>Specimen.Specimen.type</td>
             <td>
@@ -468,16 +483,16 @@
          <tr>
             <th>Subject Age at Collection</th>
             <td>
-               <span title="Derive from the patient.birthDate.  Consider whether patient personal information must be shared for subject reconciliation.  If not, do not send this data.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</span>
             </td>
             <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
-               <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</td>
+               <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.   As an alternative use the cqf-relativeTime extension on Patient.birthDate and convey as a relative time to study enrollment</td>
             <td/>
          </tr>
          <tr>
             <th>Subject Age Units</th>
             <td>
-               <span title="If age is shared, include a unit of measure (months, years).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits</span>
             </td>
             <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
                <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</td>
@@ -486,7 +501,7 @@
          <tr>
             <th>Fasting Status</th>
             <td>
-               <span title="If fasting status is provided, it must be one of the following:&#xA;&#xA;&#xA;               &#xA;&#xA;&#xA;Y - Yes&#xA;N - No&#xA;U - Unknown&#xA;and blank if not relevant.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
             </td>
             <td>Specimen.Specimen.collection.fastingStatusCodeableConcept</td>
             <td>
@@ -499,7 +514,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery ID</th>
             <td>
-               <span title="Populate with the battery ID, if it exists.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
             </td>
             <td>DiagnosticReport.DiagnosticReport.identifier</td>
             <td>
@@ -510,7 +525,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery Name</th>
             <td>
-               <span title="Populate with the battery name, if a battery exists and a battery ID was provided.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@Name</span>
             </td>
             <td>DiagnosticReport.DiagnosticReport.code</td>
             <td>
@@ -521,7 +536,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/TransactionType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -529,13 +544,17 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th rowspan="2">Test Status</th>
             <td rowspan="2">
-               <span title="Multiple fields are required to populate this value per the standard.  &#xA;&#xA;&#xA;               &#xA;&#xA;Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.   From these two fields, sponsors will need to translate to the CDISC test statuses:  &#xA;D - Done&#xA;N - Not Performed&#xA;X - Cancelled.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
             </td>
             <td>ServiceRequest.ServiceRequest.doNotPerform</td>
             <td>
                <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
-            <td rowspan="2"/>
+            <td rowspan="2">Multiple fields are required to populate this value per the standard.  <br/>
+               <br/>Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.   From these two fields, sponsors will need to translate to the CDISC test statuses:  
+D - Done
+N - Not Performed
+X - Cancelled.</td>
          </tr>
          <tr>
             <td>ServiceRequest.ServiceRequest.status</td>
@@ -546,7 +565,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Testing Date and Time</th>
             <td>
-               <span title="Populate with date and time of test.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
             </td>
             <td>Observation.Observation.effectiveDateTime</td>
             <td>
@@ -557,7 +576,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Test Type</th>
             <td>
-               <span title="The intention of this field is to define whether the test was a study test, non-study test, or unscheduled test.  The normal transmission of data, via FHIR, is for study tests.  If non-study test results are required (e.g., AdverseEvent follow-up), these would be obtained via a special request from the data provider.  It may be possible to derive this from the ServiceRequest and (eventually) the PlanDefinition.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">The normal transmission of data, via FHIR, is for study tests.  If non-study test results are required (e.g., AdverseEvent follow-up), these would be obtained via a special request from the data provider.  Alternatively, if the system requires this field to be populated, derive whether the test was for the study or not, use the ServiceRequest resource.</td>
             <td>Differentiation would be whether the Observation was basedOn a particular activity in the CarePlan (scheduled) or tied to a particular ActivityDefinition (Study test)</td>
@@ -565,7 +584,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Performing Laboratory ID</th>
             <td>
-               <span title="An identifier for the laboratory performing the specimen collection and result generation.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID</span>
             </td>
             <td>Organization.Organization.identifier</td>
             <td>
@@ -576,7 +595,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Performing Laboratory Name</th>
             <td>
-               <span title="The name of the laboratory performing the specimen collection and result generation.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name</span>
             </td>
             <td>Organization.Organization.name</td>
             <td>
@@ -587,18 +606,18 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Lab Test ID</th>
             <td>
-               <span title="The ID of the test as assigned by the laboratory. &#xA;&#xA;&#xA;               &#xA;&#xA;NOTE: since this is a codeable concept, you may provide multiple coding system codes for a test.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system = 'Lab Test')</p>
             </td>
-            <td/>
+            <td>Since this is a codeable concept, there may be  multiple codes for a test.  The sponsor will have to determine which is the "lab's" code vs. "receiver's" code vs. others.</td>
          </tr>
          <tr>
             <th>Lab Test Name</th>
             <td>
-               <span title="The name of the test as assigned by the laboratory.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@Name</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
@@ -609,7 +628,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Additional Test Description</th>
             <td>
-               <span title="Additional text about the test that produced the result.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
             </td>
             <td>Observation.Observation.note</td>
             <td>
@@ -620,18 +639,18 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Receiver Test ID</th>
             <td>
-               <span title="If the Sponsor has a test ID that needs to be included in the results, populate this field.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@ID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@ID</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
-               <p>Observation.code.coding.where (system = Recipient Test)</p>
+               <p>Observation.code.coding.where (system = [Recipient Test])</p>
             </td>
             <td>Observation/code/coding/system/@value ("system" element used to designate the type of code that is being represented (in this case the "ReceiverTest") by the "code" element)</td>
          </tr>
          <tr>
             <th>Receiver Test Name</th>
             <td>
-               <span title="If the Sponsor has a test name that needs to be included in the results, populate this field.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@Name</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@Name</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
@@ -642,95 +661,111 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>LOINC Code</th>
             <td>
-               <span title="The LOINC test code.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@Value</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
-               <p>Observation.code.coding.where (coding system = 'LOINC')</p>
+               <p>Observation.code.coding.where (coding system = 'http://loinc.org')</p>
             </td>
             <td/>
          </tr>
          <tr>
             <th>LOINC Code List ID</th>
             <td>
-               <span title="The URI for the LOINC code list.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</span>
             </td>
             <td>Observation.Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system = 'http://loinc.org')</p>
             </td>
-            <td/>
+            <td>This will always be 'LOINC'</td>
          </tr>
          <tr>
             <th>Test Level Comments</th>
             <td>
-               <span title="Populate with the comment text.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</span>
             </td>
             <td>Observation.Observation.extension</td>
             <td>
-               <p>Observation.extension(event-note).valueAnnotation.text</p>
+               <p>Observation.note.text</p>
             </td>
-            <td>New extension from Observation</td>
+            <td>Will need to determine whether to also incude date and author.</td>
          </tr>
          <tr>
             <th>Reported Result Status</th>
             <td>
-               <span title="This has two possible values:  P for Preliminary and F for Final.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</span>
             </td>
             <td>Observation.Observation.status</td>
             <td>
                <p>Observation.status</p>
             </td>
-            <td/>
+            <td>This has two possible values:  P for Preliminary and F for Final.</td>
          </tr>
          <tr>
             <th>Alert Flag</th>
             <td>
-               <span title="The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:&#xA;&#xA;&#xA;               &#xA;&#xA;LP - Low Panic&#xA;LT - Low Telephone&#xA;LN - Low Normal&#xA;N - Normal&#xA;HN - High Normal&#xA;HT - High Telephone&#xA;HP - High Panic&#xA;AB - Abnormal&#xA;and blank when not used.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
             </td>
             <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where(system='Alert Flag')</p>
             </td>
-            <td/>
+            <td>The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:<br/>
+               <br/>LP - Low Panic
+LT - Low Telephone
+LN - Low Normal
+N - Normal
+HN - High Normal
+HT - High Telephone
+HP - High Panic
+AB - Abnormal
+and blank when not used. It may be necessary to translate from other interpretation codings. </td>
          </tr>
          <tr>
             <th>Delta Flag</th>
             <td>
-               <span title="The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:&#xA;&#xA;&#xA;               &#xA;&#xA;D+  for an increase in value&#xA;D-  for a decrease in value&#xA;and blank for no flag.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
             </td>
             <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Delta Flag')</p>
             </td>
-            <td/>
+            <td>The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:<br/>
+               <br/>D+  for an increase in value
+D-  for a decrease in value
+and blank for no flag.   It may be necessary to translate from other interpretation codings.</td>
          </tr>
          <tr>
             <th>Exclusion Flag</th>
             <td>
-               <span title="The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:&#xA;&#xA;&#xA;               &#xA;&#xA;LX - Low Exclusion&#xA;HX - High Exclusion&#xA;EX - Excluded (for exclusions not falling under high or low)&#xA;and blank for no flag.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
             </td>
             <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Exclusion Flag')</p>
             </td>
-            <td/>
+            <td>The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:<br/>
+               <br/>LX - Low Exclusion
+HX - High Exclusion
+EX - Excluded (for exclusions not falling under high or low)
+and blank for no flag.   It may be necessary to translate from other</td>
          </tr>
          <tr>
             <th>Blinding Flag</th>
             <td>
-               <span title="Blinding is handled via the security on the Observation resource.  ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
             </td>
             <td>Observation.Observation.meta</td>
             <td>
                <p>Observation.meta.security.code</p>
             </td>
-            <td/>
+            <td>A new code would likely be needed to specifically designate 'blinded'.</td>
          </tr>
          <tr>
             <th>Reported Date and Time</th>
             <td>
-               <span title="Populate with the date the result was reported.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedDateTime</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedDateTime</span>
             </td>
             <td>Observation.Observation.issued</td>
             <td>
@@ -741,7 +776,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Test Transaction Type</th>
             <td>
-               <span title="Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TransactionType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -749,37 +784,38 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Toxicity Grade</th>
             <td>
-               <span title="Use a controlled vocabulary list for the toxicity grade.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</span>
             </td>
             <td>Observation.Observation.interpretation</td>
             <td>
-               <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
+               <p>Observation.interpretation.coding.where (system = 'Toxicity Grade').code</p>
             </td>
-            <td/>
+            <td>If there are multiple possible systems, the sponsor will have to determine which interpretation corresponds to toxicity grade</td>
          </tr>
          <tr>
             <th>Toxicity Grade Code List ID</th>
             <td>
-               <span title="The URI of the code list.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
             </td>
             <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
             </td>
+            <td colspan="2" style="background-color:LightGray">May need to translate the URI to a CDISC Code List id</td>
             <td/>
          </tr>
          <tr>
             <th>Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)</th>
             <td>
-               <span title="Use the field within Codeable Concept to determine code vs text.  For greater/less than, look in the data to see if there is a &lt; or &gt; symbol.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/@ResultType</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/@ResultType</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Determine from the field in which the result resides.  e.g., Observation/category/coding/code/@value  For text and code results, which both use CodeableConcept, look at the field within CC to determine code vs. text.</td>
+            <td colspan="2" style="background-color:LightGray">Determine from the field in which the result resides.   valueCodeableConcept vs. valueQuantity vs. valueString  Greater than and less than can be determined by valueQuantity.qualifier</td>
             <td/>
          </tr>
          <tr>
             <th>Text Result</th>
             <td>
-               <span title="The textual result value (for non-numeric results).">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@Value</span>
             </td>
             <td>Observation.Observation.valueCodeableConcept</td>
             <td>
@@ -790,29 +826,29 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Text Result Code List ID</th>
             <td>
-               <span title="The URI of the code list used for the text results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</span>
             </td>
             <td>Observation.Observation.valueCodeableConcept</td>
             <td>
                <p>Observation.valueCodeableConcept.coding.system</p>
             </td>
-            <td/>
+            <td>May need to convert from URI to CDISC-recognized 'ID'</td>
          </tr>
          <tr>
             <th>Conventional Numeric Result</th>
             <td>
-               <span title="The conventional result value. ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
-            <td/>
+            <td>If the reported result isn't in conventional units, can use the PQ-translation extension to convey a translation.</td>
          </tr>
          <tr>
             <th>Reported Numeric Result</th>
             <td>
-               <span title="The reported result value. ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -823,18 +859,18 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>SI Numeric Result</th>
             <td>
-               <span title="The international unit (SI) result value. ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
-            <td/>
+            <td>If the reported result isn't in SI units, can use the PQ-translation extension to convey a translation.</td>
          </tr>
          <tr>
             <th>Conventional Numeric Result Precision</th>
             <td>
-               <span title="Precision is implicitly determined from the attribute &#xA;Observation/valueQuantity/value/@value">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -842,12 +878,12 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             </td>
             <td>Determine the precision from the value.<br/>
                <br/>Precision is implicitly determined from the attribute 
-Observation/valueQuantity/value/@value</td>
+Observation/valueQuantity/value/@value   If the reported result isn't in conventional units, can use the PQ-translation extension to convey a translation.</td>
          </tr>
          <tr>
             <th>Reported Numeric Result Precision</th>
             <td>
-               <span title="Precision is implicitly determined from the attribute &#xA;Observation/valueQuantity/value/@value">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -860,7 +896,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>SI Numeric Result Precision</th>
             <td>
-               <span title="Precision is implicitly determined from the attribute &#xA;Observation/valueQuantity/value/@value">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -868,117 +904,119 @@ Observation/valueQuantity/value/@value</td>
             </td>
             <td>Determine the precision from the value.<br/>
                <br/>Precision is implicitly determined from the attribute 
-Observation/valueQuantity/value/@value</td>
+Observation/valueQuantity/value/@value   If the reported result isn't in SI units, can use the PQ-translation extension to convey a translation.</td>
          </tr>
          <tr>
             <th>Conventional Reference Range Low</th>
             <td>
-               <span title="The reference range 'low' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
-               <p>Observation.referenceRange.low.valueunit</p>
+               <p>Observation.referenceRange.low.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.  If the reported units aren't 'conventional, can use the PQ-translation extension on Quantity to convey a translation.</td>
          </tr>
          <tr>
             <th>Reported Reference Range Low</th>
             <td>
-               <span title="The reference range 'low' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
-               <p>Observation.referenceRange.low.valueunit</p>
+               <p>Observation.referenceRange.low.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.</td>
          </tr>
          <tr>
             <th>SI Reference Range Low</th>
             <td>
-               <span title="The reference range 'low' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
-               <p>Observation.referenceRange.low.valueunit</p>
+               <p>Observation.referenceRange.low.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.  If the reported units aren't SI, can use the PQ-translation extension on Quantity to convey a translation.</td>
          </tr>
          <tr>
             <th>Conventional Reference Range High</th>
             <td>
-               <span title="The reference range 'high' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
-               <p>Observation.referenceRange.high.valueunit</p>
+               <p>Observation.referenceRange.high.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.  If the reported units aren't 'conventional, can use the PQ-translation extension on Quantity to convey a translation.</td>
          </tr>
          <tr>
             <th>Reported Reference Range High</th>
             <td>
-               <span title="The reference range 'high' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
-               <p>Observation.referenceRange.high.valueunit</p>
+               <p>Observation.referenceRange.high.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.</td>
          </tr>
          <tr>
             <th>SI Reference Range High</th>
             <td>
-               <span title="The reference range 'high' value for numeric results.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
             <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
-               <p>Observation.referenceRange.high.valueunit</p>
+               <p>Observation.referenceRange.high.unit</p>
             </td>
-            <td/>
+            <td>Will need to combine value and unit into a string.  If the reported units aren't SI, can use the PQ-translation extension on Quantity to convey a translation.</td>
          </tr>
          <tr>
             <th>Conventional Units</th>
             <td>
-               <span title="The units of measure in conventional units. NOTE: needs to comply with CDISC terminology.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
-               <p>Observation.valueQuantity.unit</p>
+               <p>Observation.valueQuantity.code</p>
+               <p>Observation.valueQuantity.extension('PQ-translation').code</p>
             </td>
-            <td/>
+            <td>If the reported units are not the same as conventional, can convey with the translation extension.  Translation to CDISC terminology may be required.</td>
          </tr>
          <tr>
             <th>Reported Units</th>
             <td>
-               <span title="The units of measure for the reported result value. NOTE: needs to comply with CDISC terminology.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
-               <p>Observation.valueQuantity.unit</p>
+               <p>Observation.valueQuantity.code</p>
             </td>
-            <td/>
+            <td>This may require translation to CDISC terminology</td>
          </tr>
          <tr>
             <th>SI Units</th>
             <td>
-               <span title="The units of measure in international units. NOTE: needs to comply with CDISC terminology.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
-               <p>Observation.valueQuantity.unit</p>
+               <p>Observation.valueQuantity.code</p>
+               <p>Observation.valueQuantity.extensoin('PQ-translation').code</p>
             </td>
-            <td/>
+            <td>If the reported units are not SI units, can convey with the translation extension.  Translation to CDISC terminology may be required.</td>
          </tr>
          <tr>
             <th>Conventional Units Code List ID</th>
             <td>
-               <span title="Provide the ID (URI) of the code list used.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -989,7 +1027,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Reported Units Code List ID</th>
             <td>
-               <span title="Provide the ID (URI) of the code list used.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -1000,7 +1038,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>SI Units Code List ID</th>
             <td>
-               <span title="Provide the ID (URI) of the code list used.">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
             <td>Observation.Observation.valueQuantity</td>
             <td>
@@ -1011,7 +1049,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Record Extension Type</th>
             <td>
-               <span title="This allows specification of extensions from the Base Lab Model definition.  For a lab record, this would contain 'BASE'.  For Microbiology data, this would contain 'MICROBIO'."/>
+               <span/>
             </td>
             <td colspan="2" style="background-color:LightGray">Populate with a default value, depending on the type of data being transmitted.<br/>
                <br/>E.g., "BASE"</td>
@@ -1020,15 +1058,15 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Result Class</th>
             <td>
-               <span title="Specifies whether the result units are Reported, Conventional, or SI (international).  Since the FHIR model does not have an attribute for this, either transmit one type of result, in the agreed upon class, or provide a unit of measure system on the result values. Alternatively, the unit of measure may provide an indication of the result class. ">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
+               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
             </td>
-            <td colspan="2" style="background-color:LightGray">Derive this from the unit of measure system (on the result value), provide only one type of result, or provide a way to differentiate which results are reported, conventional, or international units.  In some cases, the result unit of measure may provide some indication of whether the results are in conventional or SI.</td>
+            <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</td>
             <td/>
          </tr>
          <tr>
             <th>Model Version</th>
             <td>
-               <span title="Utilize default values and/or message wrapper content to populate this field.">/GTP/@ModelVersion</span>
+               <span>/GTP/@ModelVersion</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Populate with a default value.</td>
             <td>The version of FHIR in use is conveyed using Resource.meta.profile</td>
@@ -1036,7 +1074,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>File Creation Date and Time</th>
             <td>
-               <span title="Utilize default values and/or message wrapper content to populate this field.">/GTP/@CreationDateTime</span>
+               <span>/GTP/@CreationDateTime</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper. (file creation date)</td>
             <td>Bundle.timestamp</td>
@@ -1044,7 +1082,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Transaction Type</th>
             <td>
-               <span title="Utilize default values and/or message wrapper content to populate this field.">/GTP/TransactionType</span>
+               <span>/GTP/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">No mitigation.  If required, fill with a default value.</td>
             <td>As per study.transaction</td>
@@ -1052,7 +1090,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Transmission Source ID</th>
             <td>
-               <span title="Utilize default values and/or message wrapper content to populate this field.">/GTP/TransmissionSource/@ID</span>
+               <span>/GTP/TransmissionSource/@ID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper.</td>
             <td>MessageHeader.source.endpoint if using messaging, otherwise determined out of band based on sender authentication process</td>
@@ -1060,7 +1098,7 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>Transmission Source Name</th>
             <td>
-               <span title="Utilize default values and/or message wrapper content to populate this field.">/GTP/TransmissionSource/@Name</span>
+               <span>/GTP/TransmissionSource/@Name</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper.</td>
             <td>MessageHeader.source.name if using messaging, otherwise determined out of band based on sender authentication process</td>
