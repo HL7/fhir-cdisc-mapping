@@ -29,7 +29,7 @@
             <td>
                <span>/GTP/Study/@ID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.identifier</td>
+            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -42,7 +42,7 @@
             <td>
                <span>/GTP/Study/@Name</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.title</td>
+            <td>ResearchStudy.title</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve()partOf.resolve().title</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().title</p>
@@ -71,7 +71,7 @@
             <td>
                <span>/GTP/Study/Site/@ID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.site</td>
+            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -92,7 +92,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/@ID</span>
             </td>
-            <td>Practitioner.Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
@@ -105,7 +105,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/@Name</span>
             </td>
-            <td>Practitioner.Practitioner.name</td>
+            <td>Practitioner.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</p>
@@ -126,7 +126,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/ScreenID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -138,7 +138,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/SubjectID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -150,7 +150,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -162,7 +162,7 @@
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
             </td>
-            <td>Patient.Patient.gender</td>
+            <td>Patient.gender</td>
             <td>
                <p>Observation.subject.resolve().gender</p>
             </td>
@@ -203,7 +203,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
             </td>
-            <td>Patient.Patient.name</td>
+            <td>Patient.name</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
             </td>
@@ -216,7 +216,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
             </td>
-            <td>Patient.Patient.birthDate</td>
+            <td>Patient.birthDate</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</p>
             </td>
@@ -228,7 +228,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
             </td>
-            <td>Encounter.Encounter.identifier</td>
+            <td>Encounter.identifier</td>
             <td>
                <p>Observation.encounter.resolve().identifier.value</p>
             </td>
@@ -257,7 +257,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/@TypeModifier</span>
             </td>
-            <td>Encounter.Encounter.reasonCode</td>
+            <td>Encounter.reasonCode</td>
             <td>
                <p>Observation.encounter.resolve().reasonCode</p>
             </td>
@@ -276,7 +276,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
             </td>
-            <td>Specimen.Specimen.accessionIdentifier</td>
+            <td>Specimen.accessionIdentifier</td>
             <td>
                <p>Observation.resolve().accessionIdentifier.value</p>
             </td>
@@ -303,7 +303,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
             </td>
-            <td>Organization.Organization.identifier</td>
+            <td>Organization.identifier</td>
             <td>
                <p>Observation.performer.resolve().identifier.value</p>
             </td>
@@ -314,7 +314,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@Name</span>
             </td>
-            <td>Organization.Organization.name</td>
+            <td>Organization.name</td>
             <td>
                <p>Observation.performer.resolve().name</p>
             </td>
@@ -325,7 +325,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
             </td>
-            <td>Specimen.Specimen.identifier</td>
+            <td>Specimen.identifier</td>
             <td>
                <p>Observation.specimen.resolve().identifier.value</p>
             </td>
@@ -336,14 +336,14 @@ unknown -&gt; U</td>
             <td rowspan="2">
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</span>
             </td>
-            <td>Specimen.Specimen.collection.collectedDateTime</td>
+            <td>Specimen.collection.collectedDateTime</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedDateTime</p>
             </td>
             <td rowspan="2">Most of the time there'll only be a single dateTime.  If collected over a period of time (e.g. urine), use the end.</td>
          </tr>
          <tr>
-            <td>Specimen.Specimen.collection.collectedPeriod</td>
+            <td>Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -353,7 +353,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
             </td>
-            <td>Specimen.Specimen.extension</td>
+            <td>Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration</p>
             </td>
@@ -364,7 +364,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
             </td>
-            <td>Specimen.Specimen.extension</td>
+            <td>Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</p>
             </td>
@@ -375,7 +375,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime</span>
             </td>
-            <td>Specimen.Specimen.collection.collectedPeriod</td>
+            <td>Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -386,7 +386,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@ReceivedDateTime</span>
             </td>
-            <td>Specimen.Specimen.receivedTime</td>
+            <td>Specimen.receivedTime</td>
             <td>
                <p>Observation.specimen.resolve().receivedTime</p>
             </td>
@@ -397,7 +397,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition</span>
             </td>
-            <td>Specimen.Specimen.condition</td>
+            <td>Specimen.condition</td>
             <td>
                <p>Observation.specimen.resolve().condition.coding.code</p>
             </td>
@@ -408,7 +408,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
-            <td>Practitioner.Practitioner.identifier</td>
+            <td>Practitioner.identifier</td>
             <td>
                <p>Observation.specimen.resolve().note.author.resolve().where($thisisPractitioner).identifier</p>
             </td>
@@ -419,7 +419,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
-            <td>Specimen.Specimen.note</td>
+            <td>Specimen.note</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve()isPractitioner).note.text</p>
             </td>
@@ -430,7 +430,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
-            <td>Observation.Observation.identifier</td>
+            <td>Observation.identifier</td>
             <td>
                <p>Observation.specimen.resolve().note.author.resolve().where($thisisOrganization).identifier</p>
             </td>
@@ -441,7 +441,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
-            <td>Specimen.Specimen.note</td>
+            <td>Specimen.note</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).note.text</p>
             </td>
@@ -452,7 +452,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID</span>
             </td>
-            <td>Specimen.Specimen.type</td>
+            <td>Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.code</p>
             </td>
@@ -463,7 +463,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</span>
             </td>
-            <td>Specimen.Specimen.type</td>
+            <td>Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.display</p>
             </td>
@@ -474,7 +474,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID</span>
             </td>
-            <td>Specimen.Specimen.type</td>
+            <td>Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.system</p>
             </td>
@@ -503,7 +503,7 @@ unknown -&gt; U</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
             </td>
-            <td>Specimen.Specimen.collection.fastingStatusCodeableConcept</td>
+            <td>Specimen.collection.fastingStatusCodeableConcept</td>
             <td>
                <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
             </td>
@@ -516,7 +516,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
             </td>
-            <td>DiagnosticReport.DiagnosticReport.identifier</td>
+            <td>DiagnosticReport.identifier</td>
             <td>
                <p>DiagnosticReport.identifier.value</p>
             </td>
@@ -527,7 +527,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@Name</span>
             </td>
-            <td>DiagnosticReport.DiagnosticReport.code</td>
+            <td>DiagnosticReport.code</td>
             <td>
                <p>DiagnosticReport.code.text</p>
             </td>
@@ -546,7 +546,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             <td rowspan="2">
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
             </td>
-            <td>ServiceRequest.ServiceRequest.doNotPerform</td>
+            <td>ServiceRequest.doNotPerform</td>
             <td>
                <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
@@ -557,7 +557,7 @@ N - Not Performed
 X - Cancelled.</td>
          </tr>
          <tr>
-            <td>ServiceRequest.ServiceRequest.status</td>
+            <td>ServiceRequest.status</td>
             <td>
                <p>Observation.basedon.resolve().status</p>
             </td>
@@ -567,7 +567,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
             </td>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -586,7 +586,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID</span>
             </td>
-            <td>Organization.Organization.identifier</td>
+            <td>Organization.identifier</td>
             <td>
                <p>Observation.performer.resolve().identifier</p>
             </td>
@@ -597,7 +597,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name</span>
             </td>
-            <td>Organization.Organization.name</td>
+            <td>Organization.name</td>
             <td>
                <p>Observation.performer.resolve().name</p>
             </td>
@@ -608,7 +608,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system = 'Lab Test')</p>
             </td>
@@ -619,7 +619,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@Name</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.display</p>
             </td>
@@ -630,7 +630,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
             </td>
-            <td>Observation.Observation.note</td>
+            <td>Observation.note</td>
             <td>
                <p>Observation.note.text</p>
             </td>
@@ -641,7 +641,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@ID</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where (system = [Recipient Test])</p>
             </td>
@@ -652,7 +652,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@Name</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.display where (coding system = 'Recipient Test')</p>
             </td>
@@ -663,7 +663,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@Value</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where (coding system = 'http://loinc.org')</p>
             </td>
@@ -674,7 +674,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system = 'http://loinc.org')</p>
             </td>
@@ -685,7 +685,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</span>
             </td>
-            <td>Observation.Observation.extension</td>
+            <td>Observation.extension</td>
             <td>
                <p>Observation.note.text</p>
             </td>
@@ -696,7 +696,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</span>
             </td>
-            <td>Observation.Observation.status</td>
+            <td>Observation.status</td>
             <td>
                <p>Observation.status</p>
             </td>
@@ -707,7 +707,7 @@ X - Cancelled.</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where(system='Alert Flag')</p>
             </td>
@@ -727,7 +727,7 @@ and blank when not used. It may be necessary to translate from other interpretat
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Delta Flag')</p>
             </td>
@@ -741,7 +741,7 @@ and blank for no flag.   It may be necessary to translate from other interpretat
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Exclusion Flag')</p>
             </td>
@@ -756,7 +756,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
             </td>
-            <td>Observation.Observation.meta</td>
+            <td>Observation.meta</td>
             <td>
                <p>Observation.meta.security.code</p>
             </td>
@@ -767,7 +767,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedDateTime</span>
             </td>
-            <td>Observation.Observation.issued</td>
+            <td>Observation.issued</td>
             <td>
                <p>Observation.issued</p>
             </td>
@@ -786,7 +786,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Toxicity Grade').code</p>
             </td>
@@ -797,7 +797,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
             </td>
@@ -817,7 +817,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@Value</span>
             </td>
-            <td>Observation.Observation.valueCodeableConcept</td>
+            <td>Observation.valueCodeableConcept</td>
             <td>
                <p>Observation.valueCodeableConcept.text</p>
             </td>
@@ -828,7 +828,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</span>
             </td>
-            <td>Observation.Observation.valueCodeableConcept</td>
+            <td>Observation.valueCodeableConcept</td>
             <td>
                <p>Observation.valueCodeableConcept.coding.system</p>
             </td>
@@ -839,7 +839,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -850,7 +850,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -861,7 +861,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -872,7 +872,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -885,7 +885,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in convent
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -898,7 +898,7 @@ Observation/valueQuantity/value/@value</td>
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -911,7 +911,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -923,7 +923,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -935,7 +935,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -947,7 +947,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -959,7 +959,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -971,7 +971,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.Observation.referenceRange</td>
+            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -983,7 +983,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.code</p>
                <p>Observation.valueQuantity.extension('PQ-translation').code</p>
@@ -995,7 +995,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.code</p>
             </td>
@@ -1006,7 +1006,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.code</p>
                <p>Observation.valueQuantity.extensoin('PQ-translation').code</p>
@@ -1018,7 +1018,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>
@@ -1029,7 +1029,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>
@@ -1040,7 +1040,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <td>
                <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>

@@ -106,6 +106,11 @@
         </xsl:otherwise>
       </xsl:choose>
       <xsl:copy-of select="$cdisc/definition|$cdisc/valueList"/>
+      <xsl:if test="$cdisc/description">
+        <definition>
+          <xsl:copy-of select="$cdisc/description/node()"/>
+        </definition>
+      </xsl:if>
     </xsl:copy>
 	</xsl:template>
 	<xsl:template match="mapping">
@@ -119,7 +124,7 @@
     </xsl:if>
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <xsl:copy-of select="$element/@*"/>
+      <xsl:copy-of select="$element/@*[not(local-name(.)='path')]"/>
       <xsl:apply-templates select="node()"/>
       <xsl:copy-of select="$element/node()"/>
     </xsl:copy>

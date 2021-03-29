@@ -34,7 +34,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.identifier</td>
+            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -53,7 +53,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.site</td>
+            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value</p>
                <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -72,7 +72,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject)).identifer.value</p>
             </td>
@@ -98,7 +98,7 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHCAT</span>
             </td>
-            <td>Condition.Condition.category</td>
+            <td>Condition.category</td>
             <td>
                <p>Condition.category</p>
             </td>
@@ -106,19 +106,19 @@
                <br/>If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.category</td>
+            <td>AdverseEvent.category</td>
             <td>
                <p>AdverseEvent.category</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.category</td>
+            <td>AllergyIntolerance.category</td>
             <td>
                <p>AllergyIntolerance.category</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -131,7 +131,7 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHSCAT</span>
             </td>
-            <td>Condition.Condition.category</td>
+            <td>Condition.category</td>
             <td>
                <p>Condition.category</p>
             </td>
@@ -139,19 +139,19 @@
                <br/>If needed there are several options to categorize this based on whether something is a Condition/AllergyIntolerance/Observation/etc.  This could also include sub-categorize by diagnosis vs. problem, Allergy vs. intolerance or use Observation.category.  But in general, the mapping to both CAT and SCAT is going to be driven by what types of categories the study requires or needs.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.category</td>
+            <td>AdverseEvent.category</td>
             <td>
                <p>AdverseEvent.category</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.category</td>
+            <td>AllergyIntolerance.category</td>
             <td>
                <p>AllergyIntolerance.category</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -164,26 +164,26 @@
             <td rowspan="4">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable MHDTC in ISO 8601 format">MHDTC</span>
             </td>
-            <td>Condition.Condition.recordedDate</td>
+            <td>Condition.recordedDate</td>
             <td>
                <p>Condition.recordedDate</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.recordedDate</td>
+            <td>AdverseEvent.recordedDate</td>
             <td>
                <p>AdverseEvent.recordedDate</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.recordedDate</td>
+            <td>AllergyIntolerance.recordedDate</td>
             <td>
                <p>AllergyIntolerance.recordedDate</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observaton.effectiveDateTime</p>
             </td>
@@ -196,26 +196,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). May be used to create RELREC to link this record with a record in another domain.">MHSPID</span>
             </td>
-            <td>Condition.Condition.identifier</td>
+            <td>Condition.identifier</td>
             <td>
                <p>Condition.identifier</p>
             </td>
             <td rowspan="4">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.identifier</td>
+            <td>AdverseEvent.identifier</td>
             <td>
                <p>AdverseEvent.identifier</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.identifier</td>
+            <td>AllergyIntolerance.identifier</td>
             <td>
                <p>AlergyIntolerance.identifier</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.identifier</td>
+            <td>Observation.identifier</td>
             <td>
                <p>Observation.identifier</p>
             </td>
@@ -238,26 +238,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">MHTERM</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code</p>
             </td>
@@ -270,20 +270,20 @@
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHOCCUR</span>
             </td>
-            <td>Condition.Condition.verificationStatus</td>
+            <td>Condition.verificationStatus</td>
             <td>
                <p>Condition.verificationStatus.where(%this IN {'refuted'|'entered-in-error'})</p>
             </td>
             <td rowspan="3">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around "has the patient had X", that would be accomplished through a Questionnaire.Response</td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.verificationStatus</td>
+            <td>AllergyIntolerance.verificationStatus</td>
             <td>
                <p>(AllergyIntolerance.verificationStatus in {'unconfirmed'|'confirmed'|'refuted'|'entered-in-error'}).not()</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -321,14 +321,14 @@
                <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHENRF or MHENRTPT.  When populating MHENRF, if the value of the   MHONGO  is &#34;Y&#34; a value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating MHENRTPT, if the value of MHONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When MHONGO refers to the Study Reference Period (defined in DM&gt;RFSTDTC to DM&gt;RFENDTC) the SDTMIG variable MHENRF should be populated.">MHENRF</span>
                <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTMIG relative timing variable such as MHENRF or MHENRTPT.  When populating MHENRF, if the value of the   MHONGO  is &#34;Y&#34; a value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating MHENRTPT, if the value of MHONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When MHONGO refers to the Study Reference Period (defined in DM&gt;RFSTDTC to DM&gt;RFENDTC) the SDTMIG variable MHENRF should be populated.">MHENRTPT</span>
             </td>
-            <td>Condition.Condition.clinicalStatus</td>
+            <td>Condition.clinicalStatus</td>
             <td>
                <p>Condition.clinicalStatus</p>
             </td>
             <td rowspan="2"/>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.outcome</td>
+            <td>AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -341,26 +341,26 @@
             <td rowspan="4">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable MHSTDTC in ISO 8601 format.">MHSTDTC</span>
             </td>
-            <td>Condition.Condition.onsetDateTime</td>
+            <td>Condition.onsetDateTime</td>
             <td>
                <p>Condition.onset.onsetDateTime</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.date</td>
+            <td>AdverseEvent.date</td>
             <td>
                <p>AdverseEvent.date</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.onsetDateTime</td>
+            <td>AllergyIntolerance.onsetDateTime</td>
             <td>
                <p>AllergyIntolerance.onsetDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -373,7 +373,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable MHENDTC in ISO 8601 format.">MHENDTC</span>
             </td>
-            <td>Condition.Condition.abatementDateTime</td>
+            <td>Condition.abatementDateTime</td>
             <td>
                <p>Condition.abatementDateTime</p>
             </td>
@@ -387,27 +387,27 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">MHLOC*</span>
             </td>
-            <td>Condition.Condition.bodySite</td>
+            <td>Condition.bodySite</td>
             <td>
                <p>Condition.bodysite</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>Condition.Condition.bodySite</td>
+            <td>Condition.bodySite</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.bodySite</td>
+            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
                <p>Observation.specimen.resolve().collection.bodySite</p>
             </td>
          </tr>
          <tr>
-            <td>Specimen.Specimen.collection.bodySite</td>
+            <td>Specimen.collection.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
                <p>Observation.specimen.resolve().collection.bodySite</p>
@@ -464,26 +464,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHDECOD</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHDECOD).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHDECOD).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHDECOD).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHDECOD).code</p>
             </td>
@@ -496,26 +496,26 @@
             <td rowspan="4">
                <span title="&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHLLT*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHLLT).display</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHLLT).display</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHLLT).display</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHLLT).display</p>
             </td>
@@ -528,26 +528,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHLLTCD*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHLLT).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHLLT).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHLLT).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHLLT).code</p>
             </td>
@@ -560,26 +560,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHPTCD*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHPT).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHPT).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHPT).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHPT).code</p>
             </td>
@@ -592,26 +592,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHHLT*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.where(system=%MHHLT).display</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHHLT).display</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.where(system=%MHHLT).display</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.where(system=%MHHLT).display</p>
             </td>
@@ -624,26 +624,26 @@
             <td rowspan="4">
                <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;&#xA;               &#xA;&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHHLTCD*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHHLT).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHHLT).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHHLT).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHHLT).code</p>
             </td>
@@ -656,26 +656,26 @@
             <td rowspan="4">
                <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;&#xA;               &#xA;&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHHLGT*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHHLG).display</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHHLG).display</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHHLG).display</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHHLG).display</p>
             </td>
@@ -688,26 +688,26 @@
             <td rowspan="4">
                <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;&#xA;               &#xA;&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHHLGTCD*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHHLG).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHHLG).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHHLG).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHHLG).code</p>
             </td>
@@ -718,26 +718,26 @@
             <td rowspan="4">
                <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;&#xA;               &#xA;&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHSCOC*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHHLG).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHHLG).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHHLG).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHHLG).code</p>
             </td>
@@ -750,26 +750,26 @@
             <td rowspan="4">
                <span title="The field does not typically appear on the CRF. Sponsor's will populate this through the coding  process.  This is applicable to items using MedDRA coding&#xA;&#xA;&#xA;               &#xA;&#xA;The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to code utilizing the Define-XML external code list attributes.  Sponsors should include an Origin in the defined metadata document to indicate that the data was &#34;ASSIGNED&#34;.">MHSOCCD*</span>
             </td>
-            <td>Condition.Condition.code</td>
+            <td>Condition.code</td>
             <td>
                <p>Condition.code.coding.where(system=%MHSOC).code</p>
             </td>
             <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
          </tr>
          <tr>
-            <td>AdverseEvent.AdverseEvent.event</td>
+            <td>AdverseEvent.event</td>
             <td>
                <p>AdverseEvent.event.coding.where(system=%MHSOC).code</p>
             </td>
          </tr>
          <tr>
-            <td>AllergyIntolerance.AllergyIntolerance.code</td>
+            <td>AllergyIntolerance.code</td>
             <td>
                <p>AllergyIntolerance.code.coding.where(system=%MHSOC).code</p>
             </td>
          </tr>
          <tr>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system=%MHSOC).code</p>
             </td>

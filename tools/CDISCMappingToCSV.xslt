@@ -4,39 +4,54 @@
 	<xsl:template match="/mappings">
     <xsl:text>Domain,CDASH/Lab Element,CDASH Core,CDASH Type,CDASH Definition,CDASH Link,CDASH-SDTM Map Comments,SDTM Element,SDTM Core,SDTM Type,SDTM Terminology,SDTM Definition,SDTM Link,FHIR Resource,FHIR Element,FHIR Path,FHIR Min,FHIR Max,FHIR Type,FHIR Binding Name,FHIR Binding Strength,FHIR Binding Valueset,FHIR Condition,FHIR Definition,FHIR Comment,FHIR Gap,Comment&#xa;</xsl:text>
     <xsl:for-each select="domain/element">
-      <xsl:for-each select="mapping|gap">
-        <xsl:value-of select="concat(ancestor::domain/@code, ',')"/>
-        <xsl:if test="not(ancestor::element/cdisc[@spec=('LAB','CDASH')])">,,,,,</xsl:if>
-        <xsl:for-each select="ancestor::element/cdisc[@spec=('LAB','CDASH')]">
-          <xsl:value-of select="concat('&quot;', f:escape(@label), '&quot;,&quot;', @core, '&quot;,&quot;', @type, '&quot;,&quot;')"/>
-          <xsl:apply-templates mode="htmlToString" select="definition/node()"/>
-          <xsl:value-of select="concat('&quot;,&quot;', @link, '&quot;,')"/>
-        </xsl:for-each>
-        <xsl:if test="not(ancestor::element/cdisc[@spec='SDTM'])">,,,,,,</xsl:if>
-        <xsl:for-each select="ancestor::element/sdtm[@spec='SDTM']">
-          <xsl:text>"</xsl:text>
-          <xsl:apply-templates mode="htmlToString" select="description/node()"/>
-          <xsl:value-of select="concat('&quot;', f:escape(@label), '&quot;,&quot;', @core, '&quot;,&quot;', @type, '&quot;,&quot;')"/>
-          <!-- terminology -->
-          <xsl:text>","</xsl:text>
-          <xsl:apply-templates mode="htmlToString" select="definition/node()"/>
-          <xsl:value-of select="concat('&quot;,&quot;', @link, '&quot;,')"/>
-        </xsl:for-each>
-        <xsl:if test="not(mapping)">,,,,,,,,,</xsl:if>
-        <xsl:for-each select="mapping">
+      <xsl:call-template name="doElement">
+        <xsl:with-param name="pos" select="1"/>
+      </xsl:call-template>
+      <xsl:if test="count(cdisc[@spec='SDTM'])>1">
+        <xsl:call-template name="doElement">
+          <xsl:with-param name="pos" select="2"/>
+        </xsl:call-template>
+      </xsl:if>
+      <xsl:if test="count(cdisc[@spec='SDTM'])>2">
+        <xsl:message terminate="yes" select="'Need to update transform to support more than 2 SDTM mappings per element'"/>
+      </xsl:if>
+    </xsl:for-each>
+	</xsl:template>
+	<xsl:template name="doElement">
+    <xsl:param name="pos" as="xs:integer"/>
+    <xsl:for-each select="mapping|gap">
+      <xsl:value-of select="concat(ancestor::domain/@code, ',')"/>
+      <xsl:if test="not(ancestor::element/cdisc[@spec=('LAB','CDASH')])">,,,,,</xsl:if>
+      <xsl:for-each select="ancestor::element/cdisc[@spec=('LAB','CDASH')]">
+        <xsl:value-of select="concat('&quot;', f:escape(@label), '&quot;,&quot;', @core, '&quot;,&quot;', @type, '&quot;,&quot;')"/>
+        <xsl:apply-templates mode="htmlToString" select="definition/node()"/>
+        <xsl:value-of select="concat('&quot;,&quot;', @link, '&quot;,')"/>
+      </xsl:for-each>
+      <xsl:if test="not(ancestor::element/cdisc[@spec='SDTM'])">,,,,,,</xsl:if>
+      <xsl:for-each select="ancestor::element/cdisc[@spec='SDTM'][position()=$pos]">
+        <xsl:variable name="values" select="string-join(valueList/value, ', ')"/>
+        <xsl:text>"</xsl:text>
+        <xsl:apply-templates mode="htmlToString" select="description/node()"/>
+        <xsl:value-of select="concat('&quot;,&quot;', f:escape(@label), '&quot;,&quot;', @core, '&quot;,&quot;', @type, '&quot;,&quot;',f:escape(@valueDomain), f:escape($values), '&quot;,&quot;')"/>
+        <xsl:apply-templates mode="htmlToString" select="definition/node()"/>
+        <xsl:value-of select="concat('&quot;,&quot;', @link, '&quot;')"/>
+      </xsl:for-each>
+      <xsl:choose>
+        <xsl:when test="self::mapping">
           <xsl:variable name="paths" as="xs:string+">
             <xsl:for-each select="path">
               <xsl:value-of select="f:escape(@value)"/>
             </xsl:for-each>
           </xsl:variable>
-          <xsl:value-of select="concat(',&quot;', f:escape(@resource),'&quot;,&quot;', f:escape(@element), '&quot;,&quot;', string-join($paths, '\r\n'), '&quot;,', @min, ',', @max, ',', type/@code, ',&quot;', f:escape(binding/@name),'&quot;,&quot;',
+          <xsl:value-of select="concat(',&quot;', f:escape(@resource),'&quot;,&quot;', f:escape(@path), '&quot;,&quot;', string-join($paths, '\r\n'), '&quot;,', @min, ',', @max, ',', type/code/@value, ',&quot;', f:escape(binding/@name),'&quot;,&quot;',
             f:escape(binding/@strength), '&quot;,&quot;', f:escape(binding/@valueSet), '&quot;,&quot;', string-join(condition/@value, ', '), '&quot;,&quot;', f:escape(definition/@value), '&quot;,&quot;', f:escape(comment/@value), '&quot;,&quot;')"/>
-        </xsl:for-each>
-        <xsl:apply-templates mode="htmlToString" select="gap/node()"/>
-        <xsl:text>","</xsl:text>
-        <xsl:apply-templates mode="htmlToString" select="comment/node()"/>
-        <xsl:text>"&#xa;</xsl:text>
-      </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>,,,,,,,,,,,,,"</xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates mode="htmlToString" select="parent::*/gap/node()"/>
+      <xsl:text>","</xsl:text>
+      <xsl:apply-templates mode="htmlToString" select="parent::*/comment/node()"/>
+      <xsl:text>"&#xa;</xsl:text>
     </xsl:for-each>
 	</xsl:template>
 	<xsl:template mode="htmlToString" match="text()">

@@ -34,7 +34,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.identifier</td>
+            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier.value</p>
                <p>MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -54,7 +54,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.site</td>
+            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier.value</p>
                <p>MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -74,7 +74,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value</p>
             </td>
@@ -89,26 +89,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCAT</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.category</td>
+            <td>MedicationStatement.category</td>
             <td>
                <p>MedicationStatement.category</p>
             </td>
             <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.category</td>
+            <td>MedicationRequest.category</td>
             <td>
                <p>MedicationRequest.category</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.category</td>
+            <td>MedicationDispense.category</td>
             <td>
                <p>MedicationDispense.category</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.category</td>
+            <td>MedicationAdministration.category</td>
             <td>
                <p>MedicationAdministration.category</p>
             </td>
@@ -121,26 +121,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMSCAT</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.category</td>
+            <td>MedicationStatement.category</td>
             <td>
                <p>MedicationStatement.category</p>
             </td>
             <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.category</td>
+            <td>MedicationRequest.category</td>
             <td>
                <p>MedicationRequest.category</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.category</td>
+            <td>MedicationDispense.category</td>
             <td>
                <p>MedicationDispense.category</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.category</td>
+            <td>MedicationAdministration.category</td>
             <td>
                <p>MedicationAdministration.category</p>
             </td>
@@ -165,32 +165,32 @@
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">CMSPID</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.identifier</td>
+            <td>MedicationStatement.identifier</td>
             <td>
                <p>MedicationStatement.identifier</p>
             </td>
             <td rowspan="5"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.identifier</td>
+            <td>MedicationRequest.identifier</td>
             <td>
                <p>MedicationRequest.identifier</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.identifier</td>
+            <td>MedicationDispense.identifier</td>
             <td>
                <p>MedicationDispense.identifier</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.identifier</td>
+            <td>MedicationAdministration.identifier</td>
             <td>
                <p>MedicationAdministration.identifier</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.identifier</td>
+            <td>Immunization.identifier</td>
             <td>
                <p>Immunization.identifier</p>
             </td>
@@ -203,56 +203,56 @@
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMTRT</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.medicationCodeableConcept</td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medication.medicationCodeableConcept</p>
             </td>
             <td rowspan="9"/>
          </tr>
          <tr>
-            <td>MedicationStatement.MedicationStatement.medicationReference</td>
+            <td>MedicationStatement.medicationReference</td>
             <td>
                <p>MedicationStatement.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.medicationCodeableConcept</td>
+            <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.medicationReference</td>
+            <td>MedicationRequest.medicationReference</td>
             <td>
                <p>MedicationRequest.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.medicationCodeableConcept</td>
+            <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.medicationReference</td>
+            <td>MedicationDispense.medicationReference</td>
             <td>
                <p>MedicationDispense.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.medicationCodeableConcept</td>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medication.medicationCodeableConcept</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.medicationReference</td>
+            <td>MedicationAdministration.medicationReference</td>
             <td>
                <p>MedicationAdministration.medication.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.vaccineCode</td>
+            <td>Immunization.vaccineCode</td>
             <td>
                <p>Immunization.vaccineCode</p>
             </td>
@@ -277,38 +277,38 @@
             <td rowspan="6">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMOCCUR</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.status</td>
+            <td>MedicationStatement.status</td>
             <td>
                <p>MedicationStatement.status</p>
             </td>
             <td rowspan="6">In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.doNotPerform</td>
+            <td>MedicationRequest.doNotPerform</td>
             <td>
                <p>MedicationRequest.doNotPerform=true</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.status</td>
+            <td>MedicationRequest.status</td>
             <td>
                <p>MedicationRequest.status IN {'entered-in-error'|'cancelled'|'stopped'}</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.status</td>
+            <td>MedicationDispense.status</td>
             <td>
                <p>MedicationRequest.status IN {entered-in-error'|'cancelled'|'stopped'}</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.status</td>
+            <td>MedicationAdministration.status</td>
             <td>
                <p>MedicationAdministration.status</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.status</td>
+            <td>Immunization.status</td>
             <td>
                <p>Immunization.status IN {'completed'|'entered-in-error'}</p>
             </td>
@@ -321,32 +321,32 @@
             <td rowspan="5">
                <span title="Does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED."/>
             </td>
-            <td>Medication.Medication.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>MedicationStatement.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
             <td rowspan="5"/>
          </tr>
          <tr>
-            <td>Medication.Medication.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>MedicationRequest.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>MedicationDispense.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>MedicationAdministration.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.ingredient</td>
+            <td>Medication.ingredient</td>
             <td>
                <p>Immunization.medicationReference.resolve().ingredient.where(isActive)</p>
             </td>
@@ -359,26 +359,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMINDC</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.reasonCode</td>
+            <td>MedicationStatement.reasonCode</td>
             <td>
                <p>MedicationStatement.reasonCode</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.reasonCode</td>
+            <td>MedicationRequest.reasonCode</td>
             <td>
                <p>MedicationRequest.reasonCode</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.reasonCode</td>
+            <td>MedicationAdministration.reasonCode</td>
             <td>
                <p>MedicationAdministration.reasonCode</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.reasonCode</td>
+            <td>Immunization.reasonCode</td>
             <td>
                <p>Immunization.reasonCode</p>
             </td>
@@ -391,7 +391,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
             </td>
-            <td>AdverseEvent.AdverseEvent.identifier</td>
+            <td>AdverseEvent.identifier</td>
             <td>
                <p>AdverseEvent.where(suspectEntity.instanceReference=MedicationX).identifier</p>
             </td>
@@ -405,26 +405,26 @@
             <td rowspan="4">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain."/>
             </td>
-            <td>Condition.Condition.identifier</td>
+            <td>Condition.identifier</td>
             <td>
                <p>MedicationStatement.reasonReference.resolve().identifier</p>
             </td>
             <td rowspan="4"/>
          </tr>
          <tr>
-            <td>Condition.Condition.identifier</td>
+            <td>Condition.identifier</td>
             <td>
                <p>MedicationRequest.reasonReference.resolve().identifier</p>
             </td>
          </tr>
          <tr>
-            <td>Condition.Condition.identifier</td>
+            <td>Condition.identifier</td>
             <td>
                <p>MedicationAdministration.reasonReference.resolve().identifier</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.identifier</td>
+            <td>Immunization.identifier</td>
             <td>
                <p>Immunization.reasonReference.resolve().identifier</p>
             </td>
@@ -437,32 +437,32 @@
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). in the column with the heading &#34;SDTMIG Target&#34;.">CMDOSE</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.doseAndRate.doseQuantity</p>
             </td>
             <td rowspan="5"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.doseAndRate.doseQuantity</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.doseAndRate.doseQuantity</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.dosage.dose</td>
+            <td>MedicationAdministration.dosage.dose</td>
             <td>
                <p>MedicationAdministration.dosage.dose</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.doseQuantity</td>
+            <td>Immunization.doseQuantity</td>
             <td>
                <p>Immunization.doseQuantity</p>
             </td>
@@ -476,26 +476,26 @@
                <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSTXT</span>
                <span title="This does not map directly to an SDTMIG variable.  Numeric values map to CMDOSE in SDTM.  Non-numeric values (e.g., 200 - 400) map to CMDOSTXT in SDTM.">CMDOSE</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.text</p>
             </td>
             <td rowspan="4">Requires combining multiple repetitions together</td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.text</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.text</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.dosage.text</td>
+            <td>MedicationAdministration.dosage.text</td>
             <td>
                <p>MedicationAdministration.dosage.text</p>
             </td>
@@ -508,26 +508,26 @@
             <td rowspan="4">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSTOT</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.maxDosePerPeriod</p>
             </td>
             <td rowspan="4">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.dosage.maxDosePerPeriod</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.dosage.maxDosePerPeriod</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.doseQuantity</td>
+            <td>Immunization.doseQuantity</td>
             <td>
                <p>Immunization.doseQuantity</p>
             </td>
@@ -540,20 +540,20 @@
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSU</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.maxDosePerPeriod.code</p>
             </td>
             <td rowspan="3"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.maxDosePerPeriod.code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.maxDosePerPeriod.code</p>
             </td>
@@ -566,20 +566,20 @@
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRM</span>
             </td>
-            <td>Medication.Medication.form</td>
+            <td>Medication.form</td>
             <td>
                <p>MedicationStatement.medicationReference.resolve().form</p>
             </td>
             <td rowspan="3"/>
          </tr>
          <tr>
-            <td>Medication.Medication.form</td>
+            <td>Medication.form</td>
             <td>
                <p>MedicationRequest.medicationReference.resolve().form</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.form</td>
+            <td>Medication.form</td>
             <td>
                <p>MedicationDispense.medicationReference.resolve().form</p>
             </td>
@@ -592,20 +592,20 @@
             <td rowspan="3">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDOSFRQ</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.timing.frequency</p>
             </td>
             <td rowspan="3"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.frequencey</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.frequency</p>
             </td>
@@ -618,32 +618,32 @@
             <td rowspan="5">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMROUTE</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.dosage</td>
+            <td>MedicationStatement.dosage</td>
             <td>
                <p>MedicationStatement.dosage.route</p>
             </td>
             <td rowspan="5"/>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.route</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.route</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.dosage.route</td>
+            <td>MedicationAdministration.dosage.route</td>
             <td>
                <p>MedicationAdministration.dosage.route</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.route</td>
+            <td>Immunization.route</td>
             <td>
                <p>Immunization.route</p>
             </td>
@@ -656,38 +656,38 @@
             <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.effectiveDateTime</td>
+            <td>MedicationStatement.effectiveDateTime</td>
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
             <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
-            <td>MedicationStatement.MedicationStatement.effectivePeriod</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceString</td>
+            <td>Immunization.occurrenceString</td>
             <td>
                <p>Immunization.occurrenceString</p>
             </td>
@@ -700,38 +700,38 @@
             <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CDSTDTC in ISO 8601 format.">CMSTDTC</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.effectiveDateTime</td>
+            <td>MedicationStatement.effectiveDateTime</td>
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
             <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
-            <td>MedicationStatement.MedicationStatement.effectivePeriod</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceString</td>
+            <td>Immunization.occurrenceString</td>
             <td>
                <p>Immunization.occurrenceString</p>
             </td>
@@ -744,38 +744,38 @@
             <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable CMSTDTC in ISO 8601 format.">CMSTDTC</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.effectiveDateTime</td>
+            <td>MedicationStatement.effectiveDateTime</td>
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
             <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
-            <td>MedicationStatement.MedicationStatement.effectivePeriod</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceString</td>
+            <td>Immunization.occurrenceString</td>
             <td>
                <p>Immunization.occurrenceString</p>
             </td>
@@ -788,38 +788,38 @@
             <td rowspan="6">
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable CMENDTC in ISO 8601 format.">CMENDTC</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.effectiveDateTime</td>
+            <td>MedicationStatement.effectiveDateTime</td>
             <td>
                <p>MedicationStatement.effectiveDateTime</p>
             </td>
             <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
          </tr>
          <tr>
-            <td>MedicationStatement.MedicationStatement.effectivePeriod</td>
+            <td>MedicationStatement.effectivePeriod</td>
             <td>
                <p>MedicationStatement.effectivePeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.dosageInstruction</td>
+            <td>MedicationRequest.dosageInstruction</td>
             <td>
                <p>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.dosageInstruction</td>
+            <td>MedicationDispense.dosageInstruction</td>
             <td>
                <p>MedicationDispense.dosageInstruction.timing.repeat.boundsPeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceDateTime</td>
+            <td>Immunization.occurrenceDateTime</td>
             <td>
                <p>Immunization.occurrenceDateTime</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.occurrenceString</td>
+            <td>Immunization.occurrenceString</td>
             <td>
                <p>Immunization.occurrenceString</p>
             </td>
@@ -856,7 +856,7 @@
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMDECOD</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.medicationCodeableConcept</td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
@@ -864,56 +864,56 @@
             <td rowspan="9">We would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.medicationCodeableConcept</td>
+            <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.medicationCodeableConcept</td>
+            <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.medicationCodeableConcept</td>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.vaccineCode</td>
+            <td>Immunization.vaccineCode</td>
             <td>
                <p>Immunization.vaccineCode</p>
             </td>
@@ -926,7 +926,7 @@
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLAS</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.medicationCodeableConcept</td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
@@ -934,56 +934,56 @@
             <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.medicationCodeableConcept</td>
+            <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.medicationCodeableConcept</td>
+            <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.medicationCodeableConcept</td>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.vaccineCode</td>
+            <td>Immunization.vaccineCode</td>
             <td>
                <p>Immunization.vaccineCode</p>
             </td>
@@ -996,7 +996,7 @@
             <td rowspan="9">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">CMCLASCD</span>
             </td>
-            <td>MedicationStatement.MedicationStatement.medicationCodeableConcept</td>
+            <td>MedicationStatement.medicationCodeableConcept</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
@@ -1004,56 +1004,56 @@
             <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationStatement.medicationCodeableConcept</p>
                <p>MedicationStatement.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationRequest.MedicationRequest.medicationCodeableConcept</td>
+            <td>MedicationRequest.medicationCodeableConcept</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationRequest.medicationCodeableConcept</p>
                <p>MedicationRequest.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationDispense.MedicationDispense.medicationCodeableConcept</td>
+            <td>MedicationDispense.medicationCodeableConcept</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationDispense.medicationCodeableConcept</p>
                <p>MedicationDispense.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>MedicationAdministration.MedicationAdministration.medicationCodeableConcept</td>
+            <td>MedicationAdministration.medicationCodeableConcept</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Medication.Medication.code</td>
+            <td>Medication.code</td>
             <td>
                <p>MedicationAdministration.medicationCodeableConcept</p>
                <p>MedicationAdministration.medicationReference.resolve().code</p>
             </td>
          </tr>
          <tr>
-            <td>Immunization.Immunization.vaccineCode</td>
+            <td>Immunization.vaccineCode</td>
             <td>
                <p>Immunization.vaccineCode</p>
             </td>

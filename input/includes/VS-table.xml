@@ -34,7 +34,7 @@
             <td>
                <span>STUDYID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.identifier</td>
+            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -50,7 +50,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
             </td>
-            <td>ResearchStudy.ResearchStudy.site</td>
+            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -66,7 +66,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.ResearchSubject.identifier</td>
+            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -92,7 +92,7 @@
             <td>
                <span title="The field is not an SDTM variable.  The date of a measurement, test observation can be determined from the date/time of visit (VISDAT/VISTM components"/>
             </td>
-            <td>Encounter.Encounter.period</td>
+            <td>Encounter.period</td>
             <td>
                <p>Observation.encounter.resolve().period.start</p>
             </td>
@@ -106,7 +106,7 @@
             <td>
                <span title="This field is not an SDTM variable.  &#xA;May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF=&#34;N&#34;, the value of VSSSTAT will be &#34;NOT DONE&#34;.  If VSPErF=&#34;Y&#34;, VSSTAT should be NULL">VSSTAT</span>
             </td>
-            <td>Observation.Observation.status</td>
+            <td>Observation.status</td>
             <td>
                <p>Observation.status=('final' or 'cancelled')</p>
             </td>
@@ -120,7 +120,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
             </td>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -134,7 +134,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
             </td>
-            <td>Observation.Observation.effectiveDateTime</td>
+            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -148,7 +148,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">VSCAT</span>
             </td>
-            <td>Observation.Observation.category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -164,7 +164,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSCAT</span>
             </td>
-            <td>Observation.Observation.category</td>
+            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -191,7 +191,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSTPT</span>
             </td>
-            <td>Observation.Observation.extension</td>
+            <td>Observation.extension</td>
             <td>
                <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
             </td>
@@ -205,7 +205,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSTAT</span>
             </td>
-            <td>Observation.Observation.status</td>
+            <td>Observation.status</td>
             <td>
                <p>Observation.status</p>
                <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
@@ -213,7 +213,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
          </tr>
          <tr>
-            <td>ServiceRequest.ServiceRequest.status</td>
+            <td>ServiceRequest.status</td>
             <td>
                <p>Observation.status</p>
                <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
@@ -227,7 +227,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -241,7 +241,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRESU</span>
             </td>
-            <td>Observation.Observation.valueQuantity</td>
+            <td>Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.unit</p>
             </td>
@@ -255,7 +255,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span>SUPPVS.QVAL</span>
             </td>
-            <td>Observation.Observation.interpretation</td>
+            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -269,14 +269,14 @@ This combination can be used to extract vital sign data points from EHR system a
             <td rowspan="2">
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSPOS</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code</p>
             </td>
             <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
          </tr>
          <tr>
-            <td>Observation.Observation.method</td>
+            <td>Observation.method</td>
             <td>
                <p>Observation.method</p>
             </td>
@@ -289,7 +289,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLOC</span>
             </td>
-            <td>Observation.Observation.bodySite</td>
+            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -303,7 +303,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLAT</span>
             </td>
-            <td>Observation.Observation.bodySite</td>
+            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -317,7 +317,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSDIR*</span>
             </td>
-            <td>Observation.Observation.bodySite</td>
+            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -331,7 +331,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTESTCD</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.code</p>
             </td>
@@ -345,7 +345,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST</span>
             </td>
-            <td>Observation.Observation.code</td>
+            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.display</p>
             </td>
@@ -359,7 +359,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">VSSPID</span>
             </td>
-            <td>Observation.Observation.identifier</td>
+            <td>Observation.identifier</td>
             <td>
                <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
             </td>
