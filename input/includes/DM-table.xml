@@ -1,400 +1,810 @@
-<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
-     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+<div>
    <p>
-        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+        Guidance on interpreting the tables can be found <a href="overview.html#mappings">here</a>.
       </p>
-   <table class="grid"
-          style="width:150%;word-break:break-word;table-layout:fixed;">
-      <col style="width:15%"/>
-      <col style="width:7.5%"/>
-      <col style="width:7.5%"/>
-      <col style="width:15%;"/>
-      <col style="width:20%;"/>
-      <col style="width:35%;"/>
-      <thead style="background-color:PowderBlue;">
-         <tr>
-            <th colspan="3" style="text-align:center;">CDISC</th>
-            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
-            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
-         </tr>
-         <tr style="text-align:center;">
-            <th style="text-align:center;">Name</th>
-            <th style="text-align:center;">CDASH</th>
-            <th style="text-align:center;">SDTM</th>
-            <th style="text-align:center;">Element</th>
-            <th style="text-align:center;">FHIRPath</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <th>Study Identifier</th>
-            <td>
-               <span style="font-weight:bold" title="A unique identifier for a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">STUDYID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Unique identifier for a study.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">STUDYID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Study Site Identifier</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A unique identifier for a site within a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">SITEID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Unique identifier for a site within a study.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Subject Identifier for the Study</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A unique subject identifier within a site and a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">SUBJID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Identifiers assigned to this research subject for a study.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Birth Date</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A subject's date of birth (with or without the time of birth). The complete Date of Birth is made from the temporal components of Birth Year, Birth Month, Birth Day and Birth Time.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDAT">BRTHDAT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Date/time of birth of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The date of birth for the individual.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
-            </td>
-            <td>
-               <p>Patient.birthDate</p>
-            </td>
-            <td>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>
-               <br/>Birth time is captured as a standard extension</td>
-         </tr>
-         <tr>
-            <th>Birth Day</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Day of birth of the subject in an unambiguous date format (e.g., DD).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDD">BRTHDD</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Date/time of birth of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The date of birth for the individual.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
-            </td>
-            <td>
-               <p>Patient.birthDate.substring(8,4)</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Birth Month</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Month of birth of the subject in an unambiguous date format (e.g., MMM).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHMO">BRTHMO</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Date/time of birth of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The date of birth for the individual.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
-            </td>
-            <td>
-               <p>Patient.birthDate.substring(5,2)</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Birth Year</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The year of birth of the subject in an unambiguous date format (e.g., YYYY).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHYY">BRTHYY</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Date/time of birth of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The date of birth for the individual.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
-            </td>
-            <td>
-               <p>Patient.birthDate.substring(0,4)</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Birth Time</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The time of birth of the subject in an unambiguous time format (e.g., hh:mm)">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHTIM">BRTHTIM</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Date/time of birth of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.extension">Patient.extension</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
-            </td>
-            <td>
-               <p>Patient.extension(patient-birthTime).valueTime</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Age</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The age of the subject expressed in AGEU.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGE">AGE</a>
-               </span>
-               <br/>Core: O<br/>Type: Num</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Age expressed in AGEU. May be derived from RFSTDTC and BRTHDTC, but BRTHDTC may not be available in all cases (due to subject privacy concerns).">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGE">AGE</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Num</td>
-            <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
-               <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Age Units</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Those units of time that are routinely used to express the age of a person.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGEU">AGEU</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Units associated with AGE.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGEU">AGEU</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char</td>
-            <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Demographics Collection Date</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/DMDAT">DMDAT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Date/time of demographic data collection.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/DMDTC">DMDTC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.meta">Patient.meta</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Meta">Meta</a>
-            </td>
-            <td>
-               <p>Patient.meta.lastUpdated</p>
-            </td>
-            <td> <br/>
-               <br/>This indicates when the Patient resource was last changed, but in practice different pieces of demographics are collected at different times.  Review will be required of the history of the patient resource to determine when any particular fact was first asserted.</td>
-         </tr>
-         <tr>
-            <th>Sex</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Sex of the subject as determined by the investigator.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SEX">SEX</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Sex of the subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SEX">SEX</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-            </td>
-            <td>
-               <p>Patient.gender</p>
-            </td>
-            <td>Note that gender represents the gender for administrative purposes.  Genetic, physiologic, social and other gender aspects are captured as Observations</td>
-         </tr>
-         <tr>
-            <th>Ethnicity</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/ETHNIC">ETHNIC</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="The ethnicity of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of ethnicity (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm).">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/ETHNIC">ETHNIC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Collected Ethnicity</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CETHNIC">CETHNIC</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">SUPPDM.QVAL</span>
-            </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Race</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (U.S. Center for Disease Control).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACE">RACE</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Race of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of race (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm) See Assumption below regarding RACE.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/RACE">RACE</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char</td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
-               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Collected Race</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (US Centers for Disease Control).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CRACE">CRACE</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">SUPPDM.QVAL</span>
-            </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
-               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Race Other</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A free-text field to be used when none of the preprinted values for RACE are applicable or if another, unprinted selection should be added to those preprinted values.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACEOTH">RACEOTH</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"/>
-            </td>
-            <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
-               <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
-            <td/>
-         </tr>
-      </tbody>
-   </table>
+   <div id="tabs">
+      <ul>
+         <li>
+            <a href="#lookup">CDISC Lookup view</a>
+         </li>
+         <li>
+            <a href="#mapping">FHIR mapping view</a>
+         </li>
+      </ul>
+      <div id="lookup">
+         <table class="grid"
+                style="width:150%;word-break:break-word;table-layout:fixed;">
+            <col style="width:15%"/>
+            <col style="width:7.5%"/>
+            <col style="width:7.5%"/>
+            <col style="width:15%;"/>
+            <col style="width:20%;"/>
+            <col style="width:35%;"/>
+            <thead style="background-color:PowderBlue;">
+               <tr>
+                  <th colspan="3" style="text-align:center;">CDISC</th>
+                  <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+                  <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+               </tr>
+               <tr style="text-align:center;">
+                  <th style="text-align:center;">Label</th>
+                  <th style="text-align:center;">CDASH</th>
+                  <th style="text-align:center;">SDTM</th>
+                  <th style="text-align:center;">Element</th>
+                  <th style="text-align:center;">FHIRPath</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <th>Study Identifier</th>
+                  <td>
+                     <span style="font-weight:bold" title="A unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Study Site Identifier</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">SITEID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Subject Identifier for the Study</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique subject identifier within a site and a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">SUBJID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Identifiers assigned to this research subject for a study.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Date</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A subject's date of birth (with or without the time of birth). The complete Date of Birth is made from the temporal components of Birth Year, Birth Month, Birth Day and Birth Time.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDAT">BRTHDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate</p>
+                  </td>
+                  <td>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>
+                     <br/>Birth time is captured as a standard extension</td>
+               </tr>
+               <tr>
+                  <th>Birth Day</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Day of birth of the subject in an unambiguous date format (e.g., DD).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDD">BRTHDD</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(8,4)</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Month</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Month of birth of the subject in an unambiguous date format (e.g., MMM).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHMO">BRTHMO</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(5,2)</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Year</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The year of birth of the subject in an unambiguous date format (e.g., YYYY).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHYY">BRTHYY</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(0,4)</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Time</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The time of birth of the subject in an unambiguous time format (e.g., hh:mm)">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHTIM">BRTHTIM</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.extension">Patient.extension</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+                  </td>
+                  <td>
+                     <p>Patient.extension(patient-birthTime).valueTime</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Age</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The age of the subject expressed in AGEU.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGE">AGE</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Num</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Age expressed in AGEU. May be derived from RFSTDTC and BRTHDTC, but BRTHDTC may not be available in all cases (due to subject privacy concerns).">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGE">AGE</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Num</td>
+                  <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
+                     <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Age Units</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Those units of time that are routinely used to express the age of a person.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGEU">AGEU</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Units associated with AGE.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGEU">AGEU</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Demographics Collection Date</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/DMDAT">DMDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Date/time of demographic data collection.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/DMDTC">DMDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.meta">Patient.meta</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Meta">Meta</a>
+                  </td>
+                  <td>
+                     <p>Patient.meta.lastUpdated</p>
+                  </td>
+                  <td> <br/>
+                     <br/>This indicates when the Patient resource was last changed, but in practice different pieces of demographics are collected at different times.  Review will be required of the history of the patient resource to determine when any particular fact was first asserted.</td>
+               </tr>
+               <tr>
+                  <th>Sex</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Sex of the subject as determined by the investigator.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SEX">SEX</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Sex of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SEX">SEX</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Patient.gender</p>
+                  </td>
+                  <td>Note that gender represents the gender for administrative purposes.  Genetic, physiologic, social and other gender aspects are captured as Observations</td>
+               </tr>
+               <tr>
+                  <th>Ethnicity</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/ETHNIC">ETHNIC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The ethnicity of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of ethnicity (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm).">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/ETHNIC">ETHNIC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Collected Ethnicity</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CETHNIC">CETHNIC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPDM.QVAL</span>
+                  </td>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Race</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (U.S. Center for Disease Control).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACE">RACE</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Race of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of race (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm) See Assumption below regarding RACE.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/RACE">RACE</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Collected Race</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (US Centers for Disease Control).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CRACE">CRACE</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPDM.QVAL</span>
+                  </td>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Race Other</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A free-text field to be used when none of the preprinted values for RACE are applicable or if another, unprinted selection should be added to those preprinted values.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACEOTH">RACEOTH</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"/>
+                  </td>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td/>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div id="mapping">
+         <table class="grid"
+                style="width:150%;word-break:break-word;table-layout:fixed;">
+            <col style="width:15%"/>
+            <col style="width:15%;"/>
+            <col style="width:20%;"/>
+            <col style="width:7.5%"/>
+            <col style="width:7.5%"/>
+            <col style="width:35%;"/>
+            <thead style="background-color:PowderBlue;">
+               <tr>
+                  <th/>
+                  <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+                  <th colspan="2" style="text-align:center;">CDISC</th>
+                  <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+               </tr>
+               <tr style="text-align:center;">
+                  <th style="text-align:center;">Label</th>
+                  <th style="text-align:center;">Element</th>
+                  <th style="text-align:center;">FHIRPath</th>
+                  <th style="text-align:center;">CDASH</th>
+                  <th style="text-align:center;">SDTM</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <th>Study Identifier</th>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold" title="A unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Study Site Identifier</th>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">SITEID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Subject Identifier for the Study</th>
+                  <td>
+                     <span title="Identifiers assigned to this research subject for a study.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique subject identifier within a site and a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">SUBJID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Date</th>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A subject's date of birth (with or without the time of birth). The complete Date of Birth is made from the temporal components of Birth Year, Birth Month, Birth Day and Birth Time.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDAT">BRTHDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>There is potential where the birth date can not be collected due to country regulations.  In those cases an estimated age may be entered.<br/>
+                     <br/>Birth time is captured as a standard extension</td>
+               </tr>
+               <tr>
+                  <th>Birth Day</th>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(8,4)</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Day of birth of the subject in an unambiguous date format (e.g., DD).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHDD">BRTHDD</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Month</th>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(5,2)</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Month of birth of the subject in an unambiguous date format (e.g., MMM).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHMO">BRTHMO</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Year</th>
+                  <td>
+                     <span title="The date of birth for the individual.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+                  </td>
+                  <td>
+                     <p>Patient.birthDate.substring(0,4)</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The year of birth of the subject in an unambiguous date format (e.g., YYYY).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHYY">BRTHYY</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Birth Time</th>
+                  <td>
+                     <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.extension">Patient.extension</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+                  </td>
+                  <td>
+                     <p>Patient.extension(patient-birthTime).valueTime</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The time of birth of the subject in an unambiguous time format (e.g., hh:mm)">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/BRTHTIM">BRTHTIM</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Date/time of birth of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/BRTHDTC">BRTHDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Age</th>
+                  <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
+                     <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The age of the subject expressed in AGEU.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGE">AGE</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Num</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Age expressed in AGEU. May be derived from RFSTDTC and BRTHDTC, but BRTHDTC may not be available in all cases (due to subject privacy concerns).">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGE">AGE</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Num</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Age Units</th>
+                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Those units of time that are routinely used to express the age of a person.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/AGEU">AGEU</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Units associated with AGE.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/AGEU">AGEU</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Demographics Collection Date</th>
+                  <td>
+                     <span title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.meta">Patient.meta</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Meta">Meta</a>
+                  </td>
+                  <td>
+                     <p>Patient.meta.lastUpdated</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The date of collection represented in an unambiguous date format (e.g., DD-MON-YYYY)">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/DMDAT">DMDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Date/time of demographic data collection.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/DMDTC">DMDTC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td> <br/>
+                     <br/>This indicates when the Patient resource was last changed, but in practice different pieces of demographics are collected at different times.  Review will be required of the history of the patient resource to determine when any particular fact was first asserted.</td>
+               </tr>
+               <tr>
+                  <th>Sex</th>
+                  <td>
+                     <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Patient.gender</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Sex of the subject as determined by the investigator.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SEX">SEX</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Sex of the subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SEX">SEX</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>Note that gender represents the gender for administrative purposes.  Genetic, physiologic, social and other gender aspects are captured as Observations</td>
+               </tr>
+               <tr>
+                  <th>Ethnicity</th>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/ETHNIC">ETHNIC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The ethnicity of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of ethnicity (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm).">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/ETHNIC">ETHNIC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Collected Ethnicity</th>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-ethnicity.html) for this to capture ethnicity as required by U.S. legislation.  It captures two distinct granularities as well as free text.  Depending on the study, the higher or lower granularity might map to ETHNIC and the lower or free text could map to CETHNIC.  Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A social group characterized by a distinctive social and cultural tradition maintained from generation to generation, a common history and origin and a sense of identification with the group; members of the group have distinctive features in their way of life, shared experiences and often a common genetic heritage; these features may be reflected in their experience of health and disease.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CETHNIC">CETHNIC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPDM.QVAL</span>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Race</th>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (U.S. Center for Disease Control).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACE">RACE</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Race of the subject. Sponsors should refer to &#34;Collection of Race and Ethnicity Data in Clinical Trials&#34; (FDA, September 2005) for guidance regarding the collection of race (http://www.fda.gov/RegulatoryInformation/Guidances/ucm126340.htm) See Assumption below regarding RACE.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/RACE">RACE</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Collected Race</th>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (US Centers for Disease Control).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/CRACE">CRACE</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPDM.QVAL</span>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Race Other</th>
+                  <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
+                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A free-text field to be used when none of the preprinted values for RACE are applicable or if another, unprinted selection should be added to those preprinted values.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/RACEOTH">RACEOTH</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"/>
+                  </td>
+                  <td/>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
 </div>
+        {% assign includetabscripts = 'true' %}
+      

@@ -1,665 +1,1340 @@
-<div xmlns:xs="http://www.w3.org/2001/XMLSchema"
-     xmlns:fn="http://www.w3.org/2005/xpath-functions">
+<div>
    <p>
-        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+        Guidance on interpreting the tables can be found <a href="overview.html#mappings">here</a>.
       </p>
-   <table class="grid"
-          style="width:150%;word-break:break-word;table-layout:fixed;">
-      <col style="width:15%"/>
-      <col style="width:7.5%"/>
-      <col style="width:7.5%"/>
-      <col style="width:15%;"/>
-      <col style="width:20%;"/>
-      <col style="width:35%;"/>
-      <thead style="background-color:PowderBlue;">
-         <tr>
-            <th colspan="3" style="text-align:center;">CDISC</th>
-            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
-            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
-         </tr>
-         <tr style="text-align:center;">
-            <th style="text-align:center;">Name</th>
-            <th style="text-align:center;">CDASH</th>
-            <th style="text-align:center;">SDTM</th>
-            <th style="text-align:center;">Element</th>
-            <th style="text-align:center;">FHIRPath</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <th>Study Identifier</th>
-            <td>
-               <span style="font-weight:bold" title="A unique identifier for a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold" title="Unique identifier for a study.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-            </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
-         </tr>
-         <tr>
-            <th>Study Site Identifier</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A unique identifier for a site within a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Unique identifier for a site within a study.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="A facility in which study activities are conducted.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-               <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-            </td>
-            <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-               <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
-         </tr>
-         <tr>
-            <th>Subject Identifier for the Study</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A unique subject identifier within a site and a study.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Identifiers assigned to this research subject for a study.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
-            </td>
-            <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
-               <br/>No standard way to decide which subject identifier to use</td>
-         </tr>
-         <tr>
-            <th>Visit Name</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td colspan="2" style="background-color:LightGray">Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Visit Date</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Date the clinical encounter occurred (or started).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"/>
-            </td>
-            <td>
-               <span title="The start and end time of the encounter.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.period">Encounter.period</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
-            </td>
-            <td>
-               <p>Observation.encounter.resolve().period.start</p>
-            </td>
-            <td>Linked via Observation.encounter</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Performed</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="The status of the result value.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-            </td>
-            <td>
-               <p>Observation.status=('final' or 'cancelled')</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Vital Signs Date</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
-            </td>
-            <td>
-               <p>Observation.effectiveDateTime</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Vital Signs Time</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
-            <td>
-               <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
-            </td>
-            <td>
-               <p>Observation.effectiveDateTime</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Category for Vital Signs</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A grouping of topic-variable values based on user-defined characteristics.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Used to define a category of related records.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="A code that classifies the general type of observation being made.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
-            </td>
-            <td>
-               <p>Observation.category</p>
-            </td>
-            <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
-               <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+   <div id="tabs">
+      <ul>
+         <li>
+            <a href="#lookup">CDISC Lookup view</a>
+         </li>
+         <li>
+            <a href="#mapping">FHIR mapping view</a>
+         </li>
+      </ul>
+      <div id="lookup">
+         <table class="grid"
+                style="width:150%;word-break:break-word;table-layout:fixed;">
+            <col style="width:15%"/>
+            <col style="width:7.5%"/>
+            <col style="width:7.5%"/>
+            <col style="width:15%;"/>
+            <col style="width:20%;"/>
+            <col style="width:35%;"/>
+            <thead style="background-color:PowderBlue;">
+               <tr>
+                  <th colspan="3" style="text-align:center;">CDISC</th>
+                  <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+                  <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+               </tr>
+               <tr style="text-align:center;">
+                  <th style="text-align:center;">Label</th>
+                  <th style="text-align:center;">CDASH</th>
+                  <th style="text-align:center;">SDTM</th>
+                  <th style="text-align:center;">Element</th>
+                  <th style="text-align:center;">FHIRPath</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <th>Study Identifier</th>
+                  <td>
+                     <span style="font-weight:bold" title="A unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                  </td>
+                  <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+               </tr>
+               <tr>
+                  <th>Study Site Identifier</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="A facility in which study activities are conducted.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                  </td>
+                  <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+               </tr>
+               <tr>
+                  <th>Subject Identifier for the Study</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique subject identifier within a site and a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Identifiers assigned to this research subject for a study.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                  </td>
+                  <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+                     <br/>No standard way to decide which subject identifier to use</td>
+               </tr>
+               <tr>
+                  <th>Visit Name</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Visit Date</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Date the clinical encounter occurred (or started).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"/>
+                  </td>
+                  <td>
+                     <span title="The start and end time of the encounter.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.period">Encounter.period</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+                  </td>
+                  <td>
+                     <p>Observation.encounter.resolve().period.start</p>
+                  </td>
+                  <td>Linked via Observation.encounter</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Performed</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="The status of the result value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status=('final' or 'cancelled')</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Date</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Observation.effectiveDateTime</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Time</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td>
+                     <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Observation.effectiveDateTime</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Category for Vital Signs</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A grouping of topic-variable values based on user-defined characteristics.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to define a category of related records.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="A code that classifies the general type of observation being made.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+                  </td>
+                  <td>
+                     <p>Observation.category</p>
+                  </td>
+                  <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+                     <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
 This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
-         </tr>
-         <tr>
-            <th>Subcategory for Vital Signs</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A sub-division of the VSCAT values based on user-defined characteristics.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="A further categorization of a measurement or examination.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="A code that classifies the general type of observation being made.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
-            </td>
-            <td>
-               <p>Observation.category</p>
-            </td>
-            <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
-               <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+               </tr>
+               <tr>
+                  <th>Subcategory for Vital Signs</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A sub-division of the VSCAT values based on user-defined characteristics.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A further categorization of a measurement or examination.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="A code that classifies the general type of observation being made.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+                  </td>
+                  <td>
+                     <p>Observation.category</p>
+                  </td>
+                  <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+                     <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
 This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Group ID</th>
-            <td>
-               <span style="font-weight:bold">VSGRPID</span>
-            </td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Used to tie together a block of related records in a single domain for a subject.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td colspan="2" style="background-color:LightGray">This would typically be done by having the related Observations being 'membersOf' a common parent Observation.</td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Vital Signs Planned Time Point Name</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A text description of planned time point when measurements should be taken as defined in the protocol.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.extension">Observation.extension</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
-            </td>
-            <td>
-               <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
-            </td>
-            <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
-         </tr>
-         <tr>
-            <th rowspan="2">Vital Signs Completion Status</th>
-            <td rowspan="2">
-               <span style="font-weight:bold"
-                     title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td rowspan="2">
-               <span style="font-weight:bold"
-                     title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="The status of the result value.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-            </td>
-            <td>
-               <p>Observation.status</p>
-               <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
-            </td>
-            <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
-         </tr>
-         <tr>
-            <td>
-               <span title="The status of the order.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-            </td>
-            <td>
-               <p>Observation.status</p>
-               <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
-            </td>
-         </tr>
-         <tr>
-            <th>VS Result or Finding in Original Units</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Result of the vital signs measurement as originally received or collected.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Result of the vital signs measurement as originally received or collected.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char</td>
-            <td>
-               <span title="The information determined as a result of making the observation, if the information has a simple value.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
-            <td>
-               <p>Observation.valueQuantity.value</p>
-            </td>
-            <td>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </td>
-         </tr>
-         <tr>
-            <th>VS Original Units</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The unit of the result as originally received or collected.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
-               </span>
-               <br/>Core: Exp<br/>Type: Char</td>
-            <td>
-               <span title="The information determined as a result of making the observation, if the information has a simple value.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
-            <td>
-               <p>Observation.valueQuantity.unit</p>
-            </td>
-            <td/>
-         </tr>
-         <tr>
-            <th>Vital Signs Clinical Significance</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="An indication whether the vital sign result was clinically significant.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">SUPPVS.QVAL</span>
-            </td>
-            <td>
-               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
-            </td>
-            <td>
-               <p>Observation.interpretation</p>
-            </td>
-            <td>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
-         </tr>
-         <tr>
-            <th rowspan="2">Vital Signs Position of Subject</th>
-            <td rowspan="2">
-               <span style="font-weight:bold"
-                     title="The position of the subject during a measurement or examination.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
-               </span>
-               <br/>Core: R/C<br/>Type: Char</td>
-            <td rowspan="2">
-               <span style="font-weight:bold"
-                     title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.code</p>
-            </td>
-            <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
-         </tr>
-         <tr>
-            <td>
-               <span title="Indicates the mechanism used to perform the observation.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.method">Observation.method</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-methods">ObservationMethod</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.method</p>
-            </td>
-         </tr>
-         <tr>
-            <th>Location of Vital Signs Measurement</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.bodySite</p>
-            </td>
-            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Laterality</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Qualifier for anatomical location further detailing the side of the body.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.bodySite</p>
-            </td>
-            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Directionality</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">VSDIR*</span>
-            </td>
-            <td>
-               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
-               </span>
-               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.bodySite</p>
-            </td>
-            <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Test code</th>
-            <td>
-               <span style="font-weight:bold">VSTESTCD</span>
-            </td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.code.coding.code</p>
-            </td>
-            <td>coding.display and coding.code (plus coding.system)</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Test Name</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="Descriptive name of the test or examination used to obtain the measurement or finding.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
-               </span>
-               <br/>Core: HR<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
-               </span>
-               <br/>Core: Req<br/>Type: Char</td>
-            <td>
-               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
-               </span>
-               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
-               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
-               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
-            </td>
-            <td>
-               <p>Observation.code.coding.display</p>
-            </td>
-            <td>coding.display and coding.code (plus coding.system)</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Sponsor-Defined Identifier</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold"
-                     title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
-                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
-               </span>
-               <br/>Core: Perm<br/>Type: Char</td>
-            <td>
-               <span title="A unique identifier assigned to this observation.">
-                  <a style="font-weight:bold"
-                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.identifier">Observation.identifier</a>
-               </span>
-               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
-            </td>
-            <td>
-               <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
-            </td>
-            <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</td>
-         </tr>
-         <tr>
-            <th>Vital Signs Repetition Number</th>
-            <td>
-               <span style="font-weight:bold"
-                     title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
-                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
-               </span>
-               <br/>Core: O<br/>Type: Char</td>
-            <td>
-               <span style="font-weight:bold">SUPPVS.QVAL</span>
-            </td>
-            <td colspan="2" style="background-color:LightGray">This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</td>
-            <td/>
-         </tr>
-      </tbody>
-   </table>
+               </tr>
+               <tr>
+                  <th>Vital Signs Group ID</th>
+                  <td>
+                     <span style="font-weight:bold">VSGRPID</span>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to tie together a block of related records in a single domain for a subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">This would typically be done by having the related Observations being 'membersOf' a common parent Observation.</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Planned Time Point Name</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A text description of planned time point when measurements should be taken as defined in the protocol.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.extension">Observation.extension</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+                  </td>
+                  <td>
+                     <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
+                  </td>
+                  <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
+               </tr>
+               <tr>
+                  <th rowspan="2">Vital Signs Completion Status</th>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="The status of the result value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status</p>
+                     <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
+                  </td>
+                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="The status of the order.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status</p>
+                     <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th>VS Result or Finding in Original Units</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Result of the vital signs measurement as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Result of the vital signs measurement as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td>
+                     <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
+                  <td>
+                     <p>Observation.valueQuantity.value</p>
+                  </td>
+                  <td>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </td>
+               </tr>
+               <tr>
+                  <th>VS Original Units</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The unit of the result as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td>
+                     <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
+                  <td>
+                     <p>Observation.valueQuantity.unit</p>
+                  </td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Clinical Significance</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An indication whether the vital sign result was clinically significant.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPVS.QVAL</span>
+                  </td>
+                  <td>
+                     <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+                  </td>
+                  <td>
+                     <p>Observation.interpretation</p>
+                  </td>
+                  <td>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
+               </tr>
+               <tr>
+                  <th rowspan="2">Vital Signs Position of Subject</th>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="The position of the subject during a measurement or examination.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code</p>
+                  </td>
+                  <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="Indicates the mechanism used to perform the observation.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.method">Observation.method</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-methods">ObservationMethod</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.method</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Location of Vital Signs Measurement</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Laterality</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier for anatomical location further detailing the side of the body.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Directionality</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">VSDIR*</span>
+                  </td>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Test code</th>
+                  <td>
+                     <span style="font-weight:bold">VSTESTCD</span>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code.coding.code</p>
+                  </td>
+                  <td>coding.display and coding.code (plus coding.system)</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Test Name</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Descriptive name of the test or examination used to obtain the measurement or finding.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code.coding.display</p>
+                  </td>
+                  <td>coding.display and coding.code (plus coding.system)</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Sponsor-Defined Identifier</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>
+                     <span title="A unique identifier assigned to this observation.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.identifier">Observation.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
+                  </td>
+                  <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Repetition Number</th>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPVS.QVAL</span>
+                  </td>
+                  <td colspan="2" style="background-color:LightGray">This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</td>
+                  <td/>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div id="mapping">
+         <table class="grid"
+                style="width:150%;word-break:break-word;table-layout:fixed;">
+            <col style="width:15%"/>
+            <col style="width:15%;"/>
+            <col style="width:20%;"/>
+            <col style="width:7.5%"/>
+            <col style="width:7.5%"/>
+            <col style="width:35%;"/>
+            <thead style="background-color:PowderBlue;">
+               <tr>
+                  <th/>
+                  <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+                  <th colspan="2" style="text-align:center;">CDISC</th>
+                  <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+               </tr>
+               <tr style="text-align:center;">
+                  <th style="text-align:center;">Label</th>
+                  <th style="text-align:center;">Element</th>
+                  <th style="text-align:center;">FHIRPath</th>
+                  <th style="text-align:center;">CDASH</th>
+                  <th style="text-align:center;">SDTM</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <th>Study Identifier</th>
+                  <td>
+                     <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold" title="A unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold" title="Unique identifier for a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+               </tr>
+               <tr>
+                  <th>Study Site Identifier</th>
+                  <td>
+                     <span title="A facility in which study activities are conducted.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Unique identifier for a site within a study.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+               </tr>
+               <tr>
+                  <th>Subject Identifier for the Study</th>
+                  <td>
+                     <span title="Identifiers assigned to this research subject for a study.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A unique subject identifier within a site and a study.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
+                     <br/>No standard way to decide which subject identifier to use</td>
+               </tr>
+               <tr>
+                  <th>Visit Name</th>
+                  <td colspan="2" style="background-color:LightGray">Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Visit Date</th>
+                  <td>
+                     <span title="The start and end time of the encounter.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.period">Encounter.period</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+                  </td>
+                  <td>
+                     <p>Observation.encounter.resolve().period.start</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Date the clinical encounter occurred (or started).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"/>
+                  </td>
+                  <td>Linked via Observation.encounter</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Performed</th>
+                  <td>
+                     <span title="The status of the result value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status=('final' or 'cancelled')</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Date</th>
+                  <td>
+                     <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Observation.effectiveDateTime</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Time</th>
+                  <td>
+                     <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Observation.effectiveDateTime</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Category for Vital Signs</th>
+                  <td>
+                     <span title="A code that classifies the general type of observation being made.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+                  </td>
+                  <td>
+                     <p>Observation.category</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A grouping of topic-variable values based on user-defined characteristics.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to define a category of related records.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+                     <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
+               </tr>
+               <tr>
+                  <th>Subcategory for Vital Signs</th>
+                  <td>
+                     <span title="A code that classifies the general type of observation being made.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+                  </td>
+                  <td>
+                     <p>Observation.category</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A sub-division of the VSCAT values based on user-defined characteristics.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A further categorization of a measurement or examination.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
+                     <br/>Observation.category.coding.system="http://terminology.hl7.org/CodeSystem/observation-category" + Observation.category.coding.code="vital-signs".
+This combination can be used to extract vital sign data points from EHR system and correctly assign them to the VS domain.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Group ID</th>
+                  <td colspan="2" style="background-color:LightGray">This would typically be done by having the related Observations being 'membersOf' a common parent Observation.</td>
+                  <td>
+                     <span style="font-weight:bold">VSGRPID</span>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Used to tie together a block of related records in a single domain for a subject.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Planned Time Point Name</th>
+                  <td>
+                     <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.extension">Observation.extension</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+                  </td>
+                  <td>
+                     <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A text description of planned time point when measurements should be taken as defined in the protocol.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
+               </tr>
+               <tr>
+                  <th rowspan="2">Vital Signs Completion Status</th>
+                  <td>
+                     <span title="The status of the result value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status</p>
+                     <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
+                  </td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="The status of the order.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.status</p>
+                     <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th>VS Result or Finding in Original Units</th>
+                  <td>
+                     <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
+                  <td>
+                     <p>Observation.valueQuantity.value</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Result of the vital signs measurement as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Result of the vital signs measurement as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </td>
+               </tr>
+               <tr>
+                  <th>VS Original Units</th>
+                  <td>
+                     <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
+                  <td>
+                     <p>Observation.valueQuantity.unit</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The unit of the result as originally received or collected.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
+                     </span>
+                     <br/>Core: Exp<br/>Type: Char</td>
+                  <td/>
+               </tr>
+               <tr>
+                  <th>Vital Signs Clinical Significance</th>
+                  <td>
+                     <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+                  </td>
+                  <td>
+                     <p>Observation.interpretation</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="An indication whether the vital sign result was clinically significant.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPVS.QVAL</span>
+                  </td>
+                  <td>If clinical significance is a boolean, then the mapping is different from the existing http://hl7.org/fhir/ValueSet/observation-interpretation ValueSet. Meaning, the values of "normal", "high", :low", etc. can reside in the --NRIND variable. There are also cases where clinical significant outcome details can exist with corresponding details that don't fit into either of those mentioned buckets. </td>
+               </tr>
+               <tr>
+                  <th rowspan="2">Vital Signs Position of Subject</th>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code</p>
+                  </td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="The position of the subject during a measurement or examination.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
+                     </span>
+                     <br/>Core: R/C<br/>Type: Char</td>
+                  <td rowspan="2">
+                     <span style="font-weight:bold"
+                           title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="Indicates the mechanism used to perform the observation.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.method">Observation.method</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-methods">ObservationMethod</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.method</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Location of Vital Signs Measurement</th>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Laterality</th>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier for anatomical location further detailing the side of the body.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Directionality</th>
+                  <td>
+                     <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.bodySite</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">VSDIR*</span>
+                  </td>
+                  <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Test code</th>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code.coding.code</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold">VSTESTCD</span>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>coding.display and coding.code (plus coding.system)</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Test Name</th>
+                  <td>
+                     <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+                     </span>
+                     <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+                  </td>
+                  <td>
+                     <p>Observation.code.coding.display</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Descriptive name of the test or examination used to obtain the measurement or finding.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
+                     </span>
+                     <br/>Core: HR<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
+                     </span>
+                     <br/>Core: Req<br/>Type: Char</td>
+                  <td>coding.display and coding.code (plus coding.system)</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Sponsor-Defined Identifier</th>
+                  <td>
+                     <span title="A unique identifier assigned to this observation.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}observation-definitions.html#Observation.identifier">Observation.identifier</a>
+                     </span>
+                     <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+                  </td>
+                  <td>
+                     <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
+                  </td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
+                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
+                     </span>
+                     <br/>Core: Perm<br/>Type: Char</td>
+                  <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</td>
+               </tr>
+               <tr>
+                  <th>Vital Signs Repetition Number</th>
+                  <td colspan="2" style="background-color:LightGray">This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</td>
+                  <td>
+                     <span style="font-weight:bold"
+                           title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
+                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td>
+                     <span style="font-weight:bold">SUPPVS.QVAL</span>
+                  </td>
+                  <td/>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
 </div>
+        {% assign includetabscripts = 'true' %}
+      

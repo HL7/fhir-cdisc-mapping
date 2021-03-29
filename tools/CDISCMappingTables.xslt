@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xs fn">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
 	<xsl:variable name="linkPrefix" select="'http://cdisc.org'"/>
 	<xsl:template match="/mappings">
@@ -16,114 +16,190 @@
     <xsl:for-each select="domain">
       <xsl:result-document href="../input/includes/{@code}-table.xml" encoding="UTF-8">
         <xsl:apply-templates select="."/>
+        {% assign includetabscripts = 'true' %}
       </xsl:result-document>
     </xsl:for-each>
 	</xsl:template>
 	<xsl:template match="domain">
-    <xsl:variable name="cdiscConcepts" as="xs:string+" select="distinct-values(element/cdisc/@spec)"/>
     <div>
       <p>
-        Guidance on interpreting the table can be found <a href="overview.html#mappings">here</a>.
+        Guidance on interpreting the tables can be found <a href="overview.html#mappings">here</a>.
       </p>
-      <table class="grid" style="width:150%;word-break:break-word;table-layout:fixed;">
-        <xsl:choose>
-          <xsl:when test="count($cdiscConcepts)=1">
-            <col style="width:15%"/>
-            <col style="width:20%"/>
-            <col style="width:15%;"/>
-            <col style="width:20%;"/>
-            <col style="width:30%;"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <col style="width:15%"/>
-            <col style="width:7.5%"/>
-            <col style="width:7.5%"/>
-            <col style="width:15%;"/>
-            <col style="width:20%;"/>
-            <col style="width:35%;"/>
-          </xsl:otherwise>
-        </xsl:choose>
-        <thead style="background-color:PowderBlue;">
-          <tr>
-            <th colspan="{count($cdiscConcepts)+1}" style="text-align:center;">CDISC</th>
-            <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
-            <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
-          </tr>
-          <tr style="text-align:center;">
-            <th style="text-align:center;">Name</th>
-            <xsl:for-each select="$cdiscConcepts">
-              <th style="text-align:center;">
-                <xsl:value-of select="."/>
-              </th>
-            </xsl:for-each>
-            <th style="text-align:center;">Element</th>
-            <th style="text-align:center;">FHIRPath</th>
-          </tr>
-        </thead>
-        <tbody>
-          <xsl:for-each select="element">
-            <xsl:variable name="element" as="element(element)" select="."/>
-            <xsl:variable name="rows" as="xs:integer" select="if (mapping) then count(mapping) else 1"/>
-            <tr>
-              <th>
-                <xsl:if test="$rows!=1">
-                  <xsl:attribute name="rowspan" select="$rows"/>
-                </xsl:if>
-                <xsl:value-of select="@name"/>
-              </th>
+      <div id="tabs">
+        <ul>
+          <li>
+            <a href="#lookup">CDISC Lookup view</a>
+          </li>
+          <li>
+            <a href="#mapping">FHIR mapping view</a>
+          </li>
+        </ul>
+        <div id="lookup">
+          <xsl:call-template name="doTable">
+            <xsl:with-param name="forward" select="true()"/>
+          </xsl:call-template>
+        </div>
+        <div id="mapping">
+          <xsl:call-template name="doTable">
+            <xsl:with-param name="forward" select="false()"/>
+          </xsl:call-template>
+        </div>
+      </div>
+    </div>
+	</xsl:template>
+	<xsl:template name="doTable">
+    <xsl:param name="forward" as="xs:boolean"/>
+    <xsl:variable name="cdiscConcepts" as="xs:string+" select="distinct-values(element/cdisc/@spec)"/>
+    <table class="grid" style="width:150%;word-break:break-word;table-layout:fixed;">
+      <xsl:choose>
+        <xsl:when test="count($cdiscConcepts)=1">
+          <col style="width:15%"/>
+          <xsl:choose>
+            <xsl:when test="$forward">
+              <col style="width:20%"/>
+              <col style="width:15%;"/>
+              <col style="width:20%;"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <col style="width:15%;"/>
+              <col style="width:20%;"/>
+              <col style="width:20%"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <col style="width:30%;"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <col style="width:15%"/>
+          <xsl:choose>
+            <xsl:when test="$forward">
+              <col style="width:7.5%"/>
+              <col style="width:7.5%"/>
+              <col style="width:15%;"/>
+              <col style="width:20%;"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <col style="width:15%;"/>
+              <col style="width:20%;"/>
+              <col style="width:7.5%"/>
+              <col style="width:7.5%"/>
+            </xsl:otherwise>
+          </xsl:choose>
+          <col style="width:35%;"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <thead style="background-color:PowderBlue;">
+        <tr>
+          <xsl:choose>
+            <xsl:when test="$forward">
+              <th colspan="{count($cdiscConcepts)+1}" style="text-align:center;">CDISC</th>
+              <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+            </xsl:when>
+            <xsl:otherwise>
+              <th/>
+              <th colspan="2" style="text-align:center;">FHIR map (or gap)</th>
+              <th colspan="{count($cdiscConcepts)}" style="text-align:center;">CDISC</th>
+            </xsl:otherwise>
+          </xsl:choose>
+          <th rowspan="2" style="vertical-align:bottom;text-align:center;">Comment</th>
+        </tr>
+        <tr style="text-align:center;">
+          <th style="text-align:center;">Label</th>
+          <xsl:choose>
+            <xsl:when test="$forward">
               <xsl:for-each select="$cdiscConcepts">
-                <td>
-                  <xsl:if test="$rows!=1">
-                    <xsl:attribute name="rowspan" select="$rows"/>
-                  </xsl:if>
-                  <xsl:for-each select="$element/cdisc[@spec=current()]">
-                    <span style="font-weight:bold">
-                      <xsl:for-each select="definition">
-                        <xsl:attribute name="title">
-                          <xsl:apply-templates mode="htmlToString" select="node()"/>
-                        </xsl:attribute>
-                      </xsl:for-each>
-                      <xsl:choose>
-                        <xsl:when test="@link">
-                          <a href="{$linkPrefix}{@link}">
-                            <xsl:value-of select="@label"/>
-                          </a>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <xsl:value-of select="@label"/>
-                        </xsl:otherwise>
-                      </xsl:choose>
-                    </span>
-                    <xsl:if test="@core">
-                      <br/>
-                      <xsl:value-of select="concat('Core:&#xA0;', @core)"/>
-                      <br/>
-                      <xsl:value-of select="concat('Type:&#xA0;', @type)"/>
-                      <xsl:if test="@valueDomain|valueList">
-                        <br/>
-                        <xsl:value-of select="concat('values:&#xA0;', @valueDomain,string-join(valueList/value, ', '))"/>
-                      </xsl:if>
-                    </xsl:if>
-                  </xsl:for-each>
-                </td>
+                <th style="text-align:center;">
+                  <xsl:value-of select="."/>
+                </th>
               </xsl:for-each>
-              <xsl:apply-templates select="mapping[1]|gap"/>
+              <th style="text-align:center;">Element</th>
+              <th style="text-align:center;">FHIRPath</th>
+            </xsl:when>
+            <xsl:otherwise>
+              <th style="text-align:center;">Element</th>
+              <th style="text-align:center;">FHIRPath</th>
+              <xsl:for-each select="$cdiscConcepts">
+                <th style="text-align:center;">
+                  <xsl:value-of select="."/>
+                </th>
+              </xsl:for-each>
+            </xsl:otherwise>
+          </xsl:choose>
+        </tr>
+      </thead>
+      <tbody>
+        <xsl:for-each select="element">
+          <xsl:variable name="element" as="element(element)" select="."/>
+          <xsl:variable name="rows" as="xs:integer" select="if (mapping) then count(mapping) else 1"/>
+          <xsl:variable name="cdisc" as="element(td)+">
+            <xsl:for-each select="$cdiscConcepts">
               <td>
                 <xsl:if test="$rows!=1">
                   <xsl:attribute name="rowspan" select="$rows"/>
                 </xsl:if>
-                <xsl:copy-of select="comment/node()"/>
+                <xsl:for-each select="$element/cdisc[@spec=current()]">
+                  <span style="font-weight:bold">
+                    <xsl:for-each select="definition">
+                      <xsl:attribute name="title">
+                        <xsl:apply-templates mode="htmlToString" select="node()"/>
+                      </xsl:attribute>
+                    </xsl:for-each>
+                    <xsl:choose>
+                      <xsl:when test="@link">
+                        <a href="{$linkPrefix}{@link}">
+                          <xsl:value-of select="@label"/>
+                        </a>
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <xsl:value-of select="@label"/>
+                      </xsl:otherwise>
+                    </xsl:choose>
+                  </span>
+                  <xsl:if test="@core">
+                    <br/>
+                    <xsl:value-of select="concat('Core:&#xA0;', @core)"/>
+                    <br/>
+                    <xsl:value-of select="concat('Type:&#xA0;', @type)"/>
+                    <xsl:if test="@valueDomain|valueList">
+                      <br/>
+                      <xsl:value-of select="concat('values:&#xA0;', @valueDomain,string-join(valueList/value, ', '))"/>
+                    </xsl:if>
+                  </xsl:if>
+                </xsl:for-each>
               </td>
-            </tr>
-            <xsl:for-each select="mapping[position()&gt;1]">
-              <tr>
-                <xsl:apply-templates select="."/>              
-              </tr>
             </xsl:for-each>
+          </xsl:variable>
+          <tr>
+            <th>
+              <xsl:if test="$rows!=1">
+                <xsl:attribute name="rowspan" select="$rows"/>
+              </xsl:if>
+              <xsl:value-of select="@name"/>
+            </th>
+            <xsl:choose>
+              <xsl:when test="$forward">
+                <xsl:copy-of select="$cdisc"/>
+                <xsl:apply-templates select="mapping[1]|gap"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:apply-templates select="mapping[1]|gap"/>
+                <xsl:copy-of select="$cdisc"/>
+              </xsl:otherwise>
+            </xsl:choose>
+            <td>
+              <xsl:if test="$rows!=1">
+                <xsl:attribute name="rowspan" select="$rows"/>
+              </xsl:if>
+              <xsl:copy-of select="comment/node()"/>
+            </td>
+          </tr>
+          <xsl:for-each select="mapping[position()&gt;1]">
+            <tr>
+              <xsl:apply-templates select="."/>              
+            </tr>
           </xsl:for-each>
-        </tbody>
-      </table>
-    </div>
+        </xsl:for-each>
+      </tbody>
+    </table>
 	</xsl:template>
 	<xsl:template match="gap">
     <td colspan="2" style="background-color:LightGray">
