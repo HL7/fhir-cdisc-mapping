@@ -34,7 +34,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">STUDYID</span>
             </td>
-            <td>ResearchStudy.identifier</td>
+            <td>ResearchStudy.ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
             </td>
@@ -48,7 +48,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SITEID</span>
             </td>
-            <td>ResearchStudy.identifier</td>
+            <td>ResearchStudy.ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
             </td>
@@ -62,7 +62,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
             </td>
@@ -76,7 +76,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
             </td>
-            <td>Patient.birthDate</td>
+            <td>Patient.Patient.birthDate</td>
             <td>
                <p>Patient.birthDate</p>
             </td>
@@ -91,7 +91,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
             </td>
-            <td>Patient.birthDate</td>
+            <td>Patient.Patient.birthDate</td>
             <td>
                <p>Patient.birthDate.substring(8,4)</p>
             </td>
@@ -105,7 +105,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
             </td>
-            <td>Patient.birthDate</td>
+            <td>Patient.Patient.birthDate</td>
             <td>
                <p>Patient.birthDate.substring(5,2)</p>
             </td>
@@ -119,7 +119,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
             </td>
-            <td>Patient.birthDate</td>
+            <td>Patient.Patient.birthDate</td>
             <td>
                <p>Patient.birthDate.substring(0,4)</p>
             </td>
@@ -133,7 +133,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">BRTHDTC</span>
             </td>
-            <td>Patient.extension</td>
+            <td>Patient.Patient.extension</td>
             <td>
                <p>Patient.extension(patient-birthTime).valueTime</p>
             </td>
@@ -170,7 +170,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission data set, concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable BRTHDTC in ISO 860 format.">DMDTC</span>
             </td>
-            <td>Patient.meta</td>
+            <td>Patient.Patient.meta</td>
             <td>
                <p>Patient.meta.lastUpdated</p>
             </td>
@@ -185,7 +185,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">SEX</span>
             </td>
-            <td>Patient.gender</td>
+            <td>Patient.Patient.gender</td>
             <td>
                <p>Patient.gender</p>
             </td>

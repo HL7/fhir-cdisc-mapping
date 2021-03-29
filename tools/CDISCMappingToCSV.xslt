@@ -2,10 +2,18 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:f="http://example.org/foo">
 	<xsl:output method="text" encoding="UTF-8"/>
 	<xsl:template match="/mappings">
-    <xsl:text>Domain,CDISC Spec1,CDISC Element1,CDISC Description1,CDISC Spec2,CDISC Element2,CDISC Description2,FHIR Element,FHIR Path,FHIR Gap,Comment&#xa;</xsl:text>
+    <xsl:text>Domain,CDASH/Lab Element,CDASH Core,CDASH Type,CDASH Definition,CDASH Link,CDASH-SDTM Map Comments,SDTM Element,SDTM Core,SDTM Codes,Value List,SDTM Definition,SDTM Link,FHIR Resource,FHIR Element,FHIR Path,FHIR Min,FHIR Max,FHIR Type,FHIR Binding,FHIR Constraint,FHIR Definition,FHIR Comment,FHIR Gap,Comment&#xa;</xsl:text>
     <xsl:for-each select="domain/element">
       <xsl:for-each select="mapping/path|gap">
-        <xsl:value-of select="concat(ancestor::domain/@code, ',', f:escape(ancestor::element/cdisc[1]/@spec), ',&quot;', f:escape(ancestor::element/cdisc[1]/@label), '&quot;,&quot;')"/>
+        <xsl:value-of select="concat(ancestor::domain/@code, ',')"/>
+        <xsl:if test="not(ancestor::element/cdisc[@spec=('LAB','CDASH')])">,,,,,</xsl:if>
+        <xsl:for-each select="ancestor::element/cdisc[@spec=('LAB','CDASH')]">
+          <xsl:value-of select="concat('&quot;', f:escape(@label), '&quot;,&quot;', @core, '&quot;,&quot;', @type, '&quot;,&quot;')"/>
+          <xsl:apply-templates mode="htmlToString" select="description/node()|definition/node()"/>
+          <xsl:value-of select="concat('&quot;,&quot;', @link, '&quot;,')"/>
+        </xsl:for-each>
+        
+        , f:escape(ancestor::element/cdisc[1]/@spec), ',&quot;', f:escape(ancestor::element/cdisc[1]/@label), '&quot;,&quot;')"/>
         <xsl:apply-templates mode="htmlToString" select="ancestor::element/cdisc[1]/description/node()"/>
         <xsl:value-of select="concat('&quot;,', f:escape(ancestor::element/cdisc[2]/@spec), ',&quot;', f:escape(ancestor::element/cdisc[2]/@label), '&quot;,&quot;')"/>
         <xsl:apply-templates mode="htmlToString" select="ancestor::element/cdisc[2]/description/node()"/>

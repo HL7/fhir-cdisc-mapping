@@ -34,7 +34,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">STUDYID</span>
             </td>
-            <td>AdverseEvent.study</td>
+            <td>AdverseEvent.AdverseEvent.study</td>
             <td>
                <p>AdverseEvent.study.resolve().partOf.resolve().identifier.value</p>
                <p>ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value</p>
@@ -50,7 +50,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
             </td>
-            <td>ResearchStudy.site</td>
+            <td>ResearchStudy.ResearchStudy.site</td>
             <td>
                <p>AdverseEvent.study.resolve().identifier.value</p>
                <p>ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier.value</p>
@@ -66,7 +66,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=AdverseEvent.subject).identifier.value</p>
             </td>
@@ -92,7 +92,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.">AECAT</span>
             </td>
-            <td>AdverseEvent.category</td>
+            <td>AdverseEvent.AdverseEvent.category</td>
             <td>
                <p>AdverseEvent.category</p>
             </td>
@@ -107,7 +107,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCAT</span>
             </td>
-            <td>AdverseEvent.category</td>
+            <td>AdverseEvent.AdverseEvent.category</td>
             <td>
                <p>AdverseEvent.category</p>
             </td>
@@ -122,7 +122,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">AESPID</span>
             </td>
-            <td>AdverseEvent.identifier</td>
+            <td>AdverseEvent.AdverseEvent.identifier</td>
             <td>
                <p>AdverseEvent.identifier.where(assigner=sponsor).value</p>
                <p>AdverseEvent.refID</p>
@@ -137,7 +137,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AETERM</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -173,7 +173,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.">AESTDTC</span>
             </td>
-            <td>AdverseEvent.date</td>
+            <td>AdverseEvent.AdverseEvent.date</td>
             <td>
                <p>AdverseEvent.date(date portion)</p>
             </td>
@@ -187,7 +187,7 @@
             <td>
                <span title="This does not map directly to an SDTMIG variable. For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable AESTDTC in ISO 8601 format.">AESTDTC</span>
             </td>
-            <td>AdverseEvent.date</td>
+            <td>AdverseEvent.AdverseEvent.date</td>
             <td>
                <p>AdverseEvent.date(time portion)</p>
             </td>
@@ -201,7 +201,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AELOC</span>
             </td>
-            <td>Condition.bodySite</td>
+            <td>Condition.Condition.bodySite</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
@@ -215,7 +215,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AELAT*</span>
             </td>
-            <td>Condition.bodySite</td>
+            <td>Condition.Condition.bodySite</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
@@ -229,7 +229,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEDIR*</span>
             </td>
-            <td>Condition.bodySite</td>
+            <td>Condition.Condition.bodySite</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
@@ -243,7 +243,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEPORTOT*</span>
             </td>
-            <td>Condition.bodySite</td>
+            <td>Condition.Condition.bodySite</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().bodySite</p>
             </td>
@@ -269,7 +269,7 @@
             <td>
                <span>AEENDTC</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.occurrence).valuePeriod.end</p>
             </td>
@@ -283,7 +283,7 @@
             <td>
                <span>AEENDTC</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.occurrence).valuePeriod.end</p>
             </td>
@@ -297,7 +297,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESEV</span>
             </td>
-            <td>AdverseEvent.severity</td>
+            <td>AdverseEvent.AdverseEvent.severity</td>
             <td>
                <p>AdverseEvent.severity</p>
             </td>
@@ -322,7 +322,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESER</span>
             </td>
-            <td>AdverseEvent.seriousness</td>
+            <td>AdverseEvent.AdverseEvent.seriousness</td>
             <td>
                <p>AdverseEvent.seriousness</p>
             </td>
@@ -336,7 +336,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESDTH</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome='fatal'</p>
             </td>
@@ -350,7 +350,7 @@
             <td>
                <span title="This field does not map directly to an SDTMIG variable.  For the SDTM dataset, concatenate all collected CDASH DATE and TIME components and populate the SDTM variable DTHDTC in ISO 8601 format.">DM.DTHDTC</span>
             </td>
-            <td>Patient.deceasedDateTime</td>
+            <td>Patient.Patient.deceasedDateTime</td>
             <td>
                <p>Patient.deceasedDateTime</p>
             </td>
@@ -364,7 +364,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESLIFE</span>
             </td>
-            <td>AdverseEvent.seriousness</td>
+            <td>AdverseEvent.AdverseEvent.seriousness</td>
             <td>
                <p>AdverseEvent.seriousness</p>
             </td>
@@ -389,7 +389,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESDISAB</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -403,7 +403,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCONG</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -417,7 +417,7 @@
             <td>
                <span title="If the details regarding Serious As are collected I the clinical database, then it is recommended that a separate Yes/No variable be defined for each Serious AE type.  ">SUPPAE.QVAL</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -431,7 +431,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESMIE</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -445,7 +445,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESCAN</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -459,7 +459,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AESOD</span>
             </td>
-            <td>AdverseEvent.suspectEntity.causality.productRelatedness</td>
+            <td>AdverseEvent.AdverseEvent.suspectEntity.causality.productRelatedness</td>
             <td>
                <p>AdverseEvent.suspectEntity.causality.productRelatedness</p>
             </td>
@@ -473,7 +473,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEREL</span>
             </td>
-            <td>AdverseEvent.suspectEntity.causality.productRelatedness</td>
+            <td>AdverseEvent.AdverseEvent.suspectEntity.causality.productRelatedness</td>
             <td>
                <p>AdverseEvent.suspectEntity.causality.productRelatedness</p>
             </td>
@@ -487,7 +487,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEACN</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
             </td>
@@ -501,7 +501,7 @@
             <td>
                <span title="This does not map directly an SDTMIG variable.  The sponsor may submit this data in a SUPPAE-dataset where SUPPAE.QNAM = &#34;AEACNDEV&#34; and SUPPAE.QLABEL = &#34;Actions Taken with Device&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPAE.QVAL</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
             </td>
@@ -515,7 +515,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEACNOTH</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
             </td>
@@ -529,7 +529,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AEOUT</span>
             </td>
-            <td>AdverseEvent.outcome</td>
+            <td>AdverseEvent.AdverseEvent.outcome</td>
             <td>
                <p>AdverseEvent.outcome</p>
             </td>
@@ -598,7 +598,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">AECONTRT</span>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
             </td>
@@ -623,7 +623,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEDECOD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -637,7 +637,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AELLT</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -651,7 +651,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AELLTCD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -665,7 +665,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEPTCD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -679,7 +679,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLT</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -693,7 +693,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLTCD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -707,7 +707,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLGT</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -721,7 +721,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AEHLGTCD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -735,7 +735,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AESOC</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -749,7 +749,7 @@
             <td>
                <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  The sponsor is expected to provide the dictionary name and version used to map the terms.">AESOCCD</span>
             </td>
-            <td>Condition.code</td>
+            <td>Condition.Condition.code</td>
             <td>
                <p>AdverseEvent.resultingCondition.resolve().code</p>
             </td>
@@ -763,7 +763,7 @@
             <td>
                <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that the field is NOT SUBMITTED."/>
             </td>
-            <td>AdverseEvent.extension</td>
+            <td>AdverseEvent.AdverseEvent.extension</td>
             <td>
                <p>AdverseEvent.extension(AdverseEvent.mitigatingAction).extension(item).valueCodeableConcept</p>
             </td>

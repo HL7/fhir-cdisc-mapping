@@ -34,7 +34,7 @@
             <td>
                <span>DM.STUDYID</span>
             </td>
-            <td>ResearchStudy.identifier</td>
+            <td>ResearchStudy.ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -50,7 +50,7 @@
             <td>
                <span>DM.SITEID</span>
             </td>
-            <td>ResearchStudy.identifier</td>
+            <td>ResearchStudy.ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -64,7 +64,7 @@
             <td>
                <span>DM.INVID</span>
             </td>
-            <td>Practitioner.identifier</td>
+            <td>Practitioner.Practitioner.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
@@ -80,7 +80,7 @@
             <td>
                <span>DM.SUBJID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -95,7 +95,7 @@
             <td>
                <span>VISITNUM</span>
             </td>
-            <td>Encounter.identifier</td>
+            <td>Encounter.Encounter.identifier</td>
             <td>
                <p>Observation.encounter.resolve().identifier</p>
             </td>
@@ -109,7 +109,7 @@
             <td>
                <span>VISIT</span>
             </td>
-            <td>ActivityDefinition.name</td>
+            <td>ActivityDefinition.ActivityDefinition.name</td>
             <td>
                <p>Observation.encounter.resolve().extension(workflow-instantiates).valueCanonical.resolve().title</p>
             </td>
@@ -124,7 +124,7 @@
             <td>
                <span>LBREFID</span>
             </td>
-            <td>Specimen.accessionIdentifier</td>
+            <td>Specimen.Specimen.accessionIdentifier</td>
             <td>
                <p>Observation.specimen.resolve().accessionIdentifier.value</p>
             </td>
@@ -136,7 +136,7 @@
             <td rowspan="2">
                <span>LBDTC</span>
             </td>
-            <td>Specimen.collection.collectedDateTime</td>
+            <td>Specimen.Specimen.collection.collectedDateTime</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedDateTime</p>
             </td>
@@ -144,7 +144,7 @@
 To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</td>
          </tr>
          <tr>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>Specimen.Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.start</p>
             </td>
@@ -155,7 +155,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBENDTC</span>
             </td>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>Specimen.Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -170,7 +170,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBDUR*</span>
             </td>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>Specimen.Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod</p>
             </td>
@@ -184,7 +184,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBTPT</span>
             </td>
-            <td>Specimen.extension</td>
+            <td>Specimen.Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).extension('reference').valueReference.reference.resolve().title</p>
             </td>
@@ -198,7 +198,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBELTM</span>
             </td>
-            <td>Specimen.extension</td>
+            <td>Specimen.Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).extension('offset').valueDuration</p>
             </td>
@@ -212,7 +212,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBSPCCND</span>
             </td>
-            <td>Specimen.condition</td>
+            <td>Specimen.Specimen.condition</td>
             <td>
                <p>Observation.specimen.resolve().condition.coding.code</p>
             </td>
@@ -227,7 +227,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBSPEC</span>
             </td>
-            <td>Specimen.type</td>
+            <td>Specimen.Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().type.coding.display</p>
             </td>
@@ -242,7 +242,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <td>
                <span>LBFAST</span>
             </td>
-            <td>Specimen.collection.fastingStatusCodeableConcept</td>
+            <td>Specimen.Specimen.collection.fastingStatusCodeableConcept</td>
             <td>
                <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
             </td>
@@ -267,7 +267,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
             <td>
                <span>LBPOS*</span>
             </td>
-            <td>Specimen.collection</td>
+            <td>Specimen.Specimen.collection</td>
             <td>
                <p>Observation.specimen.resolve().collection.extension(observation-bodyPosition).valueCodeableConcept</p>
             </td>
@@ -281,7 +281,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
             <td>
                <span>LBSPCUFL*</span>
             </td>
-            <td>Specimen.status</td>
+            <td>Specimen.Specimen.status</td>
             <td>
                <p>Observation.specimen.resolve()status.where($this='Unsatisfactory')</p>
             </td>
@@ -296,14 +296,14 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
             <td rowspan="2">
                <span>LBCAT</span>
             </td>
-            <td>DiagnosticReport.category</td>
+            <td>DiagnosticReport.DiagnosticReport.category</td>
             <td>
                <p>DiagnosticReport.category.coding.where(system='LBSCAT').code</p>
             </td>
             <td rowspan="2">NOTE: In some cases, this may be inferred from the LOINC.  It might also be found by looking for the 'panel' Obsesrvation this Observation is a part of.  In most cases, translation will be required to sponsor-defined codes.  It may work best for the sponsor to categorize based on TESTCD values and ignore lab-reported and EHR-determined categories entirely.</td>
          </tr>
          <tr>
-            <td>DiagnosticReport.code</td>
+            <td>DiagnosticReport.DiagnosticReport.code</td>
             <td>
                <p>DiagnosticReport.code</p>
             </td>
@@ -316,7 +316,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
             <td rowspan="2">
                <span>LBSTAT</span>
             </td>
-            <td>ServiceRequest.doNotPerform</td>
+            <td>ServiceRequest.ServiceRequest.doNotPerform</td>
             <td>
                <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
@@ -330,7 +330,7 @@ Completed = &lt;blank&gt;
 </td>
          </tr>
          <tr>
-            <td>ServiceRequest.status</td>
+            <td>ServiceRequest.ServiceRequest.status</td>
             <td>
                <p>Observation.basedOn.resolve().status</p>
             </td>
@@ -341,7 +341,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBREASND</span>
             </td>
-            <td>Observation.dataAbsentReason</td>
+            <td>Observation.Observation.dataAbsentReason</td>
             <td>
                <p>Observation.dataAbsentReason.text</p>
             </td>
@@ -353,7 +353,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBTESTCD</span>
             </td>
-            <td>Observation.code</td>
+            <td>Observation.Observation.code</td>
             <td>
                <p>Observation.code.coding.where(selected=true).code</p>
             </td>
@@ -365,7 +365,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBTEST</span>
             </td>
-            <td>Observation.code</td>
+            <td>Observation.Observation.code</td>
             <td>
                <p>Observation.code.coding.where(selected=true).display</p>
             </td>
@@ -379,7 +379,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBLOINC</span>
             </td>
-            <td>Observation.code</td>
+            <td>Observation.Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system='LOINC').code</p>
             </td>
@@ -393,7 +393,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBNAM</span>
             </td>
-            <td>Organization.name</td>
+            <td>Organization.Organization.name</td>
             <td>
                <p>Observation.performer.where($this is Organization).resolve().name</p>
             </td>
@@ -407,7 +407,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBNRIND</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system ='NRIND')</p>
             </td>
@@ -419,7 +419,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBTOXGR</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.code</p>
             </td>
@@ -433,7 +433,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBTOX</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.version</p>
             </td>
@@ -447,7 +447,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBTOX</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).system</p>
             </td>
@@ -461,7 +461,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBORNRLO</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low</p>
             </td>
@@ -475,7 +475,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBORNRHI</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high</p>
             </td>
@@ -489,7 +489,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBSTNRC</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>Observation.Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.text</p>
             </td>
@@ -503,7 +503,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBORRES</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>Observation.Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.value</p>
                <p>Observation.valueCodeableConcept.text</p>
@@ -518,7 +518,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBORRESU</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>Observation.Observation.valueQuantity</td>
             <td>
                <p>Observation.valueQuantity.unit</p>
             </td>
@@ -532,7 +532,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>SUPPLB.QVAL</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -546,7 +546,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBMETHOD</span>
             </td>
-            <td>Observation.method</td>
+            <td>Observation.Observation.method</td>
             <td>
                <p>Observation.method</p>
             </td>
@@ -558,7 +558,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBLOC*</span>
             </td>
-            <td>Specimen.collection.bodySite</td>
+            <td>Specimen.Specimen.collection.bodySite</td>
             <td>
                <p>Observation.specimen.resolve().collection.bodySite</p>
             </td>
@@ -581,7 +581,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>USUBJID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>ResearchSubject.ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -595,7 +595,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBRESCAT*</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>Observation.Observation.interpretation</td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -609,7 +609,7 @@ Completed = &lt;blank&gt;
             <td>
                <span>LBANTREG*</span>
             </td>
-            <td>Specimen.collection.bodySite</td>
+            <td>Specimen.Specimen.collection.bodySite</td>
             <td>
                <p>Observation.specimen.resolve().collection.bodySite</p>
             </td>

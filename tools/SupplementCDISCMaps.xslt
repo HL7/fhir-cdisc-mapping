@@ -119,7 +119,9 @@
     </xsl:if>
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
+      <xsl:copy-of select="$element/@*"/>
       <xsl:apply-templates select="node()"/>
+      <xsl:copy-of select="$element/node()"/>
     </xsl:copy>
 	</xsl:template>
 </xsl:stylesheet>

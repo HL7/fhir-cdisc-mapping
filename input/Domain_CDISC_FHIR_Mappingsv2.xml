@@ -9,7 +9,7 @@
   <Author>Christine K Denney</Author>
   <LastAuthor>Lloyd McKenzie</LastAuthor>
   <Created>2018-06-06T18:12:11Z</Created>
-  <LastSaved>2021-03-28T05:03:17Z</LastSaved>
+  <LastSaved>2021-03-29T02:56:04Z</LastSaved>
   <Company>Eli Lilly and Company</Company>
   <Version>16.00</Version>
  </DocumentProperties>
@@ -21,8 +21,6 @@
   <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
-  <ActiveSheet>5</ActiveSheet>
-  <FirstVisibleSheet>1</FirstVisibleSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -3800,8 +3798,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Use the new extension to connect Observation to ResearchStudy.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="171.46875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study Name</Data><NamedCell
@@ -3819,8 +3816,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Use the new extension to connect Observation to ResearchStudy.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Transmission Type</Data><NamedCell
@@ -3828,7 +3824,7 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determine from type of call to service (requesting all data vs incremental data).  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental data processing (due to lack of delta detection).</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Determine from type of call to service (requesting all data vs incremental data - e.g. filtering by _lastUpdated).  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental data processing (due to lack of delta detection).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">If the data is being 'pushed' in a message, this could also be conveyed in the MessageHeader.event</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -3836,8 +3832,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determine from the type of call to the FHIR service.  Requesting all data would be cumulative; requesting only a subset of data, since the last call, is incremental.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study Transaction Type</Data><NamedCell
@@ -3853,8 +3848,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="171.46875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Site ID or Number</Data><NamedCell
@@ -3873,8 +3867,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Site exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Use the new extension to connect Observation to ResearchStudy.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Site Transaction Type</Data><NamedCell
@@ -3890,8 +3883,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="228.46875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Investigator ID or Number</Data><NamedCell
@@ -3903,14 +3895,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which id to expose or may need to map to one recognized by the sponsor.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/@ID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the Investigator ID known by the study sponsor.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="157.21875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Investigator Name</Data><NamedCell
@@ -3922,14 +3913,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which name to expose.  Can also extract the prefix, given and family names if text isn't specified.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which name to expose if there are multiples.  Can also extract the prefix, given and family names if text isn't specified.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/@Name</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the Investigator name known by the study sponsor.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Investigator Transaction Type</Data><NamedCell
@@ -3945,8 +3935,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Screen ID or Number</Data><NamedCell
@@ -3958,14 +3947,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/ScreenID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Either ScreenID &#10;or SubjectID &#10;must exist</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the sponsor's research subject ID in this field. Use the identifier.type to differentiate subject identifiers.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject ID or Number</Data><NamedCell
@@ -3977,14 +3965,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/SubjectID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Either ScreenID &#10;or SubjectID &#10;must exist</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the sponsor's research subject ID in this field. Use the identifier.type to differentiate subject identifiers.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.71875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Spare subject level ID or Number</Data><NamedCell
@@ -3996,14 +3983,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/SpareSubjectID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide an alternative subject ID in this field.  Use the identifier.type to differentiate subject identifiers.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="242.71875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Sex</Data><NamedCell
@@ -4012,16 +3998,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">gender</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).individual.resolve().gender</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.subject.resolve().gender</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.  The US-core birth-sex extension (if it is present) may be more consistently populated than Patient.gender.&#10;&#10;If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:&#10;male -&gt; M&#10;female -&gt; F&#10;other -&gt; U&#10;unknown -&gt; U</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Sex/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Sex exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for sponsor to perform patient reconciliation.  If not, do not send this data element.&#10;&#10;If patient gender is sent, the values must be mapped from the FHIR vocabulary to the LAB standard:&#10;male -&gt; M&#10;female -&gt; F&#10;other -&gt; U&#10;unknown -&gt; U</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="256.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Sex Code List ID</Data><NamedCell
@@ -4036,8 +4022,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">No value exists for this field.  </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="171">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Race</Data><NamedCell
@@ -4047,21 +4032,19 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">There's an US-core extension (us-core-race) for capturing this in the U.S. and the possibility that other countries will define their own extensions.  Note that this is for administrative, not clinical purposes.  Genetic heritage would typically be captured as an Observation</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#10;&#10;If patient race is sent, use the us-core-race extension in FHIR.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Race/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Race exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#10;&#10;If patient race is sent, use the us-core-race extension in FHIR.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="171.46875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Race Code List ID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">N/A</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">N/A</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Race, whether captured as an extension or observation value is generally a CodeableConcept allowing capturing both code system and (if relevant) version.  Race is highly variable from country to country (both whether it's allowed and how it's coded), so there's no standard element for this in the core spec.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -4070,8 +4053,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">No value exists for this field.  </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="185.71875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Initials</Data><NamedCell
@@ -4082,7 +4064,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">N/A</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#10;&#10;If required, be sure to send only the initials, derived from the name.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -4090,8 +4072,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  &#10;&#10;If required, be sure to send only the initials, derived from the name.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114.46875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Date Of Birth</Data><NamedCell
@@ -4102,7 +4083,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">N/A</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -4110,8 +4091,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="42.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Visit ID or Number</Data><NamedCell
@@ -4130,8 +4110,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Visit exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the study sponsor's visit identifier.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="213.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Visit Name</Data><NamedCell
@@ -4147,8 +4126,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If a sponsor requires the visit name, use the encounter.identifier.value field to fulfill this purpose.  Set the encounter.identifier.type.CodeableConcept.text to 'Visit Name'.  Alternatively, you can use the Schedule of Activities, within the Protocol (see PlanDefinition resource)</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="213.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Visit Type</Data><NamedCell
@@ -4164,8 +4142,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Visit exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Since this is required for the LAB model, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type'.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="242.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Visit Type Modifier</Data><NamedCell
@@ -4183,8 +4160,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">This is not required for the LAB model.  If needed, we recommend using the contents of the  encounter.identifier field to assist with determining the type of visit (scheduled or unscheduled).  To store this in FHIR, use the encounter.identifier.value field and set the encounter.identifier.type.CodeableConcept.text to 'Visit Type Modifier'.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Transaction Type</Data><NamedCell
@@ -4200,8 +4176,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update will be left to the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Accession ID or Number</Data><NamedCell
@@ -4218,8 +4193,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If required by the sponsor, provide the accession ID (for the specimen).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="185.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Last Active Date and Time</Data><NamedCell
@@ -4234,8 +4208,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The intention of this field is to hold the local date and time of the last modification made to the accession record at the central laboratory.  This includes a Universal Time Offset plus/minus hours and minutes.  Since this field is not required by LAB, it will not be sent.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Visit Transaction Type</Data><NamedCell
@@ -4251,8 +4224,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="228">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Central Laboratory ID</Data><NamedCell
@@ -4270,8 +4242,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with identifier for the lab.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Central Laboratory Name</Data><NamedCell
@@ -4289,8 +4260,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with name of the lab, if required.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen ID or Number</Data><NamedCell
@@ -4308,26 +4278,25 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with specimen identifier from the lab.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Actual Collection Date and Time</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">collection.collectedPeriod</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">collection.collectedDateTime&#10;collection.collectedPeriod</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.specimen.resolve().collection.collectedPeriod.start</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.specimen.resolve().collection.collectedDateTime&#10;Observation.specimen.resolve().collection.collectedPeriod.end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Most of the time there'll only be a single dateTime.  If collected over a period of time (e.g. urine), use the end.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate this with the start time of a collection period or the actual time for a single timepoint.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="166.96875">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Planned Collection Time Elapsed</Data><NamedCell
@@ -4336,17 +4305,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s73"><Data ss:Type="String">extension&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s73"><Data ss:Type="String">Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration.code</Data><NamedCell
+    <Cell ss:StyleID="s73"><Data ss:Type="String">Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Specimen.extension.extension.url=offset, then Specimen.extension.extension.valueDuration.value + Specimen.extension.extension.valueDuration.code</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to convert value + units into an ISO duration</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Capture the duration portion in this attribute. (e.g., 03:00)</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="186">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Planned Collection Time Elapsed Description</Data><NamedCell
@@ -4358,14 +4326,13 @@
     <Cell ss:StyleID="s73"><Data ss:Type="String">Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Specimen.extension.extension.url=relationship, then Specimen.extension.extension.valueString + Specimen.extension.extension.url=target, then Specimen.extension.extension.valueReference.reference</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">The event would be in extension('target').valueReference.display and the time would be in extension('offset').valueDuration value and unit.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Capture both the quantity of time and the relative event (e.g., 3 hours post dose)</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Collection End Date and Time</Data><NamedCell
@@ -4382,8 +4349,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate this with the end time of a collection period.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Received Date and Time</Data><NamedCell
@@ -4400,8 +4366,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate this with the time the specimen was received.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen Condition</Data><NamedCell
@@ -4419,8 +4384,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the description of the specimen.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Investigator - Specimen Comment Source</Data><NamedCell
@@ -4438,8 +4402,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the practitioner.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Investigator - Specimen Comment Text</Data><NamedCell
@@ -4456,8 +4419,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Specimen Comment exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the comment text.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Lab - Specimen Comment Source</Data><NamedCell
@@ -4475,8 +4437,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the lab (organization) which produced the lab comment.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Lab - Specimen Comment Text</Data><NamedCell
@@ -4493,8 +4454,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Specimen Comment exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the comment text.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen Material ID</Data><NamedCell
@@ -4512,8 +4472,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Specimen Material exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with an identifier for the specimen material.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen Material Name</Data><NamedCell
@@ -4525,14 +4484,13 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.display</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s72"><Data ss:Type="String">If multiple codes are present, filter based on system.  </Data><NamedCell
+    <Cell ss:StyleID="s72"><Data ss:Type="String">If multiple codes are present, filter based on system.   Translation may be required</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Name should be  in the controlled vocabulary of the material code list.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Specimen Material Code List ID</Data><NamedCell
@@ -4550,8 +4508,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The URI of the code list for the material.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="228">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Age at Collection</Data><NamedCell
@@ -4559,15 +4516,14 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).&#10;&#10;If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).&#10;&#10;If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.&#10;&#10;As an alternative use the cqf-relativeTime extension on Patient.birthDate and convey as a relative time to study enrollment</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Derive from the patient.birthDate.  Consider whether patient personal information must be shared for subject reconciliation.  If not, do not send this data.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="228">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Subject Age Units</Data><NamedCell
@@ -4582,8 +4538,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Subject Age At Collection exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If age is shared, include a unit of measure (months, years).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Fasting Status</Data><NamedCell
@@ -4601,8 +4556,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If fasting status is provided, it must be one of the following:&#10;&#10;&#10;Y - Yes&#10;N - No&#10;U - Unknown&#10;and blank if not relevant.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Battery ID</Data><NamedCell
@@ -4620,8 +4574,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Base &#10;Battery exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the battery ID, if it exists.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Battery Name</Data><NamedCell
@@ -4639,8 +4592,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the battery name, if a battery exists and a battery ID was provided.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Battery Transaction Type</Data><NamedCell
@@ -4656,8 +4608,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="327.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Test Status</Data><NamedCell
@@ -4669,13 +4620,13 @@
     <Cell ss:StyleID="s73"><Data ss:Type="String">Observation.basedOn.resolve().doNotPerform&#10;Observation.basedon.resolve().status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Multiple fields are required to populate this value per the standard.  &#10;&#10;Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.&#10;&#10;From these two fields, sponsors will need to translate to the CDISC test statuses:  &#10;D - Done&#10;N - Not Performed&#10;X - Cancelled.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Multiple fields are required to populate this value per the standard.  &#10;&#10;Use ServiceRequest.status and ServiceRequest.doNotPerform (doNotPerform will only be true if the test is not to be performed) to represent the test status.&#10;&#10;From these two fields, sponsors will need to translate to the CDISC test statuses:  &#10;D - Done&#10;N - Not Performed&#10;X - Cancelled.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Testing Date and Time</Data><NamedCell
@@ -4692,8 +4643,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with date and time of test.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="285">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Test Type</Data><NamedCell
@@ -4709,8 +4659,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The intention of this field is to define whether the test was a study test, non-study test, or unscheduled test.  The normal transmission of data, via FHIR, is for study tests.  If non-study test results are required (e.g., AdverseEvent follow-up), these would be obtained via a special request from the data provider.  It may be possible to derive this from the ServiceRequest and (eventually) the PlanDefinition.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Performing Laboratory ID</Data><NamedCell
@@ -4728,8 +4677,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">An identifier for the laboratory performing the specimen collection and result generation.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Performing Laboratory Name</Data><NamedCell
@@ -4746,8 +4694,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The name of the laboratory performing the specimen collection and result generation.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="128.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Lab Test ID</Data><NamedCell
@@ -4759,13 +4706,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where(system = 'Lab Test')&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Since this is a codeable concept, there may be  multiple codes for a test.  The sponsor will have to determine which is the &quot;lab's&quot; code vs. &quot;receiver's&quot; code vs. others.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The ID of the test as assigned by the laboratory. &#10;&#10;NOTE: since this is a codeable concept, you may provide multiple coding system codes for a test.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Lab Test Name</Data><NamedCell
@@ -4783,8 +4730,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The name of the test as assigned by the laboratory.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Additional Test Description</Data><NamedCell
@@ -4802,8 +4748,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Additional text about the test that produced the result.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Receiver Test ID</Data><NamedCell
@@ -4812,7 +4757,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where (system = Recipient Test)</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where (system = [Recipient Test])</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69" ss:HRef="mailto:Observation/code/coding/system/@value%20(%22system%22%20element%20used%20to%20designate%20the%20type%20of%20code%20that%20is%20being%20represented%20(in%20this%20case%20the%20%22ReceiverTest%22)%20by%20the%20%22code%22%20element)"><Data
@@ -4822,8 +4767,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Receiver &#10;Test exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If the Sponsor has a test ID that needs to be included in the results, populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Receiver Test Name</Data><NamedCell
@@ -4840,8 +4784,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">If the Sponsor has a test name that needs to be included in the results, populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">LOINC Code</Data><NamedCell
@@ -4850,7 +4793,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where (coding system = 'LOINC')</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where (coding system = 'http://loinc.org')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4858,8 +4801,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if LOINC Test Code exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The LOINC test code.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">LOINC Code List ID</Data><NamedCell
@@ -4871,13 +4813,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.code.coding.where(system = 'http://loinc.org')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">This will always be 'LOINC'</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The URI for the LOINC code list.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Test Level Comments</Data><NamedCell
@@ -4886,17 +4828,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.extension(event-note).valueAnnotation.text</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.note.text</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">New extension from Observation</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to determine whether to also incude date and author.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the comment text.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Result Status</Data><NamedCell
@@ -4908,12 +4849,11 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">This has two possible values:  P for Preliminary and F for Final.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">This has two possible values:  P for Preliminary and F for Final.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="242.25">
@@ -4926,12 +4866,11 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where(system='Alert Flag')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:&#10;&#10;LP - Low Panic&#10;LT - Low Telephone&#10;LN - Low Normal&#10;N - Normal&#10;HN - High Normal&#10;HT - High Telephone&#10;HP - High Panic&#10;AB - Abnormal&#10;and blank when not used. It may be necessary to translate from other interpretation codings. </Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The alert flag generated by the reference ranges applied and tied to the reported result. There are 9 alert flag values:&#10;&#10;LP - Low Panic&#10;LT - Low Telephone&#10;LN - Low Normal&#10;N - Normal&#10;HN - High Normal&#10;HT - High Telephone&#10;HP - High Panic&#10;AB - Abnormal&#10;and blank when not used.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="171">
@@ -4944,12 +4883,11 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where (system = 'Delta Flag')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:&#10;&#10;D+  for an increase in value&#10;D-  for a decrease in value&#10;and blank for no flag.&#10;&#10;It may be necessary to translate from other interpretation codings.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The delta flag generated by the reference ranges applied and tied to the reported result. There are three delta flags:&#10;&#10;D+  for an increase in value&#10;D-  for a decrease in value&#10;and blank for no flag.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="199.5">
@@ -4962,13 +4900,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where (system = 'Exclusion Flag')&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:&#10;&#10;LX - Low Exclusion&#10;HX - High Exclusion&#10;EX - Excluded (for exclusions not falling under high or low)&#10;and blank for no flag.&#10;&#10;It may be necessary to translate from other</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The exclusion flag generated by the reference ranges applied and tied to the reported result. There are four exclusion flag values:&#10;&#10;LX - Low Exclusion&#10;HX - High Exclusion&#10;EX - Excluded (for exclusions not falling under high or low)&#10;and blank for no flag.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Blinding Flag</Data><NamedCell
@@ -4980,13 +4918,13 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Observation.meta.security.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">A new code would likely be needed to specifically designate 'blinded'.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Blinding is handled via the security on the Observation resource.  </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Date and Time</Data><NamedCell
@@ -5003,8 +4941,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Populate with the date the result was reported.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Test Transaction Type</Data><NamedCell
@@ -5021,8 +4958,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determining whether transactions are insert or update is a task for the data consumer.  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental updates (no delta detection).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Toxicity Grade</Data><NamedCell
@@ -5031,16 +4967,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">interpretation&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where (system = 'Toxicity Grade')</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where (system = 'Toxicity Grade').code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">If there are multiple possible systems, the sponsor will have to determine which interpretation corresponds to toxicity grade</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Toxicity &#10;Grade exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Use a controlled vocabulary list for the toxicity grade.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Toxicity Grade Code List ID</Data><NamedCell
@@ -5051,14 +4987,14 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.interpretation.coding.where (system = 'Toxicity Grade')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">May need to translate the URI to a CDISC Code List id</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The URI of the code list.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="128.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)</Data><NamedCell
@@ -5066,15 +5002,14 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Determine from the field in which the result resides.  e.g., Observation/category/coding/code/@value  For text and code results, which both use CodeableConcept, look at the field within CC to determine code vs. text.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Determine from the field in which the result resides.   valueCodeableConcept vs. valueQuantity vs. valueString  Greater than and less than can be determined by valueQuantity.qualifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/@ResultType</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(if Single &#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Use the field within Codeable Concept to determine code vs text.  For greater/less than, look in the data to see if there is a &lt; or &gt; symbol.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Text Result</Data><NamedCell
@@ -5091,8 +5026,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Text&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The textual result value (for non-numeric results).</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Text Result Code List ID</Data><NamedCell
@@ -5104,13 +5038,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueCodeableConcept.coding.system</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">May need to convert from URI to CDISC-recognized 'ID'</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The URI of the code list used for the text results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Conventional Numeric Result</Data><NamedCell
@@ -5123,13 +5057,13 @@
       ss:Type="String">Observation.valueQuantity.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">If the reported result isn't in conventional units, can use the PQ-translation extension to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The conventional result value. </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Numeric Result</Data><NamedCell
@@ -5147,8 +5081,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reported result value. </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Numeric Result</Data><NamedCell
@@ -5160,13 +5093,13 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">If the reported result isn't in SI units, can use the PQ-translation extension to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The international unit (SI) result value. </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Conventional Numeric Result Precision</Data><NamedCell
@@ -5177,15 +5110,14 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Determine the precision from the value.&#10;&#10;Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Determine the precision from the value.&#10;&#10;Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value&#10;&#10;If the reported result isn't in conventional units, can use the PQ-translation extension to convey a translation.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Numeric Result Precision</Data><NamedCell
@@ -5196,15 +5128,14 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Determine the precision from the value.&#10;&#10;Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Numeric Result Precision</Data><NamedCell
@@ -5215,14 +5146,12 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Determine the precision from the value.&#10;&#10;Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Determine the precision from the value.&#10;&#10;Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value&#10;&#10;If the reported result isn't in SI units, can use the PQ-translation extension to convey a translation.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Numeric&#10;Result exists)</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Precision is implicitly determined from the attribute &#10;Observation/valueQuantity/value/@value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
@@ -5232,16 +5161,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.valueunit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.  If the reported units aren't 'conventional, can use the PQ-translation extension on Quantity to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'low' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Reference Range Low</Data><NamedCell
@@ -5250,16 +5179,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.valueunit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'low' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Reference Range Low</Data><NamedCell
@@ -5268,16 +5197,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.valueunit&#10;</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.low.value&#10;Observation.referenceRange.low.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.  If the reported units aren't SI, can use the PQ-translation extension on Quantity to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'low' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Conventional Reference Range High</Data><NamedCell
@@ -5286,16 +5215,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.valueunit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.  If the reported units aren't 'conventional, can use the PQ-translation extension on Quantity to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'high' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Reference Range High</Data><NamedCell
@@ -5304,16 +5233,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.valueunit&#10;</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'high' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="114">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Reference Range High</Data><NamedCell
@@ -5322,16 +5251,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">referenceRange</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.valueunit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.referenceRange.high.value&#10;Observation.referenceRange.high.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to combine value and unit into a string.  If the reported units aren't SI, can use the PQ-translation extension on Quantity to convey a translation.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The reference range 'high' value for numeric results.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Conventional Units</Data><NamedCell
@@ -5340,16 +5269,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><Data ss:Type="String">valueQuantity</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.unit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.code&#10;Observation.valueQuantity.extension('PQ-translation').code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">If the reported units are not the same as conventional, can convey with the translation extension.  Translation to CDISC terminology may be required.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Result&#10;Units exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The units of measure in conventional units. NOTE: needs to comply with CDISC terminology.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Units</Data><NamedCell
@@ -5358,16 +5287,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><Data ss:Type="String">valueQuantity</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.unit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">This may require translation to CDISC terminology</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Result&#10;Units exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The units of measure for the reported result value. NOTE: needs to comply with CDISC terminology.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="85.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Units</Data><NamedCell
@@ -5376,16 +5305,16 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><Data ss:Type="String">valueQuantity</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.unit</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.valueQuantity.code&#10;Observation.valueQuantity.extensoin('PQ-translation').code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">If the reported units are not SI units, can convey with the translation extension.  Translation to CDISC terminology may be required.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y&#10;(If Result&#10;Units exists)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">The units of measure in international units. NOTE: needs to comply with CDISC terminology.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Conventional Units Code List ID</Data><NamedCell
@@ -5402,8 +5331,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the ID (URI) of the code list used.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Reported Units Code List ID</Data><NamedCell
@@ -5420,8 +5348,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the ID (URI) of the code list used.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75">
     <Cell ss:StyleID="s69"><Data ss:Type="String">SI Units Code List ID</Data><NamedCell
@@ -5438,8 +5365,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Provide the ID (URI) of the code list used.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="142.5">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Record Extension Type</Data><NamedCell
@@ -5454,8 +5380,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">This allows specification of extensions from the Base Lab Model definition.  For a lab record, this would contain 'BASE'.  For Microbiology data, this would contain 'MICROBIO'.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="242.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Result Class</Data><NamedCell
@@ -5463,15 +5388,14 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Derive this from the unit of measure system (on the result value), provide only one type of result, or provide a way to differentiate which results are reported, conventional, or international units.  In some cases, the result unit of measure may provide some indication of whether the results are in conventional or SI.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Specifies whether the result units are Reported, Conventional, or SI (international).  Since the FHIR model does not have an attribute for this, either transmit one type of result, in the agreed upon class, or provide a unit of measure system on the result values. Alternatively, the unit of measure may provide an indication of the result class. </Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Model Version</Data><NamedCell
@@ -5487,8 +5411,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Utilize default values and/or message wrapper content to populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">File Creation Date and Time</Data><NamedCell
@@ -5504,8 +5427,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Utilize default values and/or message wrapper content to populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="57">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Transaction Type</Data><NamedCell
@@ -5521,8 +5443,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Utilize default values and/or message wrapper content to populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Transmission Source ID</Data><NamedCell
@@ -5538,8 +5459,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Utilize default values and/or message wrapper content to populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="71.25">
     <Cell ss:StyleID="s69"><Data ss:Type="String">Transmission Source Name</Data><NamedCell
@@ -5555,8 +5475,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s71"><Data ss:Type="String">N</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Utilize default values and/or message wrapper content to populate this field.</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -5572,10 +5491,11 @@
     <VerticalResolution>1200</VerticalResolution>
    </Print>
    <Zoom>87</Zoom>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>65</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
    <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -5588,12 +5508,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>66</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>51</ActiveRow>
+     <ActiveCol>8</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -11043,7 +10962,6 @@
     <VerticalResolution>1200</VerticalResolution>
    </Print>
    <Zoom>90</Zoom>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -11064,8 +10982,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>80</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>71</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

@@ -26,7 +26,7 @@
             <xsl:for-each select="parent::element">
               <xsl:attribute name="min" select="min/@value"/>
               <xsl:attribute name="max" select="max/@value"/>
-              <xsl:apply-templates select="definition|comment|binding|constraint|condition"/>
+              <xsl:apply-templates select="definition|comment|binding|condition"/>
             </xsl:for-each>
             <xsl:choose>
               <xsl:when test="$type='string'">
@@ -41,10 +41,13 @@
       </xsl:when>
       <xsl:otherwise>
         <element path="{path/@value}" min="{min/@value}" max="{max/@value}">
-          <xsl:apply-templates select="definition|comment|binding|constraint|condition|type"/>
+          <xsl:apply-templates select="definition|comment|binding|condition|type"/>
         </element>
       </xsl:otherwise>
     </xsl:choose>
+	</xsl:template>
+	<xsl:template match="binding">
+    <binding name="{extension[contains(@url,'bindingName')]/valueString/@value}" strength="{strength/@value}" valueSet="{valueSet/@value}"/>
 	</xsl:template>
 	<xsl:template match="*">
     <xsl:element name="{local-name(.)}">
