@@ -27,9 +27,15 @@
          <tr>
             <th>Study ID or Number</th>
             <td>
-               <span>/GTP/Study/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/@ID</span>
             </td>
-            <td>ResearchStudy.identifier</td>
+            <td>
+               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -40,9 +46,15 @@
          <tr>
             <th>Study Name</th>
             <td>
-               <span>/GTP/Study/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/@Name</span>
             </td>
-            <td>ResearchStudy.title</td>
+            <td>
+               <span title="A short, descriptive user-friendly label for the study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.title">ResearchStudy.title</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve()partOf.resolve().title</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().title</p>
@@ -53,7 +65,7 @@
          <tr>
             <th>Transmission Type</th>
             <td>
-               <span>/GTP/Study/@TransmissionType</span>
+               <span style="font-weight:bold">/GTP/Study/@TransmissionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determine from type of call to service (requesting all data vs incremental data - e.g. filtering by _lastUpdated).  NOTE: If data are not persisted between FHIR and LAB, cannot do incremental data processing (due to lack of delta detection).</td>
             <td>If the data is being 'pushed' in a message, this could also be conveyed in the MessageHeader.event</td>
@@ -61,7 +73,7 @@
          <tr>
             <th>Study Transaction Type</th>
             <td>
-               <span>/GTP/Study/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>This would be conveyed using a transaction Bundle - specifically the Bundle.entry.request.method</td>
@@ -69,9 +81,15 @@
          <tr>
             <th>Site ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/@ID</span>
             </td>
-            <td>ResearchStudy.site</td>
+            <td>
+               <span title="A facility in which study activities are conducted.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -82,7 +100,7 @@
          <tr>
             <th>Site Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -90,9 +108,15 @@
          <tr>
             <th>Investigator ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/@ID</span>
             </td>
-            <td>Practitioner.identifier</td>
+            <td>
+               <span title="An identifier that applies to this person in this role.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}practitioner-definitions.html#Practitioner.identifier">Practitioner.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
@@ -103,9 +127,15 @@
          <tr>
             <th>Investigator Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/@Name</span>
             </td>
-            <td>Practitioner.name</td>
+            <td>
+               <span title="The name(s) associated with the practitioner.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}practitioner-definitions.html#Practitioner.name">Practitioner.name</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#HumanName">HumanName</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().name.text</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().name.text</p>
@@ -116,7 +146,7 @@
          <tr>
             <th>Investigator Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -124,9 +154,15 @@
          <tr>
             <th>Screen ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/ScreenID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/ScreenID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -136,9 +172,15 @@
          <tr>
             <th>Subject ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/SubjectID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/SubjectID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -148,9 +190,15 @@
          <tr>
             <th>Spare subject level ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
             </td>
-            <td>ResearchSubject.identifier</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
             </td>
@@ -160,9 +208,17 @@
          <tr>
             <th>Subject Sex</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Sex/@Value</span>
             </td>
-            <td>Patient.gender</td>
+            <td>
+               <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.subject.resolve().gender</p>
             </td>
@@ -176,7 +232,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Sex Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Sex/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Sex/@CodeListID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">For FHIR, the administrative gender code list is fixed, so no need to send it in the instance.  If there's a need to convey alternate gender codes, then those would appear either as Observation values or as extension values on Patient (the former for clinical information, the latter for administrative purposes).  In either event, the code would be in CodeableConcept.coding which allows identifying both the code system and (if relevant), the version</td>
             <td/>
@@ -184,7 +240,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Race</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Race/@Value</span>
             </td>
             <td colspan="2" style="background-color:LightGray">There's an US-core extension (us-core-race) for capturing this in the U.S. and the possibility that other countries will define their own extensions.  Note that this is for administrative, not clinical purposes.  Genetic heritage would typically be captured as an Observation</td>
             <td>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
@@ -193,7 +249,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Race Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Race/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Race/@CodeListID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Race, whether captured as an extension or observation value is generally a CodeableConcept allowing capturing both code system and (if relevant) version.  Race is highly variable from country to country (both whether it's allowed and how it's coded), so there's no standard element for this in the core spec.</td>
             <td/>
@@ -201,9 +257,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Initials</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
             </td>
-            <td>Patient.name</td>
+            <td>
+               <span title="A name associated with the individual.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.name">Patient.name</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#HumanName">HumanName</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
             </td>
@@ -214,9 +276,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Date Of Birth</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
             </td>
-            <td>Patient.birthDate</td>
+            <td>
+               <span title="The date of birth for the individual.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}patient-definitions.html#Patient.birthDate">Patient.birthDate</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#date">date</a>
+            </td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</p>
             </td>
@@ -226,9 +294,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Visit ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
             </td>
-            <td>Encounter.identifier</td>
+            <td>
+               <span title="Identifier(s) by which this encounter is known.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.identifier">Encounter.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>Observation.encounter.resolve().identifier.value</p>
             </td>
@@ -237,7 +311,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Visit Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/@Name</span>
             </td>
             <td colspan="2" style="background-color:LightGray">In practice, visit name would be the ActivityDefinition.title for the activity in the protocol associated with the encounter.  There is no standard extension for this link (though one will be defined).  Most clinical systems won't actually capture this, so the determination will need to be made at time of data extraction based on the protocol</td>
             <td>See LB mapping comment</td>
@@ -245,7 +319,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Visit Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/@Type</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/@Type</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This is essentially whether the visit is tied to a particular activity within the PlanDefinition (study protocol) or not.  Given that in non-study-specific systems, there won't typically be a linkage even when the encounter *is* driven by the study, this will generally need to be populated algorithmically on extension</td>
             <td>This could theoretically be distinguished by whether there was a link to a CarePlan activity or ActivityDefinition.  Alternatively, you could use an extension or tag.  (What's 'planned' for one study might be unplanned for another)<br/>
@@ -255,9 +329,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Visit Type Modifier</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/@TypeModifier</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/@TypeModifier</span>
             </td>
-            <td>Encounter.reasonCode</td>
+            <td>
+               <span title="Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.reasonCode">Encounter.reasonCode</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/encounter-reason">EncounterReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+            </td>
             <td>
                <p>Observation.encounter.resolve().reasonCode</p>
             </td>
@@ -266,7 +348,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -274,9 +356,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Accession ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
             </td>
-            <td>Specimen.accessionIdentifier</td>
+            <td>
+               <span title="The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.accessionIdentifier">Specimen.accessionIdentifier</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>Observation.resolve().accessionIdentifier.value</p>
             </td>
@@ -285,7 +373,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Last Active Date and Time</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/@LastActiveDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/@LastActiveDateTime</span>
             </td>
             <td colspan="2" style="background-color:LightGray">FHIR allows capture meta.lastUpdated which reflects when the data last changed on the server in question, but would need to look at Provenance to see when data last changed on a particular system.  This typically won't be available.</td>
             <td/>
@@ -293,7 +381,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Visit Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -301,9 +389,14 @@ unknown -&gt; U</td>
          <tr>
             <th>Central Laboratory ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
             </td>
-            <td>Organization.identifier</td>
+            <td>
+               <span title="Identifier for the organization that is used to identify the organization across multiple disparate systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}organization-definitions.html#Organization.identifier">Organization.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a> org-1</td>
             <td>
                <p>Observation.performer.resolve().identifier.value</p>
             </td>
@@ -312,9 +405,14 @@ unknown -&gt; U</td>
          <tr>
             <th>Central Laboratory Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@Name</span>
             </td>
-            <td>Organization.name</td>
+            <td>
+               <span title="A name associated with the organization.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}organization-definitions.html#Organization.name">Organization.name</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a> org-1</td>
             <td>
                <p>Observation.performer.resolve().name</p>
             </td>
@@ -323,9 +421,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Specimen ID or Number</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
             </td>
-            <td>Specimen.identifier</td>
+            <td>
+               <span title="Id for specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.identifier">Specimen.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().identifier.value</p>
             </td>
@@ -334,16 +438,28 @@ unknown -&gt; U</td>
          <tr>
             <th rowspan="2">Actual Collection Date and Time</th>
             <td rowspan="2">
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@ActualCollectionDateTime</span>
             </td>
-            <td>Specimen.collection.collectedDateTime</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedDateTime">Specimen.collection.collectedDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedDateTime</p>
             </td>
             <td rowspan="2">Most of the time there'll only be a single dateTime.  If collected over a period of time (e.g. urine), use the end.</td>
          </tr>
          <tr>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedPeriod">Specimen.collection.collectedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -351,9 +467,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Planned Collection Time Elapsed</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsed</span>
             </td>
-            <td>Specimen.extension</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.extension">Specimen.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueDuration</p>
             </td>
@@ -362,9 +484,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Planned Collection Time Elapsed Description</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@PlannedCollectionTimeElapsedDescription</span>
             </td>
-            <td>Specimen.extension</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.extension">Specimen.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).valueReference.reference</p>
             </td>
@@ -373,9 +501,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Collection End Date and Time</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenCollection/@CollectionEndDateTime</span>
             </td>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedPeriod">Specimen.collection.collectedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -384,9 +518,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Received Date and Time</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@ReceivedDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@ReceivedDateTime</span>
             </td>
-            <td>Specimen.receivedTime</td>
+            <td>
+               <span title="Time when specimen was received for processing or testing.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.receivedTime">Specimen.receivedTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().receivedTime</p>
             </td>
@@ -395,9 +535,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Specimen Condition</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenTransport/@SpecimenCondition</span>
             </td>
-            <td>Specimen.condition</td>
+            <td>
+               <span title="A mode or state of being that describes the nature of the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.condition">Specimen.condition</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0493">SpecimenCondition</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().condition.coding.code</p>
             </td>
@@ -406,9 +554,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Investigator - Specimen Comment Source</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
-            <td>Practitioner.identifier</td>
+            <td>
+               <span title="An identifier that applies to this person in this role.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}practitioner-definitions.html#Practitioner.identifier">Practitioner.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().note.author.resolve().where($thisisPractitioner).identifier</p>
             </td>
@@ -417,9 +571,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Investigator - Specimen Comment Text</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
-            <td>Specimen.note</td>
+            <td>
+               <span title="To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.note">Specimen.note</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Annotation">Annotation</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve()isPractitioner).note.text</p>
             </td>
@@ -428,9 +588,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Lab - Specimen Comment Source</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Source</span>
             </td>
-            <td>Observation.identifier</td>
+            <td>
+               <span title="A unique identifier assigned to this observation.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.identifier">Observation.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().note.author.resolve().where($thisisOrganization).identifier</p>
             </td>
@@ -439,9 +605,15 @@ unknown -&gt; U</td>
          <tr>
             <th>Lab - Specimen Comment Text</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenComment/@Text</span>
             </td>
-            <td>Specimen.note</td>
+            <td>
+               <span title="To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.note">Specimen.note</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Annotation">Annotation</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).note.text</p>
             </td>
@@ -450,9 +622,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Specimen Material ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@ID</span>
             </td>
-            <td>Specimen.type</td>
+            <td>
+               <span title="The kind of material that forms the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.type">Specimen.type</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0487">SpecimenType</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.code</p>
             </td>
@@ -461,9 +641,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Specimen Material Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@Name</span>
             </td>
-            <td>Specimen.type</td>
+            <td>
+               <span title="The kind of material that forms the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.type">Specimen.type</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0487">SpecimenType</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.display</p>
             </td>
@@ -472,9 +660,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Specimen Material Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SpecimenMaterial/@CodeListID</span>
             </td>
-            <td>Specimen.type</td>
+            <td>
+               <span title="The kind of material that forms the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.type">Specimen.type</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0487">SpecimenType</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().where($author.resolve() isOrganization).type.coding.system</p>
             </td>
@@ -483,7 +679,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Age at Collection</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeAtCollection</span>
             </td>
             <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
                <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.   As an alternative use the cqf-relativeTime extension on Patient.birthDate and convey as a relative time to study enrollment</td>
@@ -492,7 +688,7 @@ unknown -&gt; U</td>
          <tr>
             <th>Subject Age Units</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@AgeUnits</span>
             </td>
             <td colspan="2" style="background-color:LightGray">If captured as an Observation, this would be in the ValueQuantity.code derived from the patient.birthDate(Observation.subject (ref:Patient.birthDate).<br/>
                <br/>If the full birthdate cannot be shared, due to country restrictions, use the birth year to derive age information.  Due to lost accuracy in having only the year of birth, 'years' would be the default unit.</td>
@@ -501,9 +697,17 @@ unknown -&gt; U</td>
          <tr>
             <th>Fasting Status</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
             </td>
-            <td>Specimen.collection.fastingStatusCodeableConcept</td>
+            <td>
+               <span title="Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.fastingStatusCodeableConcept">Specimen.collection.fastingStatusCodeableConcept</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0916">FastingStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
             </td>
@@ -514,9 +718,15 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
             </td>
-            <td>DiagnosticReport.identifier</td>
+            <td>
+               <span title="Identifiers assigned to this report by the performer or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}diagnosticreport-definitions.html#DiagnosticReport.identifier">DiagnosticReport.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
+            </td>
             <td>
                <p>DiagnosticReport.identifier.value</p>
             </td>
@@ -525,9 +735,17 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@Name</span>
             </td>
-            <td>DiagnosticReport.code</td>
+            <td>
+               <span title="A code or name that describes this diagnostic report.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}diagnosticreport-definitions.html#DiagnosticReport.code">DiagnosticReport.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/report-codes">DiagnosticReportCodes</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+            </td>
             <td>
                <p>DiagnosticReport.code.text</p>
             </td>
@@ -536,7 +754,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th>Battery Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -544,9 +762,15 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
          <tr>
             <th rowspan="2">Test Status</th>
             <td rowspan="2">
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@Status</span>
             </td>
-            <td>ServiceRequest.doNotPerform</td>
+            <td>
+               <span title="Set this to true if the record is saying that the service/procedure should NOT be performed.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.doNotPerform">ServiceRequest.doNotPerform</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#boolean">boolean</a>
+            </td>
             <td>
                <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
@@ -557,7 +781,15 @@ N - Not Performed
 X - Cancelled.</td>
          </tr>
          <tr>
-            <td>ServiceRequest.status</td>
+            <td>
+               <span title="The status of the order.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.basedon.resolve().status</p>
             </td>
@@ -565,9 +797,15 @@ X - Cancelled.</td>
          <tr>
             <th>Testing Date and Time</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestingDateTime</span>
             </td>
-            <td>Observation.effectiveDateTime</td>
+            <td>
+               <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+            </td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -576,7 +814,7 @@ X - Cancelled.</td>
          <tr>
             <th>Test Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/@TestType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">The normal transmission of data, via FHIR, is for study tests.  If non-study test results are required (e.g., AdverseEvent follow-up), these would be obtained via a special request from the data provider.  Alternatively, if the system requires this field to be populated, derive whether the test was for the study or not, use the ServiceRequest resource.</td>
             <td>Differentiation would be whether the Observation was basedOn a particular activity in the CarePlan (scheduled) or tied to a particular ActivityDefinition (Study test)</td>
@@ -584,9 +822,14 @@ X - Cancelled.</td>
          <tr>
             <th>Performing Laboratory ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@ID</span>
             </td>
-            <td>Organization.identifier</td>
+            <td>
+               <span title="Identifier for the organization that is used to identify the organization across multiple disparate systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}organization-definitions.html#Organization.identifier">Organization.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a> org-1</td>
             <td>
                <p>Observation.performer.resolve().identifier</p>
             </td>
@@ -595,9 +838,14 @@ X - Cancelled.</td>
          <tr>
             <th>Performing Laboratory Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/PerformingLab/@Name</span>
             </td>
-            <td>Organization.name</td>
+            <td>
+               <span title="A name associated with the organization.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}organization-definitions.html#Organization.name">Organization.name</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a> org-1</td>
             <td>
                <p>Observation.performer.resolve().name</p>
             </td>
@@ -606,9 +854,17 @@ X - Cancelled.</td>
          <tr>
             <th>Lab Test ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@ID</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.where(system = 'Lab Test')</p>
             </td>
@@ -617,9 +873,17 @@ X - Cancelled.</td>
          <tr>
             <th>Lab Test Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@Name</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.display</p>
             </td>
@@ -628,9 +892,15 @@ X - Cancelled.</td>
          <tr>
             <th>Additional Test Description</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LabTest/@AdditionalDescription</span>
             </td>
-            <td>Observation.note</td>
+            <td>
+               <span title="Comments about the observation or the results.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.note">Observation.note</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Annotation">Annotation</a>
+            </td>
             <td>
                <p>Observation.note.text</p>
             </td>
@@ -639,9 +909,17 @@ X - Cancelled.</td>
          <tr>
             <th>Receiver Test ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@ID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@ID</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.where (system = [Recipient Test])</p>
             </td>
@@ -650,9 +928,17 @@ X - Cancelled.</td>
          <tr>
             <th>Receiver Test Name</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@Name</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/ReceiverTest/@Name</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.display where (coding system = 'Recipient Test')</p>
             </td>
@@ -661,9 +947,17 @@ X - Cancelled.</td>
          <tr>
             <th>LOINC Code</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@Value</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.where (coding system = 'http://loinc.org')</p>
             </td>
@@ -672,9 +966,17 @@ X - Cancelled.</td>
          <tr>
             <th>LOINC Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/LOINCTestCode/@CodeListID</span>
             </td>
-            <td>Observation.code</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.code.coding.where(system = 'http://loinc.org')</p>
             </td>
@@ -683,9 +985,15 @@ X - Cancelled.</td>
          <tr>
             <th>Test Level Comments</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TestLevelComment</span>
             </td>
-            <td>Observation.extension</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.extension">Observation.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+            </td>
             <td>
                <p>Observation.note.text</p>
             </td>
@@ -694,9 +1002,17 @@ X - Cancelled.</td>
          <tr>
             <th>Reported Result Status</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedResultStatus</span>
             </td>
-            <td>Observation.status</td>
+            <td>
+               <span title="The status of the result value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.status</p>
             </td>
@@ -705,9 +1021,17 @@ X - Cancelled.</td>
          <tr>
             <th>Alert Flag</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@AlertFlag</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation.coding.where(system='Alert Flag')</p>
             </td>
@@ -725,9 +1049,17 @@ and blank when not used. It may be necessary to translate from other interpretat
          <tr>
             <th>Delta Flag</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@DeltaFlag</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Delta Flag')</p>
             </td>
@@ -739,9 +1071,17 @@ and blank for no flag.   It may be necessary to translate from other interpretat
          <tr>
             <th>Exclusion Flag</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ExclusionFlag</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Exclusion Flag')</p>
             </td>
@@ -754,9 +1094,15 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Blinding Flag</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@BlindingFlag</span>
             </td>
-            <td>Observation.meta</td>
+            <td>
+               <span title="The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.meta">Observation.meta</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Meta">Meta</a>
+            </td>
             <td>
                <p>Observation.meta.security.code</p>
             </td>
@@ -765,9 +1111,15 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Reported Date and Time</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedDateTime</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/@ReportedDateTime</span>
             </td>
-            <td>Observation.issued</td>
+            <td>
+               <span title="The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.issued">Observation.issued</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#instant">instant</a>
+            </td>
             <td>
                <p>Observation.issued</p>
             </td>
@@ -776,7 +1128,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Test Transaction Type</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TransactionType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determining whether transactions are insert or update is a task for the data consumer.  (NOTE: This requires persistent storage to compare current data with data in the incoming file)</td>
             <td>As per study transaction type (not clear why it happens at both levels - what would it mean to 'delete' at the study level and 'update at the site level?)</td>
@@ -784,9 +1136,17 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Toxicity Grade</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@Value</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Toxicity Grade').code</p>
             </td>
@@ -795,9 +1155,17 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Toxicity Grade Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
             </td>
@@ -807,7 +1175,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/@ResultType</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/@ResultType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Determine from the field in which the result resides.   valueCodeableConcept vs. valueQuantity vs. valueString  Greater than and less than can be determined by valueQuantity.qualifier</td>
             <td/>
@@ -815,9 +1183,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Text Result</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@Value</span>
             </td>
-            <td>Observation.valueCodeableConcept</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueCodeableConcept">Observation.valueCodeableConcept</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> obs-7</td>
             <td>
                <p>Observation.valueCodeableConcept.text</p>
             </td>
@@ -826,9 +1199,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Text Result Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/TextResult/@CodeListID</span>
             </td>
-            <td>Observation.valueCodeableConcept</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueCodeableConcept">Observation.valueCodeableConcept</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> obs-7</td>
             <td>
                <p>Observation.valueCodeableConcept.coding.system</p>
             </td>
@@ -837,9 +1215,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Conventional Numeric Result</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -848,9 +1231,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Reported Numeric Result</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -859,9 +1247,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>SI Numeric Result</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -870,9 +1263,14 @@ and blank for no flag.   It may be necessary to translate from other</td>
          <tr>
             <th>Conventional Numeric Result Precision</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -883,9 +1281,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in convent
          <tr>
             <th>Reported Numeric Result Precision</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -896,9 +1299,14 @@ Observation/valueQuantity/value/@value</td>
          <tr>
             <th>SI Numeric Result Precision</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/NumericResult/@Precision</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -909,9 +1317,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Conventional Reference Range Low</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -921,9 +1335,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Reported Reference Range Low</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -933,9 +1353,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>SI Reference Range Low</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeLow</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.low.value</p>
                <p>Observation.referenceRange.low.unit</p>
@@ -945,9 +1371,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Conventional Reference Range High</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -957,9 +1389,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Reported Reference Range High</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -969,9 +1407,15 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>SI Reference Range High</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultReferenceRange/@ReferenceRangeHigh</span>
             </td>
-            <td>Observation.referenceRange</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.referenceRange.high.value</p>
                <p>Observation.referenceRange.high.unit</p>
@@ -981,9 +1425,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Conventional Units</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.code</p>
                <p>Observation.valueQuantity.extension('PQ-translation').code</p>
@@ -993,9 +1442,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Reported Units</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.code</p>
             </td>
@@ -1004,9 +1458,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>SI Units</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@Value</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.code</p>
                <p>Observation.valueQuantity.extensoin('PQ-translation').code</p>
@@ -1016,9 +1475,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Conventional Units Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>
@@ -1027,9 +1491,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Reported Units Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>
@@ -1038,9 +1507,14 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>SI Units Code List ID</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultUnits/@CodeListID</span>
             </td>
-            <td>Observation.valueQuantity</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.system</p>
             </td>
@@ -1049,7 +1523,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Record Extension Type</th>
             <td>
-               <span/>
+               <span style="font-weight:bold"/>
             </td>
             <td colspan="2" style="background-color:LightGray">Populate with a default value, depending on the type of data being transmitted.<br/>
                <br/>E.g., "BASE"</td>
@@ -1058,7 +1532,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Result Class</th>
             <td>
-               <span>/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
+               <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
             </td>
             <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</td>
             <td/>
@@ -1066,7 +1540,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Model Version</th>
             <td>
-               <span>/GTP/@ModelVersion</span>
+               <span style="font-weight:bold">/GTP/@ModelVersion</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Populate with a default value.</td>
             <td>The version of FHIR in use is conveyed using Resource.meta.profile</td>
@@ -1074,7 +1548,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>File Creation Date and Time</th>
             <td>
-               <span>/GTP/@CreationDateTime</span>
+               <span style="font-weight:bold">/GTP/@CreationDateTime</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper. (file creation date)</td>
             <td>Bundle.timestamp</td>
@@ -1082,7 +1556,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Transaction Type</th>
             <td>
-               <span>/GTP/TransactionType</span>
+               <span style="font-weight:bold">/GTP/TransactionType</span>
             </td>
             <td colspan="2" style="background-color:LightGray">No mitigation.  If required, fill with a default value.</td>
             <td>As per study.transaction</td>
@@ -1090,7 +1564,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Transmission Source ID</th>
             <td>
-               <span>/GTP/TransmissionSource/@ID</span>
+               <span style="font-weight:bold">/GTP/TransmissionSource/@ID</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper.</td>
             <td>MessageHeader.source.endpoint if using messaging, otherwise determined out of band based on sender authentication process</td>
@@ -1098,7 +1572,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <tr>
             <th>Transmission Source Name</th>
             <td>
-               <span>/GTP/TransmissionSource/@Name</span>
+               <span style="font-weight:bold">/GTP/TransmissionSource/@Name</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Pull from the message wrapper.</td>
             <td>MessageHeader.source.name if using messaging, otherwise determined out of band based on sender authentication process</td>

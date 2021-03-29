@@ -29,12 +29,22 @@
          <tr>
             <th>Study Identifier</th>
             <td>
-               <span>DM.STUDYID</span>
-            </td>
+               <span style="font-weight:bold" title="A unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">DM.STUDYID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span>DM.STUDYID</span>
+               <span style="font-weight:bold" title="Unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">DM.STUDYID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -45,12 +55,24 @@
          <tr>
             <th>Study Site Identifier</th>
             <td>
-               <span>DM.SITEID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">DM.SITEID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span>DM.SITEID</span>
+               <span style="font-weight:bold"
+                     title="Unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -62,9 +84,18 @@
             <th>Investigator Identifier</th>
             <td/>
             <td>
-               <span>DM.INVID</span>
+               <span style="font-weight:bold"
+                     title="An identifier to describe the Investigator for the study. May be used in addition to SITEID. Not needed if SITEID is equivalent to INVID.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/INVID">DM.INVID</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="An identifier that applies to this person in this role.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}practitioner-definitions.html#Practitioner.identifier">Practitioner.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>Practitioner.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
@@ -75,12 +106,24 @@
          <tr>
             <th>Subject Identifier for the Study</th>
             <td>
-               <span>DM.SUBJID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique subject identifier within a site and a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">DM.SUBJID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span>DM.SUBJID</span>
+               <span style="font-weight:bold"
+                     title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -90,12 +133,21 @@
          <tr>
             <th>Visit Number</th>
             <td>
-               <span>VISITNUM</span>
+               <span style="font-weight:bold">VISITNUM</span>
             </td>
             <td>
-               <span>VISITNUM</span>
+               <span style="font-weight:bold"
+                     title="1. Clinical encounter number. 2. Numeric version of VISIT, used for sorting.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISITNUM">VISITNUM</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Num</td>
+            <td>
+               <span title="Identifier(s) by which this encounter is known.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.identifier">Encounter.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>Encounter.identifier</td>
             <td>
                <p>Observation.encounter.resolve().identifier</p>
             </td>
@@ -104,12 +156,23 @@
          <tr>
             <th>Visit Name</th>
             <td>
-               <span>VISIT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/VISIT">VISIT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span>VISIT</span>
-            </td>
-            <td>ActivityDefinition.name</td>
+               <span style="font-weight:bold"
+                     title="1. Protocol-defined description of clinical encounter 2. May be used in addition to VISITNUM and/or VISITDY">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISIT">VISIT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A natural language name identifying the activity definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}activitydefinition-definitions.html#ActivityDefinition.name">ActivityDefinition.name</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a> inv-0</td>
             <td>
                <p>Observation.encounter.resolve().extension(workflow-instantiates).valueCanonical.resolve().title</p>
             </td>
@@ -119,12 +182,24 @@
          <tr>
             <th>Lab Specimen ID</th>
             <td>
-               <span>LBREFID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An internal or external identifier such as specimen identifier.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID">LBREFID</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span>LBREFID</span>
+               <span style="font-weight:bold"
+                     title="Internal or external specimen identifier. Example: Specimen ID.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID">LBREFID</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.accessionIdentifier">Specimen.accessionIdentifier</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>Specimen.accessionIdentifier</td>
             <td>
                <p>Observation.specimen.resolve().accessionIdentifier.value</p>
             </td>
@@ -134,9 +209,17 @@
             <th rowspan="2">Date/Time of Specimen Collection</th>
             <td rowspan="2"/>
             <td rowspan="2">
-               <span>LBDTC</span>
+               <span style="font-weight:bold">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDTC">LBDTC</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedDateTime">Specimen.collection.collectedDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
             </td>
-            <td>Specimen.collection.collectedDateTime</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedDateTime</p>
             </td>
@@ -144,7 +227,13 @@
 To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 2015-02-07T13:28:17-05:00)</td>
          </tr>
          <tr>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedPeriod">Specimen.collection.collectedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.start</p>
             </td>
@@ -153,9 +242,17 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
             <th>End Date/Time of Specimen Collection</th>
             <td/>
             <td>
-               <span>LBENDTC</span>
+               <span style="font-weight:bold">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBENDTC">LBENDTC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedPeriod">Specimen.collection.collectedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
             </td>
-            <td>Specimen.collection.collectedPeriod</td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod.end</p>
             </td>
@@ -165,12 +262,18 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Specimen Collection Duration (for Clinical Research with extended time of collection)</th>
             <td>
-               <span>LBCDUR</span>
+               <span style="font-weight:bold">LBCDUR</span>
             </td>
             <td>
-               <span>LBDUR*</span>
+               <span style="font-weight:bold">LBDUR*</span>
             </td>
-            <td>Specimen.collection.collectedPeriod</td>
+            <td>
+               <span title="Time when specimen was collected from subject - the physiologically relevant time.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.collectedPeriod">Specimen.collection.collectedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.collectedPeriod</p>
             </td>
@@ -179,12 +282,21 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Specimen Planned Time Point Name (Planned Collection Time Point - time within Encounter)</th>
             <td>
-               <span>LBCTPT</span>
+               <span style="font-weight:bold">LBCTPT</span>
             </td>
             <td>
-               <span>LBTPT</span>
+               <span style="font-weight:bold"
+                     title="1. Text Description of time when specimen should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See LBTPTNUM and LBTPTREF. Examples: Start, 5 min post.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPT">LBTPT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.extension">Specimen.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
             </td>
-            <td>Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).extension('reference').valueReference.reference.resolve().title</p>
             </td>
@@ -193,12 +305,21 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Specimen Planned Elapsed Time from Time Point Reference</th>
             <td>
-               <span>LBCELTM</span>
+               <span style="font-weight:bold">LBCELTM</span>
             </td>
             <td>
-               <span>LBELTM</span>
+               <span style="font-weight:bold"
+                     title="Planned Elapsed time (in ISO 8601) relative to a planned fixed reference (LBTPTREF). This variable is useful where there are repetitive measures. Not a clock time or a date time variable. Represented as an ISO 8601 duration. Examples: &#34;-PT15M&#34; to represent the period of 15 minutes prior to the reference point indicated by LBTPTREF, or &#34;PT8H&#34; to represent the period of 8 hours after the reference point indicated by LBTPTREF.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBELTM">LBELTM</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.extension">Specimen.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
             </td>
-            <td>Specimen.extension</td>
             <td>
                <p>Observation.specimen.resolve().extension(cqf-relativeDateTime).extension('offset').valueDuration</p>
             </td>
@@ -207,12 +328,23 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Specimen Condition</th>
             <td>
-               <span>LBCSPCCN</span>
+               <span style="font-weight:bold">LBCSPCCN</span>
             </td>
             <td>
-               <span>LBSPCCND</span>
+               <span style="font-weight:bold"
+                     title="Free or standardized text describing the condition of the specimen e.g. HEMOLYZED, ICTERIC, LIPEMIC etc.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPCCND">LBSPCCND</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A mode or state of being that describes the nature of the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.condition">Specimen.condition</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0493">SpecimenCondition</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Specimen.condition</td>
             <td>
                <p>Observation.specimen.resolve().condition.coding.code</p>
             </td>
@@ -222,12 +354,23 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Specimen Type</th>
             <td>
-               <span>LBCSPEC</span>
+               <span style="font-weight:bold">LBCSPEC</span>
             </td>
             <td>
-               <span>LBSPEC</span>
+               <span style="font-weight:bold"
+                     title="Defines the type of specimen used for a measurement. Examples: SERUM, PLASMA, URINE.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPEC">LBSPEC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The kind of material that forms the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.type">Specimen.type</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0487">SpecimenType</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Specimen.type</td>
             <td>
                <p>Observation.specimen.resolve().type.coding.display</p>
             </td>
@@ -237,12 +380,23 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <tr>
             <th>Fasting Status</th>
             <td>
-               <span>LBCFAST</span>
+               <span style="font-weight:bold">LBCFAST</span>
             </td>
             <td>
-               <span>LBFAST</span>
+               <span style="font-weight:bold"
+                     title="Indicator used to identify fasting status such as Y, N, U, or null if not relevant.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.fastingStatusCodeableConcept">Specimen.collection.fastingStatusCodeableConcept</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://terminology.hl7.org/ValueSet/v2-0916">FastingStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Specimen.collection.fastingStatusCodeableConcept</td>
             <td>
                <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
             </td>
@@ -253,8 +407,11 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
          <tr>
             <th>Lab Test Condition Met</th>
             <td>
-               <span>LBCOND</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Indication whether the testing condition defined in the protocol were met (e.g., Low fat diet).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBCOND">LBCOND</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td/>
             <td colspan="2" style="background-color:LightGray">This is an 'ask on entry' question.  May be able to determine some conditions, such as fasting, by using other specimen.collection attributes (e.g., fasting status).  Others might be captured as components or extensions.  Alternatively, obtain this information from the case report form entries.</td>
             <td>There are explicit elements for Specimen.collection.fastingStatus and collection.fastingDuration.  May need extensions for other pre-conditions</td>
@@ -262,12 +419,18 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
          <tr>
             <th>Specimen Collection Position</th>
             <td>
-               <span>LBCPOS</span>
+               <span style="font-weight:bold">LBCPOS</span>
             </td>
             <td>
-               <span>LBPOS*</span>
+               <span style="font-weight:bold">LBPOS*</span>
             </td>
-            <td>Specimen.collection</td>
+            <td>
+               <span title="Details concerning the specimen collection.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection">Specimen.collection</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.extension(observation-bodyPosition).valueCodeableConcept</p>
             </td>
@@ -276,12 +439,20 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
          <tr>
             <th>Specimen Usability for the Test</th>
             <td>
-               <span>LBCSPCUF</span>
+               <span style="font-weight:bold">LBCSPCUF</span>
             </td>
             <td>
-               <span>LBSPCUFL*</span>
+               <span style="font-weight:bold">LBSPCUFL*</span>
             </td>
-            <td>Specimen.status</td>
+            <td>
+               <span title="The availability of the specimen.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.status">Specimen.status</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/specimen-status">SpecimenStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve()status.where($this='Unsatisfactory')</p>
             </td>
@@ -291,19 +462,38 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
          <tr>
             <th rowspan="2">Category</th>
             <td rowspan="2">
-               <span>LBCCAT</span>
+               <span style="font-weight:bold">LBCCAT</span>
             </td>
             <td rowspan="2">
-               <span>LBCAT</span>
+               <span style="font-weight:bold"
+                     title="Used to define a category of related records across subjects. Examples: such as HEMATOLOGY, URINALYSIS, CHEMISTRY.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBCAT">LBCAT</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}diagnosticreport-definitions.html#DiagnosticReport.category">DiagnosticReport.category</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/diagnostic-service-sections">DiagnosticServiceSection</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>DiagnosticReport.category</td>
             <td>
                <p>DiagnosticReport.category.coding.where(system='LBSCAT').code</p>
             </td>
             <td rowspan="2">NOTE: In some cases, this may be inferred from the LOINC.  It might also be found by looking for the 'panel' Obsesrvation this Observation is a part of.  In most cases, translation will be required to sponsor-defined codes.  It may work best for the sponsor to categorize based on TESTCD values and ignore lab-reported and EHR-determined categories entirely.</td>
          </tr>
          <tr>
-            <td>DiagnosticReport.code</td>
+            <td>
+               <span title="A code or name that describes this diagnostic report.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}diagnosticreport-definitions.html#DiagnosticReport.code">DiagnosticReport.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/report-codes">DiagnosticReportCodes</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
+            </td>
             <td>
                <p>DiagnosticReport.code</p>
             </td>
@@ -311,12 +501,21 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
          <tr>
             <th rowspan="2">Test Status</th>
             <td rowspan="2">
-               <span>LBCSTAT</span>
+               <span style="font-weight:bold">LBCSTAT</span>
             </td>
             <td rowspan="2">
-               <span>LBSTAT</span>
+               <span style="font-weight:bold"
+                     title="Used to indicate exam not done. Should be null if a result exists in LBORRES.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTAT">LBSTAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Set this to true if the record is saying that the service/procedure should NOT be performed.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.doNotPerform">ServiceRequest.doNotPerform</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#boolean">boolean</a>
             </td>
-            <td>ServiceRequest.doNotPerform</td>
             <td>
                <p>Observation.basedOn.resolve().doNotPerform</p>
             </td>
@@ -330,7 +529,15 @@ Completed = &lt;blank&gt;
 </td>
          </tr>
          <tr>
-            <td>ServiceRequest.status</td>
+            <td>
+               <span title="The status of the order.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.basedOn.resolve().status</p>
             </td>
@@ -339,9 +546,19 @@ Completed = &lt;blank&gt;
             <th>Reason Test Not Done</th>
             <td/>
             <td>
-               <span>LBREASND</span>
+               <span style="font-weight:bold"
+                     title="Describes why a measurement or test was not performed such as BROKEN EQUIPMENT, SUBJECT REFUSED, or SPECIMEN LOST. Used in conjunction with LBSTAT when value is NOT DONE.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREASND">LBREASND</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Provides a reason why the expected value in the element Observation.value[x] is missing.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.dataAbsentReason">Observation.dataAbsentReason</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> obs-6<br/>Binding: <a href="http://hl7.org/fhir/ValueSet/data-absent-reason">ObservationValueAbsentReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.dataAbsentReason</td>
             <td>
                <p>Observation.dataAbsentReason.text</p>
             </td>
@@ -351,9 +568,20 @@ Completed = &lt;blank&gt;
             <th>Lab Test or Examination Short Name</th>
             <td/>
             <td>
-               <span>LBTESTCD</span>
+               <span style="font-weight:bold"
+                     title="Short name of the measurement, test, or examination described in LBTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in LBTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). LBTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: ALT, LDH.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTESTCD">LBTESTCD</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(selected=true).code</p>
             </td>
@@ -363,9 +591,20 @@ Completed = &lt;blank&gt;
             <th>Lab Test or Examination Name</th>
             <td/>
             <td>
-               <span>LBTEST</span>
+               <span style="font-weight:bold"
+                     title="Verbatim name of the test or examination used to obtain the measurement or finding. Note any test normally performed by a clinical laboratory is considered a lab test. The value in LBTEST cannot be longer than 40 characters. Examples: Alanine Aminotransferase, Lactate Dehydrogenase.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTEST">LBTEST</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(selected=true).display</p>
             </td>
@@ -374,12 +613,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Test LOINC Code</th>
             <td>
-               <span>LBLOINC</span>
+               <span style="font-weight:bold">LBLOINC</span>
             </td>
             <td>
-               <span>LBLOINC</span>
+               <span style="font-weight:bold"
+                     title="1. Dictionary-derived LOINC Code for LBTEST. 2. The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBLOINC">LBLOINC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.where(system='LOINC').code</p>
             </td>
@@ -388,12 +638,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Vendor Name</th>
             <td>
-               <span>LBNAM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The name or identifier of the vendor (e.g., laboratory) that provided the test results.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBNAM">LBNAM</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span>LBNAM</span>
-            </td>
-            <td>Organization.name</td>
+               <span style="font-weight:bold"
+                     title="The name or identifier of the laboratory that performed the test.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNAM">LBNAM</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A name associated with the organization.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}organization-definitions.html#Organization.name">Organization.name</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a> org-1</td>
             <td>
                <p>Observation.performer.where($this is Organization).resolve().name</p>
             </td>
@@ -402,12 +663,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Reference Range Indicator</th>
             <td>
-               <span>LBCNRIND</span>
+               <span style="font-weight:bold">LBCNRIND</span>
             </td>
             <td>
-               <span>LBNRIND</span>
+               <span style="font-weight:bold"
+                     title="1. Indicates where the value falls with respect to reference range defined by LBORNRLO and LBORNRHI, LBSTNRLO and LBSTNRHI, or by LBSTNRC. Examples: NORMAL, ABNORMAL, HIGH, LOW. 2. Sponsors should specify in the study metadata (Comments column in the define.xml) whether LBNRIND refers to the original or standard reference ranges and results. 3. Should not be used to indicate clinical significance.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNRIND">LBNRIND</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system ='NRIND')</p>
             </td>
@@ -417,9 +689,20 @@ Completed = &lt;blank&gt;
             <th>Standard Toxicity Grade</th>
             <td/>
             <td>
-               <span>LBTOXGR</span>
+               <span style="font-weight:bold"
+                     title="Records toxicity grade value using a standard toxicity scale (such as the NCI CTCAE). If value is from a numeric scale, represent only the number (e.g., &#34;2&#34; and not &#34;Grade 2&#34;). The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOXGR">LBTOXGR</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.code</p>
             </td>
@@ -428,12 +711,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Toxicity Grade Code List Version</th>
             <td>
-               <span>LBCTOXV</span>
+               <span style="font-weight:bold">LBCTOXV</span>
             </td>
             <td>
-               <span>LBTOX</span>
+               <span style="font-weight:bold"
+                     title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).coding.version</p>
             </td>
@@ -442,12 +736,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Toxicity Grade Code List</th>
             <td>
-               <span>LBCTOX</span>
+               <span style="font-weight:bold">LBCTOX</span>
             </td>
             <td>
-               <span>LBTOX</span>
+               <span style="font-weight:bold"
+                     title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation.where(system=[Toxicity Grade]).system</p>
             </td>
@@ -456,12 +761,24 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Lab Ref Range Lower Limit in Orig Unit</th>
             <td>
-               <span>LBORNRLO</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The lower end of normal range or reference range for continuous results stored in LBORRES.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRLO">LBORNRLO</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span>LBORNRLO</span>
+               <span style="font-weight:bold"
+                     title="Lower end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRLO">LBORNRLO</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
             </td>
-            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.low</p>
             </td>
@@ -470,12 +787,24 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Lab Ref Range Upper Limit in Orig Unit</th>
             <td>
-               <span>LBORNRHI</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The upper end of normal range or reference range for continuous results stored in LBORRES.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRHI">LBORNRHI</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span>LBORNRHI</span>
+               <span style="font-weight:bold"
+                     title="Upper end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRHI">LBORNRHI</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
             </td>
-            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.high</p>
             </td>
@@ -484,12 +813,21 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Reference Range (for string value)</th>
             <td>
-               <span>LBCSTNRC</span>
+               <span style="font-weight:bold">LBCSTNRC</span>
             </td>
             <td>
-               <span>LBSTNRC</span>
+               <span style="font-weight:bold"
+                     title="For normal range values that are character in ordinal scale or if categorical ranges were supplied (e.g., &#34;-1 to +1&#34;, &#34;NEGATIVE TO TRACE&#34;).">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTNRC">LBSTNRC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &#34;OR&#34;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.referenceRange">Observation.referenceRange</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#BackboneElement">BackboneElement</a>
             </td>
-            <td>Observation.referenceRange</td>
             <td>
                <p>Observation.referenceRange.text</p>
             </td>
@@ -498,12 +836,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Lab Result or Finding in Original Units</th>
             <td>
-               <span>LBORRES</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Result of the measurement or finding as originally received or collected.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRES">LBORRES</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span>LBORRES</span>
-            </td>
-            <td>Observation.valueQuantity</td>
+               <span style="font-weight:bold"
+                     title="Result of the measurement or finding as originally received or collected.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
                <p>Observation.valueCodeableConcept.text</p>
@@ -513,12 +862,20 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Reported Units</th>
             <td>
-               <span>LBRESU</span>
+               <span style="font-weight:bold">LBRESU</span>
             </td>
             <td>
-               <span>LBORRESU</span>
-            </td>
-            <td>Observation.valueQuantity</td>
+               <span style="font-weight:bold"
+                     title="Original units in which the data were collected. The unit for LBORRES. Example: g/L.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRESU">LBORRESU</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.unit</p>
             </td>
@@ -527,12 +884,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Lab Clinical Significance</th>
             <td>
-               <span>LBCLSIG</span>
+               <span style="font-weight:bold"
+                     title="An indication whether lab test results were clinically significant.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBCLSIG">LBCLSIG</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPLB.QVAL</span>
             </td>
             <td>
-               <span>SUPPLB.QVAL</span>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -541,12 +909,23 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Method</th>
             <td>
-               <span>LBCMETH</span>
+               <span style="font-weight:bold">LBCMETH</span>
             </td>
             <td>
-               <span>LBMETHOD</span>
+               <span style="font-weight:bold"
+                     title="Method of the test or examination. Examples: EIA (Enzyme Immunoassay), ELECTROPHORESIS, DIPSTICK">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBMETHOD">LBMETHOD</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Indicates the mechanism used to perform the observation.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.method">Observation.method</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-methods">ObservationMethod</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.method</td>
             <td>
                <p>Observation.method</p>
             </td>
@@ -556,9 +935,17 @@ Completed = &lt;blank&gt;
             <th>Anatomical Region </th>
             <td/>
             <td>
-               <span>LBLOC*</span>
+               <span style="font-weight:bold">LBLOC*</span>
             </td>
-            <td>Specimen.collection.bodySite</td>
+            <td>
+               <span title="Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.bodySite">Specimen.collection.bodySite</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.bodySite</p>
             </td>
@@ -567,10 +954,10 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Run ID</th>
             <td>
-               <span>LBRUNID</span>
+               <span style="font-weight:bold">LBRUNID</span>
             </td>
             <td>
-               <span>LBRUNID*</span>
+               <span style="font-weight:bold">LBRUNID*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Would need to introduce an extension</td>
             <td>May not be applicable for safety labs.</td>
@@ -579,9 +966,18 @@ Completed = &lt;blank&gt;
             <th>Unique Subject Identifier</th>
             <td/>
             <td>
-               <span>USUBJID</span>
+               <span style="font-weight:bold"
+                     title="Identifier used to uniquely identify a subject across all studies for all applications or submissions involving the product.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -590,12 +986,20 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Result Categorization</th>
             <td>
-               <span>LBRESCAT</span>
+               <span style="font-weight:bold">LBRESCAT</span>
             </td>
             <td>
-               <span>LBRESCAT*</span>
+               <span style="font-weight:bold">LBRESCAT*</span>
             </td>
-            <td>Observation.interpretation</td>
+            <td>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
+            </td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -604,12 +1008,20 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Anatomical Region</th>
             <td>
-               <span>LBANTREG</span>
+               <span style="font-weight:bold">LBANTREG</span>
             </td>
             <td>
-               <span>LBANTREG*</span>
+               <span style="font-weight:bold">LBANTREG*</span>
             </td>
-            <td>Specimen.collection.bodySite</td>
+            <td>
+               <span title="Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}specimen-definitions.html#Specimen.collection.bodySite">Specimen.collection.bodySite</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.specimen.resolve().collection.bodySite</p>
             </td>
@@ -618,10 +1030,10 @@ Completed = &lt;blank&gt;
          <tr>
             <th>Unscheduled Flag</th>
             <td>
-               <span>LBUSCHFL</span>
+               <span style="font-weight:bold">LBUSCHFL</span>
             </td>
             <td>
-               <span>LBUSCHFL*</span>
+               <span style="font-weight:bold">LBUSCHFL*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This can sort of be inferred from the absence of a link to a PlanDefinition or ActivityDefinition, however there are lots of other reasons these links could be missing, so that's not totally reliable.  Could look at using an extension or a tag<br/>
                <br/>Not generally used for human clinical trials</td>
@@ -631,8 +1043,11 @@ Completed = &lt;blank&gt;
             <th>Planned Time Point Number</th>
             <td/>
             <td>
-               <span>LBTPTNUM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Numerical version of LBTPT to aid in sorting.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPTNUM">LBTPTNUM</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Num</td>
             <td colspan="2" style="background-color:LightGray">Pull this information from the Clinical Plan (PlanDefinition)</td>
             <td>Link to the clinical plan would be through the Observation.basedOn link to CarePlan or the instantiatesCanonical link to PlanDefinition or ActivityDefinition</td>
          </tr>
@@ -640,7 +1055,7 @@ Completed = &lt;blank&gt;
             <th>Analytical Method</th>
             <td/>
             <td>
-               <span>LBANMETH*</span>
+               <span style="font-weight:bold">LBANMETH*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This does not apply to safety labs.</td>
             <td>The corresponding values need to be evaluated and aligned accordingly to the CDISC context of --METHOD.
@@ -650,8 +1065,11 @@ Potentially could appear in Observation.method.  An extension is required to dis
             <th>Baseline Flag</th>
             <td/>
             <td>
-               <span>LBBLFL</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Indicator used to identify a baseline value. The value should be &#34;Y&#34; or null.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBBLFL">LBBLFL</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">Variable may be deprecated.  This information would come from the Sponsor.</td>
             <td>Could appear in Observation.reasonCode.  In practice the notion of 'baseline' is more of a relationship.  Any arbitrary Observation might be selected as the 'baseline' for a particular step in the study.  As such, the real linkage is the tie to the CarePlan activity that's tied to the ActivityDefinition with a reason of 'baseline'.</td>
          </tr>
@@ -659,8 +1077,11 @@ Potentially could appear in Observation.method.  An extension is required to dis
             <th>Derived Flag</th>
             <td/>
             <td>
-               <span>LBDRVFL</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Used to indicate a derived record. The value should be Y or null. Records that represent the average of other records, or do not come from the CRF, or are not as originally received or collected are examples of records that might be derived for the submission datasets. If LBDRVFL=Y, then LBORRES may be null, with LBSTRESC, and (if numeric) LBSTRESN having the derived value.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDRVFL">LBDRVFL</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">This information would come from the Sponsor.</td>
             <td>FHIR doesn't use a flag.  If an Observation is derived, it should point to the Observations it's derived from with the derivedFrom association.  (If that relationship is present, then the Derived Flag is true)</td>
          </tr>

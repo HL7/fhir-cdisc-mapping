@@ -29,12 +29,22 @@
          <tr>
             <th>Study Identifier</th>
             <td>
-               <span>STUDYID</span>
-            </td>
+               <span style="font-weight:bold" title="A unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/STUDYID">STUDYID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">STUDYID</span>
+               <span style="font-weight:bold" title="Unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID">STUDYID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -45,12 +55,24 @@
          <tr>
             <th>Study Site Identifier</th>
             <td>
-               <span>SITEID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SITEID">SITEID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+               <span style="font-weight:bold"
+                     title="Unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="A facility in which study activities are conducted.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
             </td>
-            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -61,12 +83,24 @@
          <tr>
             <th>Subject Identifier for the Study</th>
             <td>
-               <span>SUBJID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique subject identifier within a site and a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SUBJID">SUBJID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+               <span style="font-weight:bold"
+                     title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Procedure.subject).identifier.value</p>
             </td>
@@ -76,10 +110,13 @@
          <tr>
             <th>Any Procedures Performed</th>
             <td>
-               <span>PRYN</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication whether or not the subject had any procedures performed.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRYN">PRYN</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="Does not map to an SDTMIG variable.  The SDTM aCRF is annotated to indicate that this field is NOT SUBMITTED"/>
+               <span style="font-weight:bold"/>
             </td>
             <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.  It could be the answer to an Observation, but even then it would be qualified by type and time-range (procedure covers education, massage, cognitive therapy and various other data)</td>
             <td/>
@@ -87,12 +124,26 @@
          <tr>
             <th>Procedure Category</th>
             <td>
-               <span>PRCAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A grouping of topic-variable values based on user-defined characteristics.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCAT">PRCAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRCAT</span>
+               <span style="font-weight:bold"
+                     title="Used to define a category of procedure values.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A code that classifies the procedure for searching, sorting and display purposes (e.g. &#34;Surgical Procedure&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.category">Procedure.category</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-category">ProcedureCategory</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.category</td>
             <td>
                <p>Procedure.category</p>
             </td>
@@ -101,12 +152,26 @@
          <tr>
             <th>Procedure Subcategory</th>
             <td>
-               <span>PRSCAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A sub-division of the PRCAT values based on user-defined characteristics.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSCAT">PRSCAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRSCAT</span>
+               <span style="font-weight:bold"
+                     title="Used to define a further categorization of PRCAT values.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSCAT">PRSCAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A code that classifies the procedure for searching, sorting and display purposes (e.g. &#34;Surgical Procedure&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.category">Procedure.category</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-category">ProcedureCategory</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.category</td>
             <td>
                <p>Procedure.category</p>
             </td>
@@ -115,12 +180,24 @@
          <tr>
             <th>Procedure Sponsor-Defined Identifier</th>
             <td>
-               <span>PRSPID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSPID">PRSPID</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRSPID</span>
+               <span style="font-weight:bold"
+                     title="Sponsor-defined identifier. Example: pre-printed line identifier on a CRF or record identifier defined in the sponsor's operational database.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSPID">PRSPID</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Business identifiers assigned to this procedure by the performer or other systems which remain constant as the resource is updated and is propagated from server to server.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.identifier">Procedure.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>Procedure.identifier</td>
             <td>
                <p>Procedure.identifier</p>
             </td>
@@ -129,12 +206,26 @@
          <tr>
             <th>Reported Name of Procedure</th>
             <td>
-               <span>PRTRT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The verbatim surgical, therapeutic, or diagnostic procedure's name.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRT">PRTRT</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRTRT</span>
+               <span style="font-weight:bold"
+                     title="Name of procedure performed, either pre-printed or collected on a CRF.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRTRT">PRTRT</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code.coding.display; Procedure.code.text</p>
             </td>
@@ -143,12 +234,26 @@
          <tr>
             <th>Standardized Procedure Name</th>
             <td>
-               <span>PRDECOD</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The dictionary- or sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDECOD">PRDECOD</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDECOD</span>
+               <span style="font-weight:bold"
+                     title="Standardized or dictionary-derived name of PRTRT. The sponsor is expected to provide the dictionary name and version used to map the terms in the define.xml external codelist attributes. If an intervention term does not have a decode value in the dictionary then PRDECOD will be null.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDECOD">PRDECOD</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -158,10 +263,13 @@
          <tr>
             <th>Modified Procedure Name</th>
             <td>
-               <span>PRMODIFY</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="If the value for PRTERM is modified for coding purposes, then the modified text is placed here.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMODIFY">PRMODIFY</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRMODIFY*</span>
+               <span style="font-weight:bold">PRMODIFY*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Coding translations are conducted by the sponsor.<br/>
                <br/>In FHIR, there's no need to modify the PRTERM.  The text which was actually saw/typed (errors and all) is present and the various codes encoding it and the display names for those codes.  If there was a need to capture a corrected text that was submitted to a post-coding process, that would be an extension</td>
@@ -170,11 +278,17 @@
          <tr>
             <th>Procedure prespecified</th>
             <td>
-               <span>PRPRESP</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRESP">PRPRESP</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRPRESP</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Used when a specific procedure is pre-specified on a CRF. Values should be &#34;Y&#34; or null.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPRESP">PRPRESP</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.
 This could possibly be an extension on the Procedure/MedicationAdministration/MedicationStatement.</td>
             <td/>
@@ -182,12 +296,26 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
          <tr>
             <th>Procedure Occurrence</th>
             <td>
-               <span>PROCCUR</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication whether a prespecified procedure (PRTRT) happened when information about the occurrence of a specific intervention is solicited.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PROCCUR">PROCCUR</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  If the response was not asked or answered, populate the SDTMIG variable PRSTAT with &#34;NOT DONE&#34;">PROCCUR</span>
+               <span style="font-weight:bold"
+                     title="Used to record whether a pre-specified procedure occurred when information about the occurrence of a specific procedure is solicited.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PROCCUR">PROCCUR</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.status">Procedure.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/event-status">ProcedureStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
             </td>
-            <td>Procedure.status</td>
             <td>
                <p>Procedure.status</p>
             </td>
@@ -198,25 +326,50 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th rowspan="3">Procedure Reason for Occur Value</th>
             <td rowspan="3">
-               <span>PRREASOC</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An explanation of why a scheduled procedure did or did not occur.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASOC">PRREASOC</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td rowspan="3">
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRREASOC&#34; and SUPPPR.QLABEL = &#34;Reason for Occur Value&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable I SDTM domains.">SUPPPR.QVAL</span>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
-            <td>Procedure.reasonCode</td>
+            <td>
+               <span title="The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.reasonCode">Procedure.reasonCode</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-reason">ProcedureReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Procedure.reasonCode</p>
             </td>
             <td rowspan="3">Note that reasonReference would need to be turned into a code or string.  Reason[x] indicates reason for doing the procedure; statusReason when status=not-done would be reason for non-occurrence</td>
          </tr>
          <tr>
-            <td>Procedure.reasonReference</td>
+            <td>
+               <span title="The justification of why the procedure was performed.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.reasonReference">Procedure.reasonReference</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
+            </td>
             <td>
                <p>Procedure.reasonReference</p>
             </td>
          </tr>
          <tr>
-            <td>Procedure.statusReason</td>
+            <td>
+               <span title="Captures the reason for the current state of the procedure.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.statusReason">Procedure.statusReason</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-not-performed-reason">ProcedureNegationReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Procedure.statusReason</p>
             </td>
@@ -224,12 +377,23 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Reason Not Done</th>
             <td>
-               <span>PRREASND</span>
+               <span style="font-weight:bold"
+                     title="An explanation of why the data are not available.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASND">PRREASND</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">PRREASND*</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRREASND*</span>
+               <span title="Captures the reason for the current state of the procedure.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.statusReason">Procedure.statusReason</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-not-performed-reason">ProcedureNegationReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.statusReason</td>
             <td>
                <p>Procedure.statusReason.where(%resource.status IN {'not-done'| 'stopped'})</p>
             </td>
@@ -238,11 +402,17 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Prior Procedure</th>
             <td>
-               <span>PRPRIOR</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Indication the procedure occurred prior to [PRSTTPT] or prior to the date in DM.RFSTDTC.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRIOR">PRPRIOR</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is &#34;Y&#34; a value from the CDISC CT (STENRF) may be used.  ">PRSTRTPT</span>
-               <span title="This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is &#34;Y&#34; a value from the CDISC CT (STENRF) may be used.  ">PRSTRF*</span>
+               <span style="font-weight:bold"
+                     title="Identifies the start of the observation as being before or after the sponsor-defined reference time point defined by variable PRSTTPT.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTRTPT">PRSTRTPT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, U<span style="font-weight:bold">PRSTRF*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
                <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
@@ -251,25 +421,49 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th rowspan="3">Procedure Start Date</th>
             <td rowspan="3">
-               <span>PRSTDAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The date or start date of when the procedure started or was performed, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT">PRSTDAT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td rowspan="3">
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH START DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRSTDTC</span>
+               <span style="font-weight:bold"
+                     title="Start date/time of the procedure represented in ISO 8601 character format.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTDTC">PRSTDTC</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedDateTime">Procedure.performedDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
             </td>
-            <td>Procedure.performedDateTime</td>
             <td>
                <p>Procedure.performedDateTime</p>
             </td>
             <td rowspan="3">FHIR also allows performedString, but there is no way to map that to CDISC.  The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific start time.</td>
          </tr>
          <tr>
-            <td>Procedure.performedPeriod</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedPeriod">Procedure.performedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Procedure.performedPeriod.start</p>
             </td>
          </tr>
          <tr>
-            <td>Procedure.performedRange</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedRange">Procedure.performedRange</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Range">Range</a>
+            </td>
             <td>
                <p>Procedure.performedRange.low</p>
             </td>
@@ -277,13 +471,27 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Ongoing Procedure</th>
             <td>
-               <span>PRONGO</span>
+               <span style="font-weight:bold"
+                     title="Indication the procedure is ongoing when no end date is provided.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRONGO">PRONGO</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold"
+                     title="Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable PRENTPT.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENRTPT">PRENRTPT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U<span style="font-weight:bold">PRENRF*</span>
             </td>
             <td>
-               <span title="This does not map directly to an SDTM variable.  May be used to populate a value into an SDTMIG relative timing variable such as PRENRF or PRENRTPT.  When populating PRENRF, if the value of PRONGO is &#34;Y&#34;, the value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating PRENRTPT, if the value of PRONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When PRONGO refers to the Study Reference Period (defined in DM.RFSTDTC to DM.RFENDTC) the SDTM variable PRENRF should be populated.  When PRONGO is used in conjunction with another time point, the SDTM variable PRENRRPT and PRENTPT should be used">PRENRTPT</span>
-               <span title="This does not map directly to an SDTM variable.  May be used to populate a value into an SDTMIG relative timing variable such as PRENRF or PRENRTPT.  When populating PRENRF, if the value of PRONGO is &#34;Y&#34;, the value of &#34;DURING&#34;, &#34;AFTER&#34; or &#34;DURING/AFTER&#34; may be used.  When populating PRENRTPT, if the value of PRONGO is &#34;Y&#34;, the value of &#34;ONGOING&#34; may be used.  When PRONGO refers to the Study Reference Period (defined in DM.RFSTDTC to DM.RFENDTC) the SDTM variable PRENRF should be populated.  When PRONGO is used in conjunction with another time point, the SDTM variable PRENRRPT and PRENTPT should be used">PRENRF*</span>
+               <span title="A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.status">Procedure.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/event-status">ProcedureStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
             </td>
-            <td>Procedure.status</td>
             <td>
                <p>Procedure.status</p>
             </td>
@@ -293,25 +501,49 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th rowspan="3">Procedure End Date</th>
             <td rowspan="3">
-               <span>PRENDAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The end date of the procedure, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRENDAT">PRENDAT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td rowspan="3">
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format">PRENDTC</span>
+               <span style="font-weight:bold"
+                     title="End date/time of the procedure represented in ISO 8601 character format.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENDTC">PRENDTC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedDateTime">Procedure.performedDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
             </td>
-            <td>Procedure.performedDateTime</td>
             <td>
                <p>Procedure.performedDateTime</p>
             </td>
             <td rowspan="3">FHIR also allows performedString, but there is no way to map that to CDISC. The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific end time.</td>
          </tr>
          <tr>
-            <td>Procedure.performedPeriod</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedPeriod">Procedure.performedPeriod</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
+            </td>
             <td>
                <p>Procedure.performedPeriod.end</p>
             </td>
          </tr>
          <tr>
-            <td>Procedure.performedRange</td>
+            <td>
+               <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedRange">Procedure.performedRange</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Range">Range</a>
+            </td>
             <td>
                <p>Procedure.performedRange.high</p>
             </td>
@@ -319,19 +551,39 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th rowspan="2">Procedure Indication</th>
             <td rowspan="2">
-               <span>PRINDC</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The condition, disease, symptom, or disorder that the procedure was used to address or investigate (e.g., why the therapy was taken or administered, why the procedure was performed).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRINDC">PRINDC</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td rowspan="2">
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRINDC</span>
+               <span style="font-weight:bold"
+                     title="Denotes the indication for the procedure (e.g., why the procedure was performed).">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRINDC">PRINDC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.reasonCode">Procedure.reasonCode</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-reason">ProcedureReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.reasonCode</td>
             <td>
                <p>Procedure.reasonCode</p>
             </td>
             <td rowspan="2">Note that reasonReference would need to be turned into a code or string. </td>
          </tr>
          <tr>
-            <td>Procedure.reasonReference</td>
+            <td>
+               <span title="The justification of why the procedure was performed.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.reasonReference">Procedure.reasonReference</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
+            </td>
             <td>
                <p>Procedure.reasonReference</p>
             </td>
@@ -339,12 +591,21 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Related Adverse Event ID</th>
             <td>
-               <span>PRAENO</span>
+               <span style="font-weight:bold"
+                     title="Identifier for the adverse event that is the indication for this procedure.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRAENO">PRAENO</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold"/>
             </td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset, concatenate all collected CDASH END DATE and TIME components and populate the SDTMIG variable PRSTDTC in ISO 8601 format"/>
+               <span title="Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}adverseevent-definitions.html#AdverseEvent.identifier">AdverseEvent.identifier</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>AdverseEvent.identifier</td>
             <td>
                <p>Procedure.reasonReference.resolve().where(type='AdverseEvent').identifier</p>
             </td>
@@ -353,10 +614,13 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Related Medical History Event ID</th>
             <td>
-               <span>PRMHNO</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Identifier for the medical history event that is the indication for this procedure.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMHNO">PRMHNO</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  For SDTM submission datasets, may be used to create RELREC to link this record with a record in the eMedical History domain."/>
+               <span style="font-weight:bold"/>
             </td>
             <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
             <td/>
@@ -365,29 +629,47 @@ Coding translations are left to the sponsor.<br/>
             <th>Dose Description</th>
             <td/>
             <td>
-               <span>PRDOSTXT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Dosing information collected in text form. Examples: &lt;1, 200-400. Not populated when PRDOSE is populated.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSTXT">PRDOSTXT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
             <td/>
          </tr>
          <tr>
             <th>Procedure Dose Unit</th>
             <td>
-               <span>PRDOSU</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The unit for intended dose/amount for PRDOSE, PRDOSTOT, or PRDOSTXT.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSU">PRDOSU</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDOSU</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Units for PRDOSE, PRDOSTOT, or PRDOSTXT.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSU">PRDOSU</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
             <td/>
          </tr>
          <tr>
             <th>Procedure Frequency per Interval</th>
             <td>
-               <span>PRDOSFRQ</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The number/amount of the procedure that was given/administered/taken during a specific interval.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSFRQ">PRDOSFRQ</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td/>
-            <td>Procedure.extension</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.extension">Procedure.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
+            </td>
             <td>
                <p>Procedure.extension('R5/occurrenceTiming').repeat.frequency</p>
             </td>
@@ -396,23 +678,41 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Route of Administration</th>
             <td>
-               <span>PRROUTE</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The route of administration of the procedure.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRROUTE">PRROUTE</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRROUTE</span>
-            </td>
+               <span style="font-weight:bold" title="Route of administration for PRTRT.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRROUTE">PRROUTE</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">This is a known gap. Procedure Route of Administration interval does NOT exist for 'Procedure'. </td>
             <td/>
          </tr>
          <tr>
             <th>Location of Procedure</th>
             <td>
-               <span>PRLOC</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A description of the anatomical location of an procedure, such as location of a biopsy.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLOC">PRLOC</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRLOC</span>
+               <span style="font-weight:bold" title="Anatomical location of a procedure.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLOC">PRLOC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.bodySite">Procedure.bodySite</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.bodySite</td>
             <td>
                <p>Procedure.bodySite</p>
             </td>
@@ -421,12 +721,26 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Laterality</th>
             <td>
-               <span>PRLAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location further detailing side of the body for the procedure administration.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLAT">PRLAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRLAT</span>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location or specimen further detailing laterality.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLAT">PRLAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}bodystructure-definitions.html#BodyStructure.locationQualifier">BodyStructure.locationQualifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/bodystructure-relative-location">BodyStructureQualifier</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>BodyStructure.locationQualifier</td>
             <td>
                <p>Procedure.extension(procedure-targetBodyStructure).valueReference.resolve().locationQualifier</p>
             </td>
@@ -435,12 +749,26 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Directionality</th>
             <td>
-               <span>PRDIR</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDIR">PRDIR</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDIR</span>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location or specimen further detailing directionality.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDIR">PRDIR</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}bodystructure-definitions.html#BodyStructure.locationQualifier">BodyStructure.locationQualifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/bodystructure-relative-location">BodyStructureQualifier</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>BodyStructure.locationQualifier</td>
             <td>
                <p>Procedure.extension(procedure-targetBodyStructure).valueReference.resolve().locationQualifier</p>
             </td>
@@ -449,21 +777,30 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Portion or Totality</th>
             <td>
-               <span>PRPORTOT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPORTOT">PRPORTOT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRPORTOT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location or specimen further detailing the distribution, which means arrangement of, apportioning of.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPORTOT">PRPORTOT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">Typically this would be pre-coordinated into Procedure.code and would be captured in dosage instructions text for medications.  If captured as a separate element, if would need to be an extension.</td>
             <td/>
          </tr>
          <tr>
             <th>Procedure Fasting Status</th>
             <td>
-               <span>PRFAST</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication that the subject has abstained from food/water for the specified amount of time.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRFAST">PRFAST</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRFAST*</span>
+               <span style="font-weight:bold">PRFAST*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Could propose as standard extension.  Probably not relevant for MedicationStatement</td>
             <td/>
@@ -471,21 +808,30 @@ Coding translations are left to the sponsor.<br/>
          <tr>
             <th>Procedure Intended Dose Regimen</th>
             <td>
-               <span>PRDOSRGM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The text description of the (intended) schedule or regimen for the procedure.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSRGM">PRDOSRGM</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRDOSRGM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Text description of the intended schedule or regimen for the procedure.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSRGM">PRDOSRGM</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">An administration could be based on more than one thing (recommendation, plan, order) and in theory the intended dose would be different for each.</td>
             <td/>
          </tr>
          <tr>
             <th>Procedure Adjusted</th>
             <td>
-               <span>PRDOSADJ</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication whether or not the procedure dose/amount was adjusted.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSADJ">PRDOSADJ</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="When PRDOSADJ is collected, does not map to an SDTMIG variable.  The SDTM Annotated CRF is annotated to indicate that this field is NOT SUBMITTED&gt;  When PRADJ is to collected, the sponsor may suit this variable as a SUPPQ."/>
+               <span style="font-weight:bold"/>
             </td>
             <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Would appear on Procedure/MedicationAdministration/MedicationStatement.basedOn.
 Might consider proposing it as a standard extension.</td>
@@ -494,10 +840,13 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Reason for Procedure Adjustment</th>
             <td>
-               <span>PRADJ</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Description or explanation of why a procedure dose/amount was adjusted.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRADJ">PRADJ</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">PRADJ*</span>
+               <span style="font-weight:bold">PRADJ*</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Would appear on Procedure/MedicationAdministration/MedicationStatement.basedOn.
 Might consider proposing it as a standard extension.</td>
@@ -506,10 +855,13 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Completed Procedure</th>
             <td>
-               <span>PRTRTCMP</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Indication whether the subject completed the intended regimen.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRTCMP">PRTRTCMP</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This does not map, directly to an SDTMIG variable.  This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRTRTCMP&#34; and SUPPPR.QLABEL = &#34;Treatment Completed&#34;. ">SUPPPR.QVAL</span>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td colspan="2" style="background-color:LightGray">Not all potential mapping/FHIR resources/attributes will be addressed in this implementation guide.  All data requires review and analysis to ensure the data is relevant and understood.
 </td>
@@ -518,12 +870,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Interrupted</th>
             <td>
-               <span>PRITRPYN</span>
+               <span style="font-weight:bold"
+                     title="An indication whether the procedure was interrupted.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPYN">PRITRPYN</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold"/>
             </td>
             <td>
-               <span title="Does not map to an SDTMIG variable.  The SDTM a CRF is annotated to indicate that this field is NOT SUBMITTED."/>
+               <span title="A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.status">Procedure.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/event-status">ProcedureStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
             </td>
-            <td>Procedure.status</td>
             <td>
                <p>Procedure.status</p>
             </td>
@@ -532,12 +895,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Reason Procedure Interrupted</th>
             <td>
-               <span>PRITRPRS</span>
+               <span style="font-weight:bold"
+                     title="An indication of why the intervention was interrupted.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPRS">PRITRPRS</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRITRPRS&#34; and SUPPPR.QLABEL = &#34;Reason intervention Interrupted&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span title="Captures the reason for the current state of the procedure.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.statusReason">Procedure.statusReason</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-not-performed-reason">ProcedureNegationReason</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.statusReason</td>
             <td>
                <p>Procedure.statusReason</p>
             </td>
@@ -546,10 +920,13 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Interruption Duration</th>
             <td>
-               <span>PRCINTD</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The collected duration of the procedure interruption.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTD">PRCINTD</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRCINTD&#34; and SUPPPR.QLABEL = &#34;Intervention Duration&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would have to be an extension.  Typically, you'd just look at history to see when something was suspended, then resumed.</td>
             <td/>
@@ -557,10 +934,13 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Interruption Duration Units</th>
             <td>
-               <span>PRCINTDU</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The unit for the collected duration of the procedure interruption.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTDU">PRCINTDU</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPPR dataset as the value of SPPPR.QVAL where SUPPPR.QNAM = &#34;PRITRPD&#34; and SUPPPR.QLABEL = &#34;Interruption Duration&#34;.  Concatenate the collected procedure interruption duration and the duration unit components and create PRITRPD using ISO 8601.">SUPPPR.QVAL</span>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This would have to be part of the previous extension.  Typically, reviewing the history of the procedure will indicate if it was suspended and then resumed.  </td>
             <td/>
@@ -568,12 +948,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Lowest Level Term</th>
             <td>
-               <span>PRLLT</span>
+               <span style="font-weight:bold"
+                     title="MedDRA text description of the Lowest Level Term.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLT">PRLLT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRLLT&#34; and SUPPPR.QLABEL = &#34;Lower Level Term&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -583,12 +974,22 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Lowest Level Term Code</th>
             <td>
-               <span>PRLLTCD</span>
+               <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLTCD">PRLLTCD</a>
+               </span>
+               <br/>Core: O<br/>Type: Num</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRLLTCD&#34; and SUPPPR.QLABEL = &#34;Lower Level Term Code&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -598,12 +999,22 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure Preferred Term Code</th>
             <td>
-               <span>PRPTCD</span>
+               <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPTCD">PRPTCD</a>
+               </span>
+               <br/>Core: O<br/>Type: Num</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRPTCD&#34; and SUPPPR.QLABEL = &#34;Preferred Term Code Lower Level Term Code&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -613,12 +1024,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure High Level Term</th>
             <td>
-               <span>PRHLT</span>
+               <span style="font-weight:bold"
+                     title="MedDRA text description of High Level Term from the primary path.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLT">PRHLT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This information could be submitted in a SUPPPR dataset as the value of SUPPPR.QVAL where SUPPPR.QNAM = &#34;PRHLT&#34; and SUPPPR.QLABEL = &#34;High Level Term&#34;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variable.">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -628,12 +1050,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure High Level Term Code</th>
             <td>
-               <span>PRHLTCD</span>
+               <span style="font-weight:bold"
+                     title="MedDRA High Level Term code from the primary path.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLTCD">PRHLTCD</a>
+               </span>
+               <br/>Core: O<br/>Type: Num</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -643,12 +1076,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure High Level Group Term</th>
             <td>
-               <span>PRHLGT</span>
+               <span style="font-weight:bold"
+                     title="MedDRA text description of the High Level Group Term from the primary path.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGT">PRHLGT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -658,12 +1102,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>Procedure High Level Group Term Code</th>
             <td>
-               <span>PRHLGTCD</span>
+               <span style="font-weight:bold"
+                     title="MedDRA High Level Group Term code from the primary path.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGTCD">PRHLGTCD</a>
+               </span>
+               <br/>Core: O<br/>Type: Num</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -673,12 +1128,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>PR Primary System Organ Class</th>
             <td>
-               <span>PRSOC</span>
+               <span style="font-weight:bold"
+                     title="MedDRA Primary System Organ Class description associated with the intervention.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOC">PRSOC</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>
@@ -688,12 +1154,23 @@ Might consider proposing it as a standard extension.</td>
          <tr>
             <th>PR Primary System Organ Class Code</th>
             <td>
-               <span>PRSOCCD</span>
+               <span style="font-weight:bold"
+                     title="MedDRA Primary System Organ Class code.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOCCD">PRSOCCD</a>
+               </span>
+               <br/>Core: O<br/>Type: Num</td>
+            <td>
+               <span style="font-weight:bold">SUPPPR.QVAL</span>
             </td>
             <td>
-               <span title="This is not a data collection field that would appear on the CRF.  Sponsors will populate this through the coding process.  This is applicable to items using the MedDRA coding dictionary.  Rationale for adding coding variable to CDASH is to provide a more complete data management package.  This variable could be used in the PR domain for MedDRA coding.  Other dictionaries can be used and the appropriate coding elements added.  if appropriate, in the SUPPPR.QVAL dataset">SUPPPR.QVAL</span>
+               <span title="The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &#34;Laparoscopic Appendectomy&#34;).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.code">Procedure.code</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/procedure-code">ProcedureCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Procedure.code</td>
             <td>
                <p>Procedure.code</p>
             </td>

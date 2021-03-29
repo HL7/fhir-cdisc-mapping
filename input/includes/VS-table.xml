@@ -29,12 +29,22 @@
          <tr>
             <th>Study Identifier</th>
             <td>
-               <span>STUDYID</span>
-            </td>
+               <span style="font-weight:bold" title="A unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span>STUDYID</span>
+               <span style="font-weight:bold" title="Unique identifier for a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research study by the sponsor or other systems.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.identifier">ResearchStudy.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchStudy.identifier</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
@@ -45,12 +55,24 @@
          <tr>
             <th>Study Site Identifier</th>
             <td>
-               <span>SITEID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SITEID</span>
+               <span style="font-weight:bold"
+                     title="Unique identifier for a site within a study.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="A facility in which study activities are conducted.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchstudy-definitions.html#ResearchStudy.site">ResearchStudy.site</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
             </td>
-            <td>ResearchStudy.site</td>
             <td>
                <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
                <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
@@ -61,12 +83,24 @@
          <tr>
             <th>Subject Identifier for the Study</th>
             <td>
-               <span>SUBJID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A unique subject identifier within a site and a study.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">DM.SUBJID</span>
+               <span style="font-weight:bold"
+                     title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Identifiers assigned to this research subject for a study.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>ResearchSubject.identifier</td>
             <td>
                <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
             </td>
@@ -76,23 +110,38 @@
          <tr>
             <th>Visit Name</th>
             <td>
-               <span>VISIT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VISIT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
             <td/>
          </tr>
          <tr>
             <th>Visit Date</th>
             <td>
-               <span>VISDAT</span>
+               <span style="font-weight:bold"
+                     title="Date the clinical encounter occurred (or started).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold"/>
             </td>
             <td>
-               <span title="The field is not an SDTM variable.  The date of a measurement, test observation can be determined from the date/time of visit (VISDAT/VISTM components"/>
+               <span title="The start and end time of the encounter.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}encounter-definitions.html#Encounter.period">Encounter.period</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Period">Period</a>
             </td>
-            <td>Encounter.period</td>
             <td>
                <p>Observation.encounter.resolve().period.start</p>
             </td>
@@ -101,12 +150,26 @@
          <tr>
             <th>Vital Signs Performed</th>
             <td>
-               <span>VSPERF</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="This field is not an SDTM variable.  &#xA;May be used to derive a value into the SDTM variable VSSTAT.  If VSPERF=&#34;N&#34;, the value of VSSSTAT will be &#34;NOT DONE&#34;.  If VSPErF=&#34;Y&#34;, VSSTAT should be NULL">VSSTAT</span>
+               <span style="font-weight:bold"
+                     title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The status of the result value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
             </td>
-            <td>Observation.status</td>
             <td>
                <p>Observation.status=('final' or 'cancelled')</p>
             </td>
@@ -115,12 +178,23 @@
          <tr>
             <th>Vital Signs Date</th>
             <td>
-               <span>VSDAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
+               <span style="font-weight:bold">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
             </td>
-            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -129,12 +203,23 @@
          <tr>
             <th>Vital Signs Time</th>
             <td>
-               <span>VSTIM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span title="This does not map directly to an SDTMIG variable.  For the SDTM submission dataset concatenate all collected CDASH DATE and TIME components and populate the SDTMIG variable VSDTC in ISO 8601 format.">VSDTC</span>
+               <span style="font-weight:bold">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
+            <td>
+               <span title="The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the &#34;physiologically relevant time&#34;. This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.effectiveDateTime">Observation.effectiveDateTime</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
             </td>
-            <td>Observation.effectiveDateTime</td>
             <td>
                <p>Observation.effectiveDateTime</p>
             </td>
@@ -143,12 +228,26 @@
          <tr>
             <th>Category for Vital Signs</th>
             <td>
-               <span>VSCAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A grouping of topic-variable values based on user-defined characteristics.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). ">VSCAT</span>
+               <span style="font-weight:bold"
+                     title="Used to define a category of related records.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A code that classifies the general type of observation being made.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
             </td>
-            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -159,12 +258,26 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Subcategory for Vital Signs</th>
             <td>
-               <span>VSSCAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A sub-division of the VSCAT values based on user-defined characteristics.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSCAT</span>
+               <span style="font-weight:bold"
+                     title="A further categorization of a measurement or examination.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A code that classifies the general type of observation being made.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.category">Observation.category</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-category">ObservationCategory</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#preferred">preferred</a>
             </td>
-            <td>Observation.category</td>
             <td>
                <p>Observation.category</p>
             </td>
@@ -175,23 +288,38 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Group ID</th>
             <td>
-               <span>VSGRPID</span>
+               <span style="font-weight:bold">VSGRPID</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSGRPID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Used to tie together a block of related records in a single domain for a subject.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
             <td colspan="2" style="background-color:LightGray">This would typically be done by having the related Observations being 'membersOf' a common parent Observation.</td>
             <td/>
          </tr>
          <tr>
             <th>Vital Signs Planned Time Point Name</th>
             <td>
-               <span>VSTPT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A text description of planned time point when measurements should be taken as defined in the protocol.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSTPT</span>
+               <span style="font-weight:bold"
+                     title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.extension">Observation.extension</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
             </td>
-            <td>Observation.extension</td>
             <td>
                <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
             </td>
@@ -200,12 +328,26 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th rowspan="2">Vital Signs Completion Status</th>
             <td rowspan="2">
-               <span>VSSTAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td rowspan="2">
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSSTAT</span>
+               <span style="font-weight:bold"
+                     title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="The status of the result value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.status">Observation.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-status">ObservationStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
             </td>
-            <td>Observation.status</td>
             <td>
                <p>Observation.status</p>
                <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
@@ -213,7 +355,15 @@ This combination can be used to extract vital sign data points from EHR system a
             <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
          </tr>
          <tr>
-            <td>ServiceRequest.status</td>
+            <td>
+               <span title="The status of the order.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}servicerequest-definitions.html#ServiceRequest.status">ServiceRequest.status</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/request-status">ServiceRequestStatus</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+            </td>
             <td>
                <p>Observation.status</p>
                <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
@@ -222,12 +372,23 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>VS Result or Finding in Original Units</th>
             <td>
-               <span>VSORRES</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Result of the vital signs measurement as originally received or collected.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRES</span>
-            </td>
-            <td>Observation.valueQuantity</td>
+               <span style="font-weight:bold"
+                     title="Result of the vital signs measurement as originally received or collected.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.value</p>
             </td>
@@ -236,12 +397,23 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>VS Original Units</th>
             <td>
-               <span>VSORRESU</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The unit of the result as originally received or collected.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSORRESU</span>
-            </td>
-            <td>Observation.valueQuantity</td>
+               <span style="font-weight:bold"
+                     title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
+               </span>
+               <br/>Core: Exp<br/>Type: Char</td>
+            <td>
+               <span title="The information determined as a result of making the observation, if the information has a simple value.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.valueQuantity">Observation.valueQuantity</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Quantity">Quantity</a> obs-7</td>
             <td>
                <p>Observation.valueQuantity.unit</p>
             </td>
@@ -250,12 +422,23 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Clinical Significance</th>
             <td>
-               <span>VSCLSIG</span>
+               <span style="font-weight:bold"
+                     title="An indication whether the vital sign result was clinically significant.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">SUPPVS.QVAL</span>
             </td>
             <td>
-               <span>SUPPVS.QVAL</span>
+               <span title="A categorical assessment of an observation value.  For example, high, low, normal.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.interpretation">Observation.interpretation</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-interpretation">ObservationInterpretation</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#extensible">extensible</a>
             </td>
-            <td>Observation.interpretation</td>
             <td>
                <p>Observation.interpretation</p>
             </td>
@@ -264,19 +447,41 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th rowspan="2">Vital Signs Position of Subject</th>
             <td rowspan="2">
-               <span>VSPOS</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The position of the subject during a measurement or examination.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
+               </span>
+               <br/>Core: R/C<br/>Type: Char</td>
             <td rowspan="2">
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSPOS</span>
+               <span style="font-weight:bold"
+                     title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code</p>
             </td>
             <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
          </tr>
          <tr>
-            <td>Observation.method</td>
+            <td>
+               <span title="Indicates the mechanism used to perform the observation.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.method">Observation.method</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-methods">ObservationMethod</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
+            </td>
             <td>
                <p>Observation.method</p>
             </td>
@@ -284,12 +489,26 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Location of Vital Signs Measurement</th>
             <td>
-               <span>VSLOC</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLOC</span>
+               <span style="font-weight:bold"
+                     title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -298,12 +517,26 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Laterality</th>
             <td>
-               <span>VSLAT</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location further detailing the side of the body.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSLAT</span>
+               <span style="font-weight:bold"
+                     title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -312,12 +545,23 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Directionality</th>
             <td>
-               <span>VSDIR</span>
+               <span style="font-weight:bold"
+                     title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
+            <td>
+               <span style="font-weight:bold">VSDIR*</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).">VSDIR*</span>
+               <span title="Indicates the site on the subject's body where the observation was made (i.e. the target site).">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.bodySite">Observation.bodySite</a>
+               </span>
+               <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/body-site">BodySite</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.bodySite</td>
             <td>
                <p>Observation.bodySite</p>
             </td>
@@ -326,12 +570,23 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Test code</th>
             <td>
-               <span>VSTESTCD</span>
+               <span style="font-weight:bold">VSTESTCD</span>
             </td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTESTCD</span>
+               <span style="font-weight:bold"
+                     title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.code</p>
             </td>
@@ -340,12 +595,26 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Test Name</th>
             <td>
-               <span>VSTEST</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="Descriptive name of the test or examination used to obtain the measurement or finding.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
+               </span>
+               <br/>Core: HR<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). The SDTMIG variable VSTESTCD may be determined from the value collected in VSTESTCD and VSTEST. Both  VSTESTCD and VSTEST are required in the SDTM submission datasets.  Use appropriate CDISC Controlled Terminology for the test and test code.">VSTEST</span>
+               <span style="font-weight:bold"
+                     title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
+               </span>
+               <br/>Core: Req<br/>Type: Char</td>
+            <td>
+               <span title="Describes what was observed. Sometimes this is called the observation &#34;name&#34;.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.code">Observation.code</a>
+               </span>
+               <br/>1..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+               <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/observation-codes">ObservationCode</a> 
+               <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
             </td>
-            <td>Observation.code</td>
             <td>
                <p>Observation.code.coding.display</p>
             </td>
@@ -354,12 +623,24 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Sponsor-Defined Identifier</th>
             <td>
-               <span>VSSPID</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).  May be used to create RELREC to link this record with a record in another domain.">VSSPID</span>
+               <span style="font-weight:bold"
+                     title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
+                  <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
+               </span>
+               <br/>Core: Perm<br/>Type: Char</td>
+            <td>
+               <span title="A unique identifier assigned to this observation.">
+                  <a style="font-weight:bold"
+                     href="{{site.data.fhir.path}}observation-definitions.html#Observation.identifier">Observation.identifier</a>
+               </span>
+               <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
             </td>
-            <td>Observation.identifier</td>
             <td>
                <p>Observation.identifier.where(assigner=[sponsor organization id])</p>
             </td>
@@ -368,10 +649,13 @@ This combination can be used to extract vital sign data points from EHR system a
          <tr>
             <th>Vital Signs Repetition Number</th>
             <td>
-               <span>VSREPNUM</span>
-            </td>
+               <span style="font-weight:bold"
+                     title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
+                  <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
+               </span>
+               <br/>Core: O<br/>Type: Char</td>
             <td>
-               <span title="The repetition number of test/measurement within the time point ma be preprinted on the CRF (e.g.. multiple measurements of blood pressure, multiple analyses of a sample).&#xA;&#xA;&#xA;               &#xA;&#xA;This does not map directly to an SDTMIG variable.  This information could be submitted in a SUPPVS dataset as the value of SUPPPVS.QVAL where SUPPVS.QNAM=&#34;VSREPNUM&#34; and SUPVS.QLABEL=&#34;Repetition Number within time point:.  Refer to current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.">SUPPVS.QVAL</span>
+               <span style="font-weight:bold">SUPPVS.QVAL</span>
             </td>
             <td colspan="2" style="background-color:LightGray">This could be captured as a specific ActivityDefinition where you'd have a distinct ActivityDefinition for each occurrence.  However, it is more likely to be a single ActivityDefinition for the test and an extension would be added on Observation.instantiates to indicate which occurrence is the Observation.</td>
             <td/>

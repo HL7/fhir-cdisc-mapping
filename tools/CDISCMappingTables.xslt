@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
+	<xsl:variable name="linkPrefix" select="'http://cdisc.org'"/>
 	<xsl:template match="/mappings">
 <!--    <html>
       <head>
@@ -76,14 +77,33 @@
                     <xsl:attribute name="rowspan" select="$rows"/>
                   </xsl:if>
                   <xsl:for-each select="$element/cdisc[@spec=current()]">
-                    <span>
-                      <xsl:for-each select="description">
+                    <span style="font-weight:bold">
+                      <xsl:for-each select="definition">
                         <xsl:attribute name="title">
                           <xsl:apply-templates mode="htmlToString" select="node()"/>
                         </xsl:attribute>
                       </xsl:for-each>
-                      <xsl:value-of select="@label"/>
+                      <xsl:choose>
+                        <xsl:when test="@link">
+                          <a href="{$linkPrefix}{@link}">
+                            <xsl:value-of select="@label"/>
+                          </a>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:value-of select="@label"/>
+                        </xsl:otherwise>
+                      </xsl:choose>
                     </span>
+                    <xsl:if test="@core">
+                      <br/>
+                      <xsl:value-of select="concat('Core:&#xA0;', @core)"/>
+                      <br/>
+                      <xsl:value-of select="concat('Type:&#xA0;', @type)"/>
+                      <xsl:if test="@valueDomain|valueList">
+                        <br/>
+                        <xsl:value-of select="concat('values:&#xA0;', @valueDomain,string-join(valueList/value, ', '))"/>
+                      </xsl:if>
+                    </xsl:if>
                   </xsl:for-each>
                 </td>
               </xsl:for-each>
@@ -112,7 +132,39 @@
 	</xsl:template>
 	<xsl:template match="mapping">
     <td>
-      <xsl:value-of select="concat(@resource, '.', @path)"/>
+      <span>
+        <xsl:attribute name="title">
+          <xsl:value-of select="definition/@value"/>
+        </xsl:attribute>
+        <a style="font-weight:bold">
+          <xsl:attribute name="href" select="concat('{{site.data.fhir.path}}', lower-case(@resource), '-definitions.html#', @resource, '.', translate(@path, '[]','__'))"/>
+          <xsl:value-of select="concat(@resource, '.', @path)"/>
+        </a>
+      </span>
+      <br/>
+      <xsl:value-of select="concat(@min, '..', @max, '&#xA0;')"/>
+      <a>
+        <xsl:variable name="datatypePath" select="if (type/code/@value='Reference') then 'references.html' else concat('datatypes.html#', type/code/@value)"/>
+        <xsl:attribute name="href" select="concat('{{site.data.fhir.path}}', $datatypePath)"/>
+        <xsl:value-of select="type/code/@value"/>
+      </a>
+      <xsl:if test="condition">
+        <xsl:text>&#xA0;</xsl:text>
+        <xsl:value-of select="string-join(condition/@value, ', ')"/>
+      </xsl:if>
+      <xsl:for-each select="binding">
+        <br/>
+        <xsl:variable name="valueSet" select="if(contains(@valueSet, '|')) then substring-before(@valueSet, '|') else @valueSet"/>
+        <xsl:text>Binding:&#xA0;</xsl:text>
+        <a href="{$valueSet}">
+          <xsl:value-of select="@name"/>
+        </a>
+        <xsl:value-of select="' '"/>
+        <a>
+          <xsl:attribute name="href" select="concat('{{site.data.fhir.path}}terminologies.html#', lower-case(@strength))"/>
+          <xsl:value-of select="@strength"/>
+        </a>
+      </xsl:for-each>
     </td>
     <td>
       <xsl:for-each select="path">
