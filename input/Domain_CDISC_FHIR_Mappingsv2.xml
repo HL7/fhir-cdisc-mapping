@@ -11350,7 +11350,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure.status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">This supports the necessity of separating procedures and medication.&#10;&#10;An example of ongoing procedure, &quot;hemodialysis with frequency of three times a week&quot;.&#10;&#10;If the status is 'in-progress'/'active', then it's ongoing.  Note that MedicationAdministration reflects a single administration, so it would only be 'ongoing' until the IV is turned off or the rate is adjusted.</Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">This supports the necessity of separating procedures and medication.&#10;&#10;An example of ongoing procedure, &quot;hemodialysis with frequency of three times a week&quot;.&#10;&#10;If the status is 'in-progress'/'active', then it's ongoing.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRONGO</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11584,7 +11584,7 @@
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s121"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">This would be handled as an extension.  Could propose as standard extension.  Probably not relevant for MedicationStatement</Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">This would be handled as an extension. Could propose as standard extension.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s118"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRFAST</Data><NamedCell
@@ -11747,7 +11747,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRLLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11767,7 +11767,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR soure data. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR soure data. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRLLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11787,7 +11787,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRPTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11807,7 +11807,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRHLT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11827,7 +11827,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRHLTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11847,7 +11847,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.&#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.&#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRHLGT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11867,7 +11867,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRHLGTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11887,7 +11887,7 @@
     <Cell ss:StyleID="s70"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.&#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.&#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRSOC</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11907,7 +11907,7 @@
     <Cell ss:StyleID="s328"><Data ss:Type="String">Procedure.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s329"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s330"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)&#10;&#10;Note: Not clear how many of these would be populated for a procedure rather than a medication</Data><NamedCell
+    <Cell ss:StyleID="s330"><Data ss:Type="String">Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. &#10;&#10;Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s329"><Data ss:Type="String">PRSOCCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
