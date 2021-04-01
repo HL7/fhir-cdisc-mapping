@@ -7237,7 +7237,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="99.75" ss:StyleID="s108">
-    <Cell ss:StyleID="s106"><Data ss:Type="String">prespecified Adverse Event</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Prespecified Adverse Event</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s121"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -11121,7 +11121,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Procedure.category</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s119"><Data ss:Type="String">FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</Data><NamedCell
+    <Cell ss:StyleID="s119"><Data ss:Type="String">FHIR doesn't have 2 distinct category levels. The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.  A standard extension will be needed to convey multiple repetitions in R4.  (Procedure.category does repeat in the draft of R5) The SNOMED binding is an example, which means that any codes can be used. Even if the binding were stronger, alternate codes would be possible on other repetitions.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">PRCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
