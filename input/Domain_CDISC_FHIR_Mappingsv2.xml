@@ -11102,7 +11102,7 @@
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s118"><Data ss:Type="String">This likely to be a Questionnaire question than something that would directly be captured in a record.  It could be the answer to an Observation, but even then it would be qualified by type and time-range (procedure covers education, massage, cognitive therapy and various other data)</Data><NamedCell
+    <Cell ss:StyleID="s118"><Data ss:Type="String">In FHIR, this would be determined by searching for Procedures with a given subject (possibly also filtered by research study) and excluding those that were entered in error. It might also be necessary to search for education, massage, cognitive therapy and various other data to determine all procedures.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="7" ss:StyleID="s107"><Data ss:Type="String">PRYN</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
