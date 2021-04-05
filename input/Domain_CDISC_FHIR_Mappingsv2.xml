@@ -5392,7 +5392,7 @@
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate. This can sometimes also be inferred from the Observation.code.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</Data><NamedCell
