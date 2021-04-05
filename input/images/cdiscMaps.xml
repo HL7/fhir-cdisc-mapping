@@ -304,7 +304,7 @@ unknown -&gt; U</comment>
          <mapping resource="Specimen" path="collection.fastingStatusCodeableConcept" min="0" max="1">
             <path value="Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code"/>
          <definition value="Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection."/><comment value="Representing fasting status using this element is preferred to representing it with an observation using a 'pre-coordinated code'  such as  LOINC 2005-7 (Calcium [Moles/​time] in 2 hour Urine --12 hours fasting), or  using  a component observation ` such as `Observation.component code`  = LOINC 49541-6 (Fasting status - Reported)."/><binding name="FastingStatus" strength="extensible" valueSet="http://terminology.hl7.org/ValueSet/v2-0916"/><type><code value="CodeableConcept"/></type></mapping>
-         <comment>FHIR to CDISC mapping as follows:
+         <comment>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</comment>
       </element>
@@ -811,7 +811,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <mapping resource="Specimen" path="collection.fastingStatusCodeableConcept" min="0" max="1">
             <path value="Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code"/>
          <definition value="Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection."/><comment value="Representing fasting status using this element is preferred to representing it with an observation using a 'pre-coordinated code'  such as  LOINC 2005-7 (Calcium [Moles/​time] in 2 hour Urine --12 hours fasting), or  using  a component observation ` such as `Observation.component code`  = LOINC 49541-6 (Fasting status - Reported)."/><binding name="FastingStatus" strength="extensible" valueSet="http://terminology.hl7.org/ValueSet/v2-0916"/><type><code value="CodeableConcept"/></type></mapping>
-         <comment>FHIR to CDISC mapping as follows:
+         <comment>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
             <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</comment>
       </element>
