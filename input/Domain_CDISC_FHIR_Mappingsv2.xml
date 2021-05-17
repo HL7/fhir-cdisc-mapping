@@ -5571,7 +5571,7 @@
     <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">DM.STUDYID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5590,7 +5590,7 @@
     <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. &#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">DM.SITEID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5833,7 +5833,7 @@
     <Cell ss:StyleID="s88"><Data ss:Type="String">Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s74"><Data ss:Type="String">CDISC to FHIR mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</Data><NamedCell
+    <Cell ss:StyleID="s74"><Data ss:Type="String">CDISC to FHIR mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.&#10;&#10;In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><Data ss:Type="String">LBCFAST</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6511,7 +6511,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">STUDYID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -7064,7 +7064,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study. &#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><Data ss:Type="String">STUDYID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -7106,7 +7106,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Research subject points to patient, adverse event points to patient. Adverse event points to study. Check to see if they are the same in order to establish linkage.  When extracting real world evidence either the extraction will be performed in a fully identified mode and de-identification will happen as a subsequent process or the de-identification will already have occurred. Any identify info in the resources will already have real world identification randomized or otherwise made nonsensitive. The mapping is referring to subject.reference not to the identifier element on the clinical resources.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><Data ss:Type="String">SUBJID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -7707,7 +7707,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">suspectEntity.causality.productRelatedness</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">AdverseEvent.suspectEntity.causality.productRelatedness</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">AdverseEvent.suspectEntity.causality.productRelatedness|AdverseEvent.suspectEntity.causality.assessment with binding to  AdverseEventCausalityAssessment value set</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -8277,7 +8277,7 @@
     <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value&#10;&#10;AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String">SITEID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9505,7 +9505,7 @@
     <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier.value&#10;&#10;MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s234"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study. &#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String">SITEID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -10078,7 +10078,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">dosage</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.dosage.text</Data><NamedCell
+    <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.dosage.text|MedicationStatement.dosage.maxDosePerPeriod.of</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s241"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">Requires combining multiple repetitions together</Data><NamedCell
@@ -10178,7 +10178,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">dosage</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s228"><Data ss:Type="String">MedicationStatement.dosage.maxDosePerPeriod.code</Data><NamedCell
+    <Cell ss:StyleID="s228"><Data ss:Type="String">MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s275"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -11046,7 +11046,7 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. &#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><Data ss:Type="String">STUDYID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -11066,7 +11066,7 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><Data ss:Type="String">SITEID</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -12008,7 +12008,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</Data><NamedCell
+    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient).study.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12269,7 +12269,7 @@
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s197"><Data ss:Type="String">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.&#10;&#10;Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</Data><NamedCell
+    <Cell ss:StyleID="s197"><Data ss:Type="String">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.&#10;&#10;Please note: the extension may or may not correspond to the sponsor's requirements and the extension can actually capture race information in 3 different ways, so further mapping would be needed.&#10;&#10;Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s197"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String">RACE</Data><NamedCell
