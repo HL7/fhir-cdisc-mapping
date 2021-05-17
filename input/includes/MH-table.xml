@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -69,13 +69,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -100,13 +100,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -127,7 +127,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not there was any medical history to report.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHYN">MHYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHYN">MHYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -141,13 +141,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHCAT">MHCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHCAT">MHCAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Used to define a category of related records. Examples: CARDIAC or GENERAL">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHCAT">MHCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHCAT">MHCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -212,13 +212,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sub-division of the MHCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSCAT">MHSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSCAT">MHSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A further categorization of the condition or event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSCAT">MHSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSCAT">MHSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -283,12 +283,12 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The date on which the medical history was collected, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDAT">MHDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDAT">MHDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHDTC">MHDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHDTC">MHDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -344,13 +344,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSPID">MHSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSPID">MHSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database. Example: Line number on a Medical History page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSPID">MHSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSPID">MHSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -406,7 +406,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHEVDTYP">MHEVDTYP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHEVDTYP">MHEVDTYP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -419,13 +419,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The reported or prespecified name of the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHTERM">MHTERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHTERM">MHTERM</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Verbatim or preprinted CRF term for the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHTERM">MHTERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHTERM">MHTERM</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -489,13 +489,13 @@
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified medical condition/event or a group of medical conditions/events occurred when information about the occurrence of a specific event is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHOCCUR">MHOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHOCCUR">MHOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Used when the occurrence of specific medical history conditions is solicited to indicate whether or not (Y/N) a medical condition (MHTERM) had ever occurred. Values are null for spontaneously reported events.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHOCCUR">MHOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHOCCUR">MHOCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -541,13 +541,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific event, or group of events, are prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPRESP">MHPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPRESP">MHPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A value of &#34;Y&#34; indicates that this medical history event was pre-specified on the CRF. Values are null for spontaneously reported events (i.e., those collected as free-text verbatim terms)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHPRESP">MHPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHPRESP">MHPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Not expect to receive these from the site.  How this is populated in the sponsor's database would be up to the sponsor. If available, this would need to be an extension.  The notion of pre-specified is part of the questionnaire</td>
@@ -558,7 +558,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the event occurred prior to study start.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPRIOR">MHPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPRIOR">MHPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -574,17 +574,17 @@
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Indication the medical condition or event is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHONGO">MHONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHONGO">MHONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENRF">MHENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENRF">MHENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the end of the event as being before or after the reference time point defined by variable MHENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENRTPT">MHENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENRTPT">MHENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U</td>
                   <td>
@@ -619,12 +619,12 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSTDAT">MHSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSTDAT">MHSTDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSTDTC">MHSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSTDTC">MHSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -680,12 +680,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The end date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHENDAT">MHENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHENDAT">MHENDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENDTC">MHENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENDTC">MHENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -704,7 +704,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A description of the anatomical location relevant for the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLOC">MHLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLOC">MHLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -773,7 +773,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body relevant for the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLAT">MHLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLAT">MHLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -787,7 +787,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDIR">MHDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDIR">MHDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -801,7 +801,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution, which means arrangement of, apportioning of.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPORTOT">MHPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPORTOT">MHPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -815,13 +815,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHMODIFY">MHMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHMODIFY">MHMODIFY</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHMODIFY">MHMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHMODIFY">MHMODIFY</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
@@ -831,13 +831,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The dictionary text description of MHTERM or the modified topic variable (MH MODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDECOD">MHDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDECOD">MHDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of MHTERM or MHMODIFY. Equivalent to the Preferred Term (PT in MedDRA). The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHDECOD">MHDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHDECOD">MHDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -901,7 +901,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA Dictionary text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLLT">MHLLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLLT">MHLLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -967,7 +967,7 @@
                   <th rowspan="4">MH Event Lowest Level Term Code</th>
                   <td rowspan="4">
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLLTCD">MHLLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLLTCD">MHLLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -1033,7 +1033,7 @@
                   <th rowspan="4">MH Event Preferred Term Code</th>
                   <td rowspan="4">
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPTCD">MHPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPTCD">MHPTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -1100,7 +1100,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLT">MHHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLT">MHHLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -1167,7 +1167,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLTCD">MHHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLTCD">MHHLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -1234,7 +1234,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLGT">MHHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLGT">MHHLGT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -1301,7 +1301,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLGTCD">MHHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLGTCD">MHHLGTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -1430,7 +1430,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA code for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSOCCD">MHSOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSOCCD">MHSOCCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -1538,12 +1538,12 @@
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1568,13 +1568,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1595,13 +1595,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
@@ -1613,7 +1613,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not there was any medical history to report.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHYN">MHYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHYN">MHYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1638,13 +1638,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHCAT">MHCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHCAT">MHCAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Used to define a category of related records. Examples: CARDIAC or GENERAL">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHCAT">MHCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHCAT">MHCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">The sponsors does not typically require this information from the sites.<br/>
@@ -1709,13 +1709,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sub-division of the MHCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSCAT">MHSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSCAT">MHSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A further categorization of the condition or event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSCAT">MHSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSCAT">MHSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">The sponsors does not typically require this information from the sites.<br/>
@@ -1778,12 +1778,12 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The date on which the medical history was collected, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDAT">MHDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDAT">MHDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHDTC">MHDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHDTC">MHDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="4"/>
@@ -1839,13 +1839,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSPID">MHSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSPID">MHSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database. Example: Line number on a Medical History page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSPID">MHSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSPID">MHSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
@@ -1891,7 +1891,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHEVDTYP">MHEVDTYP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHEVDTYP">MHEVDTYP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1916,13 +1916,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The reported or prespecified name of the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHTERM">MHTERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHTERM">MHTERM</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Verbatim or preprinted CRF term for the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHTERM">MHTERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHTERM">MHTERM</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td rowspan="4"/>
@@ -1985,13 +1985,13 @@
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified medical condition/event or a group of medical conditions/events occurred when information about the occurrence of a specific event is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHOCCUR">MHOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHOCCUR">MHOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Used when the occurrence of specific medical history conditions is solicited to indicate whether or not (Y/N) a medical condition (MHTERM) had ever occurred. Values are null for spontaneously reported events.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHOCCUR">MHOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHOCCUR">MHOCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="3">In general in FHIR, records of the absence of Conditions are not normally captured.  If the information revolves around "has the patient had X", that would be accomplished through a Questionnaire.Response</td>
@@ -2027,13 +2027,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific event, or group of events, are prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPRESP">MHPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPRESP">MHPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A value of &#34;Y&#34; indicates that this medical history event was pre-specified on the CRF. Values are null for spontaneously reported events (i.e., those collected as free-text verbatim terms)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHPRESP">MHPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHPRESP">MHPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2045,7 +2045,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the event occurred prior to study start.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPRIOR">MHPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPRIOR">MHPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2070,17 +2070,17 @@
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Indication the medical condition or event is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHONGO">MHONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHONGO">MHONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENRF">MHENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENRF">MHENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the end of the event as being before or after the reference time point defined by variable MHENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENRTPT">MHENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENRTPT">MHENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U</td>
                   <td rowspan="2"/>
@@ -2114,12 +2114,12 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSTDAT">MHSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSTDAT">MHSTDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHSTDTC">MHSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHSTDTC">MHSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="4"/>
@@ -2174,12 +2174,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The end date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHENDAT">MHENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHENDAT">MHENDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHENDTC">MHENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHENDTC">MHENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -2201,7 +2201,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A description of the anatomical location relevant for the medical condition or event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLOC">MHLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLOC">MHLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -2259,7 +2259,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body relevant for the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLAT">MHLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLAT">MHLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2273,7 +2273,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDIR">MHDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDIR">MHDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2287,7 +2287,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution, which means arrangement of, apportioning of.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPORTOT">MHPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPORTOT">MHPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2300,13 +2300,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHMODIFY">MHMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHMODIFY">MHMODIFY</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHMODIFY">MHMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHMODIFY">MHMODIFY</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
@@ -2328,13 +2328,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The dictionary text description of MHTERM or the modified topic variable (MH MODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHDECOD">MHDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHDECOD">MHDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of MHTERM or MHMODIFY. Equivalent to the Preferred Term (PT in MedDRA). The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/MH/variables/MHDECOD">MHDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHDECOD">MHDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
@@ -2398,7 +2398,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA Dictionary text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLLT">MHLLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLLT">MHLLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -2464,7 +2464,7 @@
                   </td>
                   <td rowspan="4">
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHLLTCD">MHLLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHLLTCD">MHLLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -2530,7 +2530,7 @@
                   </td>
                   <td rowspan="4">
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHPTCD">MHPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHPTCD">MHPTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -2597,7 +2597,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLT">MHHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLT">MHHLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -2664,7 +2664,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLTCD">MHHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLTCD">MHHLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -2731,7 +2731,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLGT">MHHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLGT">MHHLGT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -2798,7 +2798,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHHLGTCD">MHHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHHLGTCD">MHHLGTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
@@ -2927,7 +2927,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="MedDRA code for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/MH/fields/MHSOCCD">MHSOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHSOCCD">MHSOCCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">

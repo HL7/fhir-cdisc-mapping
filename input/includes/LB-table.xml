@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">DM.STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/STUDYID">DM.STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">DM.STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">DM.STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -66,13 +66,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -95,7 +95,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An identifier to describe the Investigator for the study. May be used in addition to SITEID. Not needed if SITEID is equivalent to INVID.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/INVID">DM.INVID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/INVID">DM.INVID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -117,13 +117,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -147,7 +147,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="1. Clinical encounter number. 2. Numeric version of VISIT, used for sorting.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISITNUM">VISITNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/VISITNUM">VISITNUM</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num</td>
                   <td>
@@ -167,13 +167,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/VISIT">VISIT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Protocol-defined description of clinical encounter 2. May be used in addition to VISITNUM and/or VISITDY">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/VISIT">VISIT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -193,13 +193,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An internal or external identifier such as specimen identifier.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID">LBREFID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID">LBREFID</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Internal or external specimen identifier. Example: Specimen ID.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID">LBREFID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID">LBREFID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -219,7 +219,7 @@
                   <td rowspan="2"/>
                   <td rowspan="2">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDTC">LBDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBDTC">LBDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -252,7 +252,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td/>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBENDTC">LBENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBENDTC">LBENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -296,7 +296,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="1. Text Description of time when specimen should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See LBTPTNUM and LBTPTREF. Examples: Start, 5 min post.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPT">LBTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTPT">LBTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -319,7 +319,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Planned Elapsed time (in ISO 8601) relative to a planned fixed reference (LBTPTREF). This variable is useful where there are repetitive measures. Not a clock time or a date time variable. Represented as an ISO 8601 duration. Examples: &#34;-PT15M&#34; to represent the period of 15 minutes prior to the reference point indicated by LBTPTREF, or &#34;PT8H&#34; to represent the period of 8 hours after the reference point indicated by LBTPTREF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBELTM">LBELTM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBELTM">LBELTM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -342,7 +342,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Free or standardized text describing the condition of the specimen e.g. HEMOLYZED, ICTERIC, LIPEMIC etc.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPCCND">LBSPCCND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSPCCND">LBSPCCND</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -368,7 +368,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Defines the type of specimen used for a measurement. Examples: SERUM, PLASMA, URINE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPEC">LBSPEC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSPEC">LBSPEC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -394,7 +394,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Indicator used to identify fasting status such as Y, N, U, or null if not relevant.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -409,7 +409,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
                   </td>
-                  <td>FHIR to CDISC mapping as follows:
+                  <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
                </tr>
@@ -418,7 +418,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication whether the testing condition defined in the protocol were met (e.g., Low fat diet).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBCOND">LBCOND</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBCOND">LBCOND</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td/>
@@ -476,7 +476,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to define a category of related records across subjects. Examples: such as HEMATOLOGY, URINALYSIS, CHEMISTRY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBCAT">LBCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBCAT">LBCAT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -515,7 +515,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to indicate exam not done. Should be null if a result exists in LBORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTAT">LBSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSTAT">LBSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -557,7 +557,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Describes why a measurement or test was not performed such as BROKEN EQUIPMENT, SUBJECT REFUSED, or SPECIMEN LOST. Used in conjunction with LBSTAT when value is NOT DONE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREASND">LBREASND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBREASND">LBREASND</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -579,7 +579,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Short name of the measurement, test, or examination described in LBTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in LBTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). LBTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: ALT, LDH.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTESTCD">LBTESTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTESTCD">LBTESTCD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -602,7 +602,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Verbatim name of the test or examination used to obtain the measurement or finding. Note any test normally performed by a clinical laboratory is considered a lab test. The value in LBTEST cannot be longer than 40 characters. Examples: Alanine Aminotransferase, Lactate Dehydrogenase.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTEST">LBTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTEST">LBTEST</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -627,7 +627,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="1. Dictionary-derived LOINC Code for LBTEST. 2. The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBLOINC">LBLOINC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBLOINC">LBLOINC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -649,13 +649,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The name or identifier of the vendor (e.g., laboratory) that provided the test results.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBNAM">LBNAM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBNAM">LBNAM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The name or identifier of the laboratory that performed the test.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNAM">LBNAM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBNAM">LBNAM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -677,7 +677,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="1. Indicates where the value falls with respect to reference range defined by LBORNRLO and LBORNRHI, LBSTNRLO and LBSTNRHI, or by LBSTNRC. Examples: NORMAL, ABNORMAL, HIGH, LOW. 2. Sponsors should specify in the study metadata (Comments column in the define.xml) whether LBNRIND refers to the original or standard reference ranges and results. 3. Should not be used to indicate clinical significance.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNRIND">LBNRIND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBNRIND">LBNRIND</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -700,7 +700,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Records toxicity grade value using a standard toxicity scale (such as the NCI CTCAE). If value is from a numeric scale, represent only the number (e.g., &#34;2&#34; and not &#34;Grade 2&#34;). The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOXGR">LBTOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOXGR">LBTOXGR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -725,7 +725,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -750,7 +750,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -772,13 +772,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The lower end of normal range or reference range for continuous results stored in LBORRES.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRLO">LBORNRLO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRLO">LBORNRLO</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Lower end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRLO">LBORNRLO</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRLO">LBORNRLO</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -798,13 +798,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The upper end of normal range or reference range for continuous results stored in LBORRES.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRHI">LBORNRHI</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRHI">LBORNRHI</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Upper end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRHI">LBORNRHI</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRHI">LBORNRHI</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -827,7 +827,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="For normal range values that are character in ordinal scale or if categorical ranges were supplied (e.g., &#34;-1 to +1&#34;, &#34;NEGATIVE TO TRACE&#34;).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTNRC">LBSTNRC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSTNRC">LBSTNRC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -847,13 +847,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the measurement or finding as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRES">LBORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRES">LBORRES</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the measurement or finding as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -876,7 +876,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for LBORRES. Example: g/L.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRESU">LBORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORRESU">LBORRESU</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -895,7 +895,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether lab test results were clinically significant.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBCLSIG">LBCLSIG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBCLSIG">LBCLSIG</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
@@ -923,7 +923,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Method of the test or examination. Examples: EIA (Enzyme Immunoassay), ELECTROPHORESIS, DIPSTICK">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBMETHOD">LBMETHOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBMETHOD">LBMETHOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -977,7 +977,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier used to uniquely identify a subject across all studies for all applications or submissions involving the product.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -1054,7 +1054,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Numerical version of LBTPT to aid in sorting.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPTNUM">LBTPTNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTPTNUM">LBTPTNUM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td colspan="2" style="background-color:LightGray">Pull this information from the Clinical Plan (PlanDefinition)</td>
@@ -1076,7 +1076,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="Indicator used to identify a baseline value. The value should be &#34;Y&#34; or null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBBLFL">LBBLFL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBBLFL">LBBLFL</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Variable may be deprecated.  This information would come from the Sponsor.</td>
@@ -1088,7 +1088,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate a derived record. The value should be Y or null. Records that represent the average of other records, or do not come from the CRF, or are not as originally received or collected are examples of records that might be derived for the submission datasets. If LBDRVFL=Y, then LBORRES may be null, with LBSTRESC, and (if numeric) LBSTRESN having the derived value.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDRVFL">LBDRVFL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBDRVFL">LBDRVFL</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This information would come from the Sponsor.</td>
@@ -1137,12 +1137,12 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/STUDYID">DM.STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/STUDYID">DM.STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">DM.STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID">DM.STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1164,13 +1164,13 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1193,7 +1193,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="An identifier to describe the Investigator for the study. May be used in addition to SITEID. Not needed if SITEID is equivalent to INVID.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/INVID">DM.INVID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/INVID">DM.INVID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
@@ -1214,13 +1214,13 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/DM/fields/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/DM/fields/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
@@ -1244,7 +1244,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="1. Clinical encounter number. 2. Numeric version of VISIT, used for sorting.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISITNUM">VISITNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/VISITNUM">VISITNUM</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num</td>
                   <td>This won't necessarily correlate with the protocol-defined visit number.  Correspondance to a protocol-defined visit will typically require rules-based analysis based on time, encounter type and other factors.</td>
@@ -1263,13 +1263,13 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/VISIT">VISIT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Protocol-defined description of clinical encounter 2. May be used in addition to VISITNUM and/or VISITDY">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/VISIT">VISIT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>In most cases, real world data won't have a direct association to a study protocol activity and the link would need to be inferred.  However, if it exists, it would map as follows:<br/>
@@ -1290,13 +1290,13 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="An internal or external identifier such as specimen identifier.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID">LBREFID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID">LBREFID</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Internal or external specimen identifier. Example: Specimen ID.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID">LBREFID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID">LBREFID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>As reported from the Site</td>
@@ -1316,7 +1316,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td rowspan="2"/>
                   <td rowspan="2">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDTC">LBDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBDTC">LBDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="2">NOTE: no mapping included for CDASH LBDAT and LBTIM
@@ -1349,7 +1349,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td/>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBENDTC">LBENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBENDTC">LBENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>NOTE: No mapping included for CDASH LBENDAT and LBENTIM)<br/>
@@ -1393,7 +1393,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="1. Text Description of time when specimen should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See LBTPTNUM and LBTPTREF. Examples: Start, 5 min post.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPT">LBTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTPT">LBTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Typically named timepoints won't exist in real-world data and the timing point name will need to be assigned by the sponsor.  However, this shows where the data would be expressed in FHIR if it was present there.</td>
@@ -1416,7 +1416,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Planned Elapsed time (in ISO 8601) relative to a planned fixed reference (LBTPTREF). This variable is useful where there are repetitive measures. Not a clock time or a date time variable. Represented as an ISO 8601 duration. Examples: &#34;-PT15M&#34; to represent the period of 15 minutes prior to the reference point indicated by LBTPTREF, or &#34;PT8H&#34; to represent the period of 8 hours after the reference point indicated by LBTPTREF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBELTM">LBELTM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBELTM">LBELTM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>Typically named timepoints won't exist in real-world data and the timing point offset will need to be calculated by the sponsor.  However, this shows where the data would be expressed in FHIR if it was present there.  If present, would need to translate to ISO-8601</td>
@@ -1441,7 +1441,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Free or standardized text describing the condition of the specimen e.g. HEMOLYZED, ICTERIC, LIPEMIC etc.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPCCND">LBSPCCND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSPCCND">LBSPCCND</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Recommend submitting change proposals to extend the FHIR vocabulary to include CDISC values.  Sponsor will need to decide how to map when FHIR terminology contains codes not present in CDISC.<br/>
@@ -1467,7 +1467,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Defines the type of specimen used for a measurement. Examples: SERUM, PLASMA, URINE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSPEC">LBSPEC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSPEC">LBSPEC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>NOTE: In some cases, this may be inferred from the LOINC.<br/>
@@ -1493,10 +1493,10 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <span style="font-weight:bold"
                            title="Indicator used to identify fasting status such as Y, N, U, or null if not relevant.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td>FHIR to CDISC mapping as follows:
+                  <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
                </tr>
@@ -1506,7 +1506,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication whether the testing condition defined in the protocol were met (e.g., Low fat diet).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBCOND">LBCOND</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBCOND">LBCOND</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td/>
@@ -1575,7 +1575,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to define a category of related records across subjects. Examples: such as HEMATOLOGY, URINALYSIS, CHEMISTRY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBCAT">LBCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBCAT">LBCAT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td rowspan="2">NOTE: In some cases, this may be inferred from the LOINC.  It might also be found by looking for the 'panel' Obsesrvation this Observation is a part of.  In most cases, translation will be required to sponsor-defined codes.  It may work best for the sponsor to categorize based on TESTCD values and ignore lab-reported and EHR-determined categories entirely.</td>
@@ -1612,7 +1612,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to indicate exam not done. Should be null if a result exists in LBORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTAT">LBSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSTAT">LBSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="2">Sponsor may choose to map a situation in which the entire panel is cancelled as one summary record compliant with SDTM IG examples.
@@ -1655,7 +1655,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Describes why a measurement or test was not performed such as BROKEN EQUIPMENT, SUBJECT REFUSED, or SPECIMEN LOST. Used in conjunction with LBSTAT when value is NOT DONE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBREASND">LBREASND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBREASND">LBREASND</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>see notes on LBSTAT</td>
@@ -1678,7 +1678,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Short name of the measurement, test, or examination described in LBTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in LBTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). LBTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: ALT, LDH.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTESTCD">LBTESTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTESTCD">LBTESTCD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Translate to compliant terminology (if needed)</td>
@@ -1701,7 +1701,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Verbatim name of the test or examination used to obtain the measurement or finding. Note any test normally performed by a clinical laboratory is considered a lab test. The value in LBTEST cannot be longer than 40 characters. Examples: Alanine Aminotransferase, Lactate Dehydrogenase.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTEST">LBTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTEST">LBTEST</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Translate to compliant terminology (if needed)</td>
@@ -1726,7 +1726,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="1. Dictionary-derived LOINC Code for LBTEST. 2. The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBLOINC">LBLOINC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBLOINC">LBLOINC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1745,13 +1745,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The name or identifier of the vendor (e.g., laboratory) that provided the test results.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBNAM">LBNAM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBNAM">LBNAM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The name or identifier of the laboratory that performed the test.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNAM">LBNAM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBNAM">LBNAM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1776,7 +1776,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="1. Indicates where the value falls with respect to reference range defined by LBORNRLO and LBORNRHI, LBSTNRLO and LBSTNRHI, or by LBSTNRC. Examples: NORMAL, ABNORMAL, HIGH, LOW. 2. Sponsors should specify in the study metadata (Comments column in the define.xml) whether LBNRIND refers to the original or standard reference ranges and results. 3. Should not be used to indicate clinical significance.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBNRIND">LBNRIND</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBNRIND">LBNRIND</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Must map to CDISC controlled terminology</td>
@@ -1799,7 +1799,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Records toxicity grade value using a standard toxicity scale (such as the NCI CTCAE). If value is from a numeric scale, represent only the number (e.g., &#34;2&#34; and not &#34;Grade 2&#34;). The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOXGR">LBTOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOXGR">LBTOXGR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Must map to sponsor-determind terminology</td>
@@ -1824,7 +1824,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Typically FHIR systems will only populate Coding.version where the terminology is ill-behaved and code meanings change over time.  The code system version doesn't convey what value set the user was choosing from (which could be a subset of the codes from the code system or could draw from multiple code systems).</td>
@@ -1849,7 +1849,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Description of toxicity quantified by LBTOXGR. The sponsor is expected to provide the name of the scale and version used to map the terms, utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTOX">LBTOX</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Note that the system doesn't define the value set nor does it specify value set version or code system version(s)</td>
@@ -1869,13 +1869,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The lower end of normal range or reference range for continuous results stored in LBORRES.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRLO">LBORNRLO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRLO">LBORNRLO</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Lower end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRLO">LBORNRLO</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRLO">LBORNRLO</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>As reported from the lab.</td>
@@ -1895,13 +1895,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="The upper end of normal range or reference range for continuous results stored in LBORRES.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRHI">LBORNRHI</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.LocalProcessing/fields/LBORNRHI">LBORNRHI</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Upper end of reference range for continuous measurements in original units. Should be populated only for continuous results.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRHI">LBORNRHI</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORNRHI">LBORNRHI</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>As reported from the lab.</td>
@@ -1924,7 +1924,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="For normal range values that are character in ordinal scale or if categorical ranges were supplied (e.g., &#34;-1 to +1&#34;, &#34;NEGATIVE TO TRACE&#34;).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBSTNRC">LBSTNRC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBSTNRC">LBSTNRC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Sponsor would normalize this.</td>
@@ -1944,13 +1944,13 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the measurement or finding as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRES">LBORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRES">LBORRES</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the measurement or finding as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Might also include valueQuantity.comparator</td>
@@ -1972,7 +1972,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for LBORRES. Example: g/L.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBORRESU">LBORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORRESU">LBORRESU</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Needs to be translated to match the controlled terminology, if not already compliant</td>
@@ -1994,7 +1994,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether lab test results were clinically significant.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBCLSIG">LBCLSIG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBCLSIG">LBCLSIG</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
@@ -2022,7 +2022,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Method of the test or examination. Examples: EIA (Enzyme Immunoassay), ELECTROPHORESIS, DIPSTICK">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBMETHOD">LBMETHOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBMETHOD">LBMETHOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Method can cover collection and many other features.  In some cases, collection method may be inferred from the Observation.code.  Would need to map to CDISC controlled terminology</td>
@@ -2074,7 +2074,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier used to uniquely identify a subject across all studies for all applications or submissions involving the product.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>To distinguish SUBJID from USUBJID, would need to look at identifier.system</td>
@@ -2142,7 +2142,7 @@ Completed = &lt;blank&gt;
                   <td>
                      <span style="font-weight:bold"
                            title="Numerical version of LBTPT to aid in sorting.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBTPTNUM">LBTPTNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBTPTNUM">LBTPTNUM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td>Link to the clinical plan would be through the Observation.basedOn link to CarePlan or the instantiatesCanonical link to PlanDefinition or ActivityDefinition</td>
@@ -2164,7 +2164,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="Indicator used to identify a baseline value. The value should be &#34;Y&#34; or null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBBLFL">LBBLFL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBBLFL">LBBLFL</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Could appear in Observation.reasonCode.  In practice the notion of 'baseline' is more of a relationship.  Any arbitrary Observation might be selected as the 'baseline' for a particular step in the study.  As such, the real linkage is the tie to the CarePlan activity that's tied to the ActivityDefinition with a reason of 'baseline'.</td>
@@ -2176,7 +2176,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate a derived record. The value should be Y or null. Records that represent the average of other records, or do not come from the CRF, or are not as originally received or collected are examples of records that might be derived for the submission datasets. If LBDRVFL=Y, then LBORRES may be null, with LBSTRESC, and (if numeric) LBSTRESN having the derived value.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/LB/variables/LBDRVFL">LBDRVFL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBDRVFL">LBDRVFL</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>FHIR doesn't use a flag.  If an Observation is derived, it should point to the Observations it's derived from with the derivedFrom association.  (If that relationship is present, then the Derived Flag is true)</td>

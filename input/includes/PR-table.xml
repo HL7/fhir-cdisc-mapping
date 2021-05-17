@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -66,13 +66,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -94,13 +94,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -121,7 +121,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the subject had any procedures performed.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRYN">PRYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRYN">PRYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -135,13 +135,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCAT">PRCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCAT">PRCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of procedure values.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -163,13 +163,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the PRCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSCAT">PRSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSCAT">PRSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a further categorization of PRCAT values.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSCAT">PRSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSCAT">PRSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -191,13 +191,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSPID">PRSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSPID">PRSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined identifier. Example: pre-printed line identifier on a CRF or record identifier defined in the sponsor's operational database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSPID">PRSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSPID">PRSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -217,13 +217,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The verbatim surgical, therapeutic, or diagnostic procedure's name.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRT">PRTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRTRT">PRTRT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Name of procedure performed, either pre-printed or collected on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRTRT">PRTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRTRT">PRTRT</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -245,13 +245,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The dictionary- or sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDECOD">PRDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDECOD">PRDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Standardized or dictionary-derived name of PRTRT. The sponsor is expected to provide the dictionary name and version used to map the terms in the define.xml external codelist attributes. If an intervention term does not have a decode value in the dictionary then PRDECOD will be null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDECOD">PRDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDECOD">PRDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -274,7 +274,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for PRTERM is modified for coding purposes, then the modified text is placed here.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMODIFY">PRMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRMODIFY">PRMODIFY</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -289,13 +289,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRESP">PRPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPRESP">PRPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used when a specific procedure is pre-specified on a CRF. Values should be &#34;Y&#34; or null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPRESP">PRPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRPRESP">PRPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.
@@ -307,13 +307,13 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified procedure (PRTRT) happened when information about the occurrence of a specific intervention is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PROCCUR">PROCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PROCCUR">PROCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to record whether a pre-specified procedure occurred when information about the occurrence of a specific procedure is solicited.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PROCCUR">PROCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PROCCUR">PROCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -337,7 +337,7 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="An explanation of why a scheduled procedure did or did not occur.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASOC">PRREASOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRREASOC">PRREASOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
@@ -388,7 +388,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="An explanation of why the data are not available.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASND">PRREASND</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRREASND">PRREASND</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -413,13 +413,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the procedure occurred prior to [PRSTTPT] or prior to the date in DM.RFSTDTC.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRIOR">PRPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPRIOR">PRPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the start of the observation as being before or after the sponsor-defined reference time point defined by variable PRSTTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTRTPT">PRSTRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSTRTPT">PRSTRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, U<span style="font-weight:bold">PRSTRF*</span>
                   </td>
@@ -432,13 +432,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The date or start date of when the procedure started or was performed, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT">PRSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT">PRSTDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Start date/time of the procedure represented in ISO 8601 character format.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTDTC">PRSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSTDTC">PRSTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -482,13 +482,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the procedure is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRONGO">PRONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRONGO">PRONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable PRENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENRTPT">PRENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRENRTPT">PRENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U<span style="font-weight:bold">PRENRF*</span>
                   </td>
@@ -512,13 +512,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The end date of the procedure, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRENDAT">PRENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRENDAT">PRENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="End date/time of the procedure represented in ISO 8601 character format.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENDTC">PRENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRENDTC">PRENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -562,13 +562,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The condition, disease, symptom, or disorder that the procedure was used to address or investigate (e.g., why the therapy was taken or administered, why the procedure was performed).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRINDC">PRINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRINDC">PRINDC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Denotes the indication for the procedure (e.g., why the procedure was performed).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRINDC">PRINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRINDC">PRINDC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -602,7 +602,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the adverse event that is the indication for this procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRAENO">PRAENO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRAENO">PRAENO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -625,7 +625,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the medical history event that is the indication for this procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMHNO">PRMHNO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRMHNO">PRMHNO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -640,7 +640,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Dosing information collected in text form. Examples: &lt;1, 200-400. Not populated when PRDOSE is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSTXT">PRDOSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSTXT">PRDOSTXT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
@@ -651,13 +651,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The unit for intended dose/amount for PRDOSE, PRDOSTOT, or PRDOSTXT.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSU">PRDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSU">PRDOSU</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Units for PRDOSE, PRDOSTOT, or PRDOSTXT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSU">PRDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSU">PRDOSU</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">If FHIR IDs are used for RELREC, then the sponsor should evaluate its use case as necessary prior to mapping.</td>
@@ -668,7 +668,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The number/amount of the procedure that was given/administered/taken during a specific interval.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSFRQ">PRDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSFRQ">PRDOSFRQ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td/>
@@ -689,12 +689,12 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The route of administration of the procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRROUTE">PRROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRROUTE">PRROUTE</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Route of administration for PRTRT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRROUTE">PRROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRROUTE">PRROUTE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This is a known gap. Procedure Route of Administration interval does NOT exist for 'Procedure'. </td>
@@ -705,12 +705,12 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location of an procedure, such as location of a biopsy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLOC">PRLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLOC">PRLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Anatomical location of a procedure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLOC">PRLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRLOC">PRLOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -732,13 +732,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing side of the body for the procedure administration.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLAT">PRLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLAT">PRLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing laterality.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLAT">PRLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRLAT">PRLAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -760,13 +760,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDIR">PRDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDIR">PRDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing directionality.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDIR">PRDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDIR">PRDIR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -788,13 +788,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPORTOT">PRPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPORTOT">PRPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing the distribution, which means arrangement of, apportioning of.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPORTOT">PRPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRPORTOT">PRPORTOT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Typically this would be pre-coordinated into Procedure.code and would be captured in dosage instructions text for medications.  If captured as a separate element, if would need to be an extension.</td>
@@ -805,7 +805,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that the subject has abstained from food/water for the specified amount of time.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRFAST">PRFAST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRFAST">PRFAST</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -819,13 +819,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The text description of the (intended) schedule or regimen for the procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSRGM">PRDOSRGM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSRGM">PRDOSRGM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Text description of the intended schedule or regimen for the procedure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSRGM">PRDOSRGM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSRGM">PRDOSRGM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">An administration could be based on more than one thing (recommendation, plan, order) and in theory the intended dose would be different for each.</td>
@@ -836,7 +836,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the procedure dose/amount was adjusted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSADJ">PRDOSADJ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSADJ">PRDOSADJ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -851,7 +851,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Description or explanation of why a procedure dose/amount was adjusted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRADJ">PRADJ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRADJ">PRADJ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -866,7 +866,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication whether the subject completed the intended regimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRTCMP">PRTRTCMP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRTRTCMP">PRTRTCMP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -881,7 +881,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the procedure was interrupted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPYN">PRITRPYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRITRPYN">PRITRPYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -906,7 +906,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication of why the intervention was interrupted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPRS">PRITRPRS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRITRPRS">PRITRPRS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -931,7 +931,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The collected duration of the procedure interruption.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTD">PRCINTD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCINTD">PRCINTD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -945,7 +945,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The unit for the collected duration of the procedure interruption.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTDU">PRCINTDU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCINTDU">PRCINTDU</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -959,7 +959,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLT">PRLLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLLT">PRLLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -984,7 +984,7 @@ Might consider proposing it as a standard extension.</td>
                   <th>Procedure Lowest Level Term Code</th>
                   <td>
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLTCD">PRLLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLLTCD">PRLLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -1009,7 +1009,7 @@ Might consider proposing it as a standard extension.</td>
                   <th>Procedure Preferred Term Code</th>
                   <td>
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPTCD">PRPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPTCD">PRPTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -1035,7 +1035,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLT">PRHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLT">PRHLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1061,7 +1061,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLTCD">PRHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLTCD">PRHLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -1087,7 +1087,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGT">PRHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLGT">PRHLGT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1113,7 +1113,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGTCD">PRHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLGTCD">PRHLGTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -1139,7 +1139,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class description associated with the intervention.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOC">PRSOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSOC">PRSOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1165,7 +1165,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOCCD">PRSOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSOCCD">PRSOCCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -1229,12 +1229,12 @@ Might consider proposing it as a standard extension.</td>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1256,13 +1256,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1283,13 +1283,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
@@ -1301,7 +1301,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the subject had any procedures performed.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRYN">PRYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRYN">PRYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1326,13 +1326,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCAT">PRCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCAT">PRCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of procedure values.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
@@ -1354,13 +1354,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the PRCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSCAT">PRSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSCAT">PRSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a further categorization of PRCAT values.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSCAT">PRSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSCAT">PRSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
@@ -1380,13 +1380,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSPID">PRSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSPID">PRSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined identifier. Example: pre-printed line identifier on a CRF or record identifier defined in the sponsor's operational database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSPID">PRSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSPID">PRSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1408,13 +1408,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The verbatim surgical, therapeutic, or diagnostic procedure's name.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRT">PRTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRTRT">PRTRT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Name of procedure performed, either pre-printed or collected on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRTRT">PRTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRTRT">PRTRT</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>The name as expressed by or displayed to the user goes in code.text.  The name associated with the selected code goes in code.coding.display.</td>
@@ -1436,13 +1436,13 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The dictionary- or sponsor-defined standardized text description of PRTRT, or the modified topic variable (PRMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDECOD">PRDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDECOD">PRDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Standardized or dictionary-derived name of PRTRT. The sponsor is expected to provide the dictionary name and version used to map the terms in the define.xml external codelist attributes. If an intervention term does not have a decode value in the dictionary then PRDECOD will be null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDECOD">PRDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDECOD">PRDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Translation of the source-system-determined procedure code to the study-defined value set may need to be performed by the sponsor.<br/>
@@ -1455,7 +1455,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for PRTERM is modified for coding purposes, then the modified text is placed here.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMODIFY">PRMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRMODIFY">PRMODIFY</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1470,13 +1470,13 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRESP">PRPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPRESP">PRPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used when a specific procedure is pre-specified on a CRF. Values should be &#34;Y&#34; or null.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPRESP">PRPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRPRESP">PRPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1498,13 +1498,13 @@ This could possibly be an extension on the Procedure/MedicationAdministration/Me
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified procedure (PRTRT) happened when information about the occurrence of a specific intervention is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PROCCUR">PROCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PROCCUR">PROCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to record whether a pre-specified procedure occurred when information about the occurrence of a specific procedure is solicited.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PROCCUR">PROCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PROCCUR">PROCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1528,7 +1528,7 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="An explanation of why a scheduled procedure did or did not occur.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASOC">PRREASOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRREASOC">PRREASOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
@@ -1579,7 +1579,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="An explanation of why the data are not available.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRREASND">PRREASND</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRREASND">PRREASND</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1594,13 +1594,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the procedure occurred prior to [PRSTTPT] or prior to the date in DM.RFSTDTC.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPRIOR">PRPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPRIOR">PRPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the start of the observation as being before or after the sponsor-defined reference time point defined by variable PRSTTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTRTPT">PRSTRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSTRTPT">PRSTRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, U<span style="font-weight:bold">PRSTRF*</span>
                   </td>
@@ -1621,13 +1621,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The date or start date of when the procedure started or was performed, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT">PRSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT">PRSTDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Start date/time of the procedure represented in ISO 8601 character format.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRSTDTC">PRSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRSTDTC">PRSTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="3">FHIR also allows performedString, but there is no way to map that to CDISC.  The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific start time.</td>
@@ -1673,13 +1673,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the procedure is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRONGO">PRONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRONGO">PRONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable PRENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENRTPT">PRENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRENRTPT">PRENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U<span style="font-weight:bold">PRENRF*</span>
                   </td>
@@ -1701,13 +1701,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The end date of the procedure, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRENDAT">PRENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRENDAT">PRENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="End date/time of the procedure represented in ISO 8601 character format.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRENDTC">PRENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRENDTC">PRENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="3">FHIR also allows performedString, but there is no way to map that to CDISC. The performedRange mapping is imprecise because it indicates imprecision around the performance rather than a specific end time.</td>
@@ -1753,13 +1753,13 @@ Coding translations are left to the sponsor.<br/>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The condition, disease, symptom, or disorder that the procedure was used to address or investigate (e.g., why the therapy was taken or administered, why the procedure was performed).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRINDC">PRINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRINDC">PRINDC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Denotes the indication for the procedure (e.g., why the procedure was performed).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRINDC">PRINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRINDC">PRINDC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="2">Note that reasonReference would need to be turned into a code or string. </td>
@@ -1791,7 +1791,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the adverse event that is the indication for this procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRAENO">PRAENO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRAENO">PRAENO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1805,7 +1805,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the medical history event that is the indication for this procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRMHNO">PRMHNO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRMHNO">PRMHNO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1820,7 +1820,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Dosing information collected in text form. Examples: &lt;1, 200-400. Not populated when PRDOSE is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSTXT">PRDOSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSTXT">PRDOSTXT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1831,13 +1831,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The unit for intended dose/amount for PRDOSE, PRDOSTOT, or PRDOSTXT.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSU">PRDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSU">PRDOSU</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Units for PRDOSE, PRDOSTOT, or PRDOSTXT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSU">PRDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSU">PRDOSU</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1857,7 +1857,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The number/amount of the procedure that was given/administered/taken during a specific interval.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSFRQ">PRDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSFRQ">PRDOSFRQ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td/>
@@ -1869,12 +1869,12 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The route of administration of the procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRROUTE">PRROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRROUTE">PRROUTE</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Route of administration for PRTRT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRROUTE">PRROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRROUTE">PRROUTE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1896,12 +1896,12 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location of an procedure, such as location of a biopsy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLOC">PRLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLOC">PRLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Anatomical location of a procedure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLOC">PRLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRLOC">PRLOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1923,13 +1923,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing side of the body for the procedure administration.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLAT">PRLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLAT">PRLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing laterality.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRLAT">PRLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRLAT">PRLAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>This is frequently pre-coordinated into Procedure.bodySite.  Multiple qualifiers are possible.  Laterality will need to be recognized by code and/or system</td>
@@ -1951,13 +1951,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDIR">PRDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDIR">PRDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing directionality.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDIR">PRDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDIR">PRDIR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>This is frequently pre-coordinated into Procedure.bodySite.  Multiple qualifiers are possible.  Directionality will need to be recognized by code and/or system</td>
@@ -1968,13 +1968,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPORTOT">PRPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPORTOT">PRPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing the distribution, which means arrangement of, apportioning of.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRPORTOT">PRPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRPORTOT">PRPORTOT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1985,7 +1985,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that the subject has abstained from food/water for the specified amount of time.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRFAST">PRFAST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRFAST">PRFAST</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1999,13 +1999,13 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold"
                            title="The text description of the (intended) schedule or regimen for the procedure.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSRGM">PRDOSRGM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSRGM">PRDOSRGM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Text description of the intended schedule or regimen for the procedure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSRGM">PRDOSRGM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRDOSRGM">PRDOSRGM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2017,7 +2017,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the procedure dose/amount was adjusted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRDOSADJ">PRDOSADJ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRDOSADJ">PRDOSADJ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2032,7 +2032,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Description or explanation of why a procedure dose/amount was adjusted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRADJ">PRADJ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRADJ">PRADJ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2047,7 +2047,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication whether the subject completed the intended regimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRTRTCMP">PRTRTCMP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRTRTCMP">PRTRTCMP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2072,7 +2072,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the procedure was interrupted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPYN">PRITRPYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRITRPYN">PRITRPYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2097,7 +2097,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication of why the intervention was interrupted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRITRPRS">PRITRPRS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRITRPRS">PRITRPRS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2111,7 +2111,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The collected duration of the procedure interruption.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTD">PRCINTD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCINTD">PRCINTD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2125,7 +2125,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The unit for the collected duration of the procedure interruption.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRCINTDU">PRCINTDU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRCINTDU">PRCINTDU</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2150,7 +2150,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLT">PRLLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLLT">PRLLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2175,7 +2175,7 @@ Might consider proposing it as a standard extension.</td>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRLLTCD">PRLLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRLLTCD">PRLLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2200,7 +2200,7 @@ Might consider proposing it as a standard extension.</td>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRPTCD">PRPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRPTCD">PRPTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2226,7 +2226,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLT">PRHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLT">PRHLT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2252,7 +2252,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLTCD">PRHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLTCD">PRHLTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2278,7 +2278,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGT">PRHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLGT">PRHLGT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2304,7 +2304,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRHLGTCD">PRHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRHLGTCD">PRHLGTCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2330,7 +2330,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class description associated with the intervention.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOC">PRSOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSOC">PRSOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2356,7 +2356,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/PR/fields/PRSOCCD">PRSOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/PR/fields/PRSOCCD">PRSOCCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>

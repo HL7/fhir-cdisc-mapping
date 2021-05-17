@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -70,13 +70,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -102,13 +102,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -129,13 +129,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCAT">CMCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCAT">CMCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Used to define a category of medications/treatments. Examples: PRIOR, CONCOMITANT, ANTI-CANCER MEDICATION, or GENERAL CONMED.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCAT">CMCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCAT">CMCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -199,13 +199,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sub-division of the CMCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSCAT">CMSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSCAT">CMSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A further categorization of medications/ treatment. Examples: CHEMOTHERAPY, HORMONAL THERAPY, ALTERNATIVE THERAPY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSCAT">CMSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSCAT">CMSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -269,7 +269,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not any (concomitant) medications/treatments/therapies were taken/given.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMYN">CMYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMYN">CMYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -284,13 +284,13 @@
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSPID">CMSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSPID">CMSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Examples: a number pre-printed on the CRF as an explicit line identifier or record identifier defined in the sponsor's operational database. Example: line number on a concomitant medication page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSPID">CMSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSPID">CMSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -358,13 +358,13 @@
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMTRT">CMTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMTRT">CMTRT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Verbatim medication name that is either pre-printed or collected on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMTRT">CMTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMTRT">CMTRT</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -498,13 +498,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMPRESP">CMPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMPRESP">CMPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate whether (Y/null) information about the use of a specific medication was solicited on the CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMPRESP">CMPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMPRESP">CMPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Would not expect to receive from the site.
@@ -516,13 +516,13 @@
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMOCCUR">CMOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMOCCUR">CMOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="When the use of specific medications is solicited, CMOCCUR is used to indicate whether or not (Y/N) use of the medication occurred. Values are null for medications not specifically solicited.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMOCCUR">CMOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMOCCUR">CMOCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -611,7 +611,7 @@
                   <th rowspan="5">Concomitant Meds Active Ingredients</th>
                   <td rowspan="5">
                      <span style="font-weight:bold" title="Medication Ingredients.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMINGRD">CMINGRD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMINGRD">CMINGRD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="5">
@@ -682,13 +682,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., why the medication/treatment/therapy was taken or administered).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMINDC">CMINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMINDC">CMINDC</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Denotes why a medication was taken or administered. Examples: NAUSEA, HYPERTENSION.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMINDC">CMINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMINDC">CMINDC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -752,7 +752,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the adverse event that is the indication for this medication/treatment/therapy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMAENO">CMAENO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMAENO">CMAENO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -775,7 +775,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Identifier for the medical history condition that is the indication for this medication/treatment/therapy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMMHNO">CMMHNO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMMHNO">CMMHNO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -834,13 +834,13 @@
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="The dose of medication/treatment (e.g., --TRT ) given at one time represented as a numeric value.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Amount of CMTRT taken. Not populated when CMDOSTXT is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td>
@@ -908,17 +908,17 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The dose of medication/treatment taken per administration.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDSTXT">CMDSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDSTXT">CMDSTXT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Dosing amounts or a range of dosing information collected in text form. Units may be stored in CMDOSU. Example: 200-400, 15-20. Not populated when CMDOSE is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTXT">CMDOSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTXT">CMDOSTXT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Amount of CMTRT taken. Not populated when CMDOSTXT is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td>
@@ -974,13 +974,13 @@
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The total amount of CMTRT taken over a day using the units in CMDOSU.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSTOT">CMDOSTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSTOT">CMDOSTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Total daily dose of CMTRT using the units in CMDOSU. Used when dosing is collected as Total Daily Dose. Total dose over a period other than day could be recorded in a separate Supplemental Qualifier variable.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTOT">CMDOSTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTOT">CMDOSTOT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td>
@@ -1036,13 +1036,13 @@
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The unit associated with the concomitant medication/treatment/therapy taken (e.g., mg in &#34;2 mg 3 times per day&#34;).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSU">CMDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSU">CMDOSU</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Units for CMDOSE, CMDOSTOT, and CMDOSTXT. Examples: ng, mg, or mg/kg.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSU">CMDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSU">CMDOSU</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1086,13 +1086,13 @@
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The pharmaceutical dosage form in which the CMTRT is physically presented.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRM">CMDOSFRM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRM">CMDOSFRM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Dose form for CMTRT. Examples: TABLET, LOTION.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRM">CMDOSFRM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRM">CMDOSFRM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1142,13 +1142,13 @@
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The number of doses given/administered/taken during a specific interval.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRQ">CMDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRQ">CMDOSFRQ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Usually expressed as the number of repeated administrations of CMDOSE within a specific time period. Examples: BID (twice daily), Q12H (every 12 hours).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRQ">CMDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRQ">CMDOSFRQ</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1192,13 +1192,13 @@
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="The route of administration of the (concomitant) [medication/treatment/therapy].">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMROUTE">CMROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMROUTE">CMROUTE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Route of administration for CMTRT. Examples: ORAL, INTRAVENOUS.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMROUTE">CMROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMROUTE">CMROUTE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1270,12 +1270,12 @@
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The start date when the concomitant medication/treatment/therapy was first taken, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSTDAT">CMSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSTDAT">CMSTDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -1355,12 +1355,12 @@
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The time the concomitant medication/treatment/therapy was started, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSTTIM">CMSTTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSTTIM">CMSTTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -1440,12 +1440,12 @@
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The date that the subject ended/stopped taking the concomitant medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMENDAT">CMENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMENDAT">CMENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -1525,12 +1525,12 @@
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The time when the subject ended/stopped taking the concomitant medication/treatment/therapy represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMENTIM">CMENTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMENTIM">CMENTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENDTC">CMENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENDTC">CMENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -1610,17 +1610,17 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the concomitant medication/treatment/therapy was given or taken prior to [CMSTTPT] or prior to the date in DM.RFSTDTC.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMPRIOR">CMPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMPRIOR">CMPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes the start of the medication relative to sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as &#34;PRIOR&#34;, ONGOING or &#34;CONTINUING&#34; was collected, this information may be translated into CMSTRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRF">CMSTRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRF">CMSTRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the start of the medication as being before or after the reference time point defined by variable CMSTTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRTPT">CMSTRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRTPT">CMSTRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
@@ -1631,17 +1631,17 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the concomitant medication/treatment/therapy is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMONGO">CMONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMONGO">CMONGO</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes the end of the medication relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as &#34;PRIOR&#34;, &#34;ONGOING, or &#34;CONTINUING&#34; was collected, this information may be translated into CMENRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENRF">CMENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENRF">CMENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the end of the medication as being before or after the reference time point defined by variable CMENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENRTPT">CMENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENRTPT">CMENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This would need to be an extension added to the study extension on the medication resource - normally it is not captured except in the context of a study (and would be a study-specific assertion)</td>
@@ -1652,13 +1652,13 @@
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The dictionary- or sponsor-defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDECOD">CMDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDECOD">CMDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Standardized or dictionary-derived text description of CMTRT or CMMODIFY. Equivalent to the generic medication name in WHO Drug. The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes. If an intervention term does not have a decode value in the dictionary then CMDECOD will be left blank.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDECOD">CMDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDECOD">CMDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1800,13 +1800,13 @@
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The class for the intervention, often obtained from a coding dictionary.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCLAS">CMCLAS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCLAS">CMCLAS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Drug class. May be obtained from coding. When coding to a single class, populate with class value. If using a dictionary and coding to multiple classes, then follow Section 4: 4.1.2.8.3, Multiple Values For A Non-Result Qualifier Variable or omit CMCLAS.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCLAS">CMCLAS</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCLAS">CMCLAS</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1948,13 +1948,13 @@
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The assigned dictionary code for the class for the intervention.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCLASCD">CMCLASCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCLASCD">CMCLASCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Class code corresponding to CMCLAS. Drug class. May be obtained from coding. When coding to a single class, populate with class code. If using a dictionary and coding to multiple classes, then follow Section 4: 4.1.2.8.3, Multiple Values For A Non-Result Qualifier Variable or omit CMCLASCD.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCLASCD">CMCLASCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCLASCD">CMCLASCD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -2096,7 +2096,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the anatomical main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC1">CMATC1</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC1">CMATC1</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2110,7 +2110,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the anatomical main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC1CD">CMATC1CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC1CD">CMATC1CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2126,7 +2126,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description for the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC2">CMATC2</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC2">CMATC2</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2140,7 +2140,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC2CD">CMATC2CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC2CD">CMATC2CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2155,7 +2155,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC3">CMATC3</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC3">CMATC3</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2169,7 +2169,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC3CD">CMATC3CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC3CD">CMATC3CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2184,7 +2184,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the chemical/therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC4">CMATC4</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC4">CMATC4</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2198,7 +2198,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the chemical/therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC4CD">CMATC4CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC4CD">CMATC4CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2214,7 +2214,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification system. Indicates the chemical substance.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC5">CMATC5</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC5">CMATC5</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2228,7 +2228,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification system. Indicates the chemical substance.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC5CD">CMATC5CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC5CD">CMATC5CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -2286,12 +2286,12 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -2317,13 +2317,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -2344,13 +2344,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
@@ -2373,13 +2373,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCAT">CMCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCAT">CMCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Used to define a category of medications/treatments. Examples: PRIOR, CONCOMITANT, ANTI-CANCER MEDICATION, or GENERAL CONMED.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCAT">CMCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCAT">CMCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
@@ -2443,13 +2443,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A sub-division of the CMCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSCAT">CMSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSCAT">CMSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="A further categorization of medications/ treatment. Examples: CHEMOTHERAPY, HORMONAL THERAPY, ALTERNATIVE THERAPY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSCAT">CMSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSCAT">CMSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
@@ -2503,7 +2503,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not any (concomitant) medications/treatments/therapies were taken/given.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMYN">CMYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMYN">CMYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2526,13 +2526,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSPID">CMSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSPID">CMSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Examples: a number pre-printed on the CRF as an explicit line identifier or record identifier defined in the sponsor's operational database. Example: line number on a concomitant medication page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSPID">CMSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSPID">CMSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="5"/>
@@ -2602,13 +2602,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Verbatim medication name or treatments (include only treatments with data collection characteristics similar to medications).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMTRT">CMTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMTRT">CMTRT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Verbatim medication name that is either pre-printed or collected on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMTRT">CMTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMTRT">CMTRT</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td rowspan="9"/>
@@ -2732,13 +2732,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific intervention or a group of interventions is prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMPRESP">CMPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMPRESP">CMPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate whether (Y/null) information about the use of a specific medication was solicited on the CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMPRESP">CMPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMPRESP">CMPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2760,13 +2760,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="An indication whether the prespecified medication/treatment/therapy (CMTRT) or the group of medications/treatments/therapies was administered when information about the occurrence of a specific intervention is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMOCCUR">CMOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMOCCUR">CMOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="When the use of specific medications is solicited, CMOCCUR is used to indicate whether or not (Y/N) use of the medication occurred. Values are null for medications not specifically solicited.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMOCCUR">CMOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMOCCUR">CMOCCUR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="6">In general, medication records won't exist unless the patient is taking the medication, though there is an ability to say a medication isn't currently being taken or shouldn't be taken</td>
@@ -2853,7 +2853,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   </td>
                   <td rowspan="5">
                      <span style="font-weight:bold" title="Medication Ingredients.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMINGRD">CMINGRD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMINGRD">CMINGRD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="5">
@@ -2926,13 +2926,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The condition, disease, symptom, or disorder that the concomitant (non-study) medication/treatment/therapy was used to address or investigate (e.g., why the medication/treatment/therapy was taken or administered).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMINDC">CMINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMINDC">CMINDC</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Denotes why a medication was taken or administered. Examples: NAUSEA, HYPERTENSION.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMINDC">CMINDC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMINDC">CMINDC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="4"/>
@@ -2994,7 +2994,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Identifier for the adverse event that is the indication for this medication/treatment/therapy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMAENO">CMAENO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMAENO">CMAENO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -3017,7 +3017,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Identifier for the medical history condition that is the indication for this medication/treatment/therapy.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMMHNO">CMMHNO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMMHNO">CMMHNO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
@@ -3076,13 +3076,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="The dose of medication/treatment (e.g., --TRT ) given at one time represented as a numeric value.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Amount of CMTRT taken. Not populated when CMDOSTXT is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td rowspan="5"/>
@@ -3150,17 +3150,17 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The dose of medication/treatment taken per administration.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDSTXT">CMDSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDSTXT">CMDSTXT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Dosing amounts or a range of dosing information collected in text form. Units may be stored in CMDOSU. Example: 200-400, 15-20. Not populated when CMDOSE is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTXT">CMDOSTXT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTXT">CMDOSTXT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Amount of CMTRT taken. Not populated when CMDOSTXT is populated.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSE">CMDOSE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td rowspan="4">Requires combining multiple repetitions together</td>
@@ -3216,13 +3216,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="The total amount of CMTRT taken over a day using the units in CMDOSU.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSTOT">CMDOSTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSTOT">CMDOSTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
                            title="Total daily dose of CMTRT using the units in CMDOSU. Used when dosing is collected as Total Daily Dose. Total dose over a period other than day could be recorded in a separate Supplemental Qualifier variable.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTOT">CMDOSTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSTOT">CMDOSTOT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Num</td>
                   <td rowspan="4">If Total Daily Dose is required by the sponsor, it may require collection of the drug dose and  frequency to derive the CM Total Daily Dose. </td>
@@ -3278,13 +3278,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The unit associated with the concomitant medication/treatment/therapy taken (e.g., mg in &#34;2 mg 3 times per day&#34;).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSU">CMDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSU">CMDOSU</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Units for CMDOSE, CMDOSTOT, and CMDOSTXT. Examples: ng, mg, or mg/kg.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSU">CMDOSU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSU">CMDOSU</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="3"/>
@@ -3330,13 +3330,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The pharmaceutical dosage form in which the CMTRT is physically presented.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRM">CMDOSFRM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRM">CMDOSFRM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Dose form for CMTRT. Examples: TABLET, LOTION.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRM">CMDOSFRM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRM">CMDOSFRM</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="3"/>
@@ -3384,13 +3384,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="The number of doses given/administered/taken during a specific interval.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRQ">CMDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDOSFRQ">CMDOSFRQ</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="3">
                      <span style="font-weight:bold"
                            title="Usually expressed as the number of repeated administrations of CMDOSE within a specific time period. Examples: BID (twice daily), Q12H (every 12 hours).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRQ">CMDOSFRQ</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDOSFRQ">CMDOSFRQ</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="3"/>
@@ -3434,13 +3434,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="The route of administration of the (concomitant) [medication/treatment/therapy].">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMROUTE">CMROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMROUTE">CMROUTE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="5">
                      <span style="font-weight:bold"
                            title="Route of administration for CMTRT. Examples: ORAL, INTRAVENOUS.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMROUTE">CMROUTE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMROUTE">CMROUTE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="5"/>
@@ -3512,12 +3512,12 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The start date when the concomitant medication/treatment/therapy was first taken, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSTDAT">CMSTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSTDAT">CMSTDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
@@ -3597,12 +3597,12 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The time the concomitant medication/treatment/therapy was started, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMSTTIM">CMSTTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMSTTIM">CMSTTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="6">Start includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
@@ -3682,12 +3682,12 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The date that the subject ended/stopped taking the concomitant medication/treatment/therapy represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMENDAT">CMENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMENDAT">CMENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTDTC">CMSTDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
@@ -3767,12 +3767,12 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="6">
                      <span style="font-weight:bold"
                            title="The time when the subject ended/stopped taking the concomitant medication/treatment/therapy represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMENTIM">CMENTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMENTIM">CMENTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="6">
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENDTC">CMENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENDTC">CMENDTC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: ISO 8601</td>
                   <td rowspan="6">End includes both date and time, though time commonly won't be specified.  If string is specified, it will have to be parsed and converted to whatever precision is posisble</td>
@@ -3843,17 +3843,17 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the concomitant medication/treatment/therapy was given or taken prior to [CMSTTPT] or prior to the date in DM.RFSTDTC.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMPRIOR">CMPRIOR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMPRIOR">CMPRIOR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes the start of the medication relative to sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as &#34;PRIOR&#34;, ONGOING or &#34;CONTINUING&#34; was collected, this information may be translated into CMSTRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRF">CMSTRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRF">CMSTRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the start of the medication as being before or after the reference time point defined by variable CMSTTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRTPT">CMSTRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSTRTPT">CMSTRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -3864,17 +3864,17 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the concomitant medication/treatment/therapy is ongoing when no end date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMONGO">CMONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMONGO">CMONGO</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes the end of the medication relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point (represented by RFSTDTC and RFENDTC in Demographics). If information such as &#34;PRIOR&#34;, &#34;ONGOING, or &#34;CONTINUING&#34; was collected, this information may be translated into CMENRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENRF">CMENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENRF">CMENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Identifies the end of the medication as being before or after the reference time point defined by variable CMENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMENRTPT">CMENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMENRTPT">CMENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -3897,13 +3897,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The dictionary- or sponsor-defined standardized text description of the topic variable, CMTRT, or the modified topic variable (CMMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMDECOD">CMDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMDECOD">CMDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Standardized or dictionary-derived text description of CMTRT or CMMODIFY. Equivalent to the generic medication name in WHO Drug. The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes. If an intervention term does not have a decode value in the dictionary then CMDECOD will be left blank.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMDECOD">CMDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMDECOD">CMDECOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="9">We would not expect to receive these from the site.</td>
@@ -4045,13 +4045,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The class for the intervention, often obtained from a coding dictionary.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCLAS">CMCLAS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCLAS">CMCLAS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Drug class. May be obtained from coding. When coding to a single class, populate with class value. If using a dictionary and coding to multiple classes, then follow Section 4: 4.1.2.8.3, Multiple Values For A Non-Result Qualifier Variable or omit CMCLAS.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCLAS">CMCLAS</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCLAS">CMCLAS</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
@@ -4193,13 +4193,13 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="The assigned dictionary code for the class for the intervention.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMCLASCD">CMCLASCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMCLASCD">CMCLASCD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td rowspan="9">
                      <span style="font-weight:bold"
                            title="Class code corresponding to CMCLAS. Drug class. May be obtained from coding. When coding to a single class, populate with class code. If using a dictionary and coding to multiple classes, then follow Section 4: 4.1.2.8.3, Multiple Values For A Non-Result Qualifier Variable or omit CMCLASCD.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/CM/variables/CMCLASCD">CMCLASCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCLASCD">CMCLASCD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="9">These *can* be provided as alternate codings, however typically encoding is performed by the sponsor and we would not expect to receive these from the site.</td>
@@ -4329,7 +4329,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the anatomical main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC1">CMATC1</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC1">CMATC1</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -4345,7 +4345,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the first level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the anatomical main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC1CD">CMATC1CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC1CD">CMATC1CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -4359,7 +4359,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description for the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC2">CMATC2</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC2">CMATC2</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -4374,7 +4374,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the second level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic main group.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC2CD">CMATC2CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC2CD">CMATC2CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -4388,7 +4388,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC3">CMATC3</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC3">CMATC3</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -4403,7 +4403,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the third level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC3CD">CMATC3CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC3CD">CMATC3CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -4417,7 +4417,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the chemical/therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC4">CMATC4</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC4">CMATC4</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -4433,7 +4433,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the fourth level of hierarchy within the Anatomical Therapeutic Chemical Classification System. Indicates the chemical/therapeutic/pharmacological subgroup.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC4CD">CMATC4CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC4CD">CMATC4CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>
@@ -4447,7 +4447,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary text description of the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification system. Indicates the chemical substance.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC5">CMATC5</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC5">CMATC5</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -4463,7 +4463,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary code denoting the fifth level of hierarchy within the Anatomical Therapeutic Chemical Classification system. Indicates the chemical substance.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/CM/fields/CMATC5CD">CMATC5CD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/CM/fields/CMATC5CD">CMATC5CD</a>
                      </span>
                      <br/>Core: O<br/>Type: Num</td>
                   <td>

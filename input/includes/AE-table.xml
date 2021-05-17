@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -66,13 +66,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -94,13 +94,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -121,7 +121,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not any AEs were experienced during the study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEYN">AEYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEYN">AEYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -135,13 +135,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AECAT">AECAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AECAT">AECAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of related records. Example: BLEEDING, NEUROPSYCHIATRIC.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AECAT">AECAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AECAT">AECAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -164,13 +164,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the AECAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCAT">AESCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCAT">AESCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A further categorization of adverse event. Example: NEUROLOGIC.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCAT">AESCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCAT">AESCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -193,13 +193,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESPID">AESPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESPID">AESPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined identifier. It may be pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database. Example: Line number on an Adverse Events page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESPID">AESPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESPID">AESPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -220,12 +220,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The reported or prespecified name of the adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AETERM">AETERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AETERM">AETERM</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Verbatim name of the event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AETERM">AETERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AETERM">AETERM</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -247,7 +247,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified adverse event or a group of adverse events occurred when information about the occurrence of a specific event is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEOCCUR">AEOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEOCCUR">AEOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -261,13 +261,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific event, or group of events, are prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPRESP">AEPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPRESP">AEPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A value of &#34;Y&#34; indicates that this adverse event was pre-specified on the CRF. Values are null for spontaneously reported events (i.e., those collected as free-text verbatim terms)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPRESP">AEPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPRESP">AEPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">If captured within an EHR, this would be an extension on the existing extension that references the ResearchStudy.  (An AdverseEvent might be pre-specified for one study and not for another.)</td>
@@ -278,12 +278,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The start date of the adverse event, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESTDAT">AESTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESTDAT">AESTDAT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -303,12 +303,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The start time of the adverse event, represented in an unambiguous time format (e.g., hh:mm:ss)">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESTTIM">AESTTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESTTIM">AESTTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -328,13 +328,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location relevant for the adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELOC">AELOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELOC">AELOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes anatomical location relevant for the event (e.g., ARM for skin rash).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELOC">AELOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELOC">AELOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -356,7 +356,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body relevant for the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELAT">AELAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELAT">AELAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -381,7 +381,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDIR">AEDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDIR">AEDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -406,7 +406,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPORTOT">AEPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPORTOT">AEPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -431,17 +431,17 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Indication that an adverse event is ongoing when no End Date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEONGO">AEONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEONGO">AEONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the end of the event as being before or after the reference time point defined by variable AEENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT">AEENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT">AEENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point (RFSTDTC) and a discrete ending point (RFENDTC) of the trial.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</td>
@@ -452,12 +452,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The date when the adverse event resolved/ended, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEENDAT">AEENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEENDAT">AEENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -477,12 +477,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The time when the adverse event ended/resolved, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEENTIM">AEENTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEENTIM">AEENTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -502,13 +502,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The severity or intensity of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESEV">AESEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESEV">AESEV</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The severity or intensity of the event. Examples: MILD, MODERATE, SEVERE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESEV">AESEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESEV">AESEV</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -530,13 +530,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The grade of the severity of the event using a standard &#34;toxicity&#34; scale (e.g., NCI CTCAE).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AETOXGR">AETOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AETOXGR">AETOXGR</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Toxicity grade according to a standard toxicity scale such as Common Terminology Criteria for Adverse Events v3.0 (CTCAE). Sponsor should specify name of the scale and version used in the metadata (see Assumption 6d). If value is from a numeric scale, represent only the number (e.g., &#34;2&#34; and not &#34;Grade 2&#34;).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AETOXGR">AETOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AETOXGR">AETOXGR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Recommendation is to add extension for oncology or other studies requiring toxicity grades.</td>
@@ -547,12 +547,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the adverse event is determined to be &#34;serious&#34; based on what is defined in the protocol.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESER">AESER</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESER">AESER</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Is this a serious event?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESER">AESER</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESER">AESER</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -574,12 +574,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event resulted in death.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESDTH">AESDTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESDTH">AESDTH</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Did the serious event result in death?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESDTH">AESDTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESDTH">AESDTH</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -601,13 +601,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Date of death for any subject who died.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/DTHDAT">DTHDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/DTHDAT">DTHDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Date/time of death for any subject who died, in ISO 8601 format. Should represent the date/time that is captured in the clinical-trial database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/DTHDTC">DM.DTHDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/DTHDTC">DM.DTHDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -627,13 +627,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was life threatening.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESLIFE">AESLIFE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESLIFE">AESLIFE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event life threatening?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESLIFE">AESLIFE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESLIFE">AESLIFE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -655,13 +655,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event resulted in an initial or prolonged hospitalization.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESHOSP">AESHOSP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESHOSP">AESHOSP</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event require or prolong hospitalization?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESHOSP">AESHOSP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESHOSP">AESHOSP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Note: there is Encounter.hospitalization.[x], but its relevance to AESHOSP may not be explicit and would require additional analysis.</td>
@@ -672,13 +672,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was associated with a persistent or significant disability or incapacity.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESDISAB">AESDISAB</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESDISAB">AESDISAB</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event result in persistent or significant disability/incapacity?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESDISAB">AESDISAB</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESDISAB">AESDISAB</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -700,13 +700,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was associated with a congenital anomaly or birth defect.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCONG">AESCONG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCONG">AESCONG</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event associated with congenital anomaly or birth defect?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCONG">AESCONG</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCONG">AESCONG</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -728,7 +728,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication an adverse event required medical or surgical intervention to preclude permanent impairment of a body function, or prevent permanent damage to a body structure, due to the use of a medical product.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESINTV">AESINTV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESINTV">AESINTV</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -753,13 +753,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication additional categories for seriousness apply.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESMIE">AESMIE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESMIE">AESMIE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Do additional categories for seriousness apply?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESMIE">AESMIE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESMIE">AESMIE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -781,13 +781,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious event was associated with the development of cancer.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCAN">AESCAN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCAN">AESCAN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event associated with the development of cancer?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCAN">AESCAN</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCAN">AESCAN</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -809,13 +809,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious event occurred with an overdose.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOD">AESOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOD">AESOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event occur with an overdose?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOD">AESOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOD">AESOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -835,13 +835,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the study treatment had a causal effect on the adverse event, as determined by the clinician/investigator.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEREL">AEREL</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEREL">AEREL</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Records the investigator's opinion as to the causality of the event to the treatment. ICH E2A and E2B examples include NOT RELATED, UNLIKELY RELATED, POSSIBLY RELATED, RELATED. Controlled Terminology may be defined in the future. Check with regulatory authority for population of this variable.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEREL">AEREL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEREL">AEREL</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -861,13 +861,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the action taken with study treatment as a result of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACN">AEACN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACN">AEACN</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes changes to the study treatment as a result of the event. AEACN is specifically for the relationship to study treatment. AEACNOTH is for actions unrelated to dose adjustments of study treatment. Examples of AEACN values include ICH E2B values: DRUG WITHDRAWN, DOSE REDUCED, DOSE INCREASED, DOSE NOT CHANGED, UNKNOWN or NOT APPLICABLE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEACN">AEACN</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEACN">AEACN</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -887,7 +887,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the action taken, with respect to a device used in a study (which may or may not be the device under study), as a result of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNDEV">AEACNDEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNDEV">AEACNDEV</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -910,13 +910,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of other action taken as a result of the event that is unrelated to dose adjustments of the study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNOTH">AEACNOTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNOTH">AEACNOTH</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes other actions taken as a result of the event that are unrelated to dose adjustments of study treatment. Usually reported as free text. Example: &#34;TREATMENT UNBLINDED. PRIMARY CARE PHYSICIAN NOTIFIED.&#34;">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEACNOTH">AEACNOTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEACNOTH">AEACNOTH</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -936,13 +936,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the outcome of an event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEOUT">AEOUT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEOUT">AEOUT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Description of the outcome of an event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEOUT">AEOUT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEOUT">AEOUT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -964,7 +964,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the event caused the subject to discontinue from the study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDIS">AEDIS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDIS">AEDIS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -978,7 +978,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether in the investigator's opinion the event may have been due to a treatment other than study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AERLNSYN">AERLNSYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AERLNSYN">AERLNSYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -992,13 +992,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Description of the investigator's opinion as to whether the adverse event may have been due to a treatment other than study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AERELNST">AERELNST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AERELNST">AERELNST</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Records the investigator's opinion as to whether the event may have been due to a treatment other than study drug. May be reported as free text. Example: &#34;MORE LIKELY RELATED TO ASPIRIN USE.&#34;.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AERELNST">AERELNST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AERELNST">AERELNST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
@@ -1009,7 +1009,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An adverse event of special interest (serious or non-serious) is one of scientific and medical concern specific to the sponsor's product or program, for which ongoing monitoring and rapid communication by the investigator to the sponsor can be appropriate. Such an event might warrant further investigation in order to characterize and understand it. Depending on the nature of the event, rapid communication by the trial sponsor to other parties (e.g., regulators) might also be warranted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESI">AESI</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESI">AESI</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1023,13 +1023,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate the pattern of the event over time.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPATT">AEPATT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPATT">AEPATT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate the pattern of the event over time. Examples: INTERMITTENT, CONTINUOUS, SINGLE EVENT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPATT">AEPATT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPATT">AEPATT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Add extension</td>
@@ -1040,13 +1040,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a concomitant or additional treatment given because of the occurrence of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AECONTRT">AECONTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AECONTRT">AECONTRT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was another treatment given because of the occurrence of the event?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AECONTRT">AECONTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AECONTRT">AECONTRT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -1066,13 +1066,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for AETERM is modified to facilitate coding, then AEMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEMODIFY">AEMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEMODIFY">AEMODIFY</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If AETERM is modified to facilitate coding, then AEMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEMODIFY">AEMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEMODIFY">AEMODIFY</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">The fact one of the codings was modified would be captured as an extension</td>
@@ -1083,13 +1083,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The dictionary or standardized text description of AETERM or the modified topic variable (AEMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDECOD">AEDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDECOD">AEDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of AETERM or AEMODIFY. Equivalent to the Preferred Term (PT in MedDRA). The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEDECOD">AEDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEDECOD">AEDECOD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char<br/>values: MedDRA</td>
                   <td>
@@ -1111,13 +1111,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELLT">AELLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELLT">AELLT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELLT">AELLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELLT">AELLT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>
@@ -1138,13 +1138,13 @@
                   <th>AE Lowest Level Term Code</th>
                   <td>
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELLTCD">AELLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELLTCD">AELLTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELLTCD">AELLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELLTCD">AELLTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>
@@ -1165,13 +1165,13 @@
                   <th>AE Preferred Term Code</th>
                   <td>
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPTCD">AEPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPTCD">AEPTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPTCD">AEPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPTCD">AEPTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>
@@ -1193,13 +1193,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLT">AEHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLT">AEHLT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the High Level Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLT">AEHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLT">AEHLT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>
@@ -1221,13 +1221,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLTCD">AEHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLTCD">AEHLTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the High Level Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLTCD">AEHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLTCD">AEHLTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>
@@ -1249,13 +1249,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLGT">AEHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLGT">AEHLGT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the High Level Group Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGT">AEHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGT">AEHLGT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>
@@ -1277,13 +1277,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLGTCD">AEHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLGTCD">AEHLGTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the High Level Group Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGTCD">AEHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGTCD">AEHLGTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>
@@ -1305,13 +1305,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class text description associated with the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOC">AESOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOC">AESOC</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the primary System Organ Class. Will be the same as AEBODSYS if the primary SOC was used for analysis.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOC">AESOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOC">AESOC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>
@@ -1333,13 +1333,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA code for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOCCD">AESOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOCCD">AESOCCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the primary System Organ Class. Will be the same as AEBDSYCD if the primary SOC was used for analysis.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOCCD">AESOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOCCD">AESOCCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>
@@ -1361,7 +1361,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether any other actions were taken in response to the adverse event that were unrelated to study treatment dose changes or other non-study treatments given because of this adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNOYN">AEACNOYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNOYN">AEACNOYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1422,12 +1422,12 @@
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1449,13 +1449,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -1476,13 +1476,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>
@@ -1494,7 +1494,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not any AEs were experienced during the study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEYN">AEYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEYN">AEYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1519,13 +1519,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AECAT">AECAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AECAT">AECAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of related records. Example: BLEEDING, NEUROPSYCHIATRIC.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AECAT">AECAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AECAT">AECAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>This is typically sponsor-specific and we would not expect this to come from the site.<br/>
@@ -1548,13 +1548,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the AECAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCAT">AESCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCAT">AESCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A further categorization of adverse event. Example: NEUROLOGIC.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCAT">AESCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCAT">AESCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>This is typically sponsor-specific and we would not expect this to come from the site.<br/>
@@ -1576,13 +1576,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESPID">AESPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESPID">AESPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined identifier. It may be pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database. Example: Line number on an Adverse Events page.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESPID">AESPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESPID">AESPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.</td>
@@ -1604,12 +1604,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The reported or prespecified name of the adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AETERM">AETERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AETERM">AETERM</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Verbatim name of the event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AETERM">AETERM</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AETERM">AETERM</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td/>
@@ -1620,7 +1620,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a prespecified adverse event or a group of adverse events occurred when information about the occurrence of a specific event is solicited.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEOCCUR">AEOCCUR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEOCCUR">AEOCCUR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1634,13 +1634,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific event, or group of events, are prespecified on a CRF.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPRESP">AEPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPRESP">AEPRESP</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A value of &#34;Y&#34; indicates that this adverse event was pre-specified on the CRF. Values are null for spontaneously reported events (i.e., those collected as free-text verbatim terms)">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPRESP">AEPRESP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPRESP">AEPRESP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1660,12 +1660,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The start date of the adverse event, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESTDAT">AESTDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESTDAT">AESTDAT</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -1685,12 +1685,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The start time of the adverse event, represented in an unambiguous time format (e.g., hh:mm:ss)">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESTTIM">AESTTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESTTIM">AESTTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESTDTC">AESTDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -1712,13 +1712,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location relevant for the adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELOC">AELOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELOC">AELOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes anatomical location relevant for the event (e.g., ARM for skin rash).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELOC">AELOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELOC">AELOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
@@ -1740,7 +1740,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body relevant for the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELAT">AELAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELAT">AELAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1765,7 +1765,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDIR">AEDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDIR">AEDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1790,7 +1790,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the distribution (i.e., arrangement of, apportioning of).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPORTOT">AEPORTOT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPORTOT">AEPORTOT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1804,17 +1804,17 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Indication that an adverse event is ongoing when no End Date is provided.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEONGO">AEONGO</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEONGO">AEONGO</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Identifies the end of the event as being before or after the reference time point defined by variable AEENTPT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT">AEENRTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT">AEENRTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<span style="font-weight:bold"
                            title="Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point (RFSTDTC) and a discrete ending point (RFENDTC) of the trial.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1834,12 +1834,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The date when the adverse event resolved/ended, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEENDAT">AEENDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEENDAT">AEENDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>Need to use a standard extension to pre-adopt the type allowed in R5.  Element contains both date and time (if specified).</td>
@@ -1859,12 +1859,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The time when the adverse event ended/resolved, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEENTIM">AEENTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEENTIM">AEENTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENDTC">AEENDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>Need to use a standard extension to pre-adopt the type allowed in R5.  Element contains both date and time (if specified).</td>
@@ -1886,13 +1886,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The severity or intensity of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESEV">AESEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESEV">AESEV</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The severity or intensity of the event. Examples: MILD, MODERATE, SEVERE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESEV">AESEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESEV">AESEV</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1903,13 +1903,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The grade of the severity of the event using a standard &#34;toxicity&#34; scale (e.g., NCI CTCAE).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AETOXGR">AETOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AETOXGR">AETOXGR</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Toxicity grade according to a standard toxicity scale such as Common Terminology Criteria for Adverse Events v3.0 (CTCAE). Sponsor should specify name of the scale and version used in the metadata (see Assumption 6d). If value is from a numeric scale, represent only the number (e.g., &#34;2&#34; and not &#34;Grade 2&#34;).">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AETOXGR">AETOXGR</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AETOXGR">AETOXGR</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1931,12 +1931,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the adverse event is determined to be &#34;serious&#34; based on what is defined in the protocol.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESER">AESER</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESER">AESER</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Is this a serious event?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESER">AESER</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESER">AESER</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Access if an adverse event should be classified as serious based on the serious criteria defined in the protocol.</td>
@@ -1958,12 +1958,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event resulted in death.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESDTH">AESDTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESDTH">AESDTH</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Did the serious event result in death?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESDTH">AESDTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESDTH">AESDTH</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -1983,13 +1983,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Date of death for any subject who died.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/DTHDAT">DTHDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/DTHDAT">DTHDAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Date/time of death for any subject who died, in ISO 8601 format. Should represent the date/time that is captured in the clinical-trial database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/DTHDTC">DM.DTHDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/DTHDTC">DM.DTHDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -2011,13 +2011,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was life threatening.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESLIFE">AESLIFE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESLIFE">AESLIFE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event life threatening?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESLIFE">AESLIFE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESLIFE">AESLIFE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
@@ -2028,13 +2028,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event resulted in an initial or prolonged hospitalization.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESHOSP">AESHOSP</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESHOSP">AESHOSP</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event require or prolong hospitalization?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESHOSP">AESHOSP</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESHOSP">AESHOSP</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2056,13 +2056,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was associated with a persistent or significant disability or incapacity.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESDISAB">AESDISAB</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESDISAB">AESDISAB</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event result in persistent or significant disability/incapacity?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESDISAB">AESDISAB</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESDISAB">AESDISAB</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
@@ -2084,13 +2084,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious adverse event was associated with a congenital anomaly or birth defect.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCONG">AESCONG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCONG">AESCONG</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event associated with congenital anomaly or birth defect?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCONG">AESCONG</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCONG">AESCONG</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>These would typically be flagged by seriousness or outcome codes.  Will need to propose change request to support capturing more than one</td>
@@ -2112,7 +2112,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication an adverse event required medical or surgical intervention to preclude permanent impairment of a body function, or prevent permanent damage to a body structure, due to the use of a medical product.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESINTV">AESINTV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESINTV">AESINTV</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2137,13 +2137,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication additional categories for seriousness apply.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESMIE">AESMIE</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESMIE">AESMIE</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Do additional categories for seriousness apply?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESMIE">AESMIE</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESMIE">AESMIE</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Additional outcomes or seriousness codes would be specified</td>
@@ -2165,13 +2165,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious event was associated with the development of cancer.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESCAN">AESCAN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESCAN">AESCAN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was the serious event associated with the development of cancer?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESCAN">AESCAN</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESCAN">AESCAN</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Additional outcomes or seriousness codes would be specified</td>
@@ -2191,13 +2191,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the serious event occurred with an overdose.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOD">AESOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOD">AESOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Did the serious event occur with an overdose?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOD">AESOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOD">AESOD</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Product Relatedness implies that the product is involved in the AE, but it doesn't indicate overdose.   After looking through other fields, it does not look like there is a field that would cover this situation.   In studies, OD  would be a reason why the AE was marked as an SAE.</td>
@@ -2217,13 +2217,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication the study treatment had a causal effect on the adverse event, as determined by the clinician/investigator.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEREL">AEREL</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEREL">AEREL</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Records the investigator's opinion as to the causality of the event to the treatment. ICH E2A and E2B examples include NOT RELATED, UNLIKELY RELATED, POSSIBLY RELATED, RELATED. Controlled Terminology may be defined in the future. Check with regulatory authority for population of this variable.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEREL">AEREL</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEREL">AEREL</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td/>
@@ -2243,13 +2243,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the action taken with study treatment as a result of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACN">AEACN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACN">AEACN</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes changes to the study treatment as a result of the event. AEACN is specifically for the relationship to study treatment. AEACNOTH is for actions unrelated to dose adjustments of study treatment. Examples of AEACN values include ICH E2B values: DRUG WITHDRAWN, DOSE REDUCED, DOSE INCREASED, DOSE NOT CHANGED, UNKNOWN or NOT APPLICABLE.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEACN">AEACN</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEACN">AEACN</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to select only those related to study treatment</td>
@@ -2269,7 +2269,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the action taken, with respect to a device used in a study (which may or may not be the device under study), as a result of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNDEV">AEACNDEV</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNDEV">AEACNDEV</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2292,13 +2292,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of other action taken as a result of the event that is unrelated to dose adjustments of the study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNOTH">AEACNOTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNOTH">AEACNOTH</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Describes other actions taken as a result of the event that are unrelated to dose adjustments of study treatment. Usually reported as free text. Example: &#34;TREATMENT UNBLINDED. PRIMARY CARE PHYSICIAN NOTIFIED.&#34;">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEACNOTH">AEACNOTH</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEACNOTH">AEACNOTH</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Pre-adopting R5 capability via a standard extension.  Note that the extension captures all actions taken, so filtration would be needed to exclude actions related to study treatment or device</td>
@@ -2320,13 +2320,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the outcome of an event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEOUT">AEOUT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEOUT">AEOUT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Description of the outcome of an event.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEOUT">AEOUT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEOUT">AEOUT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>The coded equivalents matching up the CDISC controlled terminology. Meaning, in the EHR we may not have value-based coordination from FHIR-to-CDISC</td>
@@ -2337,7 +2337,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the event caused the subject to discontinue from the study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDIS">AEDIS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDIS">AEDIS</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2351,7 +2351,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether in the investigator's opinion the event may have been due to a treatment other than study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AERLNSYN">AERLNSYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AERLNSYN">AERLNSYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2365,13 +2365,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Description of the investigator's opinion as to whether the adverse event may have been due to a treatment other than study treatment.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AERELNST">AERELNST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AERELNST">AERELNST</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Records the investigator's opinion as to whether the event may have been due to a treatment other than study drug. May be reported as free text. Example: &#34;MORE LIKELY RELATED TO ASPIRIN USE.&#34;.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AERELNST">AERELNST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AERELNST">AERELNST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2382,7 +2382,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An adverse event of special interest (serious or non-serious) is one of scientific and medical concern specific to the sponsor's product or program, for which ongoing monitoring and rapid communication by the investigator to the sponsor can be appropriate. Such an event might warrant further investigation in order to characterize and understand it. Depending on the nature of the event, rapid communication by the trial sponsor to other parties (e.g., regulators) might also be warranted.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESI">AESI</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESI">AESI</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -2396,13 +2396,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate the pattern of the event over time.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPATT">AEPATT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPATT">AEPATT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate the pattern of the event over time. Examples: INTERMITTENT, CONTINUOUS, SINGLE EVENT.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPATT">AEPATT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPATT">AEPATT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2422,13 +2422,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether a concomitant or additional treatment given because of the occurrence of the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AECONTRT">AECONTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AECONTRT">AECONTRT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Was another treatment given because of the occurrence of the event?">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AECONTRT">AECONTRT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AECONTRT">AECONTRT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>R5 pre-adoption extension.  Note that mitigatingActions aren't necessarily treatments, so codes would need to be examined to only map those that were treatments</td>
@@ -2439,13 +2439,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for AETERM is modified to facilitate coding, then AEMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEMODIFY">AEMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEMODIFY">AEMODIFY</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If AETERM is modified to facilitate coding, then AEMODIFY will contain the modified text.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEMODIFY">AEMODIFY</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEMODIFY">AEMODIFY</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -2467,13 +2467,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The dictionary or standardized text description of AETERM or the modified topic variable (AEMODIFY), if applicable.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEDECOD">AEDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEDECOD">AEDECOD</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of AETERM or AEMODIFY. Equivalent to the Preferred Term (PT in MedDRA). The sponsor is expected to provide the dictionary name and version used to map the terms utilizing the define.xml external codelist attributes.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEDECOD">AEDECOD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEDECOD">AEDECOD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2495,13 +2495,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELLT">AELLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELLT">AELLT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELLT">AELLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELLT">AELLT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2522,13 +2522,13 @@
                   </td>
                   <td>
                      <span style="font-weight:bold" title="MedDRA Lowest Level Term code.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AELLTCD">AELLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AELLTCD">AELLTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the Lowest Level Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AELLTCD">AELLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AELLTCD">AELLTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2549,13 +2549,13 @@
                   </td>
                   <td>
                      <span style="font-weight:bold" title="MedDRA code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEPTCD">AEPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEPTCD">AEPTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the Preferred Term.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEPTCD">AEPTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPTCD">AEPTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2577,13 +2577,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLT">AEHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLT">AEHLT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the High Level Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLT">AEHLT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLT">AEHLT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2605,13 +2605,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLTCD">AEHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLTCD">AEHLTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the High Level Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLTCD">AEHLTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLTCD">AEHLTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2633,13 +2633,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA text description of the High Level Group Term from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLGT">AEHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLGT">AEHLGT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the High Level Group Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGT">AEHLGT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGT">AEHLGT</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2661,13 +2661,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA High Level Group Term code from the primary path.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEHLGTCD">AEHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEHLGTCD">AEHLGTCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the High Level Group Term for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGTCD">AEHLGTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEHLGTCD">AEHLGTCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2689,13 +2689,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA Primary System Organ Class text description associated with the event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOC">AESOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOC">AESOC</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived text description of the primary System Organ Class. Will be the same as AEBODSYS if the primary SOC was used for analysis.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOC">AESOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOC">AESOC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2717,13 +2717,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="MedDRA code for the primary System Organ Class.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AESOCCD">AESOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AESOCCD">AESOCCD</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Num</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Dictionary-derived code for the primary System Organ Class. Will be the same as AEBDSYCD if the primary SOC was used for analysis.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/AE/variables/AESOCCD">AESOCCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AESOCCD">AESOCCD</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Num<br/>values: MedDRA</td>
                   <td>Sponsors will populate this through the coding process and is applicable to items using MedDRA coding.</td>
@@ -2743,7 +2743,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether any other actions were taken in response to the adverse event that were unrelated to study treatment dose changes or other non-study treatments given because of this adverse event.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/AE/fields/AEACNOYN">AEACNOYN</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/AE/fields/AEACNOYN">AEACNOYN</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>

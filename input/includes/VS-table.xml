@@ -39,12 +39,12 @@
                   <th>Study Identifier</th>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -66,13 +66,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -94,13 +94,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -121,13 +121,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">Encounter should have a standard instantiatesCanonical extension that would allow pointing to the ActivityDefinition.  This would be the ActivityDefinition.name.  Submit a change request to add the extension</td>
@@ -138,7 +138,7 @@
                   <td>
                      <span style="font-weight:bold"
                            title="Date the clinical encounter occurred (or started).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
@@ -161,13 +161,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -189,12 +189,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -214,12 +214,12 @@
                   <td>
                      <span style="font-weight:bold"
                            title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td>
@@ -239,13 +239,13 @@
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of related records.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -269,13 +269,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the VSCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A further categorization of a measurement or examination.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -302,7 +302,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Used to tie together a block of related records in a single domain for a subject.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">This would typically be done by having the related Observations being 'membersOf' a common parent Observation.</td>
@@ -313,13 +313,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A text description of planned time point when measurements should be taken as defined in the protocol.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -339,13 +339,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -383,13 +383,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the vital signs measurement as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the vital signs measurement as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -408,13 +408,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The unit of the result as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>
@@ -433,7 +433,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the vital sign result was clinically significant.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -458,13 +458,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The position of the subject during a measurement or examination.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -500,13 +500,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -528,13 +528,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -556,7 +556,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -584,7 +584,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -606,13 +606,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Descriptive name of the test or examination used to obtain the measurement or finding.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
@@ -634,13 +634,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>
@@ -660,7 +660,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -712,12 +712,12 @@ This combination can be used to extract vital sign data points from EHR system a
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold" title="Unique identifier for a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID">STUDYID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -739,13 +739,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/SITEID">SITEID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Unique identifier for a site within a study.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SITEID">DM.SITEID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
@@ -766,13 +766,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A unique subject identifier within a site and a study.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/SUBJID">SUBJID</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
@@ -784,13 +784,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The name of a clinical encounter that encompasses planned and unplanned trial interventions, procedures, and assessments that may be performed on a subject.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VISIT">VISIT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Protocol-defined description of clinical encounter. 2. May be used in addition to VISITNUM and/or VISITDY.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VISIT">VISIT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -810,7 +810,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Date the clinical encounter occurred (or started).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VISDAT">VISDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
@@ -835,13 +835,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not a planned vital signs measurement, series of vital signs measurements, tests, or observations was performed.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSPERF">VSPERF</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -861,12 +861,12 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The date of the vital signs measurement, represented in an unambiguous date format (e.g., DD-MON-YYYY).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSDAT">VSDAT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -886,12 +886,12 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The time of measurement, represented in an unambiguous time format (e.g., hh:mm:ss).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTIM">VSTIM</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSDTC">VSDTC</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char<br/>values: ISO 8601</td>
                   <td/>
@@ -913,13 +913,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A grouping of topic-variable values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSCAT">VSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to define a category of related records.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSCAT">VSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
@@ -943,13 +943,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A sub-division of the VSCAT values based on user-defined characteristics.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSCAT">VSSCAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="A further categorization of a measurement or examination.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSCAT">VSSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>FHIR allows multiple categorizations at various levels of granularity.<br/>
@@ -965,7 +965,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Used to tie together a block of related records in a single domain for a subject.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSGRPID">VSGRPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td/>
@@ -985,13 +985,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A text description of planned time point when measurements should be taken as defined in the protocol.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTPT">VSTPT</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="1. Text Description of time when measurement should be taken. 2. This may be represented as an elapsed time relative to a fixed reference point, such as time of last dose. See VSTPTNUM and VSTPTREF. Examples: Start, 5 min post">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTPT">VSTPT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
@@ -1014,13 +1014,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The variable used to indicate that data are not available by having the site recording the value as &#34;Not Done&#34;.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Used to indicate that a vital sign measurement was not done. Should be null if a result exists in VSORRES.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
@@ -1054,13 +1054,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the vital signs measurement as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSORRES">VSORRES</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Result of the vital signs measurement as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSORRES">VSORRES</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td>Ensure the value provided from the EHR is considered an actual value (result), an interpretation or range.  </td>
@@ -1079,13 +1079,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The unit of the result as originally received or collected.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSORRESU">VSORRESU</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for VSORRES. Examples: IN, LB, BEATS/MIN.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSORRESU">VSORRESU</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td/>
@@ -1107,7 +1107,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the vital sign result was clinically significant.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSCLSIG">VSCLSIG</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1132,13 +1132,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="The position of the subject during a measurement or examination.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSPOS">VSPOS</a>
                      </span>
                      <br/>Core: R/C<br/>Type: Char</td>
                   <td rowspan="2">
                      <span style="font-weight:bold"
                            title="Position of the subject during a measurement or examination. Examples: SUPINE, STANDING, SITTING.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSPOS">VSPOS</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td rowspan="2">This is often pre-coordinated into the Observation.code, but can also be expressed in the method</td>
@@ -1174,13 +1174,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A description of the anatomical location of the subject relevant to the collection of Vital Signs measurement.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSLOC">VSLOC</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Location relevant to the collection of Vital Signs measurement. Example: ARM for blood pressure.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSLOC">VSLOC</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
@@ -1202,13 +1202,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSLAT">VSLAT</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location or specimen further detailing laterality. Examples: RIGHT, LEFT, BILATERAL">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSLAT">VSLAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>Requires knowledge or review of data to ensure location, laterality and directionality are included in the code and can be parsed.</td>
@@ -1230,7 +1230,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSDIR">VSDIR</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
@@ -1258,7 +1258,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Short name of the measurement, test, or examination described in VSTEST. It can be used as a column name when converting a dataset from a vertical to a horizontal format. The value in VSTESTCD cannot be longer than 8 characters, nor can it start with a number (e.g.&#34;1TEST&#34;). VSTESTCD cannot contain characters other than letters, numbers, or underscores. Examples: SYSBP, DIABP, BMI.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>coding.display and coding.code (plus coding.system)</td>
@@ -1280,13 +1280,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="Descriptive name of the test or examination used to obtain the measurement or finding.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSTEST">VSTEST</a>
                      </span>
                      <br/>Core: HR<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Verbatim name of the test or examination used to obtain the measurement or finding. The value in VSTEST cannot be longer than 40 characters. Examples: Systolic Blood Pressure, Diastolic Blood Pressure, Body Mass Index.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>coding.display and coding.code (plus coding.system)</td>
@@ -1306,13 +1306,13 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="A sponsor-defined identifier. In CDASH, This is typically used for preprinted or auto-generated numbers on the CRF, or any other type of identifier that does not already have a defined CDASH identifier field.">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSSPID">VSSPID</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sponsor-defined reference number. Perhaps pre-printed on the CRF as an explicit line identifier or defined in the sponsor's operational database.">
-                        <a href="http://cdisc.org/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
+                        <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSPID">VSSPID</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: "assigner=sponsor", the value of assigner can either be a simple name using "display" (e.g. "assigner.display=MyPharma" or a reference to an "Organization"</td>
@@ -1323,7 +1323,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <span style="font-weight:bold"
                            title="The instance number of a test that is repeated within a given timeframe for the same test. The level of granularity can vary (e.g., within a time point, within a visit).">
-                        <a href="http://cdisc.org/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/VS/fields/VSREPNUM">VSREPNUM</a>
                      </span>
                      <br/>Core: O<br/>Type: Char</td>
                   <td>

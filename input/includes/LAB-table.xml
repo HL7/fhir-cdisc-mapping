@@ -720,7 +720,7 @@ unknown -&gt; U</td>
                   <td>
                      <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
                   </td>
-                  <td>FHIR to CDISC mapping as follows:
+                  <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
                </tr>
@@ -2299,7 +2299,7 @@ unknown -&gt; U</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
                   </td>
-                  <td>FHIR to CDISC mapping as follows:
+                  <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
                </tr>
