@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <a name="intro"> </a>
   <h3>Introduction</h3>
 	<p>
@@ -103,4 +103,8 @@
     <li>Transcelerate eSource and E2C teams</li>
     <li>All those who participated in the initial review and feedback through CDISC and/or HL7's review processes</li>
   </ul>
+  <p>
+    Various individuals from governmental regulatory agencies were involved in mapping discussions and in review of this document prior to publication.  Their participation 
+    in no way represents policy with respect to expectations around the submission or conversion expectations for real world data or other potential uses of these mappings.
+  </p>
 </div>
