@@ -12161,7 +12161,7 @@
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">There is potential where the birth date can not be collected due to country regulations.&#10;&#10;Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">There is potential where the birth date can not be collected due to country regulations.&#10;&#10;Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.&#10;&#10;Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String">AGE</Data><NamedCell
@@ -12178,7 +12178,7 @@
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String">AGEU</Data><NamedCell
