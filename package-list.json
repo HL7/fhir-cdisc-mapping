@@ -10,6 +10,15 @@
   "status" : "ci-build",
   "current" : true
  },{
+  "version" : "1.0.0",  
+  "date" : "2021-06-00", 
+  "fhirversion": "4.0.1",
+  "desc" : "STU 1 (Permanent Home)",
+  "descCurrent" : "Current Official Published Version (STU 1)",
+  "path" : "http://hl7.org/fhir/uv/cdisc-mapping/STU1",   
+  "status" : "trial-use",
+  "sequence" : "STU 1"
+ },{
   "version" : "0.1.0",  
   "date" : "2020-12-07", 
   "fhirversion": "4.0.1",

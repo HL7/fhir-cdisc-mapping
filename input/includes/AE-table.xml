@@ -59,7 +59,7 @@
                      <p>ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</td>
+                     <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -113,8 +113,7 @@
                   <td>
                      <p>ResearchSubject.where(individual=AdverseEvent.subject).identifier.value</p>
                   </td>
-                  <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>
-                     <br/>No standard way to decide which subject identifier to use</td>
+                  <td>Research subject points to patient, adverse event points to patient. Adverse event points to study. Check to see if they are the same in order to establish linkage.  When extracting real world evidence either the extraction will be performed in a fully identified mode and de-identification will happen as a subsequent process or the de-identification will already have occurred. Any identify info in the resources will already have real world identification randomized or otherwise made nonsensitive. The mapping is referring to subject.reference not to the identifier element on the clinical resources.</td>
                </tr>
                <tr>
                   <th>Any Adverse Event</th>
@@ -257,7 +256,7 @@
                   <td/>
                </tr>
                <tr>
-                  <th>prespecified Adverse Event</th>
+                  <th>Prespecified Adverse Event</th>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that a specific event, or group of events, are prespecified on a CRF.">
@@ -852,7 +851,7 @@
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.suspectEntity.causality.productRelatedness</p>
+                     <p>AdverseEvent.suspectEntity.causality.productRelatedness|AdverseEvent.suspectEntity.causality.assessment with binding to  AdverseEventCausalityAssessment value set</p>
                   </td>
                   <td/>
                </tr>
@@ -1431,7 +1430,7 @@
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</td>
+                     <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -1485,8 +1484,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID">DM.SUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the AdverseEvent.<br/>
-                     <br/>No standard way to decide which subject identifier to use</td>
+                  <td>Research subject points to patient, adverse event points to patient. Adverse event points to study. Check to see if they are the same in order to establish linkage.  When extracting real world evidence either the extraction will be performed in a fully identified mode and de-identification will happen as a subsequent process or the de-identification will already have occurred. Any identify info in the resources will already have real world identification randomized or otherwise made nonsensitive. The mapping is referring to subject.reference not to the identifier element on the clinical resources.</td>
                </tr>
                <tr>
                   <th>Any Adverse Event</th>
@@ -1629,7 +1627,7 @@
                   <td/>
                </tr>
                <tr>
-                  <th>prespecified Adverse Event</th>
+                  <th>Prespecified Adverse Event</th>
                   <td colspan="2" style="background-color:LightGray">If captured within an EHR, this would be an extension on the existing extension that references the ResearchStudy.  (An AdverseEvent might be pre-specified for one study and not for another.)</td>
                   <td>
                      <span style="font-weight:bold"
@@ -2212,7 +2210,7 @@
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#string">string</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.suspectEntity.causality.productRelatedness</p>
+                     <p>AdverseEvent.suspectEntity.causality.productRelatedness|AdverseEvent.suspectEntity.causality.assessment with binding to  AdverseEventCausalityAssessment value set</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"

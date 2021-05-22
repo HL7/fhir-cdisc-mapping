@@ -59,7 +59,7 @@
                      <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -87,7 +87,7 @@
                      <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -127,7 +127,7 @@
                   <td>
                      <span style="font-weight:bold"/>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.  It could be the answer to an Observation, but even then it would be qualified by type and time-range (procedure covers education, massage, cognitive therapy and various other data)</td>
+                  <td colspan="2" style="background-color:LightGray">In FHIR, this would be determined by searching for Procedures with a given subject (possibly also filtered by research study) and excluding those that were entered in error. It might also be necessary to search for education, massage, cognitive therapy and various other data to determine all procedures.</td>
                   <td/>
                </tr>
                <tr>
@@ -156,7 +156,7 @@
                   <td>
                      <p>Procedure.category</p>
                   </td>
-                  <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
+                  <td>FHIR doesn't have 2 distinct category levels. The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.  A standard extension will be needed to convey multiple repetitions in R4.  (Procedure.category does repeat in the draft of R5) The SNOMED binding is an example, which means that any codes can be used. Even if the binding were stronger, alternate codes would be possible on other repetitions.</td>
                </tr>
                <tr>
                   <th>Procedure Subcategory</th>
@@ -505,7 +505,7 @@ Coding translations are left to the sponsor.<br/>
                      <p>Procedure.status</p>
                   </td>
                   <td>This supports the necessity of separating procedures and medication.<br/>
-                     <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.  Note that MedicationAdministration reflects a single administration, so it would only be 'ongoing' until the IV is turned off or the rate is adjusted.</td>
+                     <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.</td>
                </tr>
                <tr>
                   <th rowspan="3">Procedure End Date</th>
@@ -811,7 +811,7 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <span style="font-weight:bold">PRFAST*</span>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Could propose as standard extension.  Probably not relevant for MedicationStatement</td>
+                  <td colspan="2" style="background-color:LightGray">This would be handled as an extension. Could propose as standard extension.</td>
                   <td/>
                </tr>
                <tr>
@@ -978,7 +978,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure Lowest Level Term Code</th>
@@ -1003,7 +1003,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR soure data. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure.</td>
                </tr>
                <tr>
                   <th>Procedure Preferred Term Code</th>
@@ -1028,7 +1028,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Term</th>
@@ -1054,7 +1054,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Term Code</th>
@@ -1080,7 +1080,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Group Term</th>
@@ -1106,7 +1106,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Group Term Code</th>
@@ -1132,7 +1132,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>PR Primary System Organ Class</th>
@@ -1158,7 +1158,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>PR Primary System Organ Class Code</th>
@@ -1184,7 +1184,7 @@ Might consider proposing it as a standard extension.</td>
                      <p>Procedure.code</p>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
             </tbody>
          </table>
@@ -1238,7 +1238,7 @@ Might consider proposing it as a standard extension.</td>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -1266,7 +1266,7 @@ Might consider proposing it as a standard extension.</td>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -1297,7 +1297,7 @@ Might consider proposing it as a standard extension.</td>
                </tr>
                <tr>
                   <th>Any Procedures Performed</th>
-                  <td colspan="2" style="background-color:LightGray">This likely to be a Questionnaire question than something that would directly be captured in a record.  It could be the answer to an Observation, but even then it would be qualified by type and time-range (procedure covers education, massage, cognitive therapy and various other data)</td>
+                  <td colspan="2" style="background-color:LightGray">In FHIR, this would be determined by searching for Procedures with a given subject (possibly also filtered by research study) and excluding those that were entered in error. It might also be necessary to search for education, massage, cognitive therapy and various other data to determine all procedures.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether or not the subject had any procedures performed.">
@@ -1335,7 +1335,7 @@ Might consider proposing it as a standard extension.</td>
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/PR/variables/PRCAT">PRCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td>FHIR doesn't have 2 distinct category levels.  Instead, Procedure.category repeats.  The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.</td>
+                  <td>FHIR doesn't have 2 distinct category levels. The option exists to have as many categorizations with whatever axes and granularities needed or desired.  When mapping data to a particular study, it would be necessary to decide what category values best correspond to CAT vs. SCAT.  A standard extension will be needed to convey multiple repetitions in R4.  (Procedure.category does repeat in the draft of R5) The SNOMED binding is an example, which means that any codes can be used. Even if the binding were stronger, alternate codes would be possible on other repetitions.</td>
                </tr>
                <tr>
                   <th>Procedure Subcategory</th>
@@ -1684,7 +1684,7 @@ Coding translations are left to the sponsor.<br/>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, ONGOING, U<span style="font-weight:bold">PRENRF*</span>
                   </td>
                   <td>This supports the necessity of separating procedures and medication.<br/>
-                     <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.  Note that MedicationAdministration reflects a single administration, so it would only be 'ongoing' until the IV is turned off or the rate is adjusted.</td>
+                     <br/>An example of ongoing procedure, "hemodialysis with frequency of three times a week".   If the status is 'in-progress'/'active', then it's ongoing.</td>
                </tr>
                <tr>
                   <th rowspan="3">Procedure End Date</th>
@@ -1981,7 +1981,7 @@ Coding translations are left to the sponsor.<br/>
                </tr>
                <tr>
                   <th>Procedure Fasting Status</th>
-                  <td colspan="2" style="background-color:LightGray">This would be handled as an extension.  Could propose as standard extension.  Probably not relevant for MedicationStatement</td>
+                  <td colspan="2" style="background-color:LightGray">This would be handled as an extension. Could propose as standard extension.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication that the subject has abstained from food/water for the specified amount of time.">
@@ -2157,7 +2157,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure Lowest Level Term Code</th>
@@ -2182,7 +2182,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR soure data. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure.</td>
                </tr>
                <tr>
                   <th>Procedure Preferred Term Code</th>
@@ -2207,7 +2207,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Term</th>
@@ -2233,7 +2233,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Term Code</th>
@@ -2259,7 +2259,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Group Term</th>
@@ -2285,7 +2285,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>Procedure High Level Group Term Code</th>
@@ -2311,7 +2311,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>PR Primary System Organ Class</th>
@@ -2337,7 +2337,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR.<br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
                   <th>PR Primary System Organ Class Code</th>
@@ -2363,7 +2363,7 @@ Might consider proposing it as a standard extension.</td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
                   <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
-                     <br/>Procedure.code and Medication[x].medicationCode|Medication.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities)   Note: Not clear how many of these would be populated for a procedure rather than a medication</td>
+                     <br/>Procedure.code can contain as many codings as you like at whatever granularity you like.  You would distinguish what granularity it was by looking at the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
             </tbody>
          </table>

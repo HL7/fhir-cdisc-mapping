@@ -59,7 +59,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -87,7 +87,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Investigator Identifier</th>
@@ -410,8 +410,8 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                      <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
                   </td>
                   <td>CDISC to FHIR mapping as follows:
-F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
-                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
+F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.<br/>
+                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.   In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</td>
                </tr>
                <tr>
                   <th>Lab Test Condition Met</th>
@@ -640,7 +640,7 @@ Completed = &lt;blank&gt;
                      <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
                   </td>
                   <td>
-                     <p>Observation.code.coding.where(system='LOINC').code</p>
+                     <p>Observation.code.coding.where(system='http://loinc.org').code</p>
                   </td>
                   <td/>
                </tr>
@@ -981,16 +981,17 @@ Completed = &lt;blank&gt;
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>
-                     <span title="Identifiers assigned to this research subject for a study.">
+                     <span title="An identifier for this patient.">
                         <a style="font-weight:bold"
-                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.identifier">Patient.identifier</a>
                      </span>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                     <p>Observation.subject.resolve().identifier.value</p>
                   </td>
-                  <td>To distinguish SUBJID from USUBJID, would need to look at identifier.system</td>
+                  <td>To find an identifier that was consistent for the subject across studies would typically mean looking to the Patient identifier.  However, this may not be appropriate to be exposed directly, so some degree of mapping, obfuscation or anonymization may be required.<br/>
+                     <br/>In theory, a sponsor specific study-independent identifier could be maintained on Patient alongside other patient identifiers, but this would be unusual in most clinical systems.</td>
                </tr>
                <tr>
                   <th>Result Categorization</th>
@@ -1146,7 +1147,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -1174,7 +1175,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Investigator Identifier</th>
@@ -1497,8 +1498,8 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
                   <td>CDISC to FHIR mapping as follows:
-F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable<br/>
-                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
+F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.<br/>
+                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.   In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</td>
                </tr>
                <tr>
                   <th>Lab Test Condition Met</th>
@@ -1718,7 +1719,7 @@ Completed = &lt;blank&gt;
                      <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
                   </td>
                   <td>
-                     <p>Observation.code.coding.where(system='LOINC').code</p>
+                     <p>Observation.code.coding.where(system='http://loinc.org').code</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">LBLOINC</span>
@@ -2061,14 +2062,14 @@ Completed = &lt;blank&gt;
                <tr>
                   <th>Unique Subject Identifier</th>
                   <td>
-                     <span title="Identifiers assigned to this research subject for a study.">
+                     <span title="An identifier for this patient.">
                         <a style="font-weight:bold"
-                           href="{{site.data.fhir.path}}researchsubject-definitions.html#ResearchSubject.identifier">ResearchSubject.identifier</a>
+                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.identifier">Patient.identifier</a>
                      </span>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                     <p>Observation.subject.resolve().identifier.value</p>
                   </td>
                   <td/>
                   <td>
@@ -2077,7 +2078,8 @@ Completed = &lt;blank&gt;
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID">USUBJID</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>To distinguish SUBJID from USUBJID, would need to look at identifier.system</td>
+                  <td>To find an identifier that was consistent for the subject across studies would typically mean looking to the Patient identifier.  However, this may not be appropriate to be exposed directly, so some degree of mapping, obfuscation or anonymization may be required.<br/>
+                     <br/>In theory, a sponsor specific study-independent identifier could be maintained on Patient alongside other patient identifiers, but this would be unusual in most clinical systems.</td>
                </tr>
                <tr>
                   <th>Result Categorization</th>

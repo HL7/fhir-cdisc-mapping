@@ -55,7 +55,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
+                     <p>ResearchSubject.where(subject=Patient).study.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td/>
                </tr>
@@ -252,7 +252,7 @@
                      </span>
                      <br/>Core: Exp<br/>Type: Num</td>
                   <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
-                     <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
                   <td/>
                </tr>
                <tr>
@@ -268,7 +268,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/AGEU">AGEU</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
-                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.</td>
                   <td/>
                </tr>
                <tr>
@@ -311,19 +311,9 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SEX">SEX</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>
-                     <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
-                        <a style="font-weight:bold"
-                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
-                     </span>
-                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
-                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-                  </td>
-                  <td>
-                     <p>Patient.gender</p>
-                  </td>
-                  <td>Note that gender represents the gender for administrative purposes.  Genetic, physiologic, social and other gender aspects are captured as Observations</td>
+                  <td colspan="2" style="background-color:LightGray">Sex and gender are multi-faceted.concepts. Both FHIR and CDISC standards have a large degree of ambiguity in their definitions for their primary data elements describing a subject’s sex or gender (DM.SEX and Patient.gender).  This ambiguity often exists in original source systems. Depending on the use case, the Various facets of sex and gender may be utilized or captured within clinical data..  - physiologic, social, chromosomal, etc.  As such, it's not advisable to indicate a mapping where all the facets of sex and gender are ambiguous in both the source and study data standards.  Study sponsors and regulators will need to establish policies and look into the quality and nature of the source data as well as the analysis that needs to be performed to determine appropriate mappings. <br/>
+                     <br/>Extensions such as US core "birth sex" and FHIR core "gender identity" may give more semanticly consistent values, but may not be widely populated   Some gender concepts such as physiologic and genetic characteristics may be captured as Observation values rather than as demographics elements on Patient</td>
+                  <td/>
                </tr>
                <tr>
                   <th>Ethnicity</th>
@@ -371,7 +361,7 @@
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
                   <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
-                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                     <br/>Please note: the extension may or may not correspond to the sponsor's requirements and the extension can actually capture race information in 3 different ways, so further mapping would be needed.   Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
                   <td/>
                </tr>
                <tr>
@@ -442,7 +432,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.identifier).study.resolve().partOf.resolve().identifier</p>
+                     <p>ResearchSubject.where(subject=Patient).study.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
@@ -637,7 +627,7 @@
                <tr>
                   <th>Age</th>
                   <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
-                     <br/>Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The age of the subject expressed in AGEU.">
@@ -654,7 +644,7 @@
                </tr>
                <tr>
                   <th>Age Units</th>
-                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate</td>
+                  <td colspan="2" style="background-color:LightGray">Age can be captured as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Those units of time that are routinely used to express the age of a person.">
@@ -697,18 +687,8 @@
                </tr>
                <tr>
                   <th>Sex</th>
-                  <td>
-                     <span title="Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.">
-                        <a style="font-weight:bold"
-                           href="{{site.data.fhir.path}}patient-definitions.html#Patient.gender">Patient.gender</a>
-                     </span>
-                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#code">code</a>
-                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/administrative-gender">AdministrativeGender</a> 
-                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
-                  </td>
-                  <td>
-                     <p>Patient.gender</p>
-                  </td>
+                  <td colspan="2" style="background-color:LightGray">Sex and gender are multi-faceted.concepts. Both FHIR and CDISC standards have a large degree of ambiguity in their definitions for their primary data elements describing a subject’s sex or gender (DM.SEX and Patient.gender).  This ambiguity often exists in original source systems. Depending on the use case, the Various facets of sex and gender may be utilized or captured within clinical data..  - physiologic, social, chromosomal, etc.  As such, it's not advisable to indicate a mapping where all the facets of sex and gender are ambiguous in both the source and study data standards.  Study sponsors and regulators will need to establish policies and look into the quality and nature of the source data as well as the analysis that needs to be performed to determine appropriate mappings. <br/>
+                     <br/>Extensions such as US core "birth sex" and FHIR core "gender identity" may give more semanticly consistent values, but may not be widely populated   Some gender concepts such as physiologic and genetic characteristics may be captured as Observation values rather than as demographics elements on Patient</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Sex of the subject as determined by the investigator.">
@@ -720,7 +700,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/DM/variables/SEX">SEX</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>Note that gender represents the gender for administrative purposes.  Genetic, physiologic, social and other gender aspects are captured as Observations</td>
+                  <td/>
                </tr>
                <tr>
                   <th>Ethnicity</th>
@@ -756,7 +736,7 @@
                <tr>
                   <th>Race</th>
                   <td colspan="2" style="background-color:LightGray">There's a U.S. Core extension (https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-race.html) for this to capture race as required by U.S. legislation.  In theory, the OMBRace could map to RACE, 'detailed' could map to CRACE and 'text' could map to RACEOTH.  However, how appropriate these mappings would be would depend on the study requirements.<br/>
-                     <br/>Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
+                     <br/>Please note: the extension may or may not correspond to the sponsor's requirements and the extension can actually capture race information in 3 different ways, so further mapping would be needed.   Other countries use vastly different value sets or prohibit collection.  If captured for clinical rather than administrative purposes, this would be an Observation</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An arbitrary classification based on physical characteristics; a group of persons related by common descent or heredity (U.S. Center for Disease Control).">

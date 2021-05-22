@@ -3,7 +3,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
   <id value="hl7.fhir.uv.cdisc-mapping"/>
   <url value="http://hl7.org/fhir/uv/cdisc-mapping/ImplementationGuide/hl7.fhir.uv.cdisc-mapping"/>
-  <version value="0.1.0"/>
+  <version value="1.0.0"/>
   <name value="CDISCMappings"/>
   <title value="CDISC to FHIR Joint Mapping Implementation Guide"/>
   <status value="draft"/>
@@ -40,11 +40,16 @@
         <nameUrl value="index.html"/>
         <title value="IG Home Page"/>
         <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="overview.html"/>
-        <title value="Mapping Overview"/>
-        <generation value="html"/>
+        <page>
+          <nameUrl value="overview.html"/>
+          <title value="Mapping Overview"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="caveats.html"/>
+          <title value="Mapping Caveats"/>
+          <generation value="html"/>
+        </page>
         <page>
           <nameUrl value="ae.html"/>
           <title value="Adverse Events"/>

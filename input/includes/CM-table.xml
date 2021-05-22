@@ -95,7 +95,7 @@
                      <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -929,7 +929,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.text</p>
+                     <p>MedicationStatement.dosage.text|MedicationStatement.dosage.maxDosePerPeriod.of</p>
                   </td>
                   <td rowspan="4">Requires combining multiple repetitions together</td>
                </tr>
@@ -1053,7 +1053,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.maxDosePerPeriod.code</p>
+                     <p>MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</p>
                   </td>
                   <td rowspan="3"/>
                </tr>
@@ -2327,7 +2327,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -3145,7 +3145,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.text</p>
+                     <p>MedicationStatement.dosage.text|MedicationStatement.dosage.maxDosePerPeriod.of</p>
                   </td>
                   <td rowspan="4">
                      <span style="font-weight:bold"
@@ -3273,7 +3273,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.maxDosePerPeriod.code</p>
+                     <p>MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</p>
                   </td>
                   <td rowspan="3">
                      <span style="font-weight:bold"

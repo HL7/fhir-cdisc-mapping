@@ -59,7 +59,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -721,7 +721,7 @@ This combination can be used to extract vital sign data points from EHR system a
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>

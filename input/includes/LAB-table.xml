@@ -722,7 +722,7 @@ unknown -&gt; U</td>
                   </td>
                   <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
-                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
+                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</td>
                </tr>
                <tr>
                   <th>Battery ID</th>
@@ -1543,7 +1543,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</td>
+                  <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate. This can sometimes also be inferred from the Observation.code.</td>
                   <td/>
                </tr>
                <tr>
@@ -2301,7 +2301,7 @@ unknown -&gt; U</td>
                   </td>
                   <td>CDISC to FHIR mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
-                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.</td>
+                     <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</td>
                </tr>
                <tr>
                   <th>Battery ID</th>
@@ -3119,7 +3119,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                </tr>
                <tr>
                   <th>Result Class</th>
-                  <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate.</td>
+                  <td colspan="2" style="background-color:LightGray">In FHIR, the value will always be 'reported', with the ability to convey translations in an extension.  Nothing will differentiate whether a translation is considered 'conventional' or not, so if there are multiple translations present and the receiver can't figure it out by looking, an additional extension may be necessary to differentiate. This can sometimes also be inferred from the Observation.code.</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/SingleResult/ResultClass/@Value</span>
                   </td>

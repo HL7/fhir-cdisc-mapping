@@ -36,6 +36,9 @@
       <a href="overview.html">Mapping Overview</a>: Provides an explanation of the approach to the mappings, a description of how the mapping tables are organized, and other information relevant to reading and interpreting this specification.
     </li>
     <li>
+      <a href="caveats.html">Mapping Caveats &amp; Considerations</a>: Additional background on aspects of CDISC standards that provide additional challenges when mapping from FHIR and guidance on how to address those challenges.
+    </li>
+    <li>
       <b>Mapping domains</b>: Separate pages that describe the mappings for different areas of clinical research information
       <ul>
         <li>
@@ -62,7 +65,7 @@
       </ul>
     </li>
     <li>
-      <a href="downloads.html">Downloads</a>: Provides links to download this IG as well as to download the mappings as a custom transformable XML structure or as a single CSV file.
+      <a href="downloads.html">Downloads</a>: Provides links to download this IG as well as to download the mappings as a custom transformable XML structure or as a single CSV or Excel file.
     </li>
   </ul>
 

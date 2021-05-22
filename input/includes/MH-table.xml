@@ -93,7 +93,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -722,7 +722,7 @@
                   <td>
                      <p>Condition.bodysite</p>
                   </td>
-                  <td rowspan="4"/>
+                  <td rowspan="4">AllergyIntolerances are generally not associated with body sites.  </td>
                </tr>
                <tr>
                   <td>
@@ -779,7 +779,7 @@
                   <td>
                      <span style="font-weight:bold">MHLAT*</span>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Laterality is not relevant for allergies.</td>
+                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Laterality is not relevant for allergies.  Differentiation of laterality, directionality and other location qualifiers will require knowledge of the qualifier codes and code-by-code mapping</td>
                   <td/>
                </tr>
                <tr>
@@ -793,7 +793,7 @@
                   <td>
                      <span style="font-weight:bold">MHDIR*</span>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Directionality is not relevant for allergies.</td>
+                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Directionality is not relevant for allergies. Differentiation of laterality, directionality and other location qualifiers will require knowledge of the qualifier codes and code-by-code mapping</td>
                   <td/>
                </tr>
                <tr>
@@ -1578,7 +1578,7 @@
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -2207,7 +2207,7 @@
                   <td rowspan="4">
                      <span style="font-weight:bold">MHLOC*</span>
                   </td>
-                  <td rowspan="4"/>
+                  <td rowspan="4">AllergyIntolerances are generally not associated with body sites.  </td>
                </tr>
                <tr>
                   <td>
@@ -2255,7 +2255,7 @@
                </tr>
                <tr>
                   <th>Medical History Event Laterality</th>
-                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Laterality is not relevant for allergies.</td>
+                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Laterality is not relevant for allergies.  Differentiation of laterality, directionality and other location qualifiers will require knowledge of the qualifier codes and code-by-code mapping</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier for anatomical location further detailing the side of the body relevant for the event.">
@@ -2269,7 +2269,7 @@
                </tr>
                <tr>
                   <th>Medical History Directionality</th>
-                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Directionality is not relevant for allergies.</td>
+                  <td colspan="2" style="background-color:LightGray">There should be a standard extension defined that allows Condition, AdverseEvent, Observation and Specimen to point to a BodyStructure.  Directionality is not relevant for allergies. Differentiation of laterality, directionality and other location qualifiers will require knowledge of the qualifier codes and code-by-code mapping</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Qualifier further detailing the position of the anatomical location relative to the center of the body, organ, or specimen.">

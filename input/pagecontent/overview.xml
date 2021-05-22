@@ -52,7 +52,7 @@
   <p><b>NOTE:</b></p>
   <p>There is an additional table on the Laboratory page that covers the LAB specification.  It behaves slightly differently as the LAB specification uses XML rather than SAS and its elements are therefore expressed as XPaths rather than variable names.  Otherwise, it behaves the same as those above.</p>
   <p>
-    The tables for each domain can be found by using the 'Mapping' menu link.  As well, the downloads page includes a link to a CSV file containing the same content as the complete set of mapping tables, with the exception that definitions are included as columns rather than flyovers.
+    The tables for each domain can be found by using the 'Mapping' menu link.  As well, the downloads page includes a link to CSV and Excel files containing the same content as the complete set of mapping tables, with the exception that definitions are included as columns rather than flyovers.
   </p>
 <!--  <p>
     Finally, the complete set of mappings is available as an <a href="cdisc-fhir-mappings.xml">XML-based Excel file</a>.  A link to this file, as well as a downloadable version of the IG can be found on the <a href="downloads.html">downloads</a> page.
