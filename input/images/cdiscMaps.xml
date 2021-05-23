@@ -1384,9 +1384,9 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AEENRTPT" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT"><definition>Identifies the end of the event as being before or after the reference time point defined by variable AEENTPT.</definition></cdisc>
          <cdisc spec="SDTM" label="AEENRF" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF"><definition>Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point (RFSTDTC) and a discrete ending point (RFENDTC) of the trial.</definition></cdisc>
          <mapping resource="AdverseEvent" path="outcome" min="0" max="1">
-            <path value="AdverseEvent.outcome = ongoing"/>
+            <path value="AdverseEvent.outcome - ongoing"/>
          <definition value="Describes the type of outcome from the adverse event."/><type><code value="CodeableConcept"/></type><binding name="AdverseEventOutcome" strength="required" valueSet="http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1"/></mapping>
-         <comment>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</comment>
+         <gap>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</gap>
       </element>
       <element name="Adverse Event End Date">
          <cdisc spec="CDASH" label="AEENDAT" core="R/C" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/AEENDAT"><definition>The date when the adverse event resolved/ended, represented in an unambiguous date format (e.g., DD-MON-YYYY).</definition></cdisc>
@@ -1777,7 +1777,7 @@ This combination can be used to extract vital sign data points from EHR system a
       </element>
       <element name="Medical History Event Date Type">
          <cdisc spec="CDASH" label="MHEVDTYP" core="O" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/MHEVDTYP"><definition>Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.</definition></cdisc>
-         <cdisc spec="SDTM" label="SUPPMH.QVAL"><description>This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = "MHEVDTYP" and SUPPMH.QLABEL = "Medical History Event Date Type".  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description></cdisc>
+         <cdisc spec="SDTM" label="SUPPMH.QVAL"><description>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</description></cdisc>
       </element>
       <element name="Reported Term for the Medical History">
          <cdisc spec="CDASH" label="MHTERM" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/MHTERM"><definition>The reported or prespecified name of the medical condition or event.</definition></cdisc>
@@ -2817,8 +2817,6 @@ Coding translations are left to the sponsor.<br/>
          <mapping resource="Procedure" path="performedDateTime" min="0" max="1">
             <path value="Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode"/>
          <definition value="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured."/><comment value="Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone."/><type><code value="dateTime"/></type></mapping>
-         <gap>This is not expect to receive from the site.<br/>
-            <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</gap>
          <comment>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</comment>
       </element>
       <element name="Procedure Start Date">

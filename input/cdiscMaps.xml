@@ -1534,9 +1534,9 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AEENRTPT"/>
          <cdisc spec="SDTM" label="AEENRF"/>
          <mapping resource="AdverseEvent" path="outcome">
-            <path value="AdverseEvent.outcome = ongoing"/>
+            <path value="AdverseEvent.outcome - ongoing"/>
          </mapping>
-         <comment>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</comment>
+         <gap>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</gap>
       </element>
       <element name="Adverse Event End Date">
          <cdisc spec="CDASH" label="AEENDAT"/>
@@ -2018,7 +2018,7 @@ This combination can be used to extract vital sign data points from EHR system a
       <element name="Medical History Event Date Type">
          <cdisc spec="CDASH" label="MHEVDTYP"/>
          <cdisc spec="SDTM" label="SUPPMH.QVAL">
-            <description>This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = "MHEVDTYP" and SUPPMH.QLABEL = "Medical History Event Date Type".  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
+            <description>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</description>
          </cdisc>
       </element>
       <element name="Reported Term for the Medical History">
@@ -3214,8 +3214,6 @@ Coding translations are left to the sponsor.<br/>
          <mapping resource="Procedure" path="performedDateTime">
             <path value="Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode"/>
          </mapping>
-         <gap>This is not expect to receive from the site.<br/>
-            <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</gap>
          <comment>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</comment>
       </element>
       <element name="Procedure Start Date">

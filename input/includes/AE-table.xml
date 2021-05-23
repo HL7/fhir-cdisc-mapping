@@ -453,9 +453,10 @@
                      <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.outcome = ongoing</p>
+                     <p>AdverseEvent.outcome - ongoing</p>
                   </td>
-                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
+                  <td colspan="2" style="background-color:LightGray">Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
+                  <td/>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>
@@ -1819,8 +1820,9 @@
                      <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.outcome = ongoing</p>
+                     <p>AdverseEvent.outcome - ongoing</p>
                   </td>
+                  <td colspan="2" style="background-color:LightGray">Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication that an adverse event is ongoing when no End Date is provided.">
@@ -1837,7 +1839,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
+                  <td/>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>

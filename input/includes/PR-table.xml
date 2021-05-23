@@ -433,8 +433,6 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <p>Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
-                     <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
                   <td>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</td>
                </tr>
                <tr>
@@ -1609,8 +1607,6 @@ Coding translations are left to the sponsor.<br/>
                   <td>
                      <p>Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
-                     <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication the procedure occurred prior to [PRSTTPT] or prior to the date in DM.RFSTDTC.">
