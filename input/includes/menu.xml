@@ -8,6 +8,9 @@
   <li>
     <a href="overview.html">Mapping Overview</a>
   </li>
+  <li>
+    <a href="caveats.html">Mapping Caveats</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings<b class="caret">
       </b>
