@@ -8528,7 +8528,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="m2156157641304"><Data ss:Type="String">SUPPMH.QVAL</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="3" ss:StyleID="m2156157641324"><Data ss:Type="String">This field does not map directly to an SDTM variable.  This information could be submitted in a SUPPMH dataset as the value of SUPPMH.QVAL when SUPPMH.QNAM = &quot;MHEVDTYP&quot; and SUPPMH.QLABEL = &quot;Medical History Event Date Type&quot;.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</Data><NamedCell
+    <Cell ss:MergeDown="3" ss:StyleID="m2156157641324"><Data ss:Type="String">This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="14.25" ss:StyleID="s186">
