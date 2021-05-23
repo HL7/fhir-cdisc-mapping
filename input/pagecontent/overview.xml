@@ -23,8 +23,8 @@
   </p>
   <ul>
     <li>As mentioned in <a href="index.html#intro">introduction</a>, mappings will need to be adjusted on a study-specific and implementation-environment specific basis.  A business-analyst view of the mappings will be easier to use as a starting point for context-specific adjustment than a formally computable structure.</li>
-    <li>Less formal tabular representations are easier for the community to review and verify</li>
-    <li>Different organizations are likely to have differing tooling stacks for performing data conversion, meaning that formally computable representations are less likely to be as broadly useful</li>
+    <li>Less formal tabular representations are easier for the community to review and verify.</li>
+    <li>Different organizations are likely to have differing tooling stacks for performing data conversion, meaning that formally computable representations are less likely to be as broadly useful.</li>
     <li>Formal, executable mappings, such as those expressible with <a href="{{site.data.fhir.path}}structuremap.html">StructureMap</a> are more time-consuming to create and test, and HL7 and CDISC do not want to undertake that effort unless there is a clear demand from the community for such artifacts to be produced.</li>
   </ul>
   <p>
@@ -34,7 +34,7 @@
     Mapping tables are provided for each CDISC 'domain'.  (Domains are a means of organizing related data in both the SDTM and CDASH specifications.)  Not all CDISC domains are mapped in this release, but all of the primary clinical domains are included, specifically: <a href="ae.html">Adverse Events (AE)</a>, <a href="cm.html">Concommitant Medications (CM)</a>, <a href="dm.html">Demographics (DM)</a>, <a href="lb.html">Labs (LB)</a>, <a href="mh.html">Medical History (MH)</a>, <a href="pr.html">Procedures</a> and <a href="vs.html">Vital Signs (VS)</a>.  Each domain table is organized into three sections.  The first provides information about the CDISC domain elements, both from the SDTM and the CDASH perspective (though not all data elements will exist in both specifications).  This portion of the table contains the following data elements:
   </p>
   <ul>
-    <li><b>Name</b> - a descriptive name for the data element.  This is the descriptive name for the element as exposed in CDASH and/or SDTM.  (If the names are different in the two specifications but it is known the content and mapping are the same, the CDASH name is chosen preferentially)</li>
+    <li><b>Name</b> - a descriptive name for the data element.  This is the descriptive name for the element as exposed in CDASH and/or SDTM.  (If the names are different in the two specifications but it is known the content and mapping are the same, the CDASH name is chosen preferentially).</li>
     <li><b>CDASH Variable</b> - the formal id for the variable in the CDASH standard.  A fly-over provides the definition for the element in CDASH.  This column will be omitted for mapped data elements that do not have a CDASH equivalent.</li>
     <li><b>SDTM Variable</b> - the formal id for the variable in the SDTM standard.  A fly-over provides the definition for the element in SDTM.  This column will be omitted for mapped data elements that do not have a SDTM equivalent.</li>
   </ul>
@@ -42,7 +42,7 @@
     The second part of the mapping table indicates where the data element can be found in FHIR.  In some cases, there will only be a comment indicating that no mapping currently exists (and that custom extensions would be needed).  In other cases, there may be multiple FHIR rows for a single CDISC row if corresponding data might be found in multiple places.  This section includes the following columns:
   </p>
   <ul>
-    <li><b>Resource element</b> - indicates the specific resource element in FHIR and provides a hyperlink to the associated data dictionary page in the FHIR core specification</li>
+    <li><b>Resource element</b> - indicates the specific resource element in FHIR and provides a hyperlink to the associated data dictionary page in the FHIR core specification.</li>
     <li><b>Path</b> - provides a description of how to navigate from the 'base' FHIR resource that corresponds to the equivalent domain to the specified data element.  (See the <a href="#fhirpath">FHIRPath</a> section below.)</li>
   </ul>
   <p>If no mapping is possible (via standard FHIR elements or extensions), then guidance will be provided about whether data might be expected to be gleaned in other ways (e.g. a custom extension) or whether the information is simply unlikely to be found in clinical systems exposing FHIR interfaces.  Such gaps will be marked as 'gray'.</p>
@@ -64,10 +64,10 @@
     The syntax used to express the mappings to FHIR is based on a simplified version of the <a href="http://hl7.org/fhirpath">FHIRPath</a> syntax.  This syntax is used for a few reasons:
   </p>
   <ul>
-    <li>FHIR data can be expressed in different syntaxes (XML, JSON and RDF) and FHIRPath is a syntax-independent path language</li>
-    <li>FHIRPath is more concise than other path language (e.g. XPath)</li>
-    <li>FHIRPath includes built in extensions for traversing references to other resources and accessing extensions</li>
-    <li>If we ever move to fully computable mappings, they will need to be based on FHIRPath</li>
+    <li>FHIR data can be expressed in different syntaxes (XML, JSON and RDF) and FHIRPath is a syntax-independent path language.</li>
+    <li>FHIRPath is more concise than other path language (e.g. XPath).</li>
+    <li>FHIRPath includes built in extensions for traversing references to other resources and accessing extensions.</li>
+    <li>If we ever move to fully computable mappings, they will need to be based on FHIRPath.</li>
   </ul>
   <p>However, because the objective for this implementation guide is NOT fully computable mappings, we have taken a few liberties with the syntax for ease of conciseness and readability.  Specifically:</p>
   <ul>
