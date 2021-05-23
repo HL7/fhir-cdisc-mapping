@@ -6937,7 +6937,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">Observation.identifier.where(assigner=[sponsor organization id])</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">Observation.identifier.where(assigner='sponsor organization id')</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">The assigner of the identifier can be explicit or inferred by the Identifier.system.  Example: &quot;assigner=sponsor&quot;, the value of assigner can either be a simple name using &quot;display&quot; (e.g. &quot;assigner.display=MyPharma&quot; or a reference to an &quot;Organization&quot;</Data><NamedCell
