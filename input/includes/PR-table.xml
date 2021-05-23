@@ -423,9 +423,19 @@ Coding translations are left to the sponsor.<br/>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, U<span style="font-weight:bold">PRSTRF*</span>
                   </td>
+                  <td>
+                     <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedDateTime">Procedure.performedDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode</p>
+                  </td>
                   <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
                      <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
-                  <td/>
+                  <td>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</td>
                </tr>
                <tr>
                   <th rowspan="3">Procedure Start Date</th>
@@ -1589,6 +1599,16 @@ Coding translations are left to the sponsor.<br/>
                </tr>
                <tr>
                   <th>Prior Procedure</th>
+                  <td>
+                     <span title="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}procedure-definitions.html#Procedure.performedDateTime">Procedure.performedDateTime</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#dateTime">dateTime</a>
+                  </td>
+                  <td>
+                     <p>Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode</p>
+                  </td>
                   <td colspan="2" style="background-color:LightGray">This is not expect to receive from the site.<br/>
                      <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</td>
                   <td>
@@ -1604,7 +1624,7 @@ Coding translations are left to the sponsor.<br/>
                      </span>
                      <br/>Core: Perm<br/>Type: Char<br/>values: AFTER, BEFORE, COINCIDENT, U<span style="font-weight:bold">PRSTRF*</span>
                   </td>
-                  <td/>
+                  <td>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</td>
                </tr>
                <tr>
                   <th rowspan="3">Procedure Start Date</th>

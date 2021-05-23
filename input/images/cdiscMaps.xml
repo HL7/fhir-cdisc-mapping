@@ -963,7 +963,8 @@ Completed = &lt;blank&gt;
             <path value="Observation.valueQuantity.value"/>
             <path value="Observation.valueCodeableConcept.text"/>
          <definition value="The information determined as a result of making the observation, if the information has a simple value."/><comment value="An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below."/><condition value="obs-7"/><type><code value="Quantity"/></type></mapping>
-         <comment>Might also include valueQuantity.comparator</comment>
+         <comment>Might also include valueQuantity.comparator<br/>
+            <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</comment>
       </element>
       <element name="Reported Units">
          <cdisc spec="CDASH" label="LBRESU"/>
@@ -1382,7 +1383,10 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="AEONGO" core="O" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/AEONGO"><definition>Indication that an adverse event is ongoing when no End Date is provided.</definition></cdisc>
          <cdisc spec="SDTM" label="AEENRTPT" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/AE/variables/AEENRTPT"><definition>Identifies the end of the event as being before or after the reference time point defined by variable AEENTPT.</definition></cdisc>
          <cdisc spec="SDTM" label="AEENRF" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF"><definition>Describes the end of the event relative to the sponsor-defined reference period. The sponsor-defined reference period is a continuous period of time defined by a discrete starting point (RFSTDTC) and a discrete ending point (RFENDTC) of the trial.</definition></cdisc>
-         <gap>The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</gap>
+         <mapping resource="AdverseEvent" path="outcome" min="0" max="1">
+            <path value="AdverseEvent.outcome = ongoing"/>
+         <definition value="Describes the type of outcome from the adverse event."/><type><code value="CodeableConcept"/></type><binding name="AdverseEventOutcome" strength="required" valueSet="http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1"/></mapping>
+         <comment>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</comment>
       </element>
       <element name="Adverse Event End Date">
          <cdisc spec="CDASH" label="AEENDAT" core="R/C" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/AEENDAT"><definition>The date when the adverse event resolved/ended, represented in an unambiguous date format (e.g., DD-MON-YYYY).</definition></cdisc>
@@ -2810,8 +2814,12 @@ Coding translations are left to the sponsor.<br/>
                         <value>U</value>
                     </valueList><definition>Identifies the start of the observation as being before or after the sponsor-defined reference time point defined by variable PRSTTPT.</definition></cdisc>
          <cdisc spec="SDTM" label="PRSTRF*"><description>This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is "Y" a value from the CDISC CT (STENRF) may be used.  </description></cdisc>
+         <mapping resource="Procedure" path="performedDateTime" min="0" max="1">
+            <path value="Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode"/>
+         <definition value="Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured."/><comment value="Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone."/><type><code value="dateTime"/></type></mapping>
          <gap>This is not expect to receive from the site.<br/>
             <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</gap>
+         <comment>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</comment>
       </element>
       <element name="Procedure Start Date">
          <cdisc spec="CDASH" label="PRSTDAT" core="R/C" type="Char" link="/mdr/cdashig/2-1/domains/PR/fields/PRSTDAT"><definition>The date or start date of when the procedure started or was performed, represented in an unambiguous date format (e.g., DD-MON-YYYY).</definition></cdisc>

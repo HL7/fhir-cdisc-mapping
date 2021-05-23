@@ -443,8 +443,19 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td colspan="2" style="background-color:LightGray">The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</td>
-                  <td/>
+                  <td>
+                     <span title="Describes the type of outcome from the adverse event.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}adverseevent-definitions.html#AdverseEvent.outcome">AdverseEvent.outcome</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/adverse-event-outcome">AdverseEventOutcome</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>AdverseEvent.outcome = ongoing</p>
+                  </td>
+                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>
@@ -1798,7 +1809,18 @@
                </tr>
                <tr>
                   <th>Ongoing Adverse Event</th>
-                  <td colspan="2" style="background-color:LightGray">The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</td>
+                  <td>
+                     <span title="Describes the type of outcome from the adverse event.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}adverseevent-definitions.html#AdverseEvent.outcome">AdverseEvent.outcome</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/adverse-event-outcome">AdverseEventOutcome</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>AdverseEvent.outcome = ongoing</p>
+                  </td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication that an adverse event is ongoing when no End Date is provided.">
@@ -1815,7 +1837,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td/>
+                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>

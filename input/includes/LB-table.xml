@@ -866,7 +866,8 @@ Completed = &lt;blank&gt;
                      <p>Observation.valueQuantity.value</p>
                      <p>Observation.valueCodeableConcept.text</p>
                   </td>
-                  <td>Might also include valueQuantity.comparator</td>
+                  <td>Might also include valueQuantity.comparator<br/>
+                     <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</td>
                </tr>
                <tr>
                   <th>Reported Units</th>
@@ -1954,7 +1955,8 @@ Completed = &lt;blank&gt;
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBORRES">LBORRES</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
-                  <td>Might also include valueQuantity.comparator</td>
+                  <td>Might also include valueQuantity.comparator<br/>
+                     <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</td>
                </tr>
                <tr>
                   <th>Reported Units</th>

@@ -1037,7 +1037,8 @@ Completed = &lt;blank&gt;
             <path value="Observation.valueQuantity.value"/>
             <path value="Observation.valueCodeableConcept.text"/>
          </mapping>
-         <comment>Might also include valueQuantity.comparator</comment>
+         <comment>Might also include valueQuantity.comparator<br/>
+            <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</comment>
       </element>
       <element name="Reported Units">
          <cdisc spec="CDASH" label="LBRESU"/>
@@ -1532,7 +1533,10 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="AEONGO"/>
          <cdisc spec="SDTM" label="AEENRTPT"/>
          <cdisc spec="SDTM" label="AEENRF"/>
-         <gap>The concept of ongoing for an AE in the context of CDASH/SDTM is non-existent as it is based on a Y or N flag and  an NULL end date indicates the AdverseEvent is ongoing.</gap>
+         <mapping resource="AdverseEvent" path="outcome">
+            <path value="AdverseEvent.outcome = ongoing"/>
+         </mapping>
+         <comment>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</comment>
       </element>
       <element name="Adverse Event End Date">
          <cdisc spec="CDASH" label="AEENDAT"/>
@@ -3207,8 +3211,12 @@ Coding translations are left to the sponsor.<br/>
          <cdisc spec="SDTM" label="PRSTRF*">
             <description>This does not map directly to an SDTMIG variable.  May be used to populate a value into an SDTM relative timing variable such as PRSTRF or PRSTRTPT.  When populating PRSTRF, or PRSTRTPT, if the value of the CDASH field PRPRIOR is "Y" a value from the CDISC CT (STENRF) may be used.  </description>
          </cdisc>
+         <mapping resource="Procedure" path="performedDateTime">
+            <path value="Procedure.performedDateTime.extension('cqf-relativeDateTime').extension(relationship).valueCode"/>
+         </mapping>
          <gap>This is not expect to receive from the site.<br/>
             <br/>This would be handled as an extension on the extension that ties the procedure to the study (though it can also be determined just by looking at the respective dates).  (This assertion would be specific to the study link.)</gap>
+         <comment>Typically, this extension won't exist, or won't be expressed relative to the subjects participation in the study.  In such cases, the value for this element will need to be derived by the sponsor through comparision of procedure dates with study participation dates.  If available, then the codes 'before-start' and 'before' map to 'true' and the rest map to false.</comment>
       </element>
       <element name="Procedure Start Date">
          <cdisc spec="CDASH" label="PRSTDAT"/>
