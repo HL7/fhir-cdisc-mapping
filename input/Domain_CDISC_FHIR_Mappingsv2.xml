@@ -12033,7 +12033,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient.study.resolve().identifier.value</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
