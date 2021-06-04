@@ -5,7 +5,7 @@
   <url value="http://hl7.org/fhir/uv/cdisc-mapping/ImplementationGuide/hl7.fhir.uv.cdisc-mapping"/>
   <version value="1.0.0"/>
   <name value="CDISCMappings"/>
-  <title value="CDISC to FHIR Joint Mapping Implementation Guide"/>
+  <title value="FHIR to CDISC Joint Mapping Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="HL7 International - BR&amp;R Work Group"/>
