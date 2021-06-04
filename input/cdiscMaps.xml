@@ -331,7 +331,7 @@ unknown -&gt; U</comment>
          <mapping resource="Specimen" path="collection.fastingStatusCodeableConcept">
             <path value="Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code"/>
          </mapping>
-         <comment>CDISC to FHIR mapping as follows:
+         <comment>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
             <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</comment>
       </element>
@@ -885,7 +885,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
          <mapping resource="Specimen" path="collection.fastingStatusCodeableConcept">
             <path value="Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code"/>
          </mapping>
-         <comment>CDISC to FHIR mapping as follows:
+         <comment>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.<br/>
             <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.   In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</comment>
       </element>
