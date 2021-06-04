@@ -4552,7 +4552,7 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s74"><Data ss:Type="String">CDISC to FHIR mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</Data><NamedCell
+    <Cell ss:StyleID="s74"><Data ss:Type="String">FHIR to CDISC mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5834,7 +5834,7 @@
     <Cell ss:StyleID="s88"><Data ss:Type="String">Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s74"><Data ss:Type="String">CDISC to FHIR mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.&#10;&#10;In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</Data><NamedCell
+    <Cell ss:StyleID="s74"><Data ss:Type="String">FHIR to CDISC mapping as follows:&#10;F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.&#10;&#10;If fastingStatusDuration is present and non-zero, that would also map to 'Y'.&#10;&#10;In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><Data ss:Type="String">LBCFAST</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
