@@ -10181,7 +10181,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><Data ss:Type="String">dosage</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s228"><Data ss:Type="String">MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</Data><NamedCell
+    <Cell ss:StyleID="s228"><Data ss:Type="String">MedicationStatement.doseAndRate.doseQuantity.unit</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s275"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s137"><NamedCell ss:Name="_FilterDatabase"/></Cell>
