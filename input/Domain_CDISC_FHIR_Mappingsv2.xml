@@ -6742,7 +6742,7 @@
     <Cell ss:StyleID="s87"><Data ss:Type="String">Observation.status&#10;&#10;ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">In some instances, VSSTAT=&quot;NOT DONE&quot; records will come from FHIR Observation resources where Observation.status=&quot;cancelled&quot;.</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">In some instances, VSSTAT=&quot;NOT DONE&quot; records will come from FHIR Observation resources where Observation.status=&quot;cancelled&quot;.  This is not an exact match and there could be observations which have been scheduled and did not happen so an observation may not exist.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">VSSTAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
