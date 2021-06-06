@@ -7202,11 +7202,11 @@
    <Row ss:AutoFitHeight="0" ss:Height="85.5" ss:StyleID="s108">
     <Cell ss:StyleID="s106"><Data ss:Type="String">Reported Term for the Adverse Event</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">resultingCondition</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">code</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="String">AdverseEvent.resultingCondition.resolve().code</Data><NamedCell
+    <Cell ss:StyleID="s70"><Data ss:Type="String">AdverseEvent.resultingCondition.Condition</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s120"><Data ss:Type="String">Note that this is renamed to AE.code in R5 (to be more consistent with other FHIR resources). &#160; &#160;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
