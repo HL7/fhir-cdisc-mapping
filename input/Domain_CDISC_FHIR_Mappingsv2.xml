@@ -9549,7 +9549,7 @@
     <Cell ss:StyleID="s137"><Data ss:Type="String">MedicationStatement.category</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s241"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:MergeDown="7" ss:StyleID="s138"><Data ss:Type="String">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</Data><NamedCell
+    <Cell ss:MergeDown="7" ss:StyleID="s138"><Data ss:Type="String">In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).&#10;&#10;A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:MergeDown="3" ss:StyleID="s236"><Data ss:Type="String">CMCAT</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
