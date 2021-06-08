@@ -6900,7 +6900,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.code.coding.code</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">coding.display and coding.code (plus coding.system)</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">May use one of the following:coding.display and coding.code (plus coding.system)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">VSTESTCD</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6920,7 +6920,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.code.coding.display</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">coding.display and coding.code (plus coding.system)</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">May use one of the following:coding.display and coding.code (plus coding.system)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">VSTEST</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
