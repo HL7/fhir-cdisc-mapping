@@ -88,7 +88,10 @@
             <xsl:if test="t:hasCellValue(., $itemNameColumn)">
               <element name="{t:cellValue(., $itemNameColumn)}">
                 <xsl:if test="$labXPathColumn!=1">
-                  <cdisc spec="LAB" label="{t:cellValue(., $labXPathColumn)}">
+                  <cdisc spec="LAB">
+                    <xsl:if test="t:hasCellValue(., $labXPathColumn)">
+                      <xsl:attribute name="label" select="t:cellValue(., $labXPathColumn)"/>
+                    </xsl:if>
                     <xsl:if test="t:hasCellValue(., $labRulesColumn)">
                       <description>
                         <xsl:copy-of select="t:htmlValue(., $labRulesColumn)"/>

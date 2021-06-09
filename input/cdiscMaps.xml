@@ -123,9 +123,8 @@ unknown -&gt; U</comment>
          <mapping resource="Patient" path="name">
             <path value="ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text"/>
          </mapping>
-         <gap>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
-            <br/>If required, be sure to send only the initials, derived from the name.</gap>
-         <comment>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials</comment>
+         <comment>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials<br/>
+            <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.     If required, be sure to send only the initials, derived from the name.</comment>
       </element>
       <element name="Subject Date Of Birth">
          <cdisc spec="LAB"
@@ -133,8 +132,8 @@ unknown -&gt; U</comment>
          <mapping resource="Patient" path="birthDate">
             <path value="ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate"/>
          </mapping>
-         <gap>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</gap>
-         <comment>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)</comment>
+         <comment>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)<br/>
+            <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</comment>
       </element>
       <element name="Visit ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/@ID"/>
@@ -542,7 +541,7 @@ and blank for no flag.   It may be necessary to translate from other</comment>
          <mapping resource="Observation" path="interpretation">
             <path value="Observation.interpretation.coding.where (system = 'Toxicity Grade')"/>
          </mapping>
-         <gap>May need to translate the URI to a CDISC Code List id</gap>
+         <comment>May need to translate the URI to a CDISC Code List id</comment>
       </element>
       <element name="Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)">
          <cdisc spec="LAB"
@@ -719,7 +718,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          </mapping>
       </element>
       <element name="Record Extension Type">
-         <cdisc spec="LAB" label=""/>
+         <cdisc spec="LAB"/>
          <gap>Populate with a default value, depending on the type of data being transmitted.<br/>
             <br/>E.g., "BASE"</gap>
       </element>
@@ -773,7 +772,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Investigator Identifier">
          <cdisc spec="SDTM" label="DM.INVID"/>
@@ -1040,8 +1039,8 @@ Completed = &lt;blank&gt;
          <comment>Might also include valueQuantity.comparator<br/>
             <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</comment>
       </element>
-      <element name="Reported Units">
-         <cdisc spec="CDASH" label="LBRESU"/>
+      <element name="Lab Original Units">
+         <cdisc spec="CDASH" label="LBORRESU"/>
          <cdisc spec="SDTM" label="LBORRESU"/>
          <mapping resource="Observation" path="valueQuantity">
             <path value="Observation.valueQuantity.unit"/>
@@ -1245,7 +1244,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping resource="Observation" path="extension">
-            <path value="Observation.extension(R5/Observation.instantiatesCanonical).resolve().title"/>
+            <path value="Observation.extension('R5-Observation.instantiatesCanonical').resolve().title"/>
          </mapping>
          <comment>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</comment>
       </element>
@@ -1262,7 +1261,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <path value="Observation.status"/>
             <path value="ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}"/>
          </mapping>
-         <comment>In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</comment>
+         <comment>In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".  This is not an exact match and there could be observations which have been scheduled and did not happen so an observation may not exist.</comment>
       </element>
       <element name="VS Result or Finding in Original Units">
          <cdisc spec="CDASH" label="VSORRES"/>
@@ -1342,7 +1341,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <mapping resource="Observation" path="code">
             <path value="Observation.code.coding.code"/>
          </mapping>
-         <comment>coding.display and coding.code (plus coding.system)</comment>
+         <comment>May use one of the following:coding.display and coding.code (plus coding.system)</comment>
       </element>
       <element name="Vital Signs Test Name">
          <cdisc spec="CDASH" label="VSTEST"/>
@@ -1352,7 +1351,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <mapping resource="Observation" path="code">
             <path value="Observation.code.coding.display"/>
          </mapping>
-         <comment>coding.display and coding.code (plus coding.system)</comment>
+         <comment>May use one of the following:coding.display and coding.code (plus coding.system)</comment>
       </element>
       <element name="Vital Signs Sponsor-Defined Identifier">
          <cdisc spec="CDASH" label="VSSPID"/>
@@ -1534,9 +1533,9 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AEENRTPT"/>
          <cdisc spec="SDTM" label="AEENRF"/>
          <mapping resource="AdverseEvent" path="outcome">
-            <path value="AdverseEvent.outcome - ongoing"/>
+            <path value="AdverseEvent.outcome=ongoing"/>
          </mapping>
-         <gap>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</gap>
+         <comment>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</comment>
       </element>
       <element name="Adverse Event End Date">
          <cdisc spec="CDASH" label="AEENDAT"/>
@@ -1685,6 +1684,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   path="suspectEntity.causality.productRelatedness">
             <path value="AdverseEvent.suspectEntity.causality.productRelatedness|AdverseEvent.suspectEntity.causality.assessment with binding to  AdverseEventCausalityAssessment value set"/>
          </mapping>
+         <comment>Reasonable to map to both.  Information could be useful in either of these fields.</comment>
       </element>
       <element name="Action Taken with Study Treatment">
          <cdisc spec="CDASH" label="AEACN"/>
@@ -1731,21 +1731,21 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="SUPPAE.QVAL">
             <description>This does not map directly an SDTMIG variable.  May be used to create a RELREC to link the AdverseEvent to the Disposition record (see SDTMIG v3.2 Section (8.2).  The sponsor may also submit this data in a SUPPAE dataset where SUPPAE.QNAM = "AEDIS" and SUPPAE.QLABEL = "Cased Study Discontinuation ".  if appropriate.  Refer to the current SDTM and SDTMIG for instructions on placement of non-standard variables in SDTM domains.</description>
          </cdisc>
-         <gap>Add an extension - would need to be specific to study as relationship might vary by study.</gap>
+         <gap>An extension would be added that would be study specific as the relationship might vary study to study.</gap>
       </element>
       <element name="AE Related to Non-Study Treatment">
          <cdisc spec="CDASH" label="AERLNSYN"/>
          <cdisc spec="SDTM">
             <description>This does not map directly an SDTMIG variable.  The SDTM aCRF is annotated to indicate that this field is not SUBMITTED.</description>
          </cdisc>
-         <gap>Add an extension - would need to be specific to study as relationship might vary by study.</gap>
+         <gap>An extension would be added that would be study specific as the relationship might vary study to study.</gap>
       </element>
       <element name="AE Relationship to Non-Study Treatment">
          <cdisc spec="CDASH" label="AERELNST"/>
          <cdisc spec="SDTM" label="AERELNST">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <gap>Add an extension - would need to be specific to study as relationship might vary by study.</gap>
+         <gap>An extension would be added that would be study specific as the relationship might vary study to study.</gap>
       </element>
       <element name="Adverse Event of Special Interest">
          <cdisc spec="CDASH" label="AESI"/>
@@ -1759,7 +1759,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="AEPATT">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
-         <gap>Add extension</gap>
+         <gap>An extension would be added that would be study specific as the relationship might vary study to study.</gap>
       </element>
       <element name="Concomitant or Additional Trtmnt Given">
          <cdisc spec="CDASH" label="AECONTRT"/>
@@ -1903,7 +1903,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</comment>
+            <br/>ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
       </element>
       <element name="Study Site Identifier">
          <cdisc spec="CDASH" label="SITEID"/>
@@ -1918,7 +1918,7 @@ This combination can be used to extract vital sign data points from EHR system a
             <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject Identifier for the Study">
          <cdisc spec="CDASH" label="SUBJID"/>
@@ -2017,9 +2017,9 @@ This combination can be used to extract vital sign data points from EHR system a
       </element>
       <element name="Medical History Event Date Type">
          <cdisc spec="CDASH" label="MHEVDTYP"/>
-         <cdisc spec="SDTM" label="SUPPMH.QVAL">
-            <description>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</description>
-         </cdisc>
+         <cdisc spec="SDTM" label="SUPPMH.QVAL"/>
+         <gap>If MHSTDTC and/or the MHENDTC are extracted from FHIR, their meaning is fixed, and thus so will be the value of this element.</gap>
+         <comment>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</comment>
       </element>
       <element name="Reported Term for the Medical History">
          <cdisc spec="CDASH" label="MHTERM"/>
@@ -2162,6 +2162,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="SDTM" label="MHMODIFY">
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
+         <gap>This would need to be captured as an extension on AdverseEvent.event.text.  A new standard extesnsion should be proposed</gap>
          <comment>In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</comment>
       </element>
       <element name="MH Dictionary-Derived Term">
@@ -2375,7 +2376,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
       </element>
       <element name="Study Site Identifier">
          <cdisc spec="CDASH" label="SITEID"/>
@@ -2391,7 +2392,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject Identifier for the Study">
          <cdisc spec="CDASH" label="SUBJID"/>
@@ -2421,7 +2422,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping resource="MedicationAdministration" path="category">
             <path value="MedicationAdministration.category"/>
          </mapping>
-         <comment>In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</comment>
+         <comment>In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+            <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</comment>
       </element>
       <element name="Subcategory for Medication">
          <cdisc spec="CDASH" label="CMSCAT"/>
@@ -2440,7 +2442,8 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <mapping resource="MedicationAdministration" path="category">
             <path value="MedicationAdministration.category"/>
          </mapping>
-         <comment>In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</comment>
+         <comment>In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+            <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</comment>
       </element>
       <element name="Any Concomitant Medications Taken">
          <cdisc spec="CDASH" label="CMYN"/>
@@ -2582,7 +2585,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <description>This does not map directly to an SDTMIG variable.  For the SDTM submission datasets, may be used to create RELREC to link this record with a record in the AdverseEvent domain.</description>
          </cdisc>
          <mapping resource="AdverseEvent" path="identifier">
-            <path value="AdverseEvent.where(suspectEntity.instanceReference=MedicationX).identifier"/>
+            <path value="AdverseEvent.where(suspectEntity.instanceReference=[some medication id]).identifier"/>
          </mapping>
          <comment>This could match on AdverseEvent by code.  (Note that the AdverseEvent points to the medication record, not the reverse</comment>
       </element>
@@ -2672,7 +2675,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping resource="MedicationStatement" path="dosage">
-            <path value="MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage"/>
+            <path value="MedicationStatement.doseAndRate.doseQuantity.unit"/>
          </mapping>
          <mapping resource="MedicationRequest" path="dosageInstruction">
             <path value="MedicationRequest.dosageInstruction.maxDosePerPeriod.code"/>
@@ -3068,7 +3071,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
             <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
       </element>
       <element name="Study Site Identifier">
          <cdisc spec="CDASH" label="SITEID"/>
@@ -3080,7 +3083,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
             <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
          </mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
+            <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
       </element>
       <element name="Subject Identifier for the Study">
          <cdisc spec="CDASH" label="SUBJID"/>
@@ -3135,7 +3138,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <mapping resource="Procedure" path="code">
-            <path value="Procedure.code.coding.display; Procedure.code.text"/>
+            <path value="Procedure.code.coding.display | Procedure.code.text"/>
          </mapping>
          <comment>The name as expressed by or displayed to the user goes in code.text.  The name associated with the selected code goes in code.coding.display.</comment>
       </element>
@@ -3431,7 +3434,7 @@ Might consider proposing it as a standard extension.</gap>
          <mapping resource="Procedure" path="code">
             <path value="Procedure.code"/>
          </mapping>
-         <comment>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+         <comment>Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR source data. <br/>
             <br/>Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</comment>
       </element>
       <element name="Procedure Lowest Level Term Code">
@@ -3539,7 +3542,7 @@ Might consider proposing it as a standard extension.</gap>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description>
          </cdisc>
          <mapping resource="ResearchStudy" path="identifier">
-            <path value="ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Patient.study.resolve().identifier.value"/>
          </mapping>
       </element>
       <element name="Subject Identifier for the Study">
@@ -3604,7 +3607,7 @@ Might consider proposing it as a standard extension.</gap>
             <description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description>
          </cdisc>
          <gap>There is potential where the birth date can not be collected due to country regulations.<br/>
-            <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</gap>
+            <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate locations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</gap>
       </element>
       <element name="Age Units">
          <cdisc spec="CDASH" label="AGEU"/>

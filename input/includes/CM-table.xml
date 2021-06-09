@@ -63,7 +63,7 @@
                      <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -95,7 +95,7 @@
                      <p>Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -150,7 +150,8 @@
                   <td>
                      <p>MedicationStatement.category</p>
                   </td>
-                  <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+                  <td rowspan="4">In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+                     <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</td>
                </tr>
                <tr>
                   <td>
@@ -220,7 +221,8 @@
                   <td>
                      <p>MedicationStatement.category</p>
                   </td>
-                  <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+                  <td rowspan="4">In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+                     <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</td>
                </tr>
                <tr>
                   <td>
@@ -766,7 +768,7 @@
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.where(suspectEntity.instanceReference=MedicationX).identifier</p>
+                     <p>AdverseEvent.where(suspectEntity.instanceReference=[some medication id]).identifier</p>
                   </td>
                   <td>This could match on AdverseEvent by code.  (Note that the AdverseEvent points to the medication record, not the reverse</td>
                </tr>
@@ -1053,7 +1055,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</p>
+                     <p>MedicationStatement.doseAndRate.doseQuantity.unit</p>
                   </td>
                   <td rowspan="3"/>
                </tr>
@@ -2295,7 +2297,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -2327,7 +2329,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -2382,7 +2384,8 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMCAT">CMCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+                  <td rowspan="4">In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+                     <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</td>
                </tr>
                <tr>
                   <td>
@@ -2452,7 +2455,8 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/CM/variables/CMSCAT">CMSCAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td rowspan="4">In FHIR, an medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes)</td>
+                  <td rowspan="4">In FHIR, a medication can be categorized in multiple ways and to the granularity  desired.  When converting from FHIR to CDASH, systems will need to look at the FHIR categories (and potentially other information) to determine how best to populate CMCAT and CMSCAT based on the study-designed categories (unless they've pre-arranged with the EHR to ensure it captures the same codes).<br/>
+                     <br/>A standard extension will need to be used if multiple categories are specified.  There can be a wide variety of categories covering different axes of categorization. As well, the binding in the HL7 specifications 'example', which means that there are no constraints on what can be used.</td>
                </tr>
                <tr>
                   <td>
@@ -2989,7 +2993,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.where(suspectEntity.instanceReference=MedicationX).identifier</p>
+                     <p>AdverseEvent.where(suspectEntity.instanceReference=[some medication id]).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -3273,7 +3277,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Dosage">Dosage</a>
                   </td>
                   <td>
-                     <p>MedicationStatement.dosage.maxDosePerPeriod.code OR MedicationStatement.dosage</p>
+                     <p>MedicationStatement.doseAndRate.doseQuantity.unit</p>
                   </td>
                   <td rowspan="3">
                      <span style="font-weight:bold"

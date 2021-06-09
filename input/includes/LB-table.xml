@@ -87,7 +87,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Investigator Identifier</th>
@@ -409,7 +409,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                   <td>
                      <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
                   </td>
-                  <td>CDISC to FHIR mapping as follows:
+                  <td>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.   In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</td>
                </tr>
@@ -870,10 +870,13 @@ Completed = &lt;blank&gt;
                      <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</td>
                </tr>
                <tr>
-                  <th>Reported Units</th>
+                  <th>Lab Original Units</th>
                   <td>
-                     <span style="font-weight:bold">LBRESU</span>
-                  </td>
+                     <span style="font-weight:bold"
+                           title="The unit of the result as originally received or collected.">
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRESU">LBORRESU</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for LBORRES. Example: g/L.">
@@ -1176,7 +1179,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Investigator Identifier</th>
@@ -1498,7 +1501,7 @@ To map directly, the data must be formatted in ISO 8601 date/time format (e.g., 
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/LB/variables/LBFAST">LBFAST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td>CDISC to FHIR mapping as follows:
+                  <td>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable.<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.   In some cases, this may be inferred from the LOINC term (Challenge). For example, Challenge=post CFst to signify a calorie fast.</td>
                </tr>
@@ -1959,7 +1962,7 @@ Completed = &lt;blank&gt;
                      <br/>CDISC (and sponsors) may have different definitions about what constitutes an "original result".  Sponsors will need to make a determination of whether the value found in the Observation.value meets those criteria and is appropriate to be mapped.  (In some cases, what's in Observation.value could have been transformed from what was captured at the point of measurement.)</td>
                </tr>
                <tr>
-                  <th>Reported Units</th>
+                  <th>Lab Original Units</th>
                   <td>
                      <span title="The information determined as a result of making the observation, if the information has a simple value.">
                         <a style="font-weight:bold"
@@ -1970,8 +1973,11 @@ Completed = &lt;blank&gt;
                      <p>Observation.valueQuantity.unit</p>
                   </td>
                   <td>
-                     <span style="font-weight:bold">LBRESU</span>
-                  </td>
+                     <span style="font-weight:bold"
+                           title="The unit of the result as originally received or collected.">
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/scenarios/LB.CentralProcessingCS/fields/LBORRESU">LBORRESU</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Original units in which the data were collected. The unit for LBORRES. Example: g/L.">

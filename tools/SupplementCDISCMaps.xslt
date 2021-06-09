@@ -126,7 +126,12 @@
       <xsl:apply-templates select="@*"/>
       <xsl:copy-of select="$element/@*[not(local-name(.)='path')]"/>
       <xsl:apply-templates select="node()"/>
-      <xsl:copy-of select="$element/node()"/>
+      <xsl:copy-of select="$element/path"/>
+      <xsl:copy-of select="$element/type"/>
+      <xsl:copy-of select="$element/binding"/>
+      <xsl:copy-of select="$element/condition"/>
+      <xsl:copy-of select="$element/definition"/>
+      <xsl:copy-of select="$element/comment"/>
     </xsl:copy>
 	</xsl:template>
 </xsl:stylesheet>

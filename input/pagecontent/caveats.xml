@@ -164,9 +164,9 @@
   <p>
     <a href="https://www.cdisc.org/standards/foundational/sdtmig/sdtmig-v3-3/html#Procedures">https://www.cdisc.org/standards/foundational/sdtmig/sdtmig-v3-3/html#Procedures</a>, Section 6.1.5
   </p>
-  <p>
+  <div>
     <img height="250" src="SDTM-PR.png" alt="Image of part of SDTM Procedure table"/>
-  </p>
+  </div>
   <p>
     Currently, these will be handled as extensions that tie the procedure to the study looking at the respective dates. The assertion would be specific to the study link.
   </p>
@@ -192,9 +192,9 @@
   <p>
     In the CDASH, PRONGO is as follows:
   </p>
-  <p>
+  <div>
     <img height="250" src="CDASH-PRONGO.png" alt="PRONGO line from CDASH table"/>
-  </p>
+  </div>
   <p>
     For guidance refer to <a href="https://www.cdisc.org/standards/foundational/cdash">CDASH IG, v2.1
   </a>
@@ -219,16 +219,16 @@
     <li>Observation.method.85354-0 (blood pressure)</li>
     <li>Observation.method.8461-6 (systolic blood pressure—supine) --&gt; map to VSTEST: Systolic Blood Pressure; VSTESTCD: SYSBP; VSPOS: SUPINE (C62167)</li>
   </ul>
-  <p>
+  <div>
     <img width="700" src="ObservationMethod.png" alt="Diagram of observation method mapping"/>
-  </p>
+  </div>
   <p/>
   <p>
     This snapshot shows the orthostatic blood pressure panel which has LOINC codes for a position in relation to vital signs.
   </p>
-  <p>
+  <div>
     <img height="400" src="LOINC-BP-panel.png" alt="LOINC blood pressure panel"/>
-  </p>
+  </div>
   <p/>
   <p>
     Source: <a href="https://loinc.org/34553-8/">https://loinc.org/34553-8/</a>
@@ -245,7 +245,7 @@
   </p>
   <p/>
   <p>This shows how Vital Signs are represented in SDTMIG v3.2 (page 278) for the FHIR-CDISC mapping.</p>
-  <p>
+  <div>
     <img src="SDTM-VS-example.png" alt="SDTM VS example table"/>
-  </p>
+  </div>
 </div>

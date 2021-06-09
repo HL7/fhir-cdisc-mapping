@@ -278,9 +278,8 @@ unknown -&gt; U</td>
                   <td>
                      <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
-                     <br/>If required, be sure to send only the initials, derived from the name.</td>
-                  <td>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials</td>
+                  <td>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials<br/>
+                     <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.     If required, be sure to send only the initials, derived from the name.</td>
                </tr>
                <tr>
                   <th>Subject Date Of Birth</th>
@@ -297,8 +296,8 @@ unknown -&gt; U</td>
                   <td>
                      <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</td>
-                  <td>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)</td>
+                  <td>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)<br/>
+                     <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</td>
                </tr>
                <tr>
                   <th>Visit ID or Number</th>
@@ -720,7 +719,7 @@ unknown -&gt; U</td>
                   <td>
                      <p>Observation.specimen.resolve().collection.fastingStatusCodeableConcept.coding.code</p>
                   </td>
-                  <td>CDISC to FHIR mapping as follows:
+                  <td>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</td>
                </tr>
@@ -1178,8 +1177,7 @@ and blank for no flag.   It may be necessary to translate from other</td>
                   <td>
                      <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">May need to translate the URI to a CDISC Code List id</td>
-                  <td/>
+                  <td>May need to translate the URI to a CDISC Code List id</td>
                </tr>
                <tr>
                   <th>Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)</th>
@@ -1854,12 +1852,11 @@ unknown -&gt; U</td>
                   <td>
                      <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().name.text</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.  <br/>
-                     <br/>If required, be sure to send only the initials, derived from the name.</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Confidential/@Initials</span>
                   </td>
-                  <td>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials</td>
+                  <td>Note that name.text will typically contain the full name, but *can* contain initials only.  If the full name is present, initials can be extracted by looking at the given and family name components and converting to initials<br/>
+                     <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.     If required, be sure to send only the initials, derived from the name.</td>
                </tr>
                <tr>
                   <th>Subject Date Of Birth</th>
@@ -1873,11 +1870,11 @@ unknown -&gt; U</td>
                   <td>
                      <p>ResearchSubject.where(subject=Observation.subject).individual.resolve().birthDate</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Confidential/@Birthdate</span>
                   </td>
-                  <td>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)</td>
+                  <td>Note that precision can vary (YYYY, YYYY-MM or YYYY-MM-DD)<br/>
+                     <br/>Consider whether patient personal information is required for the sponsor to perform patient reconciliation.  If not, do not send this data element.</td>
                </tr>
                <tr>
                   <th>Visit ID or Number</th>
@@ -2299,7 +2296,7 @@ unknown -&gt; U</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/SubjectAtCollection/@FastingStatus</span>
                   </td>
-                  <td>CDISC to FHIR mapping as follows:
+                  <td>FHIR to CDISC mapping as follows:
 F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>If fastingStatusDuration is present and non-zero, that would also map to 'Y'.  There are times where this can be inferred from the Observation.code.</td>
                </tr>
@@ -2754,11 +2751,10 @@ and blank for no flag.   It may be necessary to translate from other</td>
                   <td>
                      <p>Observation.interpretation.coding.where (system = 'Toxicity Grade')</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">May need to translate the URI to a CDISC Code List id</td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/BaseTest/BaseResult/ToxicityGrade/@CodeListID</span>
                   </td>
-                  <td/>
+                  <td>May need to translate the URI to a CDISC Code List id</td>
                </tr>
                <tr>
                   <th>Reported Result Type (C=coded; N=numeric; T=text; R=range; G = GT; L = LT)</th>

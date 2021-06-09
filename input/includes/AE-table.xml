@@ -453,10 +453,9 @@
                      <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.outcome - ongoing</p>
+                     <p>AdverseEvent.outcome=ongoing</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
-                  <td/>
+                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>
@@ -865,7 +864,7 @@
                   <td>
                      <p>AdverseEvent.suspectEntity.causality.productRelatedness|AdverseEvent.suspectEntity.causality.assessment with binding to  AdverseEventCausalityAssessment value set</p>
                   </td>
-                  <td/>
+                  <td>Reasonable to map to both.  Information could be useful in either of these fields.</td>
                </tr>
                <tr>
                   <th>Action Taken with Study Treatment</th>
@@ -981,7 +980,7 @@
                   <td>
                      <span style="font-weight:bold">SUPPAE.QVAL</span>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td/>
                </tr>
                <tr>
@@ -995,7 +994,7 @@
                   <td>
                      <span style="font-weight:bold"/>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td/>
                </tr>
                <tr>
@@ -1012,7 +1011,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AERELNST">AERELNST</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td/>
                </tr>
                <tr>
@@ -1043,7 +1042,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEPATT">AEPATT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td colspan="2" style="background-color:LightGray">Add extension</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td/>
                </tr>
                <tr>
@@ -1820,9 +1819,8 @@
                      <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
                   </td>
                   <td>
-                     <p>AdverseEvent.outcome - ongoing</p>
+                     <p>AdverseEvent.outcome=ongoing</p>
                   </td>
-                  <td colspan="2" style="background-color:LightGray">Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Indication that an adverse event is ongoing when no End Date is provided.">
@@ -1839,7 +1837,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEENRF">AEENRF</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td/>
+                  <td>Note that the assertion of 'ongoing' is made at the time the adverse event is recorded, which may or may not be what's needed for submission purposes.</td>
                </tr>
                <tr>
                   <th>Adverse Event End Date</th>
@@ -2248,7 +2246,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/AE/variables/AEREL">AEREL</a>
                      </span>
                      <br/>Core: Exp<br/>Type: Char</td>
-                  <td/>
+                  <td>Reasonable to map to both.  Information could be useful in either of these fields.</td>
                </tr>
                <tr>
                   <th>Action Taken with Study Treatment</th>
@@ -2355,7 +2353,7 @@
                </tr>
                <tr>
                   <th>AE Caused Study Discontinuation</th>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether the event caused the subject to discontinue from the study.">
@@ -2369,7 +2367,7 @@
                </tr>
                <tr>
                   <th>AE Related to Non-Study Treatment</th>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="An indication whether in the investigator's opinion the event may have been due to a treatment other than study treatment.">
@@ -2383,7 +2381,7 @@
                </tr>
                <tr>
                   <th>AE Relationship to Non-Study Treatment</th>
-                  <td colspan="2" style="background-color:LightGray">Add an extension - would need to be specific to study as relationship might vary by study.</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Description of the investigator's opinion as to whether the adverse event may have been due to a treatment other than study treatment.">
@@ -2414,7 +2412,7 @@
                </tr>
                <tr>
                   <th>Pattern of Adverse Event</th>
-                  <td colspan="2" style="background-color:LightGray">Add extension</td>
+                  <td colspan="2" style="background-color:LightGray">An extension would be added that would be study specific as the relationship might vary study to study.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Used to indicate the pattern of the event over time.">

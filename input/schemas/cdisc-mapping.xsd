@@ -65,12 +65,23 @@
   </xs:complexType>
   <xs:complexType name="CDISCElement">
     <xs:sequence>
-      <xs:element ref="description" minOccurs="0"/>
+      <xs:element name="description" type="HTML" minOccurs="0"/>
+      <xs:element name="valueList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="definition" type="HTML" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="spec" type="SpecType" use="required"/>
     <xs:attribute name="label" type="CDISCName" use="optional"/>
+    <xs:attribute name="core" type="xs:string" use="optional"/>
+    <xs:attribute name="type" type="xs:NMTOKEN" use="optional"/>
+    <xs:attribute name="link" type="xs:string" use="optional"/>
+    <xs:attribute name="valueDomain" type="xs:string" use="optional"/>
   </xs:complexType>
-  <xs:element name="description" type="HTML"/>
   <xs:complexType name="HTML" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="br"/>
@@ -79,32 +90,94 @@
   <xs:complexType name="FHIRMapping">
     <xs:sequence>
       <xs:element name="path" type="MappingFHIRPath" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="type" type="FHIRType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="binding" type="FHIRBinding" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="condition" type="FHIRCondition" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="definition" type="MarkdownValue" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="comment" type="MarkdownValue" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
-    <xs:attribute name="element" type="FHIRElement"/>
+    <xs:attribute name="resource" type="Resource"/>
+    <xs:attribute name="path" type="FHIRElement"/>
+    <xs:attribute name="min" type="FHIRMin"/>
+    <xs:attribute name="max" type="FHIRMax"/>
   </xs:complexType>
+  <xs:group name="FHIRMappingDetails">
+    <xs:all>
+    </xs:all>
+  </xs:group>
   <xs:complexType name="MappingFHIRPath">
     <xs:attribute name="value" type="FHIRPath"/>
+  </xs:complexType>
+  <xs:complexType name="MarkdownValue">
+    <xs:attribute name="value" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="FHIRType">
+    <xs:sequence>
+      <xs:element name="code" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="value" type="xs:NMTOKEN" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="profile" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:attribute name="value" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="targetProfile" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="value" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FHIRCondition">
+    <xs:attribute name="value" type="xs:NMTOKEN" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="FHIRBinding">
+    <xs:attribute name="name" type="xs:NMTOKEN" use="required"/>
+    <xs:attribute name="strength" type="xs:NMTOKEN" use="required"/>
+    <xs:attribute name="valueSet" type="xs:anyURI" use="required"/>
   </xs:complexType>
   <xs:simpleType name="NonEmptyString">
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="FHIRElement">
+  <xs:simpleType name="Resource">
     <xs:restriction base="NonEmptyString">
       <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][a-zA-Z]+)*"/>
-      <!--<xs:pattern value="[^\n^\r]+"/>-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FHIRElement">
+    <xs:restriction base="NonEmptyString">
+      <xs:pattern value="[a-z][a-zA-Z]+(\.[a-z][a-zA-Z]+)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FHIRMin">
+    <xs:restriction base="NonEmptyString">
+      <xs:pattern value="(0|1)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FHIRMax">
+    <xs:restriction base="NonEmptyString">
+      <xs:pattern value="(1|\*)"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="FHIRPath">
     <xs:restriction base="NonEmptyString">
-      <xs:pattern value="[A-Z][a-zA-Z]+(\.[a-z][() $:\-a-zA-Z='/\]\[]+)*"/>
+      <xs:pattern value="\(?[A-Z][a-zA-Z]+(\.[a-z][() ,$:\-a-zA-Z0-9='\{\}\|%/\]\[]+)*"/>
       <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CDISCName">
     <xs:restriction base="NonEmptyString">
-      <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|(\[VSTESTCD\]_)?([A-Z][A-Z\.\[\]]+)"/>
+      <xs:pattern value="(/GTP(/[A-Z][A-Za-z]+)*(/@[A-Z][A-Za-z]+)?)|(\[VSTESTCD\]_)?([A-Z][A-Z0-9\.\[\]]+\*?)"/>
       <!--<xs:pattern value="[^\n^\r]+"/>-->
     </xs:restriction>
   </xs:simpleType>

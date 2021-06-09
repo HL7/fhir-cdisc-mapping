@@ -59,7 +59,7 @@
                      <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -87,7 +87,7 @@
                      <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -236,7 +236,7 @@
                      <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
                   </td>
                   <td>
-                     <p>Procedure.code.coding.display; Procedure.code.text</p>
+                     <p>Procedure.code.coding.display | Procedure.code.text</p>
                   </td>
                   <td>The name as expressed by or displayed to the user goes in code.text.  The name associated with the selected code goes in code.coding.display.</td>
                </tr>
@@ -985,7 +985,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <p>Procedure.code</p>
                   </td>
-                  <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+                  <td>Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR source data. <br/>
                      <br/>Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>
@@ -1246,7 +1246,7 @@ Might consider proposing it as a standard extension.</td>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -1274,7 +1274,7 @@ Might consider proposing it as a standard extension.</td>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -1411,7 +1411,7 @@ Might consider proposing it as a standard extension.</td>
                      <a href="{{site.data.fhir.path}}terminologies.html#example">example</a>
                   </td>
                   <td>
-                     <p>Procedure.code.coding.display; Procedure.code.text</p>
+                     <p>Procedure.code.coding.display | Procedure.code.text</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -2172,7 +2172,7 @@ Might consider proposing it as a standard extension.</td>
                   <td>
                      <span style="font-weight:bold">SUPPPR.QVAL</span>
                   </td>
-                  <td>Procedure Code is performed by the sponsor - not expected to receive this from the site or FHIR. <br/>
+                  <td>Translation of Procedure.code to MeDRA will typically be performed by the sponsor and not provided in FHIR source data. <br/>
                      <br/>Procedure.code can contain  many codings and at various levels of granularity.  Granularity will be determined by reviewing the code system and/or having knowledge of the codes within the same code system (where one code system can express content at multiple granularities).</td>
                </tr>
                <tr>

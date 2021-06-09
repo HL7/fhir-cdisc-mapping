@@ -81,7 +81,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Patient.study.resolve().identifier.value</p>
                   </td>
                   <td/>
                </tr>
@@ -252,7 +252,7 @@
                      </span>
                      <br/>Core: Exp<br/>Type: Num</td>
                   <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
-                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
+                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate locations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
                   <td/>
                </tr>
                <tr>
@@ -456,7 +456,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.identifier.study.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Patient.study.resolve().identifier.value</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -627,7 +627,7 @@
                <tr>
                   <th>Age</th>
                   <td colspan="2" style="background-color:LightGray">There is potential where the birth date can not be collected due to country regulations.<br/>
-                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate loacations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
+                     <br/>Age can be captured either through additional filters, additional transformation, or occasionally looking for information in alternate locations such as an Observation as a point-in-time assessment, but generally this is simply calculated from birthDate.   Specifically, relevant clinical trial documentation will have expectations around units, other code systems and data consistency that may not be met by RWD and conversion and mapping may be necessary.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="The age of the subject expressed in AGEU.">

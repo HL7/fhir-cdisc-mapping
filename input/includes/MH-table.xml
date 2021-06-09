@@ -62,7 +62,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
+                     <br/>ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -93,7 +93,7 @@
                      <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -412,7 +412,8 @@
                   <td>
                      <span style="font-weight:bold">SUPPMH.QVAL</span>
                   </td>
-                  <td/>
+                  <td colspan="2" style="background-color:LightGray">If MHSTDTC and/or the MHENDTC are extracted from FHIR, their meaning is fixed, and thus so will be the value of this element.</td>
+                  <td>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</td>
                </tr>
                <tr>
                   <th rowspan="4">Reported Term for the Medical History</th>
@@ -824,6 +825,7 @@
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/MH/variables/MHMODIFY">MHMODIFY</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
+                  <td colspan="2" style="background-color:LightGray">This would need to be captured as an extension on AdverseEvent.event.text.  A new standard extesnsion should be proposed</td>
                   <td>In most cases, no MedDRA codes will be present in source data and all coding levels and displays will be added by the sponsor.  However, FHIR allows multiple codings and therefore all of these codes *can* be conveyed in FHIR if the data source chooses to capture them.  Standard code system URLs should be defined for each of the MedDRA levels.  If MedDRA is considered a single code system, then the consumer will be responsible for distinguishing which codes represent which levels by looking up the received code.</td>
                </tr>
                <tr>
@@ -1547,7 +1549,7 @@
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
+                     <br/>ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
                </tr>
                <tr>
                   <th>Study Site Identifier</th>
@@ -1578,7 +1580,7 @@
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
-                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
+                     <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
                </tr>
                <tr>
                   <th>Subject Identifier for the Study</th>
@@ -1888,6 +1890,7 @@
                </tr>
                <tr>
                   <th>Medical History Event Date Type</th>
+                  <td colspan="2" style="background-color:LightGray">If MHSTDTC and/or the MHENDTC are extracted from FHIR, their meaning is fixed, and thus so will be the value of this element.</td>
                   <td>
                      <span style="font-weight:bold"
                            title="Specifies the aspect of the medical condition or event by which MHSTDTC and/or the MHENDTC is defined.">
@@ -1897,7 +1900,7 @@
                   <td>
                      <span style="font-weight:bold">SUPPMH.QVAL</span>
                   </td>
-                  <td/>
+                  <td>This will generally be set to SYMPTOM ONSET for all resources, as both the onsetDateTime and effectiveDateTime are expected to represent when the symptoms first appeared, not when the diagnosis occurred.  However, there are no strict rules in FHIR about when a condition flare-up is considered to be a continuation of a prior condition and when it's a new condition.  Thus in some cases, new condition instances could spawn from net new episodes or relapes.  Spronsors may need to check for prior condition instances and based on their rules, adjust the value for this field to be EPISODE or something else in some cases.</td>
                </tr>
                <tr>
                   <th rowspan="4">Reported Term for the Medical History</th>
@@ -2297,6 +2300,7 @@
                </tr>
                <tr>
                   <th>MH Modified Reported Term</th>
+                  <td colspan="2" style="background-color:LightGray">This would need to be captured as an extension on AdverseEvent.event.text.  A new standard extesnsion should be proposed</td>
                   <td>
                      <span style="font-weight:bold"
                            title="If the value for MHTERM is modified to facilitate coding, then MHMODIFY will contain the modified text.">

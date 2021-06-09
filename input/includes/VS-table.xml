@@ -330,7 +330,7 @@ This combination can be used to extract vital sign data points from EHR system a
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
                   </td>
                   <td>
-                     <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
+                     <p>Observation.extension('R5-Observation.instantiatesCanonical').resolve().title</p>
                   </td>
                   <td>TimePoints will be represented in FHIR as PlanDefinition.activities.  Referencing a PlanDefinition is supported in R5.  Can use a standard extension to pre-adopt.</td>
                </tr>
@@ -361,7 +361,7 @@ This combination can be used to extract vital sign data points from EHR system a
                      <p>Observation.status</p>
                      <p>ServiceRequest.status IN {'cancelled'|'on-hold'|'revoked'| 'entered-in-error'}</p>
                   </td>
-                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
+                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".  This is not an exact match and there could be observations which have been scheduled and did not happen so an observation may not exist.</td>
                </tr>
                <tr>
                   <td>
@@ -599,7 +599,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <p>Observation.code.coding.code</p>
                   </td>
-                  <td>coding.display and coding.code (plus coding.system)</td>
+                  <td>May use one of the following:coding.display and coding.code (plus coding.system)</td>
                </tr>
                <tr>
                   <th>Vital Signs Test Name</th>
@@ -627,7 +627,7 @@ This combination can be used to extract vital sign data points from EHR system a
                   <td>
                      <p>Observation.code.coding.display</p>
                   </td>
-                  <td>coding.display and coding.code (plus coding.system)</td>
+                  <td>May use one of the following:coding.display and coding.code (plus coding.system)</td>
                </tr>
                <tr>
                   <th>Vital Signs Sponsor-Defined Identifier</th>
@@ -980,7 +980,7 @@ This combination can be used to extract vital sign data points from EHR system a
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Extension">Extension</a>
                   </td>
                   <td>
-                     <p>Observation.extension(R5/Observation.instantiatesCanonical).resolve().title</p>
+                     <p>Observation.extension('R5-Observation.instantiatesCanonical').resolve().title</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -1023,7 +1023,7 @@ This combination can be used to extract vital sign data points from EHR system a
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSSTAT">VSSTAT</a>
                      </span>
                      <br/>Core: Perm<br/>Type: Char</td>
-                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".</td>
+                  <td rowspan="2">In some instances, VSSTAT="NOT DONE" records will come from FHIR Observation resources where Observation.status="cancelled".  This is not an exact match and there could be observations which have been scheduled and did not happen so an observation may not exist.</td>
                </tr>
                <tr>
                   <td>
@@ -1261,7 +1261,7 @@ This combination can be used to extract vital sign data points from EHR system a
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTESTCD">VSTESTCD</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>coding.display and coding.code (plus coding.system)</td>
+                  <td>May use one of the following:coding.display and coding.code (plus coding.system)</td>
                </tr>
                <tr>
                   <th>Vital Signs Test Name</th>
@@ -1289,7 +1289,7 @@ This combination can be used to extract vital sign data points from EHR system a
                         <a href="https://library.cdisc.org/api/mdr/sdtmig/3-2/datasets/VS/variables/VSTEST">VSTEST</a>
                      </span>
                      <br/>Core: Req<br/>Type: Char</td>
-                  <td>coding.display and coding.code (plus coding.system)</td>
+                  <td>May use one of the following:coding.display and coding.code (plus coding.system)</td>
                </tr>
                <tr>
                   <th>Vital Signs Sponsor-Defined Identifier</th>
