@@ -3660,7 +3660,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -3728,7 +3728,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -3763,7 +3763,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which id to expose or may need to map to one recognized by the sponsor.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -3815,7 +3815,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
@@ -3833,7 +3833,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
@@ -3851,7 +3851,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.&#10;&#10;No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</Data><NamedCell
@@ -3969,7 +3969,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.encounter.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.encounter.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -4054,7 +4054,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><Data ss:Type="String">accessionIdentifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.resolve().accessionIdentifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.resolve().accessionIdentifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4102,7 +4102,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.performer.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.performer.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Will need to look at identifier.type or identifier.system to know which identifier to use.  In some cases, performer might be PractitionerRole, in which case, will need to map through PractitionerRole.organization.  If there are multiple performers that link to multiple organizations, converter will need to look at Organization.type or have other rules to decide amongst the candidates.</Data><NamedCell
@@ -4138,7 +4138,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.specimen.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Observation.specimen.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">If there are multiple identifiers, need to look at identifier.system or identifier.type to determine</Data><NamedCell
@@ -4435,7 +4435,7 @@
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69" ss:HRef="mailto:DiagnosticReport.identifier.value.@value"><Data
-      ss:Type="String">DiagnosticReport.identifier.value</Data><NamedCell
+      ss:Type="String">DiagnosticReport.identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -5438,7 +5438,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
@@ -5457,7 +5457,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -5476,7 +5476,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -5494,7 +5494,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(individual=Observation.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(individual=Observation.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
@@ -5551,7 +5551,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">accessionIdentifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s88"><Data ss:Type="String">Observation.specimen.resolve().accessionIdentifier.value</Data><NamedCell
+    <Cell ss:StyleID="s88"><Data ss:Type="String">Observation.specimen.resolve().accessionIdentifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">As reported from the Site</Data><NamedCell
@@ -6158,7 +6158,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s74"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s85"><Data ss:Type="String">Observation.subject.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s85"><Data ss:Type="String">Observation.subject.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">To find an identifier that was consistent for the subject across studies would typically mean looking to the Patient identifier.  However, this may not be appropriate to be exposed directly, so some degree of mapping, obfuscation or anonymization may be required.&#10;&#10;In theory, a sponsor specific study-independent identifier could be maintained on Patient alongside other patient identifiers, but this would be unusual in most clinical systems.</Data><NamedCell
@@ -6377,7 +6377,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6397,7 +6397,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s85"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -6417,7 +6417,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">ResearchSubject.where(individual=Observation.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s104"><Data ss:Type="String">ResearchSubject.where(individual=Observation.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
@@ -6930,7 +6930,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">study</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">AdverseEvent.study.resolve().partOf.resolve().identifier.value&#10;&#10;ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">AdverseEvent.study.resolve().partOf.resolve().identifier&#10;&#10;ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -6951,7 +6951,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">AdverseEvent.study.resolve().identifier.value&#10;&#10;ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">AdverseEvent.study.resolve().identifier&#10;&#10;ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s72"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -6972,7 +6972,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(individual=AdverseEvent.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(individual=AdverseEvent.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s113"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -8126,7 +8126,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
@@ -8146,7 +8146,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value&#10;&#10;AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier&#10;&#10;AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;Condition.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -9312,7 +9312,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier.value&#10;&#10;MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value&#10;&#10;Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier&#10;&#10;MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier&#10;&#10;Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">N/A</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -9333,7 +9333,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier.value&#10;&#10;MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value&#10;&#10;Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s83"><Data ss:Type="String">ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier&#10;&#10;MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier&#10;&#10;Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s232"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</Data><NamedCell
@@ -9353,7 +9353,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s197"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s233"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
@@ -10874,7 +10874,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.&#10;&#10;ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</Data><NamedCell
@@ -10894,7 +10894,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">site</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().identifier&#10;&#10;Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
@@ -10914,7 +10914,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s87"><Data ss:Type="String">ResearchSubject.where(individual=Procedure.subject).identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s87"><Data ss:Type="String">ResearchSubject.where(individual=Procedure.subject).identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s317"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
@@ -11861,7 +11861,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient).study.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(subject=Patient).study.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -11880,7 +11880,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(individual=Patient).identifier.identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s86"><Data ss:Type="String">ResearchSubject.where(individual=Patient).identifier.identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s86"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
