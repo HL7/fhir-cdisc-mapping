@@ -3660,7 +3660,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</Data><NamedCell
+    <Cell ss:StyleID="s69"><Data ss:Type="String">ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier&#10;&#10;Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="String">Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.&#10;&#10;The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</Data><NamedCell
