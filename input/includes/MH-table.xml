@@ -55,11 +55,11 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
@@ -86,11 +86,11 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value</p>
-                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier</p>
+                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</td>
@@ -613,6 +613,55 @@
                   </td>
                   <td>
                      <p>AdverseEvent.outcome</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th rowspan="3">MH Disease or Symptom Under Control</th>
+                  <td rowspan="3">
+                     <span style="font-weight:bold"
+                           title="Indication whether the medical condition or event is under control at the time of data collection.">
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHCTRL">MHCTRL</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td rowspan="3"/>
+                  <td>
+                     <span title="The clinical status of the condition.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}condition-definitions.html#Condition.clinicalStatus">Condition.clinicalStatus</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> con-3, con-4, con-5<br/>Binding: <a href="http://hl7.org/fhir/ValueSet/condition-clinical">ConditionClinicalStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Condition.clinicalStatus = ('inactive','remission',resolved')</p>
+                  </td>
+                  <td rowspan="3">For all of these, the evaluation of resolution is tied to the date the record was last updated, not necessarily the start of the study, so lack of resolution in the record doesn't necessarily mean that the item will be unresolved at study time.</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="Describes the type of outcome from the adverse event.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}adverseevent-definitions.html#AdverseEvent.outcome">AdverseEvent.outcome</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/adverse-event-outcome">AdverseEventOutcome</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.outcome = ('resolved', 'resolvedWithSequelae')</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="The clinical status of the allergy or intolerance.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}allergyintolerance-definitions.html#AllergyIntolerance.clinicalStatus">AllergyIntolerance.clinicalStatus</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> ait-1, ait-2<br/>Binding: <a href="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical">AllergyIntoleranceClinicalStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>AllergyIntolerance.clinicalStatus = ('inactive', 'resolved')</p>
                   </td>
                </tr>
                <tr>
@@ -1532,11 +1581,11 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
@@ -1561,11 +1610,11 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value</p>
-                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier</p>
+                     <p>AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>Condition.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -2100,6 +2149,55 @@
                   </td>
                   <td>
                      <p>AdverseEvent.outcome</p>
+                  </td>
+               </tr>
+               <tr>
+                  <th rowspan="3">MH Disease or Symptom Under Control</th>
+                  <td>
+                     <span title="The clinical status of the condition.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}condition-definitions.html#Condition.clinicalStatus">Condition.clinicalStatus</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> con-3, con-4, con-5<br/>Binding: <a href="http://hl7.org/fhir/ValueSet/condition-clinical">ConditionClinicalStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Condition.clinicalStatus = ('inactive','remission',resolved')</p>
+                  </td>
+                  <td rowspan="3">
+                     <span style="font-weight:bold"
+                           title="Indication whether the medical condition or event is under control at the time of data collection.">
+                        <a href="https://library.cdisc.org/api/mdr/cdashig/2-1/domains/MH/fields/MHCTRL">MHCTRL</a>
+                     </span>
+                     <br/>Core: O<br/>Type: Char</td>
+                  <td rowspan="3"/>
+                  <td rowspan="3">For all of these, the evaluation of resolution is tied to the date the record was last updated, not necessarily the start of the study, so lack of resolution in the record doesn't necessarily mean that the item will be unresolved at study time.</td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="Describes the type of outcome from the adverse event.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}adverseevent-definitions.html#AdverseEvent.outcome">AdverseEvent.outcome</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a>
+                     <br/>Binding: <a href="http://hl7.org/fhir/ValueSet/adverse-event-outcome">AdverseEventOutcome</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>Observation.outcome = ('resolved', 'resolvedWithSequelae')</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <span title="The clinical status of the allergy or intolerance.">
+                        <a style="font-weight:bold"
+                           href="{{site.data.fhir.path}}allergyintolerance-definitions.html#AllergyIntolerance.clinicalStatus">AllergyIntolerance.clinicalStatus</a>
+                     </span>
+                     <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">CodeableConcept</a> ait-1, ait-2<br/>Binding: <a href="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical">AllergyIntoleranceClinicalStatus</a> 
+                     <a href="{{site.data.fhir.path}}terminologies.html#required">required</a>
+                  </td>
+                  <td>
+                     <p>AllergyIntolerance.clinicalStatus = ('inactive', 'resolved')</p>
                   </td>
                </tr>
                <tr>

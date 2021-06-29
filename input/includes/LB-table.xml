@@ -55,8 +55,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
@@ -83,8 +83,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -106,8 +106,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</p>
                   </td>
                   <td>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -134,7 +134,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Observation.subject).identifier</p>
                   </td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
                      <br/>No standard way to decide which subject identifier to use</td>
@@ -210,7 +210,7 @@
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.specimen.resolve().accessionIdentifier.value</p>
+                     <p>Observation.specimen.resolve().accessionIdentifier</p>
                   </td>
                   <td>As reported from the Site</td>
                </tr>
@@ -992,7 +992,7 @@ Completed = &lt;blank&gt;
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.subject.resolve().identifier.value</p>
+                     <p>Observation.subject.resolve().identifier</p>
                   </td>
                   <td>To find an identifier that was consistent for the subject across studies would typically mean looking to the Patient identifier.  However, this may not be appropriate to be exposed directly, so some degree of mapping, obfuscation or anonymization may be required.<br/>
                      <br/>In theory, a sponsor specific study-independent identifier could be maintained on Patient alongside other patient identifiers, but this would be unusual in most clinical systems.</td>
@@ -1137,8 +1137,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
@@ -1163,8 +1163,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -1191,8 +1191,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</p>
                   </td>
                   <td/>
                   <td>
@@ -1214,7 +1214,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Observation.subject).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -1290,7 +1290,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.specimen.resolve().accessionIdentifier.value</p>
+                     <p>Observation.specimen.resolve().accessionIdentifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -2077,7 +2077,7 @@ Completed = &lt;blank&gt;
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.subject.resolve().identifier.value</p>
+                     <p>Observation.subject.resolve().identifier</p>
                   </td>
                   <td/>
                   <td>

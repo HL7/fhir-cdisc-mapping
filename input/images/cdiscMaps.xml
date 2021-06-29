@@ -3,8 +3,8 @@
       <element name="Study ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/@ID"/>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -31,8 +31,8 @@
       <element name="Site ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/@ID"/>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -45,8 +45,8 @@
       <element name="Investigator ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/@ID"/>
          <mapping resource="Practitioner" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="An identifier that applies to this person in this role."/></mapping>
          <comment>Will need to decide which id to expose or may need to map to one recognized by the sponsor.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -68,7 +68,7 @@
       <element name="Screen ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/ScreenID"/>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
             <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
@@ -76,7 +76,7 @@
       <element name="Subject ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/SubjectID"/>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
             <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
@@ -84,7 +84,7 @@
       <element name="Spare subject level ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/SpareSubjectID"/>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
             <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</comment>
@@ -134,7 +134,7 @@ unknown -&gt; U</comment>
       <element name="Visit ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/@ID"/>
          <mapping resource="Encounter" path="identifier" min="0" max="*">
-            <path value="Observation.encounter.resolve().identifier.value"/>
+            <path value="Observation.encounter.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifier(s) by which this encounter is known."/></mapping>
          <comment>No standard way to decide which identifier to use if multiples are present</comment>
       </element>
@@ -165,7 +165,7 @@ unknown -&gt; U</comment>
       <element name="Accession ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID"/>
          <mapping resource="Specimen" path="accessionIdentifier" min="0" max="1">
-            <path value="Observation.resolve().accessionIdentifier.value"/>
+            <path value="Observation.resolve().accessionIdentifier"/>
          <type><code value="Identifier"/></type><definition value="The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures."/></mapping>
       </element>
       <element name="Last Active Date and Time">
@@ -180,7 +180,7 @@ unknown -&gt; U</comment>
       <element name="Central Laboratory ID">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID"/>
          <mapping resource="Organization" path="identifier" min="0" max="*">
-            <path value="Observation.performer.resolve().identifier.value"/>
+            <path value="Observation.performer.resolve().identifier"/>
          <type><code value="Identifier"/></type><condition value="org-1"/><definition value="Identifier for the organization that is used to identify the organization across multiple disparate systems."/></mapping>
          <comment>Will need to look at identifier.type or identifier.system to know which identifier to use.  In some cases, performer might be PractitionerRole, in which case, will need to map through PractitionerRole.organization.  If there are multiple performers that link to multiple organizations, converter will need to look at Organization.type or have other rules to decide amongst the candidates.</comment>
       </element>
@@ -194,7 +194,7 @@ unknown -&gt; U</comment>
       <element name="Specimen ID or Number">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID"/>
          <mapping resource="Specimen" path="identifier" min="0" max="*">
-            <path value="Observation.specimen.resolve().identifier.value"/>
+            <path value="Observation.specimen.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Id for specimen."/></mapping>
          <comment>If there are multiple identifiers, need to look at identifier.system or identifier.type to determine</comment>
       </element>
@@ -310,7 +310,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
       <element name="Battery ID">
          <cdisc spec="LAB" label="/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID"/>
          <mapping resource="DiagnosticReport" path="identifier" min="0" max="*">
-            <path value="DiagnosticReport.identifier.value"/>
+            <path value="DiagnosticReport.identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this report by the performer or other systems."/><comment value="Usually assigned by the Information System of the diagnostic service provider (filler id)."/></mapping>
       </element>
       <element name="Battery Name">
@@ -684,8 +684,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <cdisc spec="CDASH" label="DM.STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/DM/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/STUDYID"><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -694,8 +694,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <cdisc spec="CDASH" label="DM.SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/DM/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -703,8 +703,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
       <element name="Investigator Identifier">
          <cdisc spec="SDTM" label="DM.INVID" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/INVID"><definition>An identifier to describe the Investigator for the study. May be used in addition to SITEID. Not needed if SITEID is equivalent to INVID.</definition></cdisc>
          <mapping resource="Practitioner" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="An identifier that applies to this person in this role."/></mapping>
          <comment>Will need to decide which id to expose.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -713,7 +713,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <cdisc spec="CDASH" label="DM.SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/DM/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Observation.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -739,7 +739,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
          <cdisc spec="CDASH" label="LBREFID" core="R/C" type="Char" link="/mdr/cdashig/2-1/scenarios/LB.CentralProcessing/fields/LBREFID"><definition>An internal or external identifier such as specimen identifier.</definition></cdisc>
          <cdisc spec="SDTM" label="LBREFID" core="Perm" type="Char" link="/mdr/sdtmig/3-2/datasets/LB/variables/LBREFID"><definition>Internal or external specimen identifier. Example: Specimen ID.</definition></cdisc>
          <mapping resource="Specimen" path="accessionIdentifier" min="0" max="1">
-            <path value="Observation.specimen.resolve().accessionIdentifier.value"/>
+            <path value="Observation.specimen.resolve().accessionIdentifier"/>
          <type><code value="Identifier"/></type><definition value="The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures."/></mapping>
          <comment>As reported from the Site</comment>
       </element>
@@ -1005,7 +1005,7 @@ Completed = &lt;blank&gt;
       <element name="Unique Subject Identifier">
          <cdisc spec="SDTM" label="USUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/LB/variables/USUBJID"><definition>Identifier used to uniquely identify a subject across all studies for all applications or submissions involving the product.</definition></cdisc>
          <mapping resource="Patient" path="identifier" min="0" max="*">
-            <path value="Observation.subject.resolve().identifier.value"/>
+            <path value="Observation.subject.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="An identifier for this patient."/></mapping>
          <comment>To find an identifier that was consistent for the subject across studies would typically mean looking to the Patient identifier.  However, this may not be appropriate to be exposed directly, so some degree of mapping, obfuscation or anonymization may be required.<br/>
             <br/>In theory, a sponsor specific study-independent identifier could be maintained on Patient alongside other patient identifiers, but this would be unusual in most clinical systems.</comment>
@@ -1059,8 +1059,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
          <cdisc spec="CDASH" label="STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/VS/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/VS/variables/STUDYID"><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -1069,8 +1069,8 @@ Potentially could appear in Observation.method.  An extension is required to dis
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/VS/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -1079,7 +1079,7 @@ Potentially could appear in Observation.method.  An extension is required to dis
          <cdisc spec="CDASH" label="SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/VS/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=Observation.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Observation.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -1259,8 +1259,8 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/AE/variables/STUDYID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="AdverseEvent" path="study" min="0" max="*">
-            <path value="AdverseEvent.study.resolve().partOf.resolve().identifier.value"/>
-            <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier.value"/>
+            <path value="AdverseEvent.study.resolve().partOf.resolve().identifier"/>
+            <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().partOf.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/ResearchStudy"/></type><definition value="AdverseEvent.study."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -1269,8 +1269,8 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="AdverseEvent.study.resolve().identifier.value"/>
-            <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier.value"/>
+            <path value="AdverseEvent.study.resolve().identifier"/>
+            <path value="ResearchSubject.where(subject=AdverseEvent.subject).study.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The direct path using AdverseEvent.study will only exist if the system maintaining the AdverseEvent is aware of its relevance to the Study.</comment>
@@ -1279,7 +1279,7 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/AE/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=AdverseEvent.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=AdverseEvent.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Research subject points to patient, adverse event points to patient. Adverse event points to study. Check to see if they are the same in order to establish linkage.  When extracting real world evidence either the extraction will be performed in a fully identified mode and de-identification will happen as a subsequent process or the de-identification will already have occurred. Any identify info in the resources will already have real world identification randomized or otherwise made nonsensitive. The mapping is referring to subject.reference not to the identifier element on the clinical resources.</comment>
       </element>
@@ -1670,11 +1670,11 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/MH/variables/STUDYID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().partOf.resolve().identifier"/>
+            <path value="AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="Condition.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -1683,11 +1683,11 @@ This combination can be used to extract vital sign data points from EHR system a
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier.value"/>
-            <path value="AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="Condition.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject).study.resolve().identifier"/>
+            <path value="AdverseEvent.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="Condition.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="AllergyIntolerance.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="Observation.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the AdverseEvent/Condition/AllergyIntolerance/Observation is aware of its relevance to the Study.</comment>
@@ -1839,6 +1839,19 @@ This combination can be used to extract vital sign data points from EHR system a
          <mapping resource="AdverseEvent" path="outcome" min="0" max="1">
             <path value="AdverseEvent.outcome"/>
          <type><code value="CodeableConcept"/></type><binding name="AdverseEventOutcome" strength="required" valueSet="http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1"/><definition value="Describes the type of outcome from the adverse event."/></mapping>
+      </element>
+      <element name="MH Disease or Symptom Under Control">
+         <cdisc spec="CDASH" label="MHCTRL" core="O" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/MHCTRL"><definition>Indication whether the medical condition or event is under control at the time of data collection.</definition></cdisc>
+         <mapping resource="Condition" path="clinicalStatus" min="0" max="1">
+            <path value="Condition.clinicalStatus = ('inactive','remission',resolved')"/>
+         <type><code value="CodeableConcept"/></type><binding name="ConditionClinicalStatus" strength="required" valueSet="http://hl7.org/fhir/ValueSet/condition-clinical|4.0.1"/><condition value="con-3"/><condition value="con-4"/><condition value="con-5"/><definition value="The clinical status of the condition."/><comment value="The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity."/></mapping>
+         <mapping resource="AdverseEvent" path="outcome" min="0" max="1">
+            <path value="Observation.outcome = ('resolved', 'resolvedWithSequelae')"/>
+         <type><code value="CodeableConcept"/></type><binding name="AdverseEventOutcome" strength="required" valueSet="http://hl7.org/fhir/ValueSet/adverse-event-outcome|4.0.1"/><definition value="Describes the type of outcome from the adverse event."/></mapping>
+         <mapping resource="AllergyIntolerance" path="clinicalStatus" min="0" max="1">
+            <path value="AllergyIntolerance.clinicalStatus = ('inactive', 'resolved')"/>
+         <type><code value="CodeableConcept"/></type><binding name="AllergyIntoleranceClinicalStatus" strength="required" valueSet="http://hl7.org/fhir/ValueSet/allergyintolerance-clinical|4.0.1"/><condition value="ait-1"/><condition value="ait-2"/><definition value="The clinical status of the allergy or intolerance."/><comment value="Refer to [discussion](extensibility.html#Special-Case) if clincalStatus is missing data.&#xA;The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity."/></mapping>
+         <comment>For all of these, the evaluation of resolution is tied to the date the record was last updated, not necessarily the start of the study, so lack of resolution in the record doesn't necessarily mean that the item will be unresolved at study time.</comment>
       </element>
       <element name="Medical History Event Start Date">
          <cdisc spec="CDASH" label="MHSTDAT" core="O" type="Char" link="/mdr/cdashig/2-1/domains/MH/fields/MHSTDAT"><definition>The start date of medical history event or condition represented in an unambiguous date format (e.g., DD-MON-YYYY).</definition></cdisc>
@@ -2084,12 +2097,12 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="CDASH" label="STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/CM/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/CM/variables/STUDYID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
-            <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().partOf.resolve().identifier"/>
+            <path value="MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
+            <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.    ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -2098,12 +2111,12 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/CM/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier.value"/>
-            <path value="MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
-            <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient)).study.resolve().identifier"/>
+            <path value="MedicationStatement.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="MedicationRequest.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="MedicationDispense.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="MedicationAdministration.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
+            <path value="Immunization.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the MedicationStatement/Request/Dispense/Administration or Immunization is aware of its relevance to the Study.</comment>
@@ -2112,7 +2125,7 @@ The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).
          <cdisc spec="CDASH" label="SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/CM/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier.value"/>
+            <path value="ResearchSubject.where(individual=(MedicationStatement.subject|MedicationRequest.subject|MedicationDispense.subject|MedicationAdministration.subject|Immunizations.patient).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -2697,8 +2710,8 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <cdisc spec="CDASH" label="STUDYID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/PR/fields/STUDYID"><definition>A unique identifier for a study.</definition></cdisc>
          <cdisc spec="SDTM" label="STUDYID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/PR/variables/STUDYID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value"/>
-            <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier"/>
+            <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</comment>
@@ -2707,8 +2720,8 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/PR/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="site" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value"/>
-            <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Observation.subject).study.resolve().identifier"/>
+            <path value="Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier"/>
          <type><code value="Reference"/><targetProfile value="http://hl7.org/fhir/StructureDefinition/Location"/></type><definition value="A facility in which study activities are conducted."/></mapping>
          <comment>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
             <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</comment>
@@ -2717,7 +2730,7 @@ All coding levels are found in the same attribute as distinct codings.  The gran
          <cdisc spec="CDASH" label="SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/PR/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s).</description><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=Procedure.subject).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Procedure.subject).identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
          <comment>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
             <br/>No standard way to decide which subject identifier to use</comment>
@@ -3087,14 +3100,14 @@ Might consider proposing it as a standard extension.</gap>
          <cdisc spec="CDASH" label="SITEID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/DM/fields/SITEID"><definition>A unique identifier for a site within a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SITEID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SITEID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description><definition>Unique identifier for a site within a study.</definition></cdisc>
          <mapping resource="ResearchStudy" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(subject=Patient.study.resolve().identifier.value"/>
+            <path value="ResearchSubject.where(subject=Patient).study.resolve().identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research study by the sponsor or other systems."/></mapping>
       </element>
       <element name="Subject Identifier for the Study">
          <cdisc spec="CDASH" label="SUBJID" core="HR" type="Char" link="/mdr/cdashig/2-1/domains/DM/fields/SUBJID"><definition>A unique subject identifier within a site and a study.</definition></cdisc>
          <cdisc spec="SDTM" label="DM.SUBJID" core="Req" type="Char" link="/mdr/sdtmig/3-2/datasets/DM/variables/SUBJID"><description>The corresponding CDASH Variable(s) map directly to identified SDTM Variable(s). I the column with the heading SDTMIG Target.</description><definition>Subject identifier, which must be unique within the study. Often the ID of the subject as recorded on a CRF.</definition></cdisc>
          <mapping resource="ResearchSubject" path="identifier" min="0" max="*">
-            <path value="ResearchSubject.where(individual=Patient.identifier).identifier.value"/>
+            <path value="ResearchSubject.where(individual=Patient).identifier.identifier"/>
          <type><code value="Identifier"/></type><definition value="Identifiers assigned to this research subject for a study."/></mapping>
       </element>
       <element name="Birth Date">

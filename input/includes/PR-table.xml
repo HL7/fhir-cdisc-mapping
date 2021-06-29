@@ -55,8 +55,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study. ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.   ResearchStudy links to Patient. Observation links to Patient. If the patients are the same, that establishes the linkage. There's also an extension that allows direct linkage to a 'study' from any resource - if the source system has actually established such a linkage.</td>
@@ -83,8 +83,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -111,7 +111,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Procedure.subject).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Procedure.subject).identifier</p>
                   </td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Procedure.<br/>
                      <br/>No standard way to decide which subject identifier to use</td>
@@ -1232,8 +1232,8 @@ Might consider proposing it as a standard extension.</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold" title="A unique identifier for a study.">
@@ -1258,8 +1258,8 @@ Might consider proposing it as a standard extension.</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Procedure.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -1286,7 +1286,7 @@ Might consider proposing it as a standard extension.</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Procedure.subject).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Procedure.subject).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"

@@ -81,7 +81,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.study.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Patient).study.resolve().identifier</p>
                   </td>
                   <td/>
                </tr>
@@ -107,7 +107,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Patient).identifier.identifier</p>
                   </td>
                   <td/>
                </tr>
@@ -456,7 +456,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Patient.study.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Patient).study.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"
@@ -482,7 +482,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(individual=Patient.identifier).identifier.value</p>
+                     <p>ResearchSubject.where(individual=Patient).identifier.identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold"

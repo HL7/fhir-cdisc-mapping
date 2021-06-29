@@ -46,8 +46,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -100,8 +100,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>Mapping is based on presumption that research subject will be tied to site-specific ResearchStudy, which will then be part of overall ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -127,8 +127,8 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</p>
                   </td>
                   <td>Will need to decide which id to expose or may need to map to one recognized by the sponsor.  If you want the PI for the overall study rather than just for the site associated with the Observation, you'll need to traverse the partOf.resolve() from the study-specific ResearchStudy.<br/>
                      <br/>The path using the extension will only exist if the system maintaining the Observation is aware of its relevance to the Study.</td>
@@ -173,7 +173,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                      <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
@@ -191,7 +191,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                      <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
@@ -209,7 +209,7 @@
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the Observation.  Use the identifier.type to differentiate subject identifiers.<br/>
                      <br/>No standard way to decide which subject identifier to use.  Also no standard way to differentiate subject id from screening id from spare subject id.</td>
@@ -312,7 +312,7 @@ unknown -&gt; U</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.encounter.resolve().identifier.value</p>
+                     <p>Observation.encounter.resolve().identifier</p>
                   </td>
                   <td>No standard way to decide which identifier to use if multiples are present</td>
                </tr>
@@ -374,7 +374,7 @@ unknown -&gt; U</td>
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.resolve().accessionIdentifier.value</p>
+                     <p>Observation.resolve().accessionIdentifier</p>
                   </td>
                   <td/>
                </tr>
@@ -406,7 +406,7 @@ unknown -&gt; U</td>
                      </span>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a> org-1</td>
                   <td>
-                     <p>Observation.performer.resolve().identifier.value</p>
+                     <p>Observation.performer.resolve().identifier</p>
                   </td>
                   <td>Will need to look at identifier.type or identifier.system to know which identifier to use.  In some cases, performer might be PractitionerRole, in which case, will need to map through PractitionerRole.organization.  If there are multiple performers that link to multiple organizations, converter will need to look at Organization.type or have other rules to decide amongst the candidates.</td>
                </tr>
@@ -439,7 +439,7 @@ unknown -&gt; U</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.specimen.resolve().identifier.value</p>
+                     <p>Observation.specimen.resolve().identifier</p>
                   </td>
                   <td>If there are multiple identifiers, need to look at identifier.system or identifier.type to determine</td>
                </tr>
@@ -736,7 +736,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>DiagnosticReport.identifier.value</p>
+                     <p>DiagnosticReport.identifier</p>
                   </td>
                   <td/>
                </tr>
@@ -1620,8 +1620,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().partOf.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().partOf.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/@ID</span>
@@ -1674,8 +1674,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}references.html">Reference</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/@ID</span>
@@ -1701,8 +1701,8 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier.value</p>
-                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).study.resolve().principleInvestigator.resolve().identifier</p>
+                     <p>Observation.extension(workflow-researchstudy).valueReference.resolve().principleInvestigator.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/@ID</span>
@@ -1747,7 +1747,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/ScreenID</span>
@@ -1765,7 +1765,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/SubjectID</span>
@@ -1783,7 +1783,7 @@ Observation/valueQuantity/value/@value   If the reported result isn't in SI unit
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>ResearchSubject.where(subject=Observation.subject).identifier.value</p>
+                     <p>ResearchSubject.where(subject=Observation.subject).identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/SpareSubjectID</span>
@@ -1886,7 +1886,7 @@ unknown -&gt; U</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.encounter.resolve().identifier.value</p>
+                     <p>Observation.encounter.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/@ID</span>
@@ -1948,7 +1948,7 @@ unknown -&gt; U</td>
                      <br/>0..1 <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.resolve().accessionIdentifier.value</p>
+                     <p>Observation.resolve().accessionIdentifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/@ID</span>
@@ -1980,7 +1980,7 @@ unknown -&gt; U</td>
                      </span>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a> org-1</td>
                   <td>
-                     <p>Observation.performer.resolve().identifier.value</p>
+                     <p>Observation.performer.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/CentralLab/@ID</span>
@@ -2013,7 +2013,7 @@ unknown -&gt; U</td>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>Observation.specimen.resolve().identifier.value</p>
+                     <p>Observation.specimen.resolve().identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/@ID</span>
@@ -2310,7 +2310,7 @@ F -&gt; Y; NF -&gt; N; FNA -&gt; N/A; NG -&gt; Not Applicable (blank)<br/>
                      <br/>0..* <a href="{{site.data.fhir.path}}datatypes.html#Identifier">Identifier</a>
                   </td>
                   <td>
-                     <p>DiagnosticReport.identifier.value</p>
+                     <p>DiagnosticReport.identifier</p>
                   </td>
                   <td>
                      <span style="font-weight:bold">/GTP/Study/Site/Investigator/Subject/Visit/Accession/BaseSpecimen/BaseBattery/@ID</span>
