@@ -8224,7 +8224,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s84"><Data ss:Type="String">identifier</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s133"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject)).identifer.value</Data><NamedCell
+    <Cell ss:StyleID="s133"><Data ss:Type="String">ResearchSubject.where(individual=(AdverseEvent.subject|Condition.subject|AllergyIntolerance.patient|Observation.subject)).identifer</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s87"><Data ss:Type="String">Study subject is found by finding the StudySubject that corresponds to the same Patient and ResearchStudy as the focal resource.&#10;&#10;No standard way to decide which subject identifier to use</Data><NamedCell
