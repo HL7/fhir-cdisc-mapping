@@ -1,6 +1,6 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <p>
-    There are several areas where different approaches between FHIR and CDISC create challenges for mapping between the standards.  This section highlights some of those areas and 
+    There are multiple areas where different approaches between FHIR and CDISC create challenges for mapping between the standards.  This section highlights some of those areas and 
     lists considerations and guidance for how study sponsors and others might manage the mapping process.
   </p>
   <p>
