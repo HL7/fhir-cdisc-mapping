@@ -40,6 +40,34 @@
     </ul>
   </li>
   <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappings2<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="ae.html">Adverse Events</a>
+      </li>
+      <li>
+        <a href="cm.html">Concomitant Medications</a>
+      </li>
+      <li>
+        <a href="dm.html">Demographics</a>
+      </li>
+      <li>
+        <a href="lb.html">Laboratory</a>
+      </li>
+      <li>
+        <a href="mh.html">Medical History</a>
+      </li>
+      <li>
+        <a href="pr.html">Procedures</a>
+      </li>
+      <li>
+        <a href="vs.html">Vital Signs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
       </b>
     </a>
