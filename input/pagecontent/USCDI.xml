@@ -1,7 +1,12 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <a name="USCDI"> </a>
-  <h3>USCDI</h3>
-  <p>
-    This page is a place holder for the future USCDI page.
-  </p> 
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+	<p>
+    This page is a placeholder for the USCDI to SDTM mapping
+  </p>
+  <a name="0.1.0"> </a>
+	<p>
+		<b>2020-12-01 v0.1.0 - CDISC-Mapping (STU ballot 1) Ballot Candidate</b> based on FHIR R4
+  </p>
+  <ul>
+    <li>Initial version</li>
+  </ul>
 </div>
