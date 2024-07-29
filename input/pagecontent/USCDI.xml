@@ -4,25 +4,25 @@
   </p>
   <a name="0.1.0"> </a>
 	<p>
-		<b>Add additional text here</b> list FHIR version here
+		<b>Add additional text here</b> 
 	</p>
 <table border="2">
  <tr> 
     <th></th>
-    <th>USCDI Class</th>
-    <th>USCDI Data Element</th>
-    <th>US Core FHIRPath</th>
-    <th>CDISC SDTM</th>
+    <th> USCDI Class </th>
+    <th> USCDI Data Element </th>
+    <th> US Core FHIRPath </th>
+    <th> CDISC SDTM </th>
   </tr>
   <tr>
-    <th>Row Header 1</th>
-    <td>Data</td>
-    <td>Data</td>
-    <td>Data</td>
-    <td>Data</td>
+    <th>  </th>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
 </table>
   <ul>
-    <li>More text can be added here</li>
+    <li> More text can be added here </li>
   </ul>
 </div>
