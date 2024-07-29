@@ -4,9 +4,9 @@
   </p>
   <a name="0.1.0"> </a>
 	<p>
-		<b>2020-12-01 v0.1.0 - CDISC-Mapping (STU ballot 1) Ballot Candidate</b> based on FHIR R4
+		<b>Add additional text here</b> list FHIR version here
 	</p>
-<table border="1">
+<table border="2">
  <tr> 
     <th></th>
     <th>USCDI Class</th>
@@ -23,6 +23,6 @@
   </tr>
 </table>
   <ul>
-    <li>Initial version</li>
+    <li>More text can be added here</li>
   </ul>
 </div>
