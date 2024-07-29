@@ -87,6 +87,11 @@
         </page>
       </page>
       <page>
+        <nameUrl value="USCDI.html"/>
+        <title value="Mapping USCDI to SDTM"/>
+        <generation value="html"/>
+      </page>
+      <page>
         <nameUrl value="downloads.html"/>
         <title value="Useful Downloads"/>
         <generation value="html"/>
