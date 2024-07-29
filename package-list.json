@@ -6,7 +6,7 @@
  "list" : [{
   "version" : "current",
   "desc" : "Continuous Integration Build (latest in version control)",
-  "path" : "http://build.fhir.org/ig/HL7/cdisc-map",
+  "path" : "http://build.fhir.org/ig/HL7/cdisc-mapping",
   "status" : "ci-build",
   "current" : true
  },{
